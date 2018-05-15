@@ -35,3 +35,26 @@ servlet: cookie中添加username , 判断cookie是否存在 , **要设置cookie�
 struts2: 设置拦截器, 先判断session中有没有, 再判断cookie中有没有自动登录. 登录后加入session, 看情况判断是否加入自动登录的cookie, 如果用户取消自动登录则删除cookie
 
 ---
+**upload**  
+	
+设置上传文件大小限制  总大小
+
+    <constant name="struts.multipart.maxSize" value="20971520"></constant>
+
+---
+**struts.xml中设置限制 (upload为例)**  
+
+名称为fileUpload.方法名首字母小写
+
+        <action name="upload" class="com.beyond.demo4.UploadAction"
+			method="upload">
+			<result type="redirect">/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.allowedExtensions">.txt,.doc</param>
+			</interceptor-ref>
+		</action>
+
+
+---
