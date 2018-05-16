@@ -58,3 +58,33 @@ struts2: 设置拦截器, 先判断session中有没有, 再判断cookie中有没
 
 
 ---
+
+**文件下载编码**  
+firefox与chrome浏览器对中文文件名的编码不一样
+base64 和 url
+
+    import com.sun.org.apache.xml.internal.security.utils.Base64;
+    import java.net.URLEncoder;
+
+    public String getEncodeFileName(String filename, String agent) throws UnsupportedEncodingException {
+		if (agent.toLowerCase().contains("firefox")) {
+			return "=?UTF-8?B?" + Base64.encode(filename.getBytes("UTF-8")) + "?=";
+		} else {
+			return URLEncoder.encode(filename, "UTF-8");
+		}
+	}
+
+---
+**文件下载struts.xml**
+
+    <action name="download" class="com.beyond.demo4.DownloadAction">
+			<result name="input">/index.jsp</result>
+			<result type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+			</result>
+		</action>
+
+${}中的要在Action中有get方法
+
+---
