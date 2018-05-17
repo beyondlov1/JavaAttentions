@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+  		"-//Apache Struts//XWork Validator 1.0.3//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	
+	<!-- 校验用户名不能为空 -->
+	<field name="username">
+		<!-- 编写校验的规范 -->
+		<field-validator type="requiredstring">
+			<!-- 用户的提示 -->
+			<message>亲，您的用户名是不能为空的</message>
+		</field-validator>
+	</field>
+	
+</validators>

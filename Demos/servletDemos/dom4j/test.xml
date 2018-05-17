@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<userinfos>
+	<userinfo>
+		<age>123</age>
+		<address value="ba" isFrom="true">
+		</address>
+	</userinfo>
+
+	<userinfo>
+		<age>3212</age>
+		<address value="sh">
+		</address>
+	</userinfo>
+</userinfos>
