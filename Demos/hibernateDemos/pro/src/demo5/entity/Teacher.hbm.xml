@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="demo5.entity">
+
+	<class name="Teacher" table="TEACHER">
+		<id name="id" column="ID">
+			<generator class="uuid" />
+		</id>
+
+		<property name="name" column="TNAME"></property>
+		<set name="students" table="teacher_student">
+			<key column="teacher_id"></key>
+			<many-to-many class="Student" column="student_id"></many-to-many>
+		</set>
+	</class>
+
+</hibernate-mapping>

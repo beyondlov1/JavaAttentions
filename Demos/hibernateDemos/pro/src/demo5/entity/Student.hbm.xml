@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="demo5.entity">
+
+	<class name="Student" table="STUDENT">
+		<id name="id" column="ID">
+			<generator class="uuid" />
+		</id>
+
+		<property name="score" column="SCORE"></property>
+		
+		<set name="teachers" table="teacher_student" >
+			<key column="student_id"></key>
+			<many-to-many class="Teacher" column="teacher_id" ></many-to-many>
+		</set>
+	</class>
+
+</hibernate-mapping>

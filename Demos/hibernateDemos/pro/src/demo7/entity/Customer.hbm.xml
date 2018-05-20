@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="demo7.entity">
+
+	<class name="Customer" table="CUSTOMER_7" batch-size="10">
+		<id name="id" column="ID">
+			<generator class="uuid" />
+		</id>
+
+		<property name="address" column="ADDRESS"></property>
+		<set name="orders" cascade="all" inverse="true" batch-size="10">
+			<key column="customer_id"></key>
+			<one-to-many class="Order" />
+		</set>
+	</class>
+	
+
+</hibernate-mapping>
