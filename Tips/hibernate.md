@@ -204,4 +204,18 @@ set bag list(多一个排序)
 官方的 hibernate5.3.0-Final 暂时没有提供EHcache的provider_class  
 所以要自己下:  
 [https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache/5.3.0.Final](https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache/5.3.0.Final)  
---下了貌似也不行
+
+ps:看demo!
+
+---
+
+**no session 错误**
+
+原因: 设置了lazy=true
+
+解决办法: 
+1. 迫切: from Customer c left join fetch c.order  
+2. Hibernate.initialize(o.getCustomer())  
+3. 配置lazy=false(等同于第二点)   
+4. 不提交事务(不推荐)  
+5. OpenSessionInView: 创建一个过滤器, 在业务开始之前开启session, 在业务之后(doFilter之后)提交事务. 要在action配置之后配置. 要用currentSession. 缺点:长会话导致事务开启时间太长, 太费资源, 考虑其他方法
