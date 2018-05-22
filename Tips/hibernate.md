@@ -1,3 +1,7 @@
+**要实现二级缓存看Demos**
+
+---
+
 **包**
 
     antlr-2.7.7.jar
@@ -183,7 +187,9 @@ load方法用**getCurrentSession**方式取值时只能在**commit之前**取值
 
 ---
 
-**一对多或者多对多要用Set集合**
+**一对多或者多对多要用集合**
+
+set bag list(多一个排序)
 
 ---
 **防止更新丢失**
@@ -192,3 +198,10 @@ load方法用**getCurrentSession**方式取值时只能在**commit之前**取值
 在hbm.xml中<id></id>标签之后加入<version>  [*一定要在<id></id>之后加入,否则报错* ]
 
 ---
+
+**hibernate-ehcache**
+
+官方的 hibernate5.3.0-Final 暂时没有提供EHcache的provider_class  
+所以要自己下:  
+[https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache/5.3.0.Final](https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache/5.3.0.Final)  
+--下了貌似也不行
