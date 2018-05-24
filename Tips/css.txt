@@ -1,0 +1,16 @@
+**表格实现灰白相间**
+
+tr:NTH-CHILD(even) {
+	background: gray;
+}
+
+tr:NTH-CHILD(odd) {
+	background: white;
+}
+
+
+//tr经过时变红
+tr:NTH-CHILD(odd):HOVER{
+	color:red;
+}
+

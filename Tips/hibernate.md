@@ -1,4 +1,4 @@
-**要实现二级缓存看Demos**
+﻿**要实现二级缓存看Demos**
 
 ---
 
@@ -211,11 +211,29 @@ ps:看demo!
 
 **no session 错误**
 
-原因: 设置了lazy=true
+**原因:** 设置了lazy=true
 
-解决办法: 
+**解决办法:** 
 1. 迫切: from Customer c left join fetch c.order  
 2. Hibernate.initialize(o.getCustomer())  
 3. 配置lazy=false(等同于第二点)   
 4. 不提交事务(不推荐)  
 5. OpenSessionInView: 创建一个过滤器, 在业务开始之前开启session, 在业务之后(doFilter之后)提交事务. 要在action配置之后配置. 要用currentSession. 缺点:长会话导致事务开启时间太长, 太费资源, 考虑其他方法
+
+---
+
+**用MySQL报错:**
+
+	Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+
+**原因可能是:** database没有连上  
+**解决方法:** 如果用的是jpa, 可能是MySQL驱动版本太高  (5.5的MySQL --- 5.1.39的驱动)
+
+---
+
+**一对多外键都是null的情况**
+
+原因: 关联时多方没有set一方, Order.setCustomer(customer)
+
+解决: 添加 Order.setCustomer(customer)
+

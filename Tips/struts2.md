@@ -308,3 +308,21 @@ base64 和 url
     <dispatcher>FORWARD</dispatcher> 
 
 ---
+
+**从一个Action转到另一个Action**
+
+两种方法: chain(转发)  redirect/redirectAction
+
+    <action name="BookAction_*" class="com.beyond.action.BookAction" method="{1}">
+		<result>/show_all_books.jsp</result>
+		<result name="SHOW" type="redirectAction">BookAction_showAllBooks.action</result>
+		<allowed-methods>showAllBooks, addBook</allowed-methods>
+	</action>
+
+ps: struts中都不带项目名, action前面不加"/"
+<result>中可以有<param>参数
+
+---
+
+
+
