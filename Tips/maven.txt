@@ -13,3 +13,9 @@ http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-mavenarchiver/0.17.2/N/L
 Then follow the update wizard as usual. Eclipse would then require a restart. Afterwards, a further Update Project.. on the concerned Maven project would remove any error and your Maven build could then enjoy the benefit of the latest maven-jar-plugin version.
 
 参考: https://stackoverflow.com/questions/37555557/m2e-error-in-mavenarchiver-getmanifest
+
+---
+
+**pom.xml中写入依赖后不自动下载, 且报错**
+
+maven的配置, 将auto download 打开
