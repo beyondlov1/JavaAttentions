@@ -19,3 +19,5 @@ Then follow the update wizard as usual. Eclipse would then require a restart. Af
 **pom.xml中写入依赖后不自动下载, 且报错**
 
 maven的配置, 将auto download 打开
+
+https://blog.csdn.net/J080624/article/details/71747310

@@ -88,6 +88,29 @@ $("tr").animate({"left":"0","right":"0"}, 1000);
 
 ps: tr不是块级元素, chrome不能实现上述效果,firefox可以, 如果想要chrome实现需要将tr强转为块级元素 tr{ display: block;}
 
+ps2: 但是chrome用上述方法的话会出现tr中的表格状态都没有了, 文字不能对齐 , 连成一块
+
+所以修改成下面的代码:
+
+tr:NTH-CHILD(even) td {
+	background: orange;
+	position: relative;
+	left:-100%;
+}
+
+tr:NTH-CHILD(odd) td {
+	background: lightgray;
+	position:relative;
+	right:-100%;
+}
+
+<script type="text/javascript">
+$(function(){
+$("td").animate({"left":"0","right":"0"}, 1000);
+})
+</script>
+
+
 ----
 
 
