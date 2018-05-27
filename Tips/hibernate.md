@@ -1,4 +1,4 @@
-﻿**要实现二级缓存看Demos**
+**要实现二级缓存看Demos**
 
 ---
 
@@ -236,4 +236,28 @@ ps:看demo!
 原因: 关联时多方没有set一方, Order.setCustomer(customer)
 
 解决: 添加 Order.setCustomer(customer)
+
+---
+
+**JPA的fetch注解没有用**
+
+解决方法: 用hibernate的注解 @Fetch(FetchMode.JOIN)
+
+参考: [https://stackoverflow.com/questions/463349/jpa-eager-fetch-does-not-join](https://stackoverflow.com/questions/463349/jpa-eager-fetch-does-not-join)
+
+----
+
+**Fetch的用法**
+
+用在一端的OneToMany的注解中, 表示多端如何查询: select , join , subSelect
+
+**batch的用法**
+
+谁需要批量加载就写到哪里
+
+一方可以配置多方的batchSize, 写到属性相关的地方(如:list set属性)
+
+多方的配置在多方batchSize, 用jpa注解的话写到多方类名的上面 
+
+---
 

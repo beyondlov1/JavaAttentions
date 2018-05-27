@@ -1,1 +1,0 @@
-el表达式在eclipseEE版本需要添加 isELIgnore="false", 而在myEclipse中则不需要
