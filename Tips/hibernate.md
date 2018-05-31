@@ -57,6 +57,13 @@ Transaction ts = session.beginTransaction();  //后面不需要再ts.begin
 
 ---
 
+**数据没有提交**
+
+在默认情况下, hibernate不会自动提交, 
+需要 **开启事务** 并提交
+
+---
+
 **getCurrentSession的方法会自动关闭session, 不要再close**
 
 ---
@@ -261,3 +268,6 @@ ps:看demo!
 
 ---
 
+**hibernate映射配置文件路径**
+
+如果用maven的webapp框架, 将配置文件都写到resource文件后, mapping的映射文件位置只能放到resource文件中(感觉这个resource文件夹不太一样,这是在idea上测试的)

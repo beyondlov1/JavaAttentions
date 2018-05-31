@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sheng Shi Xian</title>
+</head>
+<body>
+<select id="sheng" onchange="initShi()"></select> <select id="shi"></select>
+</body>
+<script>
+
+    var shengShiStr = [{"sheng": "河北省", "shi": ["保定市", "石家庄", "唐山"]}, {"sheng": "山东省", "shi": ["青岛市", "威海市"]}];
+
+    var JSONObject = eval(shengShiStr);
+
+    function initSheng() {
+        for (var i = 0; i < JSONObject.length; i++) {
+            var sheng = JSONObject[i].sheng;
+            var shengOptionElement = document.createElement("option");
+            shengOptionElement.innerHTML = sheng;
+            document.getElementById("sheng").appendChild(shengOptionElement);
+        }
+    }
+
+    function initShi() {
+        var selectedSheng = document.getElementById("sheng").value;
+        for (var i = 0; i < JSONObject.length; i++) {
+            var sheng = JSONObject[i].sheng;
+            if (sheng == selectedSheng) {
+                var shiArray = JSONObject[i].shi;
+                document.getElementById("shi").length = shiArray.length;
+                for (var j = 0; j < shiArray.length; j++) {
+                    var shi = shiArray[j];
+                    document.getElementById("shi").options[j].innerHTML = shi;
+                }
+            }
+        }
+    }
+
+    initSheng();
+
+</script>
+</html>

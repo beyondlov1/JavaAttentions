@@ -1,0 +1,15 @@
+var xmlRequest = new XMLHttpRequest();
+
+xmlRequest.onreadystatechange = function(){
+if(xmlRequest.readyState == 4 && xmlRequest.status == 200){
+var result = xmlRequest.responseText;
+document.getElementById("cart").innerHTML = result;
+}
+}
+
+function getCart(){
+var context = "${pageContext.request.contextPath}";
+xmlRequest.open("POST",context+"/CartServlet?op=showAllCart",true);
+xmlRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");//post一定要加
+xmlRequest.send();
+}

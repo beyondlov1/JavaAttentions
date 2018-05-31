@@ -1,0 +1,25 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app id="WebApp_1527395543117">
+	<display-name>Archetype Created Web Application</display-name>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+	<param-name>contextConfigLocation</param-name>
+	<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>BookServlet</servlet-name>
+		<display-name>BookServlet</display-name>
+		<description></description>
+		<servlet-class>com.beyond.controller.BookServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookServlet</servlet-name>
+		<url-pattern>/BookServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

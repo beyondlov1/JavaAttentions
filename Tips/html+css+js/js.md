@@ -3,22 +3,22 @@
 
 ---
 
-undefined null �� == �ж��Ƕ���true
+undefined null 在 == 判断是都是true
 
 ---
 
-���������������ᶪʧԭ����ֵ
+重新声明变量不会丢失原来的值
 
 var carname="Volvo";
 var carname;
 
 ---
 
-�ں����� var xxx = ...Ϊ�ֲ�����, xxx = ...Ϊȫ�ֱ���
+在函数中 var xxx = ...为局部变量, xxx = ...为全局变量
 
 ---
 
-onclick���ݲ���: select(this);
+onclick传递参数: select(this);
 
 js:
 function select(e){
@@ -34,13 +34,17 @@ $(e).animate({"left":"-100%","right":"-100%"}, 1000);
 }
 
 
-ps: js(DOM����)->jquery(jquery����) $(DOM����)
+ps: js(DOM对象)->jquery(jquery对象) $(DOM对象)
 
-jquery(jquery����)->js(DOM����) var v=$v.get(0);
+jquery(jquery对象)->js(DOM对象) var v=$v.get(0);
 
 https://www.cnblogs.com/theWayToAce/p/5591221.html
 
 
 ---
+
+jquery  
+attr(直接操作DOM上的属性, 有时候会出错)   
+prop(操作DOM自带属性, 添加属性是添加jquery对象的属性, dom上看不见)
 
 

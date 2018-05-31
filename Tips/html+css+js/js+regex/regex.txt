@@ -1,0 +1,4 @@
+
+
+前端表单验证常用的15个JS正则表达式
+http://caibaojian.com/form-regexp.html

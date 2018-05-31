@@ -172,3 +172,18 @@ Fileter:
 	}
 
 }
+
+---
+
+**servlet中删除cookie**
+
+	Cookie newCookie=new Cookie("username",null);      //假如要删除名称为username的Cookie
+
+     newCookie.setMaxAge(0);             //立即删除型
+
+     newCookie.setPath("/");               //项目所有目录均有效，这句很关键，否则不敢保证删除
+
+     response.addCookie(newCookie);     //重新写入，将覆盖之前的
+
+---
+

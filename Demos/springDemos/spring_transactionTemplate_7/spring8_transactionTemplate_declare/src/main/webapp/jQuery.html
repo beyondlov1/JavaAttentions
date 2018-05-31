@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery</title>
+
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta name="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+
+<body>
+	This is my HTML page.
+	<br>
+
+	<div id="iddiv">
+		<a class="a b c"> <img alt="faf" src="" class="a b c">
+		</a>
+	</div>
+	<div class="classdiv"></div>
+	<div name="namediv"></div>
+	<div name="namediv"></div>
+
+	<table border="1">
+		<tr><td>a</td></tr>
+		<tr><td>a</td></tr>
+		<tr><td>a</td></tr>
+		<tr><td>a</td></tr>
+		<tr><td>a</td></tr>
+	</table>
+
+</body>
+
+<script type="text/javascript">
+
+	var iddiv = $("#iddiv");
+	var classdiv = $(".classdiv");
+	var div = $("div");
+	var divs = $("#iddiv,.classdiv,div")
+	var diva = $(".a")
+	var divab = $("#iddiv .a")
+	var divabc = $("*")
+	var divabcd = $("#iddiv > .a")
+	
+	var table  = $("body > table:first tr:even")
+</script>
+</html>
