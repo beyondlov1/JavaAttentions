@@ -39,7 +39,7 @@
 
 ## 事件
 
-	ready() on() off() one() hover() trigger() click()
+	ready() on() off() one() hover() click() trigger("选中一方的事件") 
 
 	function(event){
 		event.stopPropagation();
