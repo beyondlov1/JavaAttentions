@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+                http://www.springframework.org/schema/beans    
+                http://www.springframework.org/schema/beans/spring-beans.xsd    
+                http://www.springframework.org/schema/context     
+                http://www.springframework.org/schema/context/spring-context.xsd    
+                http://www.springframework.org/schema/mvc    
+                http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                http://www.springframework.org/schema/tx
+                http://www.springframework.org/schema/tx/spring-tx.xsd  
+                http://www.springframework.org/schema/aop  
+                http://www.springframework.org/schema/aop/spring-aop.xsd "
+	default-autowire="byName">
+
+	<bean id="jdbcConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:jdbc.properties" />
+	</bean>
+
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${driverClassName}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+	</bean>
+
+	<!--配置hibernate相关 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</prop>
+				<prop key="javax.persistence.validation.mode">none</prop>
+				<prop key="hibernate.enable_lazy_load_on_trans">true</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				
+				<!-- second cache -->
+				<prop key="hibernate.cache.use_query_cache">true</prop>  
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+				
+				<!-- 缓存性能， 可以开启， log中会显示是否查询了数据库， 但是statistic对象中取不到值 -->
+				<!-- <prop key="hibernate.generate_statistics">true</prop> -->
+				
+				<!-- spring hibernate 整合时加（不知道什么用） -->
+				<prop key="javax.persistence.validation.mode">none</prop>
+				
+				<!-- 默认全都懒加载 配合openSessionInView -->
+        		<prop key="hibernate.enable_lazy_load_on_trans">true</prop>
+			</props>
+		</property>
+		<property name="mappingLocations"
+			value="classpath:com/beyond/entity/*.hbm.xml">
+		</property>
+	</bean>
+	<bean id="hibernateTemplate"
+		class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="cacheQueries" value="true"></property>
+	</bean>
+
+	<!--事务相关 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<tx:advice id="transactionAdvice"
+		transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" />
+			<tx:method name="modify*" />
+			<tx:method name="remove*" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut
+			expression="execution(* com.beyond.service.impl.*.*(..))"
+			id="myPointCut" />
+		<aop:advisor advice-ref="transactionAdvice"
+			pointcut-ref="myPointCut" />
+	</aop:config>
+
+	<!--dao -->
+	<bean id="userDao" class="com.beyond.dao.impl.UserDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+
+	<!--service -->
+	<bean id="userService"
+		class="com.beyond.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao" />
+	</bean>
+
+	<!--Action相关 -->
+	<bean id="userAction" class="com.beyond.action.UserAction"
+		scope="prototype">
+		<property name="userService" ref="userService" />
+	</bean>
+	<bean id="userValidationInterceptor" class="com.beyond.interceptor.UserValidationInterceptor">
+		<property name="userService" ref="userService" />
+	</bean>
+
+</beans> 

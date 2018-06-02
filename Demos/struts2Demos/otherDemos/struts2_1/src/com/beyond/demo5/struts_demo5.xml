@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+	<package name="demo5" extends="struts-default" namespace="/demo5">
+		<!-- 默认的处理action -->
+		<default-action-ref name="404"></default-action-ref>
+
+		<action name="404">
+			<result>/404.jsp</result>
+		</action>
+
+		<action name="vs" class="com.beyond.demo5.ValueStackDemo">
+			<result>/demo5/show.jsp</result>
+		</action>
+	</package>
+
+
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

@@ -71,7 +71,7 @@ jsp中使用ognl
 
 ---
 
-**<s:debug/>不能显示**  
+**\<s:debug/>不能显示**  
 
 修改常量  
 
@@ -164,7 +164,7 @@ el表达式能取到valueStack中的值
 
 **validation xml验证**
 
-*validate只需要在对应包下写 '类名-方法名-valideation.xml' 文件*
+*validate只需要在对应包下写 '类名-访问路径名* **(与struts2中的name对应!!!!!!)**-validation.xml' 文件*
 
 **type**:requiredstring, fieldexpression, int, email , regex  
 **param name**(对应上边的type):_, expression, min/max, _, regex  
@@ -324,5 +324,115 @@ ps: struts中都不带项目名, action前面不加"/"
 
 ---
 
+**interceptor(修改封装的数据)**
 
+ParameterInterceptor(param)拦截器负责数据封装，其先将数据封装到栈顶，如果栈顶没有相应的值则找下一个.  
+ModelDriven拦截器是调用ModelDriven接口中的getModel()方法， 将返回的对象压到值栈栈顶  
+在default-stack中, ParameterInterceptor是在ModelDriven之后执行，所以，param才能对栈顶操作， 也就是能对modelDriven获得的对象进行操作
+对值栈的对象操作会直接影响值栈的值（这个原理还不大懂）
+
+如果想对封装数据一开始就进行修改，首先想到的就是用拦截器，有下面几种方法：  
+1.Action实现ModelDriven接口，重写getModel方法：
+
+	@Override
+	public User getModel() {
+		if (user == null) {
+			user = new User();
+		}
+		String encryptString = SecureUtils.getEncryptString(user.getPassword());
+		user.setPassword(encryptString);
+		System.out.println("userPassword  " + user.getPassword());
+		return user;
+	}
+   
+
+	这样写虽然能操作值栈中的数据， 但是由于param拦截器会在此方法调用后执行，会覆盖掉原来修改的数据， 所以要新建一个拦截器的栈，将modelDriven放到后面才能有效果：
+
+	<interceptor-stack name="myStack" >
+                <interceptor-ref name="exception"/>
+                <interceptor-ref name="alias"/>
+                <interceptor-ref name="servletConfig"/>
+                <interceptor-ref name="i18n"/>
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="chain"/>
+                <interceptor-ref name="scopedModelDriven"/>
+                											<!-- From Here -->
+                <interceptor-ref name="fileUpload"/>
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="datetime"/>
+                <interceptor-ref name="multiselect"/>
+                <interceptor-ref name="staticParams"/>
+                <interceptor-ref name="actionMappingParams"/>
+                <interceptor-ref name="params"/>
+                <interceptor-ref name="conversionError"/>
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+                <interceptor-ref name="debugging"/>
+                
+				<interceptor-ref name="modelDriven"/> 		<!-- To Here -->
+
+            </interceptor-stack>
+     </interceptors>
+
+	<action name="userAction_signup" class="userAction" method="signup">
+			<interceptor-ref name="myStack"></interceptor-ref>
+			<result name="success">/login.jsp</result>
+			<result name="input">/signup_jquery.jsp</result>
+	</action>
+
+	<action name="userAction_login" class="com.beyond.action.UserAction" method="login">
+			<interceptor-ref name="myStack"></interceptor-ref>
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="input">/login.jsp</result>
+	</action>
+
+	此种方法Action中比较乱，不符合初衷，不推荐；
+
+2.在上面方法的基础上改进一下：在默认的拦截器之后，再自定义一个拦截器，手动调用getModel的方法：
+
+		ModelDriven modelDriven = (ModelDriven) invocation.getAction();
+		modelDriven.getModel();
+		return invocation.invoke();
+这种方法没有真正发挥拦截器的威力，不好
+
+3.终极方案： 在拦截器获得model，直接对model操作，把action的getModel方法里的东西放到拦截器里。
+
+	public class EncryptInterceptor extends AbstractInterceptor {
+
+	@Override
+	public String intercept(ActionInvocation invocation) throws Exception {
+
+		ActionContext context = invocation.getInvocationContext().getContext();
+		ModelDriven modelDriven = (ModelDriven) invocation.getAction();
+
+		User user = (User) modelDriven.getModel();
+
+		// 密码加密
+		String encryptString = SecureUtils.getEncryptString(user.getPassword());
+		user.setPassword(encryptString);
+		System.out.println("userPassword  " + user.getPassword());
+
+		return invocation.invoke();
+	}
+
+	}
+
+
+
+	<interceptors>
+		<interceptor name="encryptInterceptor" class="com.beyond.interceptor.EncryptInterceptor"></interceptor>
+	<interceptor-stack name="myStack" >
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="encryptInterceptor"></interceptor-ref>
+            </interceptor-stack>
+     </interceptors>
+
+
+
+
+    
 

@@ -271,3 +271,7 @@ ps:看demo!
 **hibernate映射配置文件路径**
 
 如果用maven的webapp框架, 将配置文件都写到resource文件后, mapping的映射文件位置只能放到resource文件中(感觉这个resource文件夹不太一样,这是在idea上测试的)
+
+---
+
+**hibernate二级缓存只能用load取得单个缓存数据**

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="login" extends="struts-default" namespace="/user">
+		<action name="login" class="com.beyond.action.LoginAction"
+			method="login">
+			<result type="redirect">/index.jsp</result>
+			<result name="input">/pages/login.jsp</result>
+		</action>
+		<action name="signup" class="com.beyond.action.LoginAction"
+			method="signup">
+			<result type="redirect">/pages/login.jsp</result>
+			<result name="input">/pages/signup.jsp</result>
+		</action>
+		<action name="isUserExist" class="com.beyond.action.LoginAction"
+			method="isUserExist"></action>
+	</package>
+
+
+	<package name="book" extends="struts-default" namespace="/book">
+		<interceptors>
+			<interceptor name="LoginInterceptor"
+				class="com.beyond.interceptor.LoginInterceptor"></interceptor>
+		</interceptors>
+		<global-results>
+			<result name="input">/pages/login.jsp</result>
+		</global-results>
+		<action name="*" class="com.beyond.action.BookAction" method="{1}">
+			<interceptor-ref name="LoginInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<allowed-methods>findAllBook, deleteBook</allowed-methods>
+		</action>
+	</package>
+
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

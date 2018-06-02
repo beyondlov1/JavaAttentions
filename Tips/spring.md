@@ -65,5 +65,15 @@ Aspect中的@AfterReturning,@AfterThrowing注解的方法中有returnValue, Exce
 
 ---
 
+**getBean得不到相应对象，而是得到接口的问题**
+
+
+原因：如果某个类实现了一个接口，在代理时会默认先调用JDK的动态代理，所以只会得到接口对象。
+
+解决方法：强制使用cglib进行代理，spring强制使用cglib的配置代码：
+
+	<aop:config proxy-target-class="true"/>
+	
+---
 
 

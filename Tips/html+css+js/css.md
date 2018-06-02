@@ -1,4 +1,4 @@
-**±í¸ñÊµÏÖ»Ò°×Ïà¼ä**
+**è¡¨æ ¼å®ç°ç°ç™½ç›¸é—´**
 
 tr:NTH-CHILD(even) {
 	background: gray;
@@ -9,14 +9,14 @@ tr:NTH-CHILD(odd) {
 }
 
 
-//tr¾­¹ıÊ±±äºì
+//trç»è¿‡æ—¶å˜çº¢
 tr:NTH-CHILD(odd):HOVER{
 	color:red;
 }
 
 ---
 
-**ÊµÏÖtableÌõÄ¿´ÓÁ½±ß²åÈë**
+**å®ç°tableæ¡ç›®ä»ä¸¤è¾¹æ’å…¥**
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -86,11 +86,11 @@ $("tr").animate({"left":"0","right":"0"}, 1000);
 </html>
 
 
-ps: tr²»ÊÇ¿é¼¶ÔªËØ, chrome²»ÄÜÊµÏÖÉÏÊöĞ§¹û,firefox¿ÉÒÔ, Èç¹ûÏëÒªchromeÊµÏÖĞèÒª½«trÇ¿×ªÎª¿é¼¶ÔªËØ tr{ display: block;}
+ps: trä¸æ˜¯å—çº§å…ƒç´ , chromeä¸èƒ½å®ç°ä¸Šè¿°æ•ˆæœ,firefoxå¯ä»¥, å¦‚æœæƒ³è¦chromeå®ç°éœ€è¦å°†trå¼ºè½¬ä¸ºå—çº§å…ƒç´  tr{ display: block;}
 
-ps2: µ«ÊÇchromeÓÃÉÏÊö·½·¨µÄ»°»á³öÏÖtrÖĞµÄ±í¸ñ×´Ì¬¶¼Ã»ÓĞÁË, ÎÄ×Ö²»ÄÜ¶ÔÆë , Á¬³ÉÒ»¿é
+ps2: ä½†æ˜¯chromeç”¨ä¸Šè¿°æ–¹æ³•çš„è¯ä¼šå‡ºç°trä¸­çš„è¡¨æ ¼çŠ¶æ€éƒ½æ²¡æœ‰äº†, æ–‡å­—ä¸èƒ½å¯¹é½ , è¿æˆä¸€å—
 
-ËùÒÔĞŞ¸Ä³ÉÏÂÃæµÄ´úÂë:
+æ‰€ä»¥ä¿®æ”¹æˆä¸‹é¢çš„ä»£ç :
 
 tr:NTH-CHILD(even) td {
 	background: orange;
@@ -113,4 +113,6 @@ $("td").animate({"left":"0","right":"0"}, 1000);
 
 ----
 
+**å‚ç›´å±…ä¸­**
 
+[https://www.qianduan.net/css-to-achieve-the-vertical-center-of-the-five-kinds-of-methods/](https://www.qianduan.net/css-to-achieve-the-vertical-center-of-the-five-kinds-of-methods/)

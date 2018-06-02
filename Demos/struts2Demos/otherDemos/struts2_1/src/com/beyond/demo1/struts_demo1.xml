@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+	<package name="demo1" extends="struts-default" namespace="/demo1">
+
+		<!-- 默认的处理action -->
+		<!-- <default-action-ref name="hello"></default-action-ref> -->
+
+		<action name="hello" class="com.beyond.demo1.HelloAction"
+			method="hello">
+			<result name="ok">/show_demo.jsp</result>
+		</action>
+
+		<action name="hello2" class="com.beyond.demo1.HelloAction2">
+			<result>/show_demo2.jsp</result>
+		</action>
+
+	</package>
+
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

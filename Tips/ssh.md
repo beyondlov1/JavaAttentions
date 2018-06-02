@@ -118,3 +118,11 @@ spring配置文件中加载*.hbm.xml问题
 		<property name="locations" value="classpath:jdbc.properties" />
 	</bean>
 
+# hibernateTemplate 的坑
+
+	hibernateTemplate.findByExample(user);
+	返回值为List<User>; 
+	如果查不到对应的user, 返回[], 而不是null;
+	需要isEmpty()判断一下;
+
+

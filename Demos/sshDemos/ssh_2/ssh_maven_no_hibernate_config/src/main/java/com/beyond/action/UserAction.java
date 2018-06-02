@@ -1,0 +1,125 @@
+package com.beyond.action;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.beyond.entity.User;
+import com.beyond.service.UserService;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+
+public class UserAction extends ActionSupport implements ModelDriven<User> {
+
+	private User user;
+
+	private String repassword;
+
+	private UserService userService;
+
+	/*
+	 * public String findAllUser() { List<User> list = userService.findAll();
+	 * ActionContext.getContext().put("list", list); return SUCCESS; }
+	 */
+	// to signup
+	public String initSignup() {
+		return SUCCESS;
+	}
+
+	// signup
+	public String signup() {
+		System.out.println(user.getUsername());
+		System.out.println(user.getPassword());
+		userService.saveUser(user);
+		return SUCCESS;
+	}
+
+	// to login
+	public String initLogin() {
+		return SUCCESS;
+	}
+
+	// login
+	public String login() {
+		User foundUser = userService.findUser(user);
+		if (foundUser == null) {
+			this.addActionError("username or password is wrong");
+			return INPUT;
+		}
+		Map<String, Object> session = ActionContext.getContext().getSession();
+		session.put("loginUser", user);
+		return SUCCESS;
+	}
+
+	// ajax
+	public String ajaxVertifyUser() {
+
+		String message = "";
+
+		String username = user.getUsername();
+		System.out.println(username);
+		Boolean isUserExist = userService.isUserExist(user);
+
+		if (!isUserExist) {
+			if (username.length() >= 6 && username.length() < 12) {
+				message = "username avaliable";
+			} else {
+				message = "username length must be 6-12";
+			}
+		} else {
+			message = "username not avaliable";
+		}
+
+		try {
+			HttpServletResponse response = ServletActionContext.getResponse();
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html");
+			PrintWriter out = response.getWriter();
+			out.print(message);
+			out.flush();
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return NONE;
+	}
+
+	/*
+	 * 手动验证 public void validate() { this.addFieldError("user.username",
+	 * "username error"); }
+	 * 
+	 * public void validateSignup(){ this.addFieldError("user.username",
+	 * "username error"); } }
+	 */
+
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+
+	public String getRepassword() {
+		return repassword;
+	}
+
+	public void setRepassword(String repassword) {
+		this.repassword = repassword;
+	}
+
+	@Override
+	public User getModel() {
+		if (user == null) {
+			user = new User();
+		}
+		return user;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+}
