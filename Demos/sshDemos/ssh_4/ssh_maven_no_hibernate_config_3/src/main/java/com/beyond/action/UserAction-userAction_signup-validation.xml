@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="user.username">
+		<field-validator type="requiredstring">
+			<message>请输入用户名</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">6</param>
+			<param name="maxLength">12</param>
+			<message>请输入长度6-12用户名</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="regex">^[a-zA-Z]\w*$</param>
+			<message>首位必须是字母</message>
+		</field-validator>
+	</field>
+	<field name="user.password">
+		<field-validator type="requiredstring">
+			<message>请输入密码</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">6</param>
+			<param name="maxLength">12</param>
+			<message>请输入6-12位密码</message>
+		</field-validator>
+	</field>
+
+	<field name="repassword">
+		<field-validator type="fieldexpression">
+			<param name="expression">repassword==user.password</param>
+			<message>两次密码不一样${user.password} ${repassword}</message>
+		</field-validator>
+	</field>
+</validators>

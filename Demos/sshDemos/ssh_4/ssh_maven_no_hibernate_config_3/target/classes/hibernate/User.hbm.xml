@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping>
+
+	<class name="com.beyond.entity.User" table="USER" batch-size="20">
+
+		<id name="id" column="ID">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="username" column="USERNAME"></property>
+		<property name="password" column="PASSWORD"></property>
+		
+	
+
+		<list name="books" batch-size="10" inverse="true"  cascade="all">
+			<key column="OWNER_ID"></key>
+			<index column="OWNER_INDEX"></index>
+			<one-to-many class="com.beyond.entity.Book" />
+		</list>
+	</class>
+	
+</hibernate-mapping>

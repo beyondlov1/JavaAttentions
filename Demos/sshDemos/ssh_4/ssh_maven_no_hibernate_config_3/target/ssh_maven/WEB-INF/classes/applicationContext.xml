@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans    
+                http://www.springframework.org/schema/beans/spring-beans.xsd    
+                http://www.springframework.org/schema/context     
+                http://www.springframework.org/schema/context/spring-context.xsd    
+                http://www.springframework.org/schema/mvc    
+                http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                http://www.springframework.org/schema/tx
+                http://www.springframework.org/schema/tx/spring-tx.xsd  
+                http://www.springframework.org/schema/aop  
+                http://www.springframework.org/schema/aop/spring-aop.xsd "
+       default-autowire="byName">
+
+    <!-- 加载properties文件 本质就是上面的配置 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/spring_database"/>
+        <property name="username" value="root"/>
+        <property name="password" value="beyondlov1"/>
+    </bean>
+
+
+    <!--配置hibernate相关-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+
+    </bean>
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!--事务相关-->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+  <tx:advice id="transactionAdvice"  transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="save*"/>
+            <tx:method name="modify*"/>
+            <tx:method name="remove*"/>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut expression="execution(* com.beyond.service.impl.*.*(..))" id="myPointCut"/>
+        <aop:advisor advice-ref="transactionAdvice" pointcut-ref="myPointCut"/>
+    </aop:config>
+
+    <!--dao-->
+
+    <bean id="userDao" class="com.beyond.dao.impl.UserDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+
+    <!--service-->
+    <bean id="userService" class="com.beyond.service.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <!--Action相关-->
+    <bean id="userAction" class="com.beyond.action.UserAction" scope="prototype">
+        <property name="userService" ref="userService" />
+    </bean>
+
+</beans> 

@@ -458,7 +458,11 @@ ModelDriven拦截器是调用ModelDriven接口中的getModel()方法， 将返�
             </interceptor-stack>
      </interceptors>
 
+---
 
+**模型驱动要手动实例化**
+
+User user = new User();
 
 
     

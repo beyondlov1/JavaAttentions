@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.beyond.entity.Book" table="BOOK"  batch-size="20" >
+
+		<id name="id" column="ID">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="name" column="NAME"></property>
+		<property name="price" column="PRICE"></property>
+		
+		<property name="uri" column="URI"></property>
+		<property name="fileName" column="FILENAME"></property>
+				
+		<many-to-one name="owner" column="OWNER_ID" class="com.beyond.entity.User" cascade="save-update"></many-to-one>
+	</class>
+
+</hibernate-mapping>
