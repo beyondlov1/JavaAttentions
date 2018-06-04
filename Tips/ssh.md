@@ -125,4 +125,17 @@ spring配置文件中加载*.hbm.xml问题
 	如果查不到对应的user, 返回[], 而不是null;
 	需要isEmpty()判断一下;
 
+# hibernateTemplate查询时，DetachCriteria的创建
 
+	DetachedCriteria criteria = DetachedCriteria.forClass(clazz);
+
+
+# spring配置文件中hibernate加载hbm.xml问题
+
+错误：spring配置文件中包含hibernate配置时，加载hbm.xml文件可能会出现问题：
+org.hibernate.boot.InvalidMappingException: Could not parse mapping document: null (INPUT_STREAM)
+
+原因：可能是复制的项目，导致出现问题
+
+解决办法：在spring中import hbm文件就会好；
+不过，貌似不改也可以，完全莫名奇妙。。。。

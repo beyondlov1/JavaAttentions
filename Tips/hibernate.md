@@ -222,10 +222,11 @@ ps:看demo!
 
 **解决办法:** 
 1. 迫切: from Customer c left join fetch c.order  
-2. Hibernate.initialize(o.getCustomer())  
+2. Hibernate.initialize(o.getCustomer())  参数为代理对象，即需要填充的对象
 3. 配置lazy=false(等同于第二点)   
 4. 不提交事务(不推荐)  
 5. OpenSessionInView: 创建一个过滤器, 在业务开始之前开启session, 在业务之后(doFilter之后)提交事务. 要在action配置之后配置. 要用currentSession. 缺点:长会话导致事务开启时间太长, 太费资源, 考虑其他方法
+
 
 ---
 
@@ -275,3 +276,31 @@ ps:看demo!
 ---
 
 **hibernate二级缓存只能用load取得单个缓存数据**
+
+---
+
+**hibernate一对多，多对一**
+
+必备属性：name, class, column  
+一：list/set/bag (name)> key(column)> [index](column=新建一列) > one-to-many(class)
+多：name, class, column 
+
+---
+
+**表无法创建，提示DDL statement不能执行**
+
+问题: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement
+
+原因：使用了保留字导致创建表的时候出错
+
+解决办法：更改列名。
+
+ps：index列为新建的列，不能简单的使用index作为列名，因为它时保留字！！！
+
+---
+
+**hibernate保存最好用saveOrUpdate**
+
+如果只用save，根据id找到User，之后对user进行更改，save之后会重新创建一个对象，并且更改id
+
+改用saveOrUpdate之后就可以避免这个问题
