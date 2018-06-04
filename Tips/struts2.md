@@ -97,11 +97,17 @@ jsp中使用ognl
 
 ---
 
+**值栈的内部结构**  
+root --- List  
+ContextMap --- map
+
+---
+
 **ognl+valueStack**
 
 *ognl取值是从valueStack的root区域取值, Action封装数据会提前压到栈里, 如果Action中有私有的User属性, 则会以对象形式存储, 所以赋值和取值的时候name要带上对象名: user.username*
 
-jsp中只有**<s:..>**能取到ognl表达式
+jsp中只有**\<s:..>**能取到ognl表达式
 
 压栈时**成员变量**也会在action被压的时候一起压进去, 而且action是较早压进去的(第二个压进去的)
 
@@ -260,6 +266,27 @@ uploadContentType
 设置上传文件大小限制  总大小
 
     <constant name="struts.multipart.maxSize" value="20971520"></constant>
+
+设置临时文件存储位置
+
+	struts.multipart.saveDir
+
+设置上传所用组件
+
+	struts.multipart.parser=jakarta       -- 默认文件上传解析器，就是FileUpload组件
+
+---
+
+**设置文件上传的类型**
+
+通过向拦截器设置参数
+
+        <interceptor-ref name="defaultStack">
+            <!-- 设置单个上传文件的大小 -->
+            <param name="fileUpload.maximumSize">2097152</param>
+            <!-- 设置扩展名 -->
+            <param name="fileUpload.allowedExtensions">.txt</param>
+        </interceptor-ref>
 
 ---
 

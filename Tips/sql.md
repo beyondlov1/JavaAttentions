@@ -1,4 +1,4 @@
-﻿**timestamp转化为-秒-**
+**timestamp转化为-秒-**
 
 unix_timestamp(timestamp_column)
 
@@ -44,4 +44,10 @@ password 是你自己设置的root密码
         <property name="hibernate.c3p0.validate">true</property>
 
 ---
+
+**mysql 添加[取消]timestamp的自动更新**
+
+MySQL 默认timestamp自动更新, 要用下面的方法取消
+alter table hello change uptime uptime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP;
+https://blog.csdn.net/rongge2008/article/details/50116457
 
