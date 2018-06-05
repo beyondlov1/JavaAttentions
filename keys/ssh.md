@@ -20,3 +20,4 @@ Entity.hbm.xml: 配置映射关系  class, id, property, oneToMany, ManyToOne
 导入: org.apache.struts  struts2-spring-plugin   2.5.16
 
 maven有坑: 需要exclude(详见tips/ssh)
+
