@@ -110,9 +110,28 @@ $("td").animate({"left":"0","right":"0"}, 1000);
 })
 </script>
 
-
 ----
 
 **垂直居中**
 
 [https://www.qianduan.net/css-to-achieve-the-vertical-center-of-the-five-kinds-of-methods/](https://www.qianduan.net/css-to-achieve-the-vertical-center-of-the-five-kinds-of-methods/)
+
+
+
+````css
+form {
+	position:absolute;
+	width:500px;
+	height:200px;
+	margin:auto;
+	text-align:center;
+	margin:auto;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+````
+
+----
+

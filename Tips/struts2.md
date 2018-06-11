@@ -464,6 +464,22 @@ ModelDriven拦截器是调用ModelDriven接口中的getModel()方法， 将返�
 
 User user = new User();
 
+---
+
+**ajax+struts2**
+
+ajax+struts2有三种应用方式  
+
+1. servlet
+2. inputSteam
+
+	inputStream = new ByteArrayInputStream("结果我我".getBytes("UTF-8"));
+	
+3. json plugin
+
+
+参考：https://blog.csdn.net/xiao__gui/article/details/21933349
+
 
     
 

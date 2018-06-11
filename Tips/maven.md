@@ -4,7 +4,7 @@
 
 pom.xml 报错:org.apache.maven.archiver.MavenArchiver.getManifest(org.apache.maven.project.MavenProject, org.apache.maven.archiver.MavenArchiveConfiguration) pom.xml /<maven projectName> line 1 Maven Configuration Problem
 
-解决办法: 
+解决办法:
 
 Better solution: update Eclipse m2e extensions
 From Help > Install New Software.., add a new repository (via the Add.. option), pointing to any of the following URLs:

@@ -51,3 +51,5 @@ MySQL 默认timestamp自动更新, 要用下面的方法取消
 alter table hello change uptime uptime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP;
 https://blog.csdn.net/rongge2008/article/details/50116457
 
+---
+

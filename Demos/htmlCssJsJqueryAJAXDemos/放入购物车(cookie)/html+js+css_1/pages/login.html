@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>login.html</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+<script src="/bookshop/js/jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="/bookshop/css/login.css" type="text/css" />
+
+</head>
+
+<body>
+	<form>
+		<div id="formDiv" style="display:none">
+			username:<input type="text" name="user.username" id="username"><br>
+			password:<input type="password" name="user.password" id="password"><br>
+			<button type="button" onclick="login()">login</button>
+		</div>
+		<div id="msg" style="display:none"></div>
+	</form>
+	<div>
+		<table id="bookTable" style="display:none">
+			<tbody>
+
+			</tbody>
+		</table>
+	</div>
+</body>
+
+<script type="text/javascript">
+
+	var cartType = "public";
+
+	$(function() {
+		initLogin();
+		initBookTable();
+	})
+
+	function getCookieValue(key, cookie) {
+		var cookieValue = ""
+		var cookieArray = cookie.split("; ");
+		for (var i = 0; i < cookieArray.length; i++) {
+			var cookieKey = cookieArray[i].split("=")[0];
+			if (cookieKey == key) {
+				cookieValue = cookieArray[i].split("=")[1];
+				break;
+			}
+		}
+		return cookieValue;
+	}
+
+	function putInCart(id) {
+		var cookie = document.cookie;
+		var cookieValue = getCookieValue("cart_" + cartType, cookie);
+		var newCookieValue = "";
+		if (cookieValue == "") {
+			newCookieValue = "-" + id + "_1";
+		} else {
+
+			var bookinfoArray = cookieValue.split("-");
+			//找到了就在循环里改，没找到就加一个
+			var isFound = false;
+			for (var i = 0; i < bookinfoArray.length; i++) {
+				var bookId = bookinfoArray[i].split("_")[0];
+				var bookCount = bookinfoArray[i].split("_")[1];
+
+				if (id == bookId) {
+					isFound = true;
+					newCookieValue += "-" + bookId + "_" + (parseInt(bookCount) + 1);
+				} else {
+					newCookieValue += "-" + bookinfoArray[i];
+				}
+			}
+			if (!isFound) {
+				newCookieValue += "-" + id + "_1";
+			}
+		}
+
+		newCookieValue = newCookieValue.substring(1);
+		document.cookie = "cart_" + cartType + "=" + newCookieValue+";path=/bookshop";
+	}
+
+	function initBookTable() {
+		var bookTbody = $("#bookTable tbody")
+		var headTr = $("<tr><th scope='col' width='272' height='46'>id </th><th scope='col' width='117'>name </th><th scope='col' width='121'>price</th><th scope='col' width='145'>remainCount </th><th scope='col' width='61'>authorName </th><th scope='col' width='68'>ownerName </th><th scope='col' width='123'>category </th><th scope='col'><p>operation</p></th></tr>");
+		bookTbody.append(headTr);
+		//获取数据
+		var url = "/bookshop/book/findAllBookAjax";
+		$.post(url, function(data) {
+			var trArray = [];
+			var bookArray = $(data).find("book");
+			for (var i = 0; i < bookArray.length; i++) {
+				var bookId = $(bookArray[i]).children("id").text();
+				var bookName = $(bookArray[i]).find("bookName").text();
+				var price = $(bookArray[i]).find("price").text();
+				var remainCount = $(bookArray[i]).find("remainCount").text();
+				var authorName = $(bookArray[i]).find("author").children("authorName").text();
+				var ownerName = $(bookArray[i]).find("owner").children("username").text();
+				var categoryName = $(bookArray[i]).find("category").children("categoryName").text();
+
+				var bookIdTd = $("<td></td>");
+				bookIdTd.text(bookId);
+				var bookNameTd = $("<td></td>");
+				bookNameTd.text(bookName);
+				var priceTd = $("<td></td>");
+				priceTd.text(price);
+				var remainCountTd = $("<td></td>");
+				remainCountTd.text(remainCount);
+				var authorNameTd = $("<td></td>");
+				authorNameTd.text(authorName);
+				var ownerNameTd = $("<td></td>");
+				ownerNameTd.text(ownerName);
+				var categoryNameTd = $("<td></td>");
+				categoryNameTd.text(categoryName);
+
+				var operationTd = $("<td><a href='javascript:putInCart("+'"' + bookId +'"'+ ")'>加入購物車</a></td>")
+
+				var tr = $("<tr></tr>")
+				tr.append(bookIdTd);
+				tr.append(bookNameTd);
+				tr.append(priceTd);
+				tr.append(remainCountTd);
+				tr.append(authorNameTd);
+				tr.append(ownerNameTd);
+				tr.append(categoryNameTd);
+				tr.append(operationTd);
+
+				trArray[i] = tr;
+				bookTbody.append(tr);
+			}
+			$("#bookTable").fadeIn(500);
+		})
+	}
+
+	function initLogin() {
+		var loginUserName = getCookie("loginUserName");
+		if (loginUserName == null || loginUserName == "") {
+			$("#formDiv").show();
+		} else {
+
+			var welcomeMsg = $("#msg");
+			var inputLeft = $("form #formDiv").position().left;
+			var inputTop = $("form #formDiv").position().top;
+			var inputWidth = $("form #formDiv").width();
+			var inputHeight = $("form #formDiv").height();
+
+			welcomeMsg.css("margin", "auto");
+			welcomeMsg.css("left", 0);
+			welcomeMsg.css("top", 0);
+			welcomeMsg.css("right", 0);
+			welcomeMsg.css("bottom", 0);
+			welcomeMsg.css("width", inputWidth);
+			welcomeMsg.css("height", inputHeight);
+			welcomeMsg.css("line-height", inputHeight + "px");
+			welcomeMsg.text(loginUserName).show();
+		}
+	}
+
+	function getCookie(key) {
+		var cookie = document.cookie;
+		var cookieArray = cookie.split(";");
+		var isFound = false;
+		for (var i = 0; i < cookieArray.length; i++) {
+			var cookieName = cookieArray[i].split("=")[0];
+			var cookieValue = cookieArray[i].split("=")[1];
+
+			if (cookieName == key) {
+				isFound = true;
+				return cookieValue;
+			}
+		}
+		if (!isFound) {
+			return null;
+		}
+	}
+
+	function login() {
+		var username = $("#username").val();
+		var password = $("#password").val();
+		var url = "/bookshop/user/login?t=" + new Date().getTime();
+		$.post(url, {
+			"user.username" : username,
+			"user.password" : password
+		}, function(data) {
+			var welcomeMsg = $("#msg");
+			var inputLeft = $("form #formDiv").position().left;
+			var inputTop = $("form #formDiv").position().top;
+			var inputWidth = $("form #formDiv").width();
+			var inputHeight = $("form #formDiv").height();
+
+			if (data != "null" && data != "false") {
+				$("#formDiv").hide();
+				welcomeMsg.css("left", inputLeft);
+				welcomeMsg.css("top", inputTop);
+				welcomeMsg.css("width", inputWidth);
+				welcomeMsg.css("height", inputHeight);
+				welcomeMsg.css("line-height", inputHeight + "px");
+				welcomeMsg.text(data);
+				welcomeMsg.show();
+			} else {
+				welcomeMsg.css("left", inputLeft + inputWidth + 1);
+				welcomeMsg.css("top", inputTop);
+				welcomeMsg.css("height", inputHeight);
+				welcomeMsg.css("line-height", inputHeight + "px");
+				welcomeMsg.text("登录失败");
+				welcomeMsg.show(1000, function() {
+					setTimeout(function() {
+						welcomeMsg.hide(1000);
+					}, 1000);
+				});
+
+			}
+		})
+
+	}
+</script>
+
+
+</html>

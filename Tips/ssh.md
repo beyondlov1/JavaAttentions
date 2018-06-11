@@ -139,3 +139,18 @@ org.hibernate.boot.InvalidMappingException: Could not parse mapping document: nu
 
 解决办法：在spring中import hbm文件就会好；
 不过，貌似不改也可以，完全莫名奇妙。。。。
+
+# spring和hibernate整合时提示dataSource问题
+错误：UnknownUnwrapTypeException: Cannot unwrap to requested type [javax.sql.DataSource]
+
+原因：spring配置事务需要dataSource，如果spring中没有配置dataSource就需要在hibernate中配置。
+
+解决办法：hibernate中配置
+
+	<property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
+
+	需要找到可用的dataSource否则还是要报错。
+	
+# spring配置中提示ContextLoaderListener找不到但是明明有相应libary
+
+解决办法：在lib中导入包，而不要靠添加libary（不靠谱）
