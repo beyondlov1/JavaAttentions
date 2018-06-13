@@ -25,7 +25,7 @@
    init_connect = 'SET NAMES utf8'
    
    [mysql]
-   character-set-server=utf8 (不知道是不是必须的)
+   character-set-server=utf8 (不能加)
    ```
 
 3. 改过的文件在百度网盘/mysql配置文件

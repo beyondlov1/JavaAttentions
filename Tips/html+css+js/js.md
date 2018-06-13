@@ -1,24 +1,23 @@
 
 
+---
+
+#### undefined null 在 == 判断是都是true
 
 ---
 
-undefined null 在 == 判断是都是true
-
----
-
-重新声明变量不会丢失原来的值
+#### 重新声明变量不会丢失原来的值
 
 var carname="Volvo";
 var carname;
 
 ---
 
-在函数中 var xxx = ...为局部变量, xxx = ...为全局变量
+#### 在函数中 var xxx = ...为局部变量, xxx = ...为全局变量
 
 ---
 
-onclick传递参数: select(this);
+#### onclick传递参数: select(this);
 
 js:
 function select(e){
@@ -40,15 +39,19 @@ jquery(jquery对象)->js(DOM对象) var v=$v.get(0);
 
 https://www.cnblogs.com/theWayToAce/p/5591221.html
 
-
 ---
 
-jquery  
+#### jquery  
+
 attr(直接操作DOM上的属性, 有时候会出错)   
 prop(操作DOM自带属性, 添加属性是添加jquery对象的属性, dom上看不见)
 
 ---
 
-ajax 是异步的，所以要在回调函数中执行要执行的方法
+#### ajax 是异步的，所以要在回调函数中执行要执行的方法
 
+---
 
+#### 運算進度問題
+
+https://blog.csdn.net/starscao/article/details/72828944

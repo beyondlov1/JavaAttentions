@@ -5,21 +5,21 @@
 继承AbstractInterceptor   
 在package中注册  
 在action标签中使用 (注意要添加默认的defaultStack)  
- 
+
     <package name="book" extends="struts-default" namespace="/book">
-		<interceptors>
-			<interceptor name="LoginInterceptor"
-				class="com.beyond.interceptor.LoginInterceptor"></interceptor>
-		</interceptors>
-		<global-results>
-			<result name="input">/pages/login.jsp</result>
-		</global-results>
-		<action name="*" class="com.beyond.action.BookAction" method="{1}">
-			<interceptor-ref name="LoginInterceptor"></interceptor-ref>
-			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<allowed-methods>findAllBook, deleteBook</allowed-methods>
-		</action>
-	</package>
+    	<interceptors>
+    		<interceptor name="LoginInterceptor"
+    			class="com.beyond.interceptor.LoginInterceptor"></interceptor>
+    	</interceptors>
+    	<global-results>
+    		<result name="input">/pages/login.jsp</result>
+    	</global-results>
+    	<action name="*" class="com.beyond.action.BookAction" method="{1}">
+    		<interceptor-ref name="LoginInterceptor"></interceptor-ref>
+    		<interceptor-ref name="defaultStack"></interceptor-ref>
+    		<allowed-methods>findAllBook, deleteBook</allowed-methods>
+    	</action>
+    </package>
 
 ---
 用属性驱动封装对象要将html中 表单的name都改为**ognl**的语法, 包括**GET和POST**传参数中的name也要用ognl: user.username**  (AJAX要更加注意)
@@ -41,15 +41,14 @@ struts2: 设置拦截器, 先判断session中有没有, 再判断cookie中有没
 名称为fileUpload.方法名首字母小写
 
         <action name="upload" class="com.beyond.demo4.UploadAction"
-			method="upload">
-			<result type="redirect">/index.jsp</result>
-			<result name="input">/index.jsp</result>
-			
-			<interceptor-ref name="defaultStack">
-				<param name="fileUpload.allowedExtensions">.txt,.doc</param>
-			</interceptor-ref>
-		</action>
-
+    		method="upload">
+    		<result type="redirect">/index.jsp</result>
+    		<result name="input">/index.jsp</result>
+    		
+    		<interceptor-ref name="defaultStack">
+    			<param name="fileUpload.allowedExtensions">.txt,.doc</param>
+    		</interceptor-ref>
+    	</action>
 
 
 
@@ -82,7 +81,7 @@ jsp中使用ognl
 **valueStack jsp两种写法**
 
 	<s:property value="[0].top.username"/>
-    <s:property value="username"/> //简写
+	<s:property value="username"/> //简写
 
 ---
 
@@ -93,7 +92,6 @@ jsp中使用ognl
 / 
 
     ValueStack vs = ActionContext.getContext().getValueStack();
-
 
 ---
 
@@ -116,26 +114,26 @@ jsp中只有**\<s:..>**能取到ognl表达式
 java:
 
     public class ValueStackDemo extends ActionSupport {
-
-	private User user = new User("username2", "password2");
-
-	public String execute() {
-		ValueStack vs = ActionContext.getContext().getValueStack();
-		User user = new User();
-		user.setUsername("username1");
-		user.setPassword("password1");
-		vs.push(user);
-		return SUCCESS;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
+    
+    private User user = new User("username2", "password2");
+    
+    public String execute() {
+    	ValueStack vs = ActionContext.getContext().getValueStack();
+    	User user = new User();
+    	user.setUsername("username1");
+    	user.setPassword("password1");
+    	vs.push(user);
+    	return SUCCESS;
+    }
+    
+    public User getUser() {
+    	return user;
+    }
+    
+    public void setUser(User user) {
+    	this.user = user;
+    }
+    
     }
 
 
@@ -143,14 +141,13 @@ jsp:
 
      <body>
        show valueStack
-		<s:property value="[1].top.username"/>
+    	<s:property value="[1].top.username"/>
        <s:property value="username"/>
        <s:property value="user.username"/>
        <input value="user.username">
        
        <s:debug></s:debug>
       </body>
-
 
 ---
 
@@ -177,8 +174,9 @@ el表达式能取到valueStack中的值
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
-    
-    
+
+
+​    
     <validators>
     
     <!-- 字符串不为空 -->
@@ -202,8 +200,9 @@ el表达式能取到valueStack中的值
     <message>两次密码不一致</message>
     </field-validator>
     </field>
-    
-    
+
+
+​    
     <!-- int大小限制 -->
     <field name="age">
     <field-validator type="int">
@@ -299,12 +298,12 @@ uploadContentType
 xml的 result type 必须是**stream**
 
     <action name="download" class="com.beyond.demo4.DownloadAction">
-			<result name="input">/index.jsp</result>
-			<result type="stream">
-				<param name="contentType">${contentType}</param>
-				<param name="contentDisposition">attachment;filename=${filename}</param>
-			</result>
-		</action>
+    		<result name="input">/index.jsp</result>
+    		<result type="stream">
+    			<param name="contentType">${contentType}</param>
+    			<param name="contentDisposition">attachment;filename=${filename}</param>
+    		</result>
+    	</action>
 
 ${}是通过Action中的get方法获取值的
 
@@ -316,14 +315,14 @@ base64 和 url
 
     import com.sun.org.apache.xml.internal.security.utils.Base64;
     import java.net.URLEncoder;
-
+    
     public String getEncodeFileName(String filename, String agent) throws UnsupportedEncodingException {
-		if (agent.toLowerCase().contains("firefox")) {
-			return "=?UTF-8?B?" + Base64.encode(filename.getBytes("UTF-8")) + "?=";
-		} else {
-			return URLEncoder.encode(filename, "UTF-8");
-		}
-	}
+    	if (agent.toLowerCase().contains("firefox")) {
+    		return "=?UTF-8?B?" + Base64.encode(filename.getBytes("UTF-8")) + "?=";
+    	} else {
+    		return URLEncoder.encode(filename, "UTF-8");
+    	}
+    }
 
 ---
 
@@ -341,10 +340,10 @@ base64 和 url
 两种方法: chain(转发)  redirect/redirectAction
 
     <action name="BookAction_*" class="com.beyond.action.BookAction" method="{1}">
-		<result>/show_all_books.jsp</result>
-		<result name="SHOW" type="redirectAction">BookAction_showAllBooks.action</result>
-		<allowed-methods>showAllBooks, addBook</allowed-methods>
-	</action>
+    	<result>/show_all_books.jsp</result>
+    	<result name="SHOW" type="redirectAction">BookAction_showAllBooks.action</result>
+    	<allowed-methods>showAllBooks, addBook</allowed-methods>
+    </action>
 
 ps: struts中都不带项目名, action前面不加"/"
 <result>中可以有<param>参数
@@ -371,52 +370,52 @@ ModelDriven拦截器是调用ModelDriven接口中的getModel()方法， 将返�
 		System.out.println("userPassword  " + user.getPassword());
 		return user;
 	}
-   
+
 
 	这样写虽然能操作值栈中的数据， 但是由于param拦截器会在此方法调用后执行，会覆盖掉原来修改的数据， 所以要新建一个拦截器的栈，将modelDriven放到后面才能有效果：
-
+	
 	<interceptor-stack name="myStack" >
-                <interceptor-ref name="exception"/>
-                <interceptor-ref name="alias"/>
-                <interceptor-ref name="servletConfig"/>
-                <interceptor-ref name="i18n"/>
-                <interceptor-ref name="prepare"/>
-                <interceptor-ref name="chain"/>
-                <interceptor-ref name="scopedModelDriven"/>
-                											<!-- From Here -->
-                <interceptor-ref name="fileUpload"/>
-                <interceptor-ref name="checkbox"/>
-                <interceptor-ref name="datetime"/>
-                <interceptor-ref name="multiselect"/>
-                <interceptor-ref name="staticParams"/>
-                <interceptor-ref name="actionMappingParams"/>
-                <interceptor-ref name="params"/>
-                <interceptor-ref name="conversionError"/>
-                <interceptor-ref name="validation">
-                    <param name="excludeMethods">input,back,cancel,browse</param>
-                </interceptor-ref>
-                <interceptor-ref name="workflow">
-                    <param name="excludeMethods">input,back,cancel,browse</param>
-                </interceptor-ref>
-                <interceptor-ref name="debugging"/>
-                
+	            <interceptor-ref name="exception"/>
+	            <interceptor-ref name="alias"/>
+	            <interceptor-ref name="servletConfig"/>
+	            <interceptor-ref name="i18n"/>
+	            <interceptor-ref name="prepare"/>
+	            <interceptor-ref name="chain"/>
+	            <interceptor-ref name="scopedModelDriven"/>
+	            											<!-- From Here -->
+	            <interceptor-ref name="fileUpload"/>
+	            <interceptor-ref name="checkbox"/>
+	            <interceptor-ref name="datetime"/>
+	            <interceptor-ref name="multiselect"/>
+	            <interceptor-ref name="staticParams"/>
+	            <interceptor-ref name="actionMappingParams"/>
+	            <interceptor-ref name="params"/>
+	            <interceptor-ref name="conversionError"/>
+	            <interceptor-ref name="validation">
+	                <param name="excludeMethods">input,back,cancel,browse</param>
+	            </interceptor-ref>
+	            <interceptor-ref name="workflow">
+	                <param name="excludeMethods">input,back,cancel,browse</param>
+	            </interceptor-ref>
+	            <interceptor-ref name="debugging"/>
+	            
 				<interceptor-ref name="modelDriven"/> 		<!-- To Here -->
-
-            </interceptor-stack>
-     </interceptors>
-
+	
+	        </interceptor-stack>
+	 </interceptors>
+	
 	<action name="userAction_signup" class="userAction" method="signup">
 			<interceptor-ref name="myStack"></interceptor-ref>
 			<result name="success">/login.jsp</result>
 			<result name="input">/signup_jquery.jsp</result>
 	</action>
-
+	
 	<action name="userAction_login" class="com.beyond.action.UserAction" method="login">
 			<interceptor-ref name="myStack"></interceptor-ref>
 			<result name="success" type="redirect">/index.jsp</result>
 			<result name="input">/login.jsp</result>
 	</action>
-
+	
 	此种方法Action中比较乱，不符合初衷，不推荐；
 
 2.在上面方法的基础上改进一下：在默认的拦截器之后，再自定义一个拦截器，手动调用getModel的方法：
@@ -429,23 +428,23 @@ ModelDriven拦截器是调用ModelDriven接口中的getModel()方法， 将返�
 3.终极方案： 在拦截器获得model，直接对model操作，把action的getModel方法里的东西放到拦截器里。
 
 	public class EncryptInterceptor extends AbstractInterceptor {
-
+	
 	@Override
 	public String intercept(ActionInvocation invocation) throws Exception {
-
+	
 		ActionContext context = invocation.getInvocationContext().getContext();
 		ModelDriven modelDriven = (ModelDriven) invocation.getAction();
-
+	
 		User user = (User) modelDriven.getModel();
-
+	
 		// 密码加密
 		String encryptString = SecureUtils.getEncryptString(user.getPassword());
 		user.setPassword(encryptString);
 		System.out.println("userPassword  " + user.getPassword());
-
+	
 		return invocation.invoke();
 	}
-
+	
 	}
 
 
@@ -453,10 +452,10 @@ ModelDriven拦截器是调用ModelDriven接口中的getModel()方法， 将返�
 	<interceptors>
 		<interceptor name="encryptInterceptor" class="com.beyond.interceptor.EncryptInterceptor"></interceptor>
 	<interceptor-stack name="myStack" >
-                <interceptor-ref name="defaultStack"/>
-                <interceptor-ref name="encryptInterceptor"></interceptor-ref>
-            </interceptor-stack>
-     </interceptors>
+	            <interceptor-ref name="defaultStack"/>
+	            <interceptor-ref name="encryptInterceptor"></interceptor-ref>
+	        </interceptor-stack>
+	 </interceptors>
 
 ---
 
@@ -480,6 +479,16 @@ ajax+struts2有三种应用方式
 
 参考：https://blog.csdn.net/xiao__gui/article/details/21933349
 
+---
 
-    
+**防止重複提交數據**
+
+```java
+1. <s:token/>
+2. token 拦截器
+3. tokenmessage
+4. actionerror
+```
+
+
 
