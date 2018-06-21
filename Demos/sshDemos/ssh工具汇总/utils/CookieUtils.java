@@ -48,4 +48,15 @@ public class CookieUtils {
 
 	}
 
+	public static void deleteCookie(String key) {
+		Cookie cookie = null;
+
+		cookie = new Cookie(key, null);
+		cookie.setMaxAge(0);
+		cookie.setPath(RequestResponseBox.getRequest().getContextPath());
+		HttpServletResponse response = RequestResponseBox.getResponse();
+		response.addCookie(cookie);
+
+	}
+
 }

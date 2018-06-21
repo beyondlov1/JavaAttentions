@@ -45,16 +45,16 @@ spring的配置文件中只要有一个对某个类设置了init和destroy方法
 			<artifactId>aopalliance</artifactId>
 			<version>1.0</version>
 		</dependency>
-
+	
 		<dependency>
 			<groupId>org.springframework</groupId>??
 			<artifactId>spring-aspects</artifactId>
 			<version>5.0.6.RELEASE</version>
 		</dependency>
 	<dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-aop</artifactId>
-    	<version>5.0.6.RELEASE</version>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aop</artifactId>
+		<version>5.0.6.RELEASE</version>
 	</dependency>
 
 ---
@@ -73,7 +73,17 @@ Aspect中的@AfterReturning,@AfterThrowing注解的方法中有returnValue, Exce
 解决方法：强制使用cglib进行代理，spring强制使用cglib的配置代码：
 
 	<aop:config proxy-target-class="true"/>
-	
+
 ---
 
+### spring 3 与 jdk 1.8 不兼容!!!!!!! (待验证)
 
+问题: java.lang.IllegalArgumentException
+	at org.springframework.asm.ClassReader.<init>(Unknown Source)
+	at org.springframework.asm.ClassReader.<init>(Unknown Source)
+	at org.springframework.asm.ClassReader.<init>(Unknown Source)
+	.....
+
+原因: 不兼容
+
+解决办法: 升级spring

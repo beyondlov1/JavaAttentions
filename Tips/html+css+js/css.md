@@ -135,3 +135,21 @@ form {
 
 ----
 
+#### 让<pre>标签文本自动换行
+
+```css
+pre{  
+    white-space:pre-wrap;  
+    white-space:-moz-pre-wrap;  
+    white-space:-pre-wrap;  
+    white-space:-o-pre-wrap;  
+    word-wrap:break-word;  
+    }  
+
+父标签加个div
+div{    
+	word-wrap: break-word;
+    white-space : normal;
+}
+```
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beyond.mapper.OwnerMapper">
+
+	<resultMap type="owner" id="ownerWithBooks">
+		<id property="id" column="id" />
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+		<collection property="books" ofType="book">
+			<id property="id" column="id" />
+			<result property="bookName" column="bookName" />
+			<result property="price" column="price" />
+			<result property="remainCount" column="remainCount" />
+		</collection>
+	</resultMap>
+	<select id="queryById" parameterType="string" resultMap="ownerWithBooks">
+		select * from book b,owner o
+		<where>
+			b.ownerId = o.id and o.id=#{id}
+		</where>
+	</select>
+
+
+
+	<insert id="addOwner" parameterType="owner">
+		<selectKey keyProperty="id" resultType="string" order="BEFORE" keyColumn="id">
+			select replace(uuid(),'-','')
+		</selectKey>
+
+		insert into owner(id,username,password) values(#{id},#{username},#{password});
+		insert into book (id,bookName,price,ownerId) values 
+		<if test="books.size()>0">
+			<foreach collection="books" separator="," index="index" item="book">
+				((select replace(uuid(),'-','')),#{book.bookName},#{book.price},#{id})
+			</foreach>
+		</if>
+	</insert>
+
+</mapper>

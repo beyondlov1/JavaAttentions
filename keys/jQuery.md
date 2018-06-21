@@ -24,23 +24,23 @@
 
 	筛选选中的:
 	eq() first() last() hasClass() filter() is() has() not() slice() 
-
+	
 	选择其他的元素:
 	children() closest() find() next() nextAll() nextUntil() offsetParent() parent() parents() parentsUntil() prev() prevAll() prevUtil() sliblings() 
-
+	
 	添加其他元素到选择中:
 	add() addBack() end()
-
+	
 	选择所有内容, 包括文本:
 	contents()
-
+	
 	转换数组:
 	map()
 
 ## 事件
 
 	ready() on() off() one() hover() click() trigger("选中一方的事件") 
-
+	
 	function(event){
 		event.stopPropagation();
 	}
@@ -51,4 +51,11 @@
 
 ## 工具
 
-	$.each() $.map() $.parseXml() $.trim()
+```web-idl
+$.each() $.map() $.parseXml() $.trim()
+```
+
+## 网站
+
+http://www.bootcss.com/
+

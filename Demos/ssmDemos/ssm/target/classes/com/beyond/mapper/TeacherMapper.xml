@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beyond.mapper.TeacherMapper">
+
+	<insert id="addTeacher" parameterType="teacher">
+		<selectKey keyProperty="id" keyColumn="id" resultType="string"
+			order="BEFORE">
+			select replace(uuid(),'-','')
+		</selectKey>
+		insert into teacher(id, name) values(#{id},#{name});
+		<if test="students.size()!=0">
+			insert into teacher_student(tid, sid)
+			values
+			<foreach collection="students" item="student" separator=",">
+				(#{teacher.id}, #{id})
+			</foreach>
+		</if>
+	</insert>
+
+	<delete id="deleteTeacherById" parameterType="string">
+		delete from teacher
+		where id=#{id}
+	</delete>
+	
+	<update id="updateTeacher" parameterType="teacher">
+		update teacher set
+		name=#{name} where
+		id=#{id}
+	</update>
+
+	<resultMap type="teacher" id="teacherWithStudent">
+		<result property="id" column="t_id" />
+		<result property="name" column="t_name" />
+		<collection property="students" ofType="student">
+			<result property="id" column="s_id" />
+			<result property="name" column="s_name" />
+		</collection>
+	</resultMap>
+	<select id="selectById" parameterType="string" resultMap="teacherWithStudent">
+		<!-- select
+		* from student s, teacher t where s.id in (select sid from
+		teacher_student where tid=#{id}) and t.id=#{id} -->
+		
+		select 
+		tr.id t_id,
+		tr.name t_name,
+		s.id s_id,
+		s.name s_name 
+		from 
+		(select * from teacher t left join teacher_student ts on t.id=ts.tid 
+		) tr 
+		left join student s on s.id=tr.sid where tr.tid=#{id}
+	</select>
+
+</mapper>

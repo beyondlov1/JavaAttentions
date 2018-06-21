@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beyond.mapper.BookMapper">
+<cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+	<resultMap type="book" id="bookWithOwner">
+		<id property="id" column="id" />
+		<result property="bookName" column="bookName" />
+		<result property="price" column="price" />
+		<result property="remainCount" column="remainCount" />
+		<association property="owner" javaType="owner" select="com.beyond.mapper.OwnerMapper.queryById" column="ownerId">
+			<id property="id" column="ownerId" />
+			<result property="username" column="username" />
+			<result property="password" column="password" />
+		</association>
+	</resultMap>
+	<select id="queryById" parameterType="string" resultMap="bookWithOwner">
+		select * from book b,owner o
+		<where>
+			b.ownerId = o.id and b.id=#{id}
+		</where>
+	</select>
+
+</mapper>

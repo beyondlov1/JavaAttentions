@@ -69,9 +69,18 @@ MyEclipse反向生成POJO類和配置文件會有一些問題，需要手動改：
 
 ---
 
+#### MyEclipse 修改web项目根路径
+
+1.Web项目右键->Properties->Myeclipse->Web->Web Context-root.
+
+2.在项目中打开.project文件,修改<projectDescription>下的<name>名称.
 
 
 
+#### Eclispe快捷键
 
+- ctrl+shift+h  搜索类
 
+#### MyEclipse创建xml模板 (提示框中的)
 
+window - property - XML Source - Templates - New
