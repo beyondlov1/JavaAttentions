@@ -202,3 +202,14 @@ if (categoryName == null || categoryName == "") {
 
 总结: 这种方法虽然能解决, 但是jquery中需要对每个关联的类都进行上面的解析, 麻烦, 所以还是用jsp吧 !!!!!
 
+#### 通用dao的关键
+
+```java
+public BaseDaoImpl() {
+		Type superclass = this.getClass().getGenericSuperclass();
+		ParameterizedType clazz = (ParameterizedType) superclass;
+		Type[] actualTypeArguments = clazz.getActualTypeArguments();
+		c = (Class) actualTypeArguments[0];
+	}
+```
+

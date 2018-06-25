@@ -25,3 +25,90 @@ public abstract class BaseEntity implements Serializable
 ```
 
 参考: https://blog.csdn.net/wgp15732622312/article/details/79951977
+
+
+
+#### mybatis+json+springmvc
+
+解析死循環:
+
+>  @JsonBackReference和@JsonManagedReference或者
+>
+> @JsonIgnoreProperties(value = { "owner", "borrower", "orders", "handler" }) --- 在entity上加, 表示這些屬性在解析成json的時候忽略
+
+缺点: 不灵活, 而且加上之后子类就不能懒加载父类了, 坚决不可取
+
+个人解决方法: 思路: 在返回 json 时将引起死循环的属性设置为 null (ssmDemos/bookshop_ssm/JsonBreakCycleUtils)
+
+
+
+```java
+private void load(Object obj, int depth) throws IllegalArgumentException, IllegalAccessException,InvocationTargetException, NoSuchMethodException, SecurityException {
+		Method[] methods = obj.getClass().getMethods();
+		for (Method method : methods) {
+			Class<?>[] parameterTypes = method.getParameterTypes();
+			Class<?> returnType = method.getReturnType();
+            
+            //list
+			if (returnType.isAssignableFrom(List.class) && method.getName().startsWith("get")) {
+				List list = (List) method.invoke(obj);
+				for (int i = 0; i < list.size(); i++) {
+					if (depth > 0) {
+						load(list.get(i), depth - 1);
+					} else {
+						setNull(obj, method);
+					}
+				}
+			}
+            
+            //实体类
+			if (isMyClass(returnType) && method.getName().startsWith("get")) {
+				Object object = method.invoke(obj);
+				if (object != null) {
+					if (depth > 0) {
+						load(object, depth - 1);
+					} else {
+						setNull(obj, method);
+					}
+				}
+			}
+		}
+	}
+
+private boolean isMyClass(Class clazz) {
+
+		if (clazz.isAssignableFrom(User.class)) {
+			return true;
+		}
+		if (clazz.isAssignableFrom(Book.class)) {
+			return true;
+		}
+		if (clazz.isAssignableFrom(Author.class)) {
+			return true;
+		}
+		if (clazz.isAssignableFrom(Order.class)) {
+			return true;
+		} else {
+			return false;
+		}
+
+}
+
+private void setNull(Object obj, Method method) throws NoSuchMethodException,SecurityException,IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		String substring = method.getName().substring(3);
+		String setMethodName = "set" + substring;
+		Method[] methods = obj.getClass().getMethods();
+		for (Method m : methods) {
+			if (m.getName().equals(setMethodName)) {
+				m.invoke(obj, new Object[] { null });
+			}
+		}
+}
+```
+
+#### spring aop + 事务
+
+要导入aspectjweaver.jar包否则会报错:
+
+> Caused by: java.lang.NoClassDefFoundError: org/aspectj/weaver/reflect/ReflectionWorld$ReflectionWorldException
+
