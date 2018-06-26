@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beyond.mapper.OrderMapper">
+<cache readOnly="true"></cache>
+	<insert id="add" parameterType="order">
+		insert into orderz
+		(
+		borrower_id,
+		book_id,
+		create_time,
+		exchange_book_id,
+		owner_permission_status,
+		owner_confirm_status,
+		borrower_confirm_status
+		)
+		values(
+		#{borrower.id},
+		#{book.id},
+		#{createTime},
+		#{exchangeBook.id},
+		#{ownerPermissionStatus},
+		#{ownerConfirmStatus},
+		#{borrowerConfirmStatus}
+		);
+	</insert>
+
+	<delete id="delete" parameterType="order">
+		delete from
+		orderz where
+		borrower_id=#{borrower.id} and book_id=#{book.id};
+	</delete>
+
+	<update id="update" parameterType="order">
+		update orderz
+		<!-- <if test="createTime != null"> <set> create_time=#{createTime} </set> 
+			</if> -->
+
+		<set>
+			<if test="exchangeBook != null and exchangeBook.id != null">
+				exchange_book_id=#{exchangeBook.id},
+			</if>
+
+			<if test="ownerPermissionStatus != null">
+				owner_permission_status=#{ownerPermissionStatus},
+			</if>
+
+			<if test="ownerConfirmStatus != null">
+				owner_confirm_status=#{ownerConfirmStatus},
+			</if>
+
+			<if test="borrowerConfirmStatus != null">
+				borrower_confirm_status=#{borrowerConfirmStatus}
+			</if>
+		</set>
+		<where>
+			borrower_id=#{borrower.id} and book_id=#{book.id}
+		</where>
+	</update>
+
+	<resultMap type="order" id="orderResultMap">
+		<result property="createTime" column="create_time" />
+		<result property="ownerPermissionStatus" column="owner_permission_status" />
+		<result property="ownerConfirmStatus" column="owner_confirm_status" />
+		<result property="borrowerConfirmStatus" column="borrower_confirm_status" />
+		<association property="exchangeBook" javaType="book"
+			column="exchange_book_id" select="com.beyond.mapper.BookMapper.selectById" />
+		<association property="borrower" javaType="user" column="borrower_id"
+			select="com.beyond.mapper.UserMapper.selectById" />
+		<association property="book" javaType="book" column="book_id"
+			select="com.beyond.mapper.BookMapper.selectById" />
+	</resultMap>
+	<select id="selectByExample" parameterType="order" resultMap="orderResultMap">
+		select * from orderz o
+		<where>
+			<if test="book!=null and book.id!=null">
+				and o.book_id=#{book.id} 
+			</if>
+			<if test="borrower!=null and borrower.id!=null">
+				and o.borrower_id=#{borrower.id} 
+			</if>
+			<if test="ownerPermissionStatus!=null">
+				and o.owner_permission_status = #{ownerPermissionStatus}
+			</if>
+			<if test="ownerConfirmStatus!=null">
+				and o.owner_confirm_status=#{ownerConfirmStatus} 
+			</if>
+			<if test="borrowerConfirmStatus!=null">
+				and o.borrower_confirm_status=#{borrowerConfirmStatus} 
+			</if>
+			<if test="exchangeBook!=null and exchangeBook.id!=null">
+				and o.exchange_book_id=#{exchangeBook.id}
+			</if>
+		</where>
+	</select>
+	<select id="selectByExampleBlur" parameterType="order" resultMap="orderResultMap">
+		select * from orderz o
+		<where>
+			<if test="book!=null and book.id!=null">
+				and o.book_id=#{book.id} 
+			</if>
+			<if test="borrower!=null and borrower.id!=null">
+				and o.borrower_id=#{borrower.id} 
+			</if>
+			<if test="ownerPermissionStatus!=null">
+				and o.owner_permission_status = #{ownerPermissionStatus}
+			</if>
+			<if test="ownerConfirmStatus!=null">
+				and o.owner_confirm_status=#{ownerConfirmStatus} 
+			</if>
+			<if test="borrowerConfirmStatus!=null">
+				and o.borrower_confirm_status=#{borrowerConfirmStatus} 
+			</if>
+			<if test="exchangeBook!=null and exchangeBook.id!=null">
+				and o.exchange_book_id=#{exchangeBook.id}
+			</if>
+		</where>
+	</select>
+	<select id="selectByUserId" parameterType="string" resultMap="orderResultMap">
+		select * from orderz o
+		left join book b on o.book_id=b.id
+		where o.borrower_id=#{id} or
+		b.owner_id=#{id};
+	</select>
+	<select id="selectByBookId" parameterType="string" resultMap="orderResultMap">
+		select * from orderz o
+		where o.book_id=#{id};
+	</select>
+
+</mapper>

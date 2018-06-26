@@ -106,6 +106,14 @@ private void setNull(Object obj, Method method) throws NoSuchMethodException,Sec
 }
 ```
 
+#### mybatis cache + json (未解决)
+
+mybatis 开启二级缓存后, 用上面的解决json死循环的方法就不能返回json了
+
+https://github.com/mybatis/mybatis-3/issues/936
+
+但是未完全解决问题, 当开启缓存后, 查询时如果缓存中有相应数据, 就会用这些数据, 但这些数据只有主要信息, 没有懒加载的信息, 所以没办法获得完整的信息. 暂时没想到解决办法
+
 #### spring aop + 事务
 
 要导入aspectjweaver.jar包否则会报错:

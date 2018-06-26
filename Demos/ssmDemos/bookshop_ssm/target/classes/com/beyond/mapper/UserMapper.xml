@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beyond.mapper.UserMapper">
+
+<cache readOnly="true" type="org.mybatis.caches.ehcache.EhcacheCache"></cache>
+
+	<insert id="add" parameterType="user">
+		<selectKey keyProperty="id" keyColumn="id" resultType="string"
+			order="BEFORE">
+			select replace(uuid(),'-','')
+		</selectKey>
+		insert into user (id,
+		username, password)
+		values(#{id},#{username},#{password})
+	</insert>
+
+	<delete id="delete" parameterType="user">
+		delete from user where
+		id=#{id};
+		delete from orderz where borrower_id=#{id};
+	</delete>
+
+	<update id="update" parameterType="user">
+		update user
+		<set>
+			username=#{username},password=#{password}
+		</set>
+		<where>
+			id=#{id}
+		</where>
+	</update>
+
+	<resultMap type="user" id="userResultMap">
+		<result property="id" column="user_id" />
+		<result property="username" column="user_username" />
+		<result property="password" column="user_password" />
+		<collection property="ownBooks" ofType="book"
+			select="com.beyond.mapper.BookMapper.selectByOwnerId" column="user_id"></collection>
+		<collection property="borrowBooks" ofType="book"
+			select="com.beyond.mapper.BookMapper.selectByBorrowerId" column="user_id"></collection>
+		<collection property="orders" ofType="order"
+			select="com.beyond.mapper.OrderMapper.selectByUserId" column="user_id"></collection>
+	</resultMap>
+	<resultMap type="user" id="userFetchResultMap">
+		<result property="id" column="user_id" />
+		<result property="username" column="user_username" />
+		<result property="password" column="user_password" />
+		<collection property="ownBooks" ofType="book">
+			<result property="id" column="own_books_id" />
+			<result property="name" column="own_books_name" />
+			<result property="price" column="own_books_price" />
+			<result property="count" column="own_books_count" />
+			<result property="bookUri" column="own_books_bookUri" />
+			<result property="coverUri" column="own_books_coverUri" />
+			<association property="author" javaType="author">
+				<result property="id" column="author_id" />
+				<result property="name" column="author_name" />
+			</association>
+			<association property="owner" javaType="user">
+				<result property="id" column="owner_id" />
+				<result property="username" column="owner_username" />
+			</association>
+			<association property="borrower" javaType="user">
+				<result property="id" column="borrower_id" />
+				<result property="username" column="borrower_username" />
+			</association>
+			<collection property="orders" ofType="order">
+			<result property="createTime" column="order_createTime" />
+			<result property="ownerPermissionStatus" column="order_ownerPermissionStatus" />
+			<result property="borrowerConfirmStatus" column="order_borrowerConfirmStatus" />
+			<result property="ownerConfirmStatus" column="order_ownerConfirmStatus" />
+			<association property="book" javaType="book">
+			<result property="id" column="order__book_id" />
+			<result property="name" column="order_book_name" />
+			<result property="price" column="order_book_price" />
+			<result property="count" column="order_book_count" />
+			<result property="bookUri" column="order_book_bookUri" />
+			<result property="coverUri" column="order_book_coverUri" />
+			</association>
+			<association property="borrower" javaType="user"></association>
+			<association property="exchangeBook" javaType="book"></association>
+			</collection>
+		</collection>
+		<collection property="borrowBooks" ofType="book"></collection>
+		<collection property="orders" ofType="order"></collection>
+	</resultMap>
+	<select id="selectById" parameterType="string" resultMap="userResultMap">
+		select
+		u.id user_id,
+		u.username user_username,
+		u.password user_password
+		from
+		user u
+		where u.id = #{id}
+	</select>
+
+	<select id="selectByExample" parameterType="user" resultMap="userResultMap">
+		select
+		u.id user_id,
+		u.username user_username,
+		u.password user_password
+		from user u
+		<where>
+
+			<if test="id!=null">
+				and u.id = #{id}
+			</if>
+			<if test="username!=null">
+				and u.username = #{username}
+			</if>
+			<if test="password!=null">
+				and u.password = #{password}
+			</if>
+		</where>
+	</select>
+
+	<select id="selectAll" resultMap="userResultMap">
+		select
+		u.id user_id,
+		u.username
+		user_username,
+		u.password user_password
+		from user u
+	</select>
+
+	<select id="selectUserByName" parameterType="string" resultMap="userResultMap">
+		select
+		u.id user_id,
+		u.username user_username,
+		u.password user_password
+		from user u
+		where
+		u.username=#{username}
+	</select>
+</mapper>
