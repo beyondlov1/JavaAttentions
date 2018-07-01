@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beyond.mapper.OrderMapper">
+
+	<cache readOnly="true" type="org.mybatis.caches.ehcache.EhcacheCache"></cache>
+
+	<insert id="add" parameterType="order">
+	<selectKey keyProperty="id" keyColumn="id" resultType="string" order="BEFORE">
+	select replace(uuid(),'-','')
+	</selectKey>
+		insert into orderz
+		(
+		id,
+		book_id,
+		owner_id,
+		exchange_book_id,
+		exchanger_id,
+		create_time,
+		status
+		)
+		values(
+		#{id},
+		#{book.id},
+		#{owner.id},
+		#{exchangeBook.id},
+		#{exchanger.id},
+		#{createTime},
+		#{status}
+		);
+	</insert>
+
+	<delete id="delete" parameterType="order">
+		delete from
+		orderz where
+		id=#{id};
+	</delete>
+
+	<update id="update" parameterType="order">
+		update orderz
+		<set>
+			<if test="book != null and book.id != null">
+				book_id=#{book.id},
+			</if>
+			<if test="owner != null and owner.id != null">
+				owner_id=#{owner.id},
+			</if>
+			<if test="exchangeBook != null and exchangeBook.id != null">
+				exchange_book_id=#{exchangeBook.id},
+			</if>
+			<if test="exchanger != null and exchanger.id != null">
+				exchanger_id=#{exchanger.id},
+			</if>
+
+			<if test="createTime != null">
+				create_time=#{createTime},
+			</if>
+
+			<if test="status != null">
+				status=#{status}
+			</if>
+		</set>
+		<where>
+			id=#{id}
+		</where>
+	</update>
+
+	<resultMap type="order" id="orderResultMap" >
+		<id property="id" column="id" />
+		<result property="createTime" column="create_time" />
+		<result property="status" column="status" />
+		<association property="book" javaType="book"
+			column="book_id" select="com.beyond.mapper.BookMapper.selectById" />
+		<association property="owner" javaType="user"
+			column="owner_id" select="com.beyond.mapper.UserMapper.selectById" />
+		<association property="exchangeBook" javaType="book"
+			column="exchange_book_id" select="com.beyond.mapper.BookMapper.selectById" />
+		<association property="exchanger" javaType="user"
+			column="exchanger_id" select="com.beyond.mapper.UserMapper.selectById" />
+	</resultMap>
+	<select id="selectByExample" parameterType="order" resultMap="orderResultMap">
+		select * from orderz o
+		<where>
+			<if test="id != null">
+				and id=#{id}
+			</if>
+			<if test="book != null and book.id != null">
+				and book_id=#{book.id}
+			</if>
+			<if test="owner != null and owner.id != null">
+				and owner_id=#{owner.id}
+			</if>
+			<if test="exchangeBook != null and exchangeBook.id != null">
+				and exchange_book_id=#{exchangeBook.id}
+			</if>
+			<if test="exchanger != null and exchanger.id != null">
+				and exchanger_id=#{exchanger.id}
+			</if>
+			<if test="createTime != null">
+				and create_time=#{createTime}
+			</if>
+			<if test="status != null">
+				and status=#{status}
+			</if>
+		</where>
+	</select>
+	<select id="selectByExampleBlur" parameterType="order"
+		resultMap="orderResultMap">
+		select * from orderz o
+		<where>
+			<if test="id != null">
+				andid=#{id}
+			</if>
+			<if test="book != null and book.id != null">
+				and book_id=#{book.id}
+			</if>
+			<if test="owner != null and owner.id != null">
+				and owner_id=#{owner.id}
+			</if>
+			<if test="exchangeBook != null and exchangeBook.id != null">
+				and exchange_book_id=#{exchangeBook.id}
+			</if>
+			<if test="exchanger != null and exchanger.id != null">
+				and exchanger_id=#{exchanger.id}
+			</if>
+			<if test="createTime != null">
+				and create_time=#{createTime}
+			</if>
+			<if test="status != null">
+				and status=#{status}
+			</if>
+		</where>
+	</select>
+	<select id="selectByOwnerId" parameterType="string" resultMap="orderResultMap">
+		select * from orderz o
+		where
+		o.owner_id=#{id};
+	</select>
+	<select id="selectByExchangerId" parameterType="string" resultMap="orderResultMap">
+		select * from orderz o
+		where
+		o.exchanger_id=#{id};
+	</select>
+	<select id="selectByBookId" parameterType="string" resultMap="orderResultMap">
+		select * from orderz o
+		where o.book_id=#{id};
+	</select>
+	<select id="selectByExchangeBookId" parameterType="string" resultMap="orderResultMap">
+		select * from orderz o
+		where o.exchange_book_id=#{id};
+	</select>
+	<select id="selectByEitherBookId" parameterType="string" resultMap="orderResultMap">
+		select * from orderz o
+		<where>
+		o.book_id=#{id} or o.exchange_book_id=#{id}
+		</where>
+	</select>
+
+</mapper>

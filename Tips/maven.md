@@ -108,3 +108,13 @@ Rebuild and deploy again
 
 Note: This is also applicable for *non maven* project.
 
+#### Ìí¼Ójstl
+
+```xml
+ <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+```
+

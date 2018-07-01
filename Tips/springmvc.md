@@ -110,3 +110,12 @@ JSR的方式(javax接口):
 ```xml
 <form:errors path="user.username"/>
 ```
+
+#### 返回字符串时,中文会乱码
+
+解决方法:
+
+```java
+ @RequestMapping(value = "/acceptOrder",produces = "text/plain; charset=utf-8")
+```
+

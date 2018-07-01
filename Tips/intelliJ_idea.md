@@ -32,7 +32,7 @@ run->tomcat->deployment->applicationContext(右边)
 
 
 自动补全变量还需要改一下: 
-  
+
 - eclipse是ctrl+2;L
 
 - intelliJ是ctrl+alt+v
@@ -40,3 +40,10 @@ run->tomcat->deployment->applicationContext(右边)
 参考:
 https://darekkay.com/blog/intellij-idea-shortcuts-for-eclipse-users/
 
+#### 熱部署JRebel
+
+文件在百度網盤的裏
+
+https://blog.csdn.net/qq_27093465/article/details/79148498
+
+ 

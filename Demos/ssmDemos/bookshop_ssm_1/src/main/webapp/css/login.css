@@ -1,0 +1,44 @@
+@charset "utf-8";
+body{
+	
+}
+form{
+	position:absolute;
+	width:500px;
+	height:200px;
+	margin:auto;
+	text-align:center;
+	margin:auto;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background:#F1F1F1;
+}
+.input-group-container{
+	position:absolute;
+	width:300px;
+	height:200px;
+	margin:auto;
+	text-align:center;
+	margin:auto;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+
+.input-group-container>div{
+	position:absolute;
+	width:300px;
+	height:100px;
+	margin:auto;
+	text-align:center;
+	margin:auto;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+
+

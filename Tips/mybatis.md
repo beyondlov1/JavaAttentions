@@ -55,3 +55,12 @@ mybatis 根据**接口返回值的类型**来决定用什么方法
 - 问题: 多表联查可能会导致列名相同, 从而在赋值时会将非空的值赋值到重名的列上
 - 解决办法: select 语句中重命名 (暂时没发现更好的解决办法, 以后可以研究一下hibernate是怎么做的)
 
+#### debug显示查询语句
+
+```
+  <settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+```
+
