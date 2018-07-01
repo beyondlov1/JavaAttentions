@@ -10,46 +10,46 @@ import com.beyond.dao.BaseDao;
 
 public class BaseDaoImpl<T> implements BaseDao<T> {
 
-	private SqlSession sqlSesssion;
-	private Class c;
+    private SqlSession sqlSesssion;
+    private Class c;
 
-	public BaseDaoImpl() {
-		Type genericSuperclass = this.getClass().getGenericSuperclass();
-		ParameterizedType parameterizedType = (ParameterizedType) genericSuperclass;
-		Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
-		c = (Class) actualTypeArguments[0];
-	}
+    public BaseDaoImpl() {
+        Type genericSuperclass = this.getClass().getGenericSuperclass();
+        ParameterizedType parameterizedType = (ParameterizedType) genericSuperclass;
+        Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
+        c = (Class) actualTypeArguments[0];
+    }
 
-	@Override
-	public void add(T t) {
-		sqlSesssion.insert("com.beyond.mapper." + c.getSimpleName() + "Mapper.add", t);
-	}
+    @Override
+    public void add(T t) {
+        sqlSesssion.insert("com.beyond.mapper." + c.getSimpleName() + "Mapper.add", t);
+    }
 
-	@Override
-	public void delete(T t) {
+    @Override
+    public void delete(T t) {
 
-	}
+    }
 
-	@Override
-	public void update(T t) {
-		// TODO Auto-generated method stub
+    @Override
+    public void update(T t) {
+        // TODO Auto-generated method stub
 
-	}
+    }
 
-	@Override
-	public T select() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public T select() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	@Override
-	public List<T> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public List<T> selectAll() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	public void setSqlSesssion(SqlSession sqlSesssion) {
-		this.sqlSesssion = sqlSesssion;
-	}
+    public void setSqlSesssion(SqlSession sqlSesssion) {
+        this.sqlSesssion = sqlSesssion;
+    }
 
 }

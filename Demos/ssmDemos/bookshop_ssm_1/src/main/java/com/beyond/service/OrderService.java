@@ -9,7 +9,7 @@ import com.beyond.entity.User;
 public interface OrderService {
 
 
-	void addOrder(Order order);
+    void addOrder(Order order);
 
     List<Order> getToAcceptOrders(User user);
 

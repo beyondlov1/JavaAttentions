@@ -7,29 +7,29 @@ import com.beyond.entity.User;
 
 public interface BookService {
 
-	List<Book> getBookByOwnerId(String id);
+    List<Book> getBookByOwnerId(String id);
 
-	List<Book> getBookByAuthorId(String id);
+    List<Book> getBookByAuthorId(String id);
 
-	Book getBookById(String id);
+    Book getBookById(String id);
 
-	List<Book> getAllBooks();
+    List<Book> getAllBooks();
 
-	void addBook(Book book);
+    void addBook(Book book);
 
-	void removeBook(Book book);
+    void removeBook(Book book);
 
-	void modifyBook(Book book);
+    void modifyBook(Book book);
 
-	List<Book> getBookByBorrowerId(String id);
+    List<Book> getBookByBorrowerId(String id);
 
-	User getUserDetail(String id);
+    User getUserDetail(String id);
 
-	void modifyBookCount(String id, int offset);
+    void modifyBookCount(String id, int offset);
 
-	List<Book> getBookByOwner(User owner);
+    List<Book> getBookByOwner(User owner);
 
-	List<Book> getBookByBorrower(User borrower);
+    List<Book> getBookByBorrower(User borrower);
 
     List<Book> getAvailableBookByOwner(User owner);
 }

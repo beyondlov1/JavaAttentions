@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.beyond.utils.breakCycle.BreakCycleFetchLoadingStrategy;
+import com.beyond.utils.breakCycle.BreakCycleFetchLoadingStrategy2;
+import com.beyond.utils.breakCycle.BreakCycleLazyLoadingStrategy;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +22,7 @@ import com.beyond.service.BookService;
 import com.beyond.service.OrderService;
 import com.beyond.utils.CookieUtils;
 import com.beyond.utils.DirUtils;
-import com.beyond.utils.JsonBreakCycleUtils;
+import com.beyond.utils.BreakCycleUtils;
 
 @Controller
 @RequestMapping("/book")
@@ -27,6 +30,8 @@ public class BookAction {
 
     private BookService bookService;
     private OrderService orderService;
+
+    private BreakCycleUtils breakCycleUtils = new BreakCycleFetchLoadingStrategy2();
 
     public void setOrderService(OrderService orderService) {
         this.orderService = orderService;
@@ -41,7 +46,7 @@ public class BookAction {
     public @ResponseBody
     List<Book> getBookByOwner(User owner) {
         List<Book> list = bookService.getBookByOwner(owner);
-        JsonBreakCycleUtils.load(list, 3);
+        breakCycleUtils.load(list, 3);
         return list;
     }
 
@@ -49,7 +54,7 @@ public class BookAction {
     public @ResponseBody
     List<Book> getAvailableBookByOwner(User owner) {
         List<Book> list = bookService.getAvailableBookByOwner(owner);
-        JsonBreakCycleUtils.load(list, 3);
+        breakCycleUtils.load(list, 3);
         return list;
     }
 
@@ -57,7 +62,7 @@ public class BookAction {
     public @ResponseBody
     List<Book> getBookByBorrower(User borrower) {
         List<Book> list = bookService.getBookByBorrower(borrower);
-        JsonBreakCycleUtils.load(list, 3);
+        breakCycleUtils.load(list, 3);
         return list;
     }
 
@@ -65,8 +70,8 @@ public class BookAction {
     public @ResponseBody
     User getUserDetail(String id) {
         User userDetail = bookService.getUserDetail(id);
-        JsonBreakCycleUtils.load(userDetail, 3);
-        return userDetail;
+        User user= (User)breakCycleUtils.load(userDetail, 3);
+        return user;
     }
 
     @RequestMapping("/getAllBooks")
@@ -79,7 +84,7 @@ public class BookAction {
                 newList.add(book);
             }
         }
-        JsonBreakCycleUtils.load(newList, 1);
+        breakCycleUtils.load(newList, 1);
         return newList;
     }
 
@@ -105,11 +110,7 @@ public class BookAction {
     @RequestMapping("/addBook")
     public String addBook(@RequestParam("file") CommonsMultipartFile file, @RequestParam("cover") CommonsMultipartFile cover, Book book, Model model)
             throws IllegalStateException, IOException {
-        /*System.out.println(file);
-        if(file.isEmpty()){
-            model.addAttribute("msg","file can not be null");
-            return "pages/addBook";
-        }*/
+
         saveFileTo(file, cover, book);
         bookService.addBook(book);
         return "redirect:/user/index.action";

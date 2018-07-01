@@ -6,14 +6,14 @@ import com.beyond.entity.Book;
 
 public interface BookMapper extends BaseMapper<Book> {
 
-	List<Book> selectByExampleBlur(Book book);
+    List<Book> selectByExampleBlur(Book book);
 
-	List<Book> selectByAuthorId(String id);
+    List<Book> selectByAuthorId(String id);
 
-	List<Book> selectByOwnerId(String id);
+    List<Book> selectByOwnerId(String id);
 
-	List<Book> selectByBorrowerId(String id);
+    List<Book> selectByBorrowerId(String id);
 
-	void cancelBorrowBook(String id);
+    void cancelBorrowBook(String id);
 
 }

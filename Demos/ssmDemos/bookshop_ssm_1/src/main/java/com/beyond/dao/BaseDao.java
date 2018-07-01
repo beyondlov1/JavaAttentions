@@ -4,16 +4,16 @@ import java.util.List;
 
 public interface BaseDao<T> {
 
-	void add(T t);
+    void add(T t);
 
-	void delete(T t);
+    void delete(T t);
 
-	void update(T t);
+    void update(T t);
 
-	T select();
+    T select();
 
-	List<T> selectAll();
+    List<T> selectAll();
 
-	// void selectByPage(Page page);
+    // void selectByPage(Page page);
 
 }
