@@ -74,7 +74,7 @@ public class BreakCycleLazyLoadingStrategy implements BreakCycleUtils {
                 | NoSuchMethodException e) {
             e.printStackTrace();
         }
-        return null;
+        return obj;
     }
 
     private boolean isMyClass(Class clazz) {

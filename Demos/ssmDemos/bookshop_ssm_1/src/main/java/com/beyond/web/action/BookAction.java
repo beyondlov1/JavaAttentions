@@ -46,24 +46,24 @@ public class BookAction {
     public @ResponseBody
     List<Book> getBookByOwner(User owner) {
         List<Book> list = bookService.getBookByOwner(owner);
-        breakCycleUtils.load(list, 3);
-        return list;
+        List<Book> books = (List<Book>) breakCycleUtils.load(list, 3);
+        return books;
     }
 
     @RequestMapping("/getAvailableBookByOwner")
     public @ResponseBody
     List<Book> getAvailableBookByOwner(User owner) {
         List<Book> list = bookService.getAvailableBookByOwner(owner);
-        breakCycleUtils.load(list, 3);
-        return list;
+        List<Book> books = (List<Book>)  breakCycleUtils.load(list, 3);
+        return books;
     }
 
     @RequestMapping("/getBookByBorrower")
     public @ResponseBody
     List<Book> getBookByBorrower(User borrower) {
         List<Book> list = bookService.getBookByBorrower(borrower);
-        breakCycleUtils.load(list, 3);
-        return list;
+        List<Book> books = (List<Book>)  breakCycleUtils.load(list, 3);
+        return books;
     }
 
     @RequestMapping("/getUserDetail")
@@ -84,8 +84,8 @@ public class BookAction {
                 newList.add(book);
             }
         }
-        breakCycleUtils.load(newList, 1);
-        return newList;
+        List<Book> books = (List<Book>) breakCycleUtils.load(newList, 3);
+        return books;
     }
 
 

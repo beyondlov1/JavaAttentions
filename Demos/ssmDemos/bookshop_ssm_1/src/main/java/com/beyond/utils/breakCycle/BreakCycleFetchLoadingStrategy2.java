@@ -30,6 +30,16 @@ public class BreakCycleFetchLoadingStrategy2 implements BreakCycleUtils{
         if (source == null) {
             return null;
         }
+
+        if(source instanceof Collection){
+            Collection oldCollection = (Collection) source;
+            Collection collection = oldCollection.getClass().newInstance();
+            for (Object object : oldCollection) {
+                Object getObject  = copy(object, depth - 1);
+                collection.add(getObject);
+            }
+            return collection;
+        }
         Object target = source.getClass().newInstance();
         Method[] methods = source.getClass().getMethods();
         for (Method method : methods) {
