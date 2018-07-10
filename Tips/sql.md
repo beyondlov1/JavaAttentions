@@ -53,3 +53,15 @@ https://blog.csdn.net/rongge2008/article/details/50116457
 
 ---
 
+**SQL查询选修了所有课程的学生姓名**
+
+select sname
+from student
+where not exists
+(select *
+from course
+where not exists  
+(select *
+from sc
+where sno =student.sno
+and cno=course.cno);
