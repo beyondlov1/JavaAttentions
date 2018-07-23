@@ -46,4 +46,18 @@ https://darekkay.com/blog/intellij-idea-shortcuts-for-eclipse-users/
 
 https://blog.csdn.net/qq_27093465/article/details/79148498
 
- 
+ #### idea同步项目到github
+
+1. 安装git:  <http://git-scm.com/downloads> 
+
+2. 更改idea的git路径, File-Settings-Version Control-Git  
+
+3. 设置GitHub账号: Settings-Version Control-GitHub
+
+4. 创建本地仓库: 对于没有在GitHub上创建仓库的一个本地项目，首先要在本地中创建本地仓库
+   先选中整个项目目录，在菜单栏VCS-import into version control-Add添加一个本地仓库
+
+5. Share to GitHub: 菜单栏VCS-Import into version control-share project on GitHub.
+
+参考: https://blog.csdn.net/luoweifu/article/details/46779027
+
