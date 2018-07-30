@@ -84,3 +84,12 @@ MyEclipse反向生成POJO類和配置文件會有一些問題，需要手動改：
 #### MyEclipse创建xml模板 (提示框中的)
 
 window - property - XML Source - Templates - New
+
+#### 转换大小写的快捷键
+
+Eclipse中改变字符串大小写的快捷键：
+
+小写变大写：ctrl＋shift＋x
+
+大写变小写：ctrl＋shift＋y
+
