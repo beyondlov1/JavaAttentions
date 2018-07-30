@@ -118,3 +118,10 @@ Note: This is also applicable for *non maven* project.
         </dependency>
 ```
 
+#### maven 源码包 中文乱码
+
+- 修改Eclipse中文本文件的默认编码：windows->Preferences->general->Workspace->Text file encoding设置为UTF-8
+- 修改JAVA源文件的默认编码：windows->Preferences->general->Content Types->右侧Context Types树，点开Text，选择Java Source File，在下面的Default encoding输入框中输入UTF-8，点Update；
+- 如果还是乱码，记得重启eclipse 。
+
+参考： https://blog.csdn.net/zsw12013/article/details/51502876
