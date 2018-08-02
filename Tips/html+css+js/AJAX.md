@@ -7,4 +7,6 @@
 	xmlHttpRequest.onreadystatechange = method;
 	方法名不能加括号
 
-# 
+# 跨域
+
+参考： https://www.jianshu.com/p/a9cd5d74d9ba
