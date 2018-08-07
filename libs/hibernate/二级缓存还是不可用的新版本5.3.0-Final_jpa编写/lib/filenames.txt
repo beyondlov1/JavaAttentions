@@ -1,0 +1,32 @@
+ 驱动器 F 中的卷是 文档
+ 卷的序列号是 1A6E-7134
+
+ F:\git_repository\MyGitHub\JavaAttentions\libs\hibernate\二级缓存还是不可用的新版本5.3.0-Final_jpa编写\lib 的目录
+
+2018/08/07  19:15    <DIR>          .
+2018/08/07  19:15    <DIR>          ..
+2018/07/30  11:37           445,288 antlr-2.7.7.jar
+2018/07/30  11:37         2,991,785 byte-buddy-1.8.0.jar
+2018/07/30  11:37            51,266 cache-api-1.1.0.jar
+2018/07/30  11:37            64,110 classmate-1.3.0.jar
+2018/08/07  19:15                20 copyNamesToFileNamesTxt.bat
+2018/07/30  11:37           313,898 dom4j-1.6.1.jar
+2018/07/30  11:37         1,481,811 ehcache-3.5.2.jar
+2018/08/07  19:15                 0 filenames.txt
+2018/07/30  11:37            76,044 hibernate-commons-annotations-5.0.3.Final.jar
+2018/07/30  11:37         6,928,642 hibernate-core-5.3.0.Final.jar
+2018/07/30  11:37            51,424 hibernate-ehcache-5.3.0.Final.jar
+2018/07/30  11:37               591 hibernate-entitymanager-5.3.0.Final.jar
+2018/07/30  11:37             8,248 hibernate-jcache-5.3.0.Final.jar
+2018/07/30  11:37           186,741 jandex-2.0.3.Final.jar
+2018/07/30  11:37           739,582 javassist-3.22.0-GA.jar
+2018/07/30  11:37           164,556 javax.persistence-api-2.2.jar
+2018/07/30  11:37            66,469 jboss-logging-3.3.2.Final.jar
+2018/07/30  11:37            28,352 jboss-transaction-api_1.2_spec-1.0.1.Final.jar
+2018/07/30  11:37           255,485 log4j-api-2.10.0.jar
+2018/07/30  11:37         1,597,622 log4j-core-2.10.0.jar
+2018/07/30  11:37           989,497 mysql-connector-java-5.1.39-bin.jar
+2018/07/30  11:37            43,907 slf4j-api-1.8.0-beta2.jar
+2018/07/30  11:37             5,560 slf4j-nop-1.8.0-beta2.jar
+              23 个文件     16,490,898 字节
+               2 个目录 155,967,766,528 可用字节

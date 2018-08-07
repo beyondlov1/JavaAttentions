@@ -1,0 +1,26 @@
+ 驱动器 F 中的卷是 文档
+ 卷的序列号是 1A6E-7134
+
+ F:\git_repository\MyGitHub\JavaAttentions\libs\hibernate\二级缓存可用的老版本\lib 的目录
+
+2018/08/07  19:16    <DIR>          .
+2018/08/07  19:16    <DIR>          ..
+2018/07/30  11:37           443,432 antlr-2.7.6.jar
+2018/07/30  11:37           327,810 backport-util-concurrent.jar
+2018/07/30  11:37           608,376 c3p0-0.9.1.jar
+2018/07/30  11:37           559,366 commons-collections-3.1.jar
+2018/07/30  11:37            60,841 commons-logging.jar
+2018/08/07  19:15                20 copyNamesToFileNamesTxt.bat
+2018/07/30  11:37           313,898 dom4j-1.6.1.jar
+2018/07/30  11:37           264,400 ehcache-1.5.0.jar
+2018/08/07  19:16                 0 filenames.txt
+2018/07/30  11:37           102,661 hibernate-jpa-2.0-api-1.0.1.Final.jar
+2018/07/30  11:37         4,162,825 hibernate3.jar
+2018/07/30  11:37           633,312 javassist-3.12.0.GA.jar
+2018/07/30  11:37            10,899 jta-1.1.jar
+2018/07/30  11:37           481,534 log4j-1.2.16.jar
+2018/07/30  11:37           832,960 mysql-connector-java-5.1.22-bin.jar
+2018/07/30  11:37            25,496 slf4j-api-1.6.1.jar
+2018/07/30  11:37             8,819 slf4j-log4j12-1.7.2.jar
+              17 个文件      8,836,649 字节
+               2 个目录 155,967,750,144 可用字节
