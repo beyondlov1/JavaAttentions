@@ -120,3 +120,26 @@ https://github.com/mybatis/mybatis-3/issues/936
 
 > Caused by: java.lang.NoClassDefFoundError: org/aspectj/weaver/reflect/ReflectionWorld$ReflectionWorldException
 
+#### 使用mybatis的通用mapper
+
+配置方法:
+
+https://mapperhelper.github.io/docs/1.integration/
+
+如果出现 错误最后一行 出现 NoSuchMethodException可能是由于通用mapper还没初始化好
+
+解决办法: 
+
+spring配置文件中org.mybatis.spring.mapper.MapperScannerConfigurer改为tk.mybatis.spring.mapper.MapperScannerConfigurer
+
+```
+ <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.thunisoft.artery.service.organ.impl.mapper,   com.thunisoft.artery.service.role.impl.mapper,   com.thunisoft.artery.module.schedule.impl.mapper,   com.thunisoft.artery.writ.mapper,   com.thunisoft.artery.service.right.impl.mapper,com.beyond.dao,com.beyond.mapper" />
+    <property name="sqlSessionFactoryBeanName" value="mybatisSessionFactory" />
+  </bean>
+```
+
+https://github.com/abel533/MyBatis-Spring-Boot/issues/75  : JKTerrific
+
+注意: 要扫描
+

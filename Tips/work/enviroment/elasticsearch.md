@@ -1,3 +1,5 @@
+
+
 #### install 6.3.2
 
 1. 官網下載（本次下載的msi）
@@ -183,4 +185,182 @@ https://knktc.com/2016/06/10/elasticsearch-multiple-instances/
 #### elastic 轻量级的查询
 
 q= +name:joy +age:>20 +may
+
+#### 部分查询
+
+```
+prefix 前缀查询
+{
+    "query": {
+        "prefix": {
+            "postcode": "W1"
+        }
+    }
+}
+```
+
+```
+wildcard 匹配特定的正则表达式（匹配shell的表达式，只支持后面这两个）： ？代表任意字符，*代表0个或者多个字符
+{
+    "query": {
+        "wildcard": {
+            "postcode": "W?F*HW" 
+        }
+    }
+}
+```
+
+```
+regexp 匹配正则表达式
+{
+    "query": {
+        "regexp": {
+            "postcode": "W[0-9].+" 
+        }
+    }
+}
+```
+
+`prefix` 、 `wildcard` 和 `regexp` 查询是基于词操作的，如果用它们来查询 `analyzed` 字段，它们会检查字段里面的每个词，而不是将字段作为整体来处理。 
+
+想要短语操作要用match_phrase_prefix
+
+```
+{
+    "match_phrase_prefix" : {
+        "brand" : {
+            "query": "walker johnnie bl", 
+            "slop":  10
+        }
+    }
+}
+```
+
+前缀查询消耗大量的资源， 需要max_expansions 进行约束，推荐设置50
+
+```
+{
+    "match_phrase_prefix" : {
+        "brand" : {
+            "query":          "johnnie walker bl",
+            "max_expansions": 50
+        }
+    }
+}
+```
+
+前面的集中查询都是在查询时进行，比较耗费资源，容易造成延迟，所以解决办法为在索引时就创建可能用得到的索引 (n-grams)
+
+1. 自定义一个token过滤器 autocomplete_filter
+2. 自定义一个analyzer
+3. 在analyzer中使用自定义的过滤器
+
+```
+{
+    "settings": {
+        "number_of_shards": 1, 
+        "analysis": {
+            "filter": {
+                "autocomplete_filter": { 
+                    "type":     "edge_ngram",
+                    "min_gram": 1,
+                    "max_gram": 20
+                }
+            },
+            "analyzer": {
+                "autocomplete": {
+                    "type":      "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "lowercase",
+                        "autocomplete_filter" 
+                    ]
+                }
+            }
+        }
+    }
+}
+
+GET /my_index/_analyze?analyzer=autocomplete
+quick brown
+```
+
+update mapping
+
+```
+PUT /my_index/_mapping/my_type
+{
+    "my_type": {
+        "properties": {
+            "name": {
+                "type":     "string",
+                "analyzer": "autocomplete"
+            }
+        }
+    }
+}
+```
+
+#### 近似查询
+
+```
+{
+    "query": {
+        "match_phrase": {
+            "title": {
+                "query": "quick fox",
+                "slop":  1
+            }
+        }
+    }
+}
+```
+
+slop代表query中的词要移动几步能和文档中的相对位置匹配
+
+数组中的元素之间的距离：position_increment_gap
+
+```
+PUT /my_index/_mapping/groups 
+{
+    "properties": {
+        "names": {
+            "type":                "string",
+            "position_increment_gap": 100
+        }
+    }
+}
+```
+
+#### 模糊查询
+
+fuzzy 对应于 term ： 模糊查询 精确查询
+
+fuzzy 主要用于拼写错误
+
+性能优化：
+
+prefix_length --- 指代前边多长的长度不用检查
+
+max_expansions: 设置最大允许的模糊选项
+
+
+
+模糊匹配查询： 在match中加入 fuzziness 选项
+
+```
+{
+  "query": {
+    "match": {
+      "text": {
+        "query":     "SURPRIZE ME!",
+        "fuzziness": "AUTO",
+        "operator":  "and"
+      }
+    }
+  }
+}
+```
+
+fuzziness 只能用于词语， 即match和multi_match
 

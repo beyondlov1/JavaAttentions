@@ -188,3 +188,9 @@ public List<Customer> queryByNameLikeOrderByAge3(Customer customer) {
 如果做好可以参考http://www.querydsl.com/static/querydsl/latest/reference/html/ch02s05.html
 
 https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#repositories
+
+
+
+#### Elasticsearch Java REST 客户端 6.2（一）Java Low Level REST 客户端官方文档
+
+https://blog.csdn.net/HoloLens/article/details/79594583
