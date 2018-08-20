@@ -46,7 +46,7 @@ checkbox 要用onChange方法获得值，因为onClick方法运行的比较靠�
 
 #### 子组件向父组件传递数据
 
-利用子组件的 this.emit(“add”, args)， 触发父组件的方法，add为出发的动作；args为父组件方法的参数；
+利用子组件的 this.$emit(“add”, args)， 触发父组件的方法，add为出发的动作；args为父组件方法的参数；
 
 
 

@@ -68,4 +68,5 @@ spring boot 的controller中的方法可以返回静态资源, 但是没有看�
    }
    ```
 
-   
+   @controller下面不能添加@RequestMapping (还不知道原因)
+

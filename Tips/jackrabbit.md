@@ -21,3 +21,20 @@ http://yiyu.iteye.com/blog/896302（这个有点老，方法都不对，但是�
 
 http://jetway.iteye.com/blog/49038（这个乱七八糟啥都有）
 
+#### jackrabbitexplorer
+
+用来查看jackrabbit的repository
+
+是一个webapp的war包
+
+地址: http://localhost:8080/jackrabbitexplorer/
+
+参考: http://priocept.com/2011/09/16/announcing-jackrabbit-explorer-admin-tool-for-jcr-repositories/
+
+https://code.google.com/archive/p/jackrabbitexplorer/wikis/GettingStarted.wiki
+
+#### JCR explorer
+
+Explore Jackrabbit Repository, Search, Query and Manage your JCR Repo Visually 
+
+项目地址: https://github.com/mehmoodz/jcr-explorer

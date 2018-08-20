@@ -119,3 +119,38 @@ JSR的方式(javax接口):
  @RequestMapping(value = "/acceptOrder",produces = "text/plain; charset=utf-8")
 ```
 
+#### springmvc封装数组,list等
+
+1. 请求: ?name=xxx&name=xxx&id=xxx&id=xxx
+
+   服务端: public String xxx(String[] id,String[] name)
+
+   会自动放到数组里,但是如果多个表单中有一个不填会造成混乱(不推荐)
+
+2. 请求: ?name[0].xxx=xxx
+
+   服务端: public String xxx(UserModel users)    UserModel中存放一个List<User>
+
+   这种方法要多创建一个UserModel的类, 比较麻烦, 而且如果索引中间少写一个,他也会给创建一个对象(不推荐)
+
+3. 请求: json的数组形式 ( JSON.stringify(conditions)  要做一下字符串序列化)
+
+   服务端: public List<User> testArgsArray(@RequestBody List<User> users)
+
+   (推荐)
+
+4. 请求: json的对象格式(字符串序列化)
+
+   服务端: public List<User> testArgsArray(@RequestBody Map<String, Object> map) 
+
+   可以返回map
+
+5. 请求: data:{"listParam" : strList},   dataType:"json",
+
+   服务端: public String requestList(@RequestParam("listParam[]") List<String> param) {     return "Request successful. Post param : List<String> - " + param.toString(); }
+
+6. map只需要在服务端就爱上@RequestParam注解就可以了
+
+#### spring mvc 拦截器
+
+参考: https://blog.csdn.net/eson_15/article/details/51749880

@@ -364,3 +364,30 @@ max_expansions: 设置最大允许的模糊选项
 
 fuzziness 只能用于词语， 即match和multi_match
 
+#### 数组查询防止出错的方法: position_increment_gap 
+
+```
+DELETE /my_index/groups/ 
+
+PUT /my_index/_mapping/groups 
+{
+    "properties": {
+        "names": {
+            "type":                "string",
+            "position_increment_gap": 100
+        }
+    }
+}
+```
+
+#### 返回部分字段
+
+```
+GET /website/blog/123?_source=title,text
+```
+
+####  层级结构
+
+1. query/highlight/aggs/from/size/sort/_source(控制返回哪些属性)/
+2. query: filter/bool/term/match/match_phrase/range
+3. bool: filter/match/term/match_phrase/range

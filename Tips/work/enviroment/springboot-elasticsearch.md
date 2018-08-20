@@ -194,3 +194,59 @@ https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#re
 #### Elasticsearch Java REST 客户端 6.2（一）Java Low Level REST 客户端官方文档
 
 https://blog.csdn.net/HoloLens/article/details/79594583
+
+
+
+#### 聚合查询常用方法
+
+```
+（1）统计某个字段的数量
+  ValueCountBuilder vcb=  AggregationBuilders.count("count_uid").field("uid");
+（2）去重统计某个字段的数量（有少量误差）
+ CardinalityBuilder cb= AggregationBuilders.cardinality("distinct_count_uid").field("uid");
+（3）聚合过滤
+FilterAggregationBuilder fab= AggregationBuilders.filter("uid_filter").filter(QueryBuilders.queryStringQuery("uid:001"));
+（4）按某个字段分组
+TermsBuilder tb=  AggregationBuilders.terms("group_name").field("name");
+（5）求和
+SumBuilder  sumBuilder=	AggregationBuilders.sum("sum_price").field("price");
+（6）求平均
+AvgBuilder ab= AggregationBuilders.avg("avg_price").field("price");
+（7）求最大值
+MaxBuilder mb= AggregationBuilders.max("max_price").field("price"); 
+（8）求最小值
+MinBuilder min=	AggregationBuilders.min("min_price").field("price");
+（9）按日期间隔分组
+DateHistogramBuilder dhb= AggregationBuilders.dateHistogram("dh").field("date");
+（10）获取聚合里面的结果
+TopHitsBuilder thb=  AggregationBuilders.topHits("top_result");
+（11）嵌套的聚合
+NestedBuilder nb= AggregationBuilders.nested("negsted_path").path("quests");
+（12）反转嵌套
+AggregationBuilders.reverseNested("res_negsted").path("kps ");
+```
+
+使用示例:
+
+```
+  QueryBuilder queryBuilder = QueryBuilders.boolQuery()
+                .must(QueryBuilders.rangeQuery("orderTime").gte(from).lte(to));
+        // 聚合查询。goodsSales是要统计的字段，sum_sales是自定义的别名
+        SumAggregationBuilder sumBuilder = AggregationBuilders.sum("sum_sales").field("goodsSales");
+ 
+        SearchQuery searchQuery = new NativeSearchQueryBuilder()
+                .withQuery(queryBuilder)
+                .addAggregation(sumBuilder)
+                .build();
+ 
+        double saleAmount = elasticsearchTemplate.query(searchQuery, response -> {
+            InternalSum sum = (InternalSum)response.getAggregations().asList().get(0);
+            return sum.getValue();
+        });
+```
+
+https://blog.csdn.net/earthhour/article/details/79602809
+
+#### 利用`Scan`和`Scroll`进行大结果集查询
+
+https://www.jianshu.com/p/35f9f867f48f
