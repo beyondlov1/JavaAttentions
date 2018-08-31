@@ -17,5 +17,14 @@ $ git remote add origin git@github.com:your_name/JavaAttentions.git
 13. 写上Commit Message: 格式(第一行写做了什么, 第二行空格, 第三行写有什么好处)  
 14. push *如果push不了 , 提示下次commit前 pull 一下就 == fetch+local merge*
 
-
 ----------
+
+#### 如果github上已经有了这个项目（比如从其他项目fork过来的）
+
+可能会出现push失败的情况， 可以用gitGUI工具push， 选中Force overwrite 。。。
+
+![1535353845802](C:\Users\huayu\AppData\Local\Temp\1535353845802.png)
+
+如果不行就再试一次， 出来github的登陆框应该就行了
+
+#### 

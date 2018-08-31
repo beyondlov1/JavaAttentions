@@ -38,3 +38,25 @@ https://code.google.com/archive/p/jackrabbitexplorer/wikis/GettingStarted.wiki
 Explore Jackrabbit Repository, Search, Query and Manage your JCR Repo Visually 
 
 项目地址: https://github.com/mehmoodz/jcr-explorer
+
+#### java使用HttpGet下载文件
+
+```
+public static byte[] get(String url, Map<String, String> headers) throws ClientProtocolException, IOException {
+        logger.info("Ready Get Request Url[{}]", url);
+        HttpGet get = new HttpGet(url);
+        setHttpHeaders(get, headers);
+        HttpResponse response = HttpClients.createDefault().execute(get);
+        if (null == response || response.getStatusLine() == null) {
+            logger.info("Post Request For Url[{}] is not ok. Response is null", url);
+            return null;
+        } else if (response.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+            logger.info("Post Request For Url[{}] is not ok. Response Status Code is {}", url,
+                    response.getStatusLine().getStatusCode());
+            return null;
+        }
+        return EntityUtils.toByteArray(response.getEntity());
+    }
+```
+
+https://blog.csdn.net/User_xiangpeng/article/details/73742227

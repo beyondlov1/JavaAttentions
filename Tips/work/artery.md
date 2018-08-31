@@ -21,3 +21,7 @@ function jqButton05eac_onClickClient(rc, id) {
 }
 ```
 
+#### 向form表单中传入参数
+
+采用的是artery的通用js, 在web的artery文件夹中, 检测url来获取参数
+
