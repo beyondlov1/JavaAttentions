@@ -62,7 +62,7 @@ GET /megacorp/employee/_search
 }
 ```
 
-#### exsit查询
+#### exsits查询
 
 ```
 {
@@ -87,6 +87,66 @@ GET /megacorp/employee/_search
             "about" : {}
         }
     }
+}
+```
+
+#### 嵌套查询
+
+由于嵌套对象 被索引在独立隐藏的文档中，我们无法直接查询它们。 相应地，我们必须使用 [`nested` 查询](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl-nested-query.html)去获取它们： 
+
+```
+GET /my_index/blogpost/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "title": "eggs" 
+          }
+        },
+        {
+          "nested": {
+            "path": "comments", 
+            "query": {
+              "bool": {
+                "must": [ 
+                  {
+                    "match": {
+                      "comments.name": "john"
+                    }
+                  },
+                  {
+                    "match": {
+                      "comments.age": 28
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+}}}
+```
+
+#### 日期
+
+存入时格式设置: 
+
+```json
+PUT my_index
+{
+  "mappings": {
+    "my_type": {
+      "properties": {
+        "date": {
+          "type":   "date",
+          "format": "yyyy-MM-dd"
+        }
+      }
+    }
+  }
 }
 ```
 

@@ -90,3 +90,8 @@ https://github.com/zhangjikai/markdown-css
 
 Html/MarkDown互转工具: https://www.bejson.com/convert/html2markdown/
 
+#### 组件自适应窗口
+
+SceneBuilder中有右键有fitParent的选项, VBox和HBox有相应的属性 VBox:vgrow=xxx HBox:vgrow=xxx
+
+这两个属性在gui设计的界面没有选项, 只能在xml中写属性
