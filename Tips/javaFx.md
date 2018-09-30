@@ -95,3 +95,11 @@ Html/MarkDown互转工具: https://www.bejson.com/convert/html2markdown/
 SceneBuilder中有右键有fitParent的选项, VBox和HBox有相应的属性 VBox:vgrow=xxx HBox:vgrow=xxx
 
 这两个属性在gui设计的界面没有选项, 只能在xml中写属性
+
+#### 这两个属性在gui设计的界面没有选项, 只能在xml中写属性
+
+#### 让table中的某一列填充整个table
+
+JavaFx TableView Columns don't fill the TableView Width
+
+https://stackoverflow.com/questions/44294622/javafx-tableview-columns-dont-fill-the-tableview-width
