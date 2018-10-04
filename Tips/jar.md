@@ -8,10 +8,6 @@
 
 #### 打包后中文乱码
 
-1. 设置idea encoding UTF-8
-2. maven 中添加encoding
+1. 启动jar时用命令启动: java -Dfile.encoding=UTF-8 -jar NoteCloud2.jar
 
-![1538650251963](jar.assets/1538650251963.png)
-
-3. 如果上边的还不行: https://blog.csdn.net/lzh657083979/article/details/79597420
-4. 或者: http://kabuto-v.iteye.com/blog/2300755
+   暂时只能用这种办法, 尝试了其他的都没有用
