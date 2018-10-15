@@ -67,3 +67,5 @@ https://blog.csdn.net/qq_27093465/article/details/79148498
 2. 启动
 
 破解包： ./ideaCrack/JetbrainsCrack-2.8-release-enc.jar
+
+可参考前半部分： https://blog.csdn.net/yl1712725180/article/details/80309862
