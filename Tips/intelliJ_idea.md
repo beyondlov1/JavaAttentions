@@ -61,3 +61,9 @@ https://blog.csdn.net/qq_27093465/article/details/79148498
 
 参考: https://blog.csdn.net/luoweifu/article/details/46779027
 
+#### idea永久破解
+
+1. 将破解包放到bin文件夹中， 更改idea64.exe.vmoptions文件，添加： -javaagent:破解包路径
+2. 启动
+
+破解包： ./ideaCrack/JetbrainsCrack-2.8-release-enc.jar

@@ -38,3 +38,13 @@ public static void resetStaticVar()
 ```
 
 参考：https://www.cnblogs.com/limingluzhu/p/5975524.html
+
+
+
+#### 将jar打包成exe
+
+执行起来基本和jar执行是一样的， 比如读取外部配置文件什么的
+
+方法: https://www.cnblogs.com/duwanjiang/p/6390379.html  (这个里面有添加库的引导)
+
+https://blog.csdn.net/jinny_0019/article/details/80065452 （这个里有选64位jre的引导）
