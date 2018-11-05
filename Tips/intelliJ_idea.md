@@ -61,7 +61,7 @@ https://blog.csdn.net/qq_27093465/article/details/79148498
 
 参考: https://blog.csdn.net/luoweifu/article/details/46779027
 
-#### idea永久破解
+#### idea永久破解(经测试无效, 用一段时间会崩溃)
 
 1. 将破解包放到bin文件夹中， 更改idea64.exe.vmoptions文件，添加： -javaagent:破解包路径
 2. 启动
