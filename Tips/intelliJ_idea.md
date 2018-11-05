@@ -69,3 +69,6 @@ https://blog.csdn.net/qq_27093465/article/details/79148498
 破解包： ./ideaCrack/JetbrainsCrack-2.8-release-enc.jar
 
 可参考前半部分： https://blog.csdn.net/yl1712725180/article/details/80309862
+
+#### eclipse查询某个方法被谁调用
+选中方法 ctrl+alt+H
