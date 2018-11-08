@@ -155,6 +155,7 @@ div{
 
 #### 英文或者数字不能自动换行
 添加以下css，ie8可用
+```
 .input-display{
 	word-break: break-all;
 	width:auto; 
@@ -163,3 +164,4 @@ div{
 	word-wrap : break-word ;
 	overflow: hidden ;
 }
+```
