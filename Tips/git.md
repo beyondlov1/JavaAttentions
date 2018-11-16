@@ -28,3 +28,4 @@ $ git remote add origin git@github.com:your_name/JavaAttentions.git
 如果不行就再试一次， 出来github的登陆框应该就行了
 
 #### 
+git 国内下载地址： https://github.com/waylau/git-for-win
