@@ -87,3 +87,7 @@ Aspect中的@AfterReturning,@AfterThrowing注解的方法中有returnValue, Exce
 原因: 不兼容
 
 解决办法: 升级spring
+
+#### spring+mybatis 多数据源配置
+
+http://www.cnblogs.com/lzrabbit/p/3750803.html
