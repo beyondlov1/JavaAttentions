@@ -2,3 +2,6 @@
 https://android-sdk.en.softonic.com/?ex=BB-682.3  下载SDK
 SDK Manager 下载相关包
 配置环境变量 ： https://blog.csdn.net/Rflyee/article/details/8973529
+
+#### gradle 配置中国镜像
+https://www.cnblogs.com/a8457013/p/8408196.html
