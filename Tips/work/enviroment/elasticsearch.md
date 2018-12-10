@@ -1,5 +1,11 @@
 # elasticsearch
 
+#### head连接不上es
+elasticsearch.yml
+添加
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+
 #### 轻量搜索
 
 ```
