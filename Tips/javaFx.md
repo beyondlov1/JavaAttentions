@@ -103,3 +103,6 @@ SceneBuilder中有右键有fitParent的选项, VBox和HBox有相应的属性 VBo
 JavaFx TableView Columns don't fill the TableView Width
 
 https://stackoverflow.com/questions/44294622/javafx-tableview-columns-dont-fill-the-tableview-width
+
+#### 消除窗口标题栏
+https://blog.csdn.net/qq_32571359/article/details/72957307
