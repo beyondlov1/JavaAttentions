@@ -106,3 +106,6 @@ https://stackoverflow.com/questions/44294622/javafx-tableview-columns-dont-fill-
 
 #### 消除窗口标题栏
 https://blog.csdn.net/qq_32571359/article/details/72957307
+
+#### 系统托盘添加图标
+https://gist.github.com/jewelsea/e231e89e8d36ef4e5d8a
