@@ -112,3 +112,4 @@ https://gist.github.com/jewelsea/e231e89e8d36ef4e5d8a
 
 #### 消除状态栏图标
   stage.initStyle(StageStyle.UTILITY);//状态栏不显示图标和窗口不显示装饰不可兼得
+UTILITY状态会导致alwaysOnTop失效
