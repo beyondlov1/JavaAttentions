@@ -11,3 +11,6 @@ window.console = window.console || (function () {
 
 #### ie8/9 兼容问题
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=EDGE">
+
+#### ie8 css3兼容
+用jquery的css方法
