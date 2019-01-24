@@ -103,3 +103,13 @@ SceneBuilder中有右键有fitParent的选项, VBox和HBox有相应的属性 VBo
 JavaFx TableView Columns don't fill the TableView Width
 
 https://stackoverflow.com/questions/44294622/javafx-tableview-columns-dont-fill-the-tableview-width
+
+#### 消除窗口标题栏
+https://blog.csdn.net/qq_32571359/article/details/72957307
+
+#### 系统托盘添加图标
+https://gist.github.com/jewelsea/e231e89e8d36ef4e5d8a
+
+#### 消除状态栏图标
+  stage.initStyle(StageStyle.UTILITY);//状态栏不显示图标和窗口不显示装饰不可兼得
+UTILITY状态会导致alwaysOnTop失效
