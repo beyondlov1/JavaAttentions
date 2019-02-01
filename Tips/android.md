@@ -53,3 +53,36 @@ model view presenter
 
 Component用来注入,  Model+providers用来生产Bean, Inject 用来确定注入位置
 
+
+
+#### 长按弹出快速分享
+
+```
+<activity
+    android:name=".view.ShareActivity"
+    android:label="note"
+    android:theme="@android:style/Theme.NoDisplay">
+    <intent-filter>
+        <action android:name="android.intent.action.PROCESS_TEXT"/>
+        <action android:name="android.intent.action.SEND" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="text/plain" />
+    </intent-filter>
+</activity>
+```
+
+PROCESS_TEXT 是快速分享 ,  SEND是一般分享. 获取内容:
+
+```
+if ("text/plain".equals(intent.getType()) && (SEND.equals(intent.getAction()) )){
+    Note note = generateNoteFromSend(intent);
+    notePresenter.addNote(note);
+}
+if ("text/plain".equals(intent.getType()) && PROCESS_TEXT.equals(intent.getAction())){
+    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+        Note note = generateNoteFromProcessText(intent);
+        notePresenter.addNote(note);
+    }
+}
+```
+
