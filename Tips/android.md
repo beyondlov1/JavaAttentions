@@ -101,6 +101,8 @@ noteRecyclerView.scrollToPosition(0);
 
 notifyItemInserted只会更新0 这一个, 不会管后边的item, 所以后边发生变化的item的position什么的会有问题, 要自己手动notifyItemRangeChanged
 
+ps: 给adapter加data的时候不能 data=newData 要data.addAll(newData)
+
 #### LayoutInflater
 
 用来查找布局, 并且声称实例, 用来动态引用布局
@@ -108,6 +110,7 @@ notifyItemInserted只会更新0 这一个, 不会管后边的item, 所以后边�
 坑: 有的时候会遇到什么id重复之类的, 就是用getActivity.getLayoutInflater..引起的, 用下面的更靠谱些(不知道什么原因)
 
 ```
+        view = LayoutInflater.from(context).inflate(R.layout.fragment_note_detail_switcher, null);
 
 ```
 
