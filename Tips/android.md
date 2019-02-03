@@ -319,3 +319,34 @@ builder.setView(view)
 https://www.jianshu.com/p/4fc6164e4709
 
 动画: https://www.jianshu.com/p/b375d552db63   https://blog.csdn.net/daisywangyy/article/details/47277749
+
+#### webView中文乱码
+
+```
+//直接用webView.loadData(content, MIME_TYPE,"UTF-8");会乱码
+webView.loadData(content, "text/html; charset=UTF-8",null);
+```
+
+参考 : https://blog.csdn.net/top_code/article/details/9163597    
+
+> loadData(data, "text/html; charset=UTF-8", null);loadData最终的机制是会把传入的三个参数拼接在一起,然		后再进行loadUrl操作,参数就是data, "text/html; charset=UTF-8", null这三个进行拼装,加入text/html; charset=UTF-8就相当于限定了页面的字符
+
+#### webview 加载css
+
+loadDataWithBaseURL()比loadData()多两个参数，可以指定HTML代码片段中相关资源的相对根路径，也可以指定历史Url，其余三个参数相同。
+
+这里主要注意参数baseUrl，baseUrl指定了你的data参数中数据是以什么地址为基准的，因为data中的数据可能会有超链接或者是image元素，而很多网站的地址都是用的相对路径，如果没有baseUrl，webview将访问不到这些资源。
+
+可以在
+
+```
+<option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+```
+
+的路径下面建普通文件夹, 会自动识别为资源文件夹
+
+路径file:///android_asset/detail.css
+
+#### markdown html 富文本编辑器
+
+https://github.com/zzhoujay/RichText
