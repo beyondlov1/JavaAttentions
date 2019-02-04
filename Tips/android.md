@@ -350,3 +350,37 @@ loadDataWithBaseURL()比loadData()多两个参数，可以指定HTML代码片段
 #### markdown html 富文本编辑器
 
 https://github.com/zzhoujay/RichText
+
+#### 监控recyclerView的滚动事件
+
+```
+noteRecyclerView.setOnFlingListener(new RecyclerView.OnFlingListener() {
+    @Override
+    public boolean onFling(int velocityX, int velocityY) {
+        //上划
+        if (velocityY<0){
+            EventBus.getDefault().post(new ShowFABEvent(R.id.note_recycler_view));
+        }
+        return false;
+    }
+});
+noteRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+    @Override
+    public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+        super.onScrollStateChanged(recyclerView, newState);
+        //下划到底
+        if (!recyclerView.canScrollVertically(1)) {
+            EventBus.getDefault().post(new HideFABEvent(R.id.note_recycler_view));
+        }
+        //上划到顶
+        if (!recyclerView.canScrollVertically(-1)) {
+            EventBus.getDefault().post(new ShowFABEvent(R.id.note_recycler_view));
+        }
+
+    }
+
+});
+```
+#### 动画
+
+https://blog.csdn.net/yanbober/article/details/46481171
