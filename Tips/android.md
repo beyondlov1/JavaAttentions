@@ -384,3 +384,76 @@ noteRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 #### 动画
 
 https://blog.csdn.net/yanbober/article/details/46481171
+
+
+
+#### 控制DialogFragment 弹出框的大小
+
+DiglogFragment:
+
+```
+@Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+
+        //要放到这里才有用, 可能是onCreateView的时候没有加载全
+        //初始化默认弹出窗口大小设置
+        Window win = getDialog().getWindow();
+//        // 一定要设置Background，如果不设置，window属性设置无效
+        win.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+        DisplayMetrics dm = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        WindowManager.LayoutParams params = win.getAttributes();
+        params.gravity = Gravity.TOP;
+        params.width = ViewGroup.LayoutParams.MATCH_PARENT;
+        params.height = dialogHeightWithSoftInputMethod;
+        win.setAttributes(params);
+        displayWebView.setMinimumHeight(dm.heightPixels);
+        contentEditText.setMinimumHeight(dm.heightPixels);
+        showKeyboard(contentEditText);
+    }
+```
+
+```
+@Subscribe(threadMode = ThreadMode.MAIN)
+public void onKeyBoardShow(ShowKeyBoardEvent event) {
+    Integer y = event.get();
+    Window win = getDialog().getWindow();
+    // 一定要设置Background，如果不设置，window属性设置无效
+    win.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+
+    DisplayMetrics dm = new DisplayMetrics();
+    getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+    WindowManager.LayoutParams params = win.getAttributes();
+    params.gravity = Gravity.TOP;
+    params.width = dm.widthPixels;
+    params.height = dm.heightPixels - y - 50;
+    win.setAttributes(params);
+
+    displayWebView.setMinimumHeight(dm.heightPixels);
+    contentEditText.setMinimumHeight(dm.heightPixels);
+
+    //设置初始的dialogHeightWithSoftInputMethod, 为了不让开始的时候动画跳一下
+    dialogHeightWithSoftInputMethod = dm.heightPixels - y - 50;
+}
+```
+
+Activity:
+
+```
+//监控输入法
+this.getWindow().getDecorView().getViewTreeObserver()
+        .addOnGlobalLayoutListener(new OnKeyboardChangeListener(this) {
+            @Override
+            protected void onKeyBoardShow(int x, int y) {
+                super.onKeyBoardShow(x, y);
+                EventBus.getDefault().post(new ShowKeyBoardEvent(y));
+            }
+
+            @Override
+            protected void onKeyBoardHide() {
+                super.onKeyBoardHide();
+            }
+        });
+```
