@@ -457,3 +457,10 @@ this.getWindow().getDecorView().getViewTreeObserver()
             }
         });
 ```
+#### 用浏览器打开网址
+
+```
+Uri uri = Uri.parse(url);
+Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+startActivity(intent);
+```
