@@ -1,5 +1,7 @@
 
 
+
+
 #### 安装
 
 https://android-sdk.en.softonic.com/?ex=BB-682.3  下载SDK
@@ -463,4 +465,27 @@ this.getWindow().getDecorView().getViewTreeObserver()
 Uri uri = Uri.parse(url);
 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 startActivity(intent);
+```
+#### 程序打开黑一下屏
+
+```
+<style name="StartLoadBackgroundFullScreenTheme" parent="FullscreenTheme">
+    <item name="windowNoTitle">true</item>
+    <item name="android:windowBackground">@android:color/white</item>
+</style>
+```
+
+```
+AndroidManifest.xml:
+<activity
+    android:name=".view.MainActivity"
+    android:configChanges="orientation|keyboardHidden|screenSize"
+    android:label="@string/app_name"
+    ***** android:theme="@style/StartLoadBackgroundFullScreenTheme" *****
+    >
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
 ```
