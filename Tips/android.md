@@ -489,3 +489,6 @@ AndroidManifest.xml:
     </intent-filter>
 </activity>
 ```
+#### 反编译apk
+
+https://blog.csdn.net/fengyuzhengfan/article/details/80286704
