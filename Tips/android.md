@@ -8,6 +8,11 @@ https://android-sdk.en.softonic.com/?ex=BB-682.3  下载SDK
 SDK Manager 下载相关包
 配置环境变量 ： https://blog.csdn.net/Rflyee/article/details/8973529
 
+
+#### 安装（上边的地址失效）
+SDK: http://mirrors.neusoft.edu.cn/android/repository/  下载tools_r24.4.1-XXX.zip
+解压， 配置为sdk
+
 #### gradle 配置中国镜像
 https://www.cnblogs.com/a8457013/p/8408196.html
 
