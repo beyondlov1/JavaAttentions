@@ -13,6 +13,15 @@ SDK Manager 下载相关包
 官方地址下载的android studio中自带了gradle， 配置那个可以少下载许多东西
 gradle编译的时候需要联网 需要挂vpn，配置android studio的proxy: 如果用ss或者ssr， 可以用socks: 127.0.0.1  1080 或者http：127.0.0.1  12333(推荐)
 不过具体的要看ss的配置了
+如果还不行就要在根目录下的 gradle.properties 中添加:
+```
+systemProp.http.proxyHost=127.0.0.1
+systemProp.http.proxyPort=12333
+
+systemProp.https.proxyHost=127.0.0.1
+systemProp.https.proxyPort=12333
+```
+如果还不行就没办法了, 只能多试几次
 
 SDK: http://mirrors.neusoft.edu.cn/android/repository/  下载tools_r24.4.1-XXX.zip
 解压， 配置为sdk
