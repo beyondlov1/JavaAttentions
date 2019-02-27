@@ -70,3 +70,16 @@ spring boot 的controller中的方法可以返回静态资源, 但是没有看�
 
    @controller下面不能添加@RequestMapping (还不知道原因)
 
+### spring - boot bug 
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)
+
+pom.xml build标签中加入
+
+```
+<resource>  
+        <directory>src/main/java</directory>  
+        <includes>  
+          <include>**/*.xml</include>  
+        </includes>  
+      </resource> 
+```

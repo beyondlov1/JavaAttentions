@@ -92,16 +92,3 @@ Aspect中的@AfterReturning,@AfterThrowing注解的方法中有returnValue, Exce
 
 http://www.cnblogs.com/lzrabbit/p/3750803.html
 
-### spring - boot 
-org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)
-
-pom.xml build标签中加入
-
-```
-<resource>  
-        <directory>src/main/java</directory>  
-        <includes>  
-          <include>**/*.xml</include>  
-        </includes>  
-      </resource> 
-```
