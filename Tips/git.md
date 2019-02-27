@@ -29,3 +29,12 @@ $ git remote add origin git@github.com:your_name/JavaAttentions.git
 
 #### 
 git 国内下载地址： https://github.com/waylau/git-for-win
+
+
+
+### git clone慢(没试过还)
+
+git config --global http.https://github.com.proxy https://127.0.0.1:1080 
+
+git config --global https.https://github.com.proxy https://127.0.0.1:1080
+
