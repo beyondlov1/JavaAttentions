@@ -65,3 +65,11 @@ where not exists
 from sc
 where sno =student.sno
 and cno=course.cno);
+
+
+
+#### 时间相关
+
+- 从时间获取日期， 精确到日： select 当前日期=convert(varchar(10),getdate(),120) 
+
+参考：https://www.cnblogs.com/nyzhai/p/3594015.html
