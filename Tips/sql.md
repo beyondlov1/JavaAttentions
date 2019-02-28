@@ -75,3 +75,9 @@ and cno=course.cno);
 参考：https://www.cnblogs.com/nyzhai/p/3594015.html
 
 https://www.cnblogs.com/whl4835349/p/5889298.html
+
+#### sqlLite时间
+
+DATE(LAST_MODIFY_TIME/1000,'unixepoch','localtime') // greenDao存的日期是到毫秒值的， 所以用date函数的时候要除以1000
+http://www.compileonline.com/execute_sql_online.php
+https://www.cnblogs.com/xmphoenix/archive/2011/05/23/2054022.html
