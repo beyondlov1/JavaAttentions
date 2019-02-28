@@ -73,3 +73,5 @@ and cno=course.cno);
 - 从时间获取日期， 精确到日： select 当前日期=convert(varchar(10),getdate(),120) 
 
 参考：https://www.cnblogs.com/nyzhai/p/3594015.html
+
+https://www.cnblogs.com/whl4835349/p/5889298.html
