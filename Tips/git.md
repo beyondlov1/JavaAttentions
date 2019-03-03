@@ -41,3 +41,6 @@ git config --global https.https://github.com.proxy https://127.0.0.1:1080
 ####  Github上怎么修改别人的项目并且提交给原作者
 
 https://blog.csdn.net/qq_26787115/article/details/52133008
+
+#### git 用 ssh
+https://blog.csdn.net/Felicity294250051/article/details/53606158
