@@ -510,3 +510,46 @@ AndroidManifest.xml:
 #### 反编译apk
 
 https://blog.csdn.net/fengyuzhengfan/article/details/80286704
+
+#### recyclerView OnClickListener 失效解决方法
+
+recyclerView.setOnTouchListener(new View.OnTouchListener() {
+
+                    GestureDetector gestureDetector = new GestureDetector(getContext(), new GestureDetector.OnGestureListener() {
+                        @Override
+                        public boolean onDown(MotionEvent e) {
+                            return false;
+                        }
+
+                        @Override
+                        public void onShowPress(MotionEvent e) {
+
+                        }
+
+                        @Override
+                        public boolean onSingleTapUp(MotionEvent e) {
+                            //do something
+                            return true;
+                        }
+
+                        @Override
+                        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+                            return false;
+                        }
+
+                        @Override
+                        public void onLongPress(MotionEvent e) {
+
+                        }
+
+                        @Override
+                        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                            return false;
+                        }
+                    });
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        return gestureDetector.onTouchEvent(event);
+                    }
+                });
+
