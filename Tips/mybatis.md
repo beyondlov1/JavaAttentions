@@ -64,3 +64,10 @@ mybatis 根据**接口返回值的类型**来决定用什么方法
     </settings>
 ```
 
+#### foreach
+<select id="dynamicForeachTest" parameterType="java.util.List" resultMap="Users">  
+    select id，name from t_blog where id in  
+    <foreach collection="list" index="index" item="item" open="(" separator="," close=")">  
+        #{item.id}  
+    </foreach>  
+</select>  
