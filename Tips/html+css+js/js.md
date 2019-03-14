@@ -55,3 +55,28 @@ prop(操作DOM自带属性, 添加属性是添加jquery对象的属性, dom上�
 #### 運算進度問題
 
 https://blog.csdn.net/starscao/article/details/72828944
+
+#### 页面自适应
+/** *窗口大小改变时执行** */
+$(window).resize(function() {	
+	resetSizeClass();
+	// 执行代码块
+	myChart.resize();
+	
+	//自适应消息提醒
+	resizeXxtx();
+})
+
+/**
+ * 自适应消息提醒
+ */
+function resizeXxtx(){
+	var width=$(".fd-xxtx-content").width();
+	if(width<400){			
+		$(".fd-xxtx-content .layui-table-view style").html(".laytable-cell-1-CXxlbMc{ width: 80px; }.laytable-cell-1-CNr{ width: 80px; }.laytable-cell-1-CSfydMc{ width: 60px; }.laytable-cell-1-3{ width: 70px; }");
+	}else{
+		$(".fd-xxtx-content .layui-table-view style").html(".laytable-cell-1-CXxlbMc{ width: 130px; }.laytable-cell-1-CNr{ width: "+(width-300)+"px; }.laytable-cell-1-CSfydMc{ width: 60px; }.laytable-cell-1-3{ width: 70px; }");
+	}
+}
+
+#### IE8 不支持修改html中的style内容要$().html();
