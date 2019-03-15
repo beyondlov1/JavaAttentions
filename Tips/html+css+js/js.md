@@ -56,7 +56,7 @@ prop(操作DOM自带属性, 添加属性是添加jquery对象的属性, dom上�
 
 https://blog.csdn.net/starscao/article/details/72828944
 
-#### 页面自适应
+#### 页面自适应 使用layui 详情见layui.md
 /** *窗口大小改变时执行** */
 $(window).resize(function() {	
 	resetSizeClass();
