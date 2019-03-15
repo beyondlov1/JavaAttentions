@@ -166,3 +166,16 @@ table.reload({
 		toolbar : '#daily_msg_table_btn'
 	});
 }
+
+
+#### layui 设置下拉框的值 2.3.0
+/**
+ * 設置下拉框的值
+ * @param id 控件id
+ * @param value 值
+ */
+function setSelectValue(id,value){
+	var select = 'dd[lay-value=' + value + ']';
+	var selectedText = $('#'+id).siblings("div.layui-form-select").find('dl').find(select).text();
+	$("#input_"+id).val(selectedText);
+}
