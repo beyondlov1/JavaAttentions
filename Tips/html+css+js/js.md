@@ -81,14 +81,3 @@ function resizeXxtx(){
 
 #### IE8 不支持修改html中的style内容要$().html();
 
-#### layui 设置下拉框的值 2.3.0
-/**
- * 設置下拉框的值
- * @param id 控件id
- * @param value 值
- */
-function setSelectValue(id,value){
-	var select = 'dd[lay-value=' + value + ']';
-	var selectedText = $('#'+id).siblings("div.layui-form-select").find('dl').find(select).text();
-	$("#input_"+id).val(selectedText);
-}
