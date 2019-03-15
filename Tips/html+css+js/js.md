@@ -79,5 +79,4 @@ function resizeXxtx(){
 	}
 }
 
-#### IE8 不支持修改html中的style内容要$().html();
 
