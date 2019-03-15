@@ -1,24 +1,24 @@
-°æ±¾:eclipse Mars, maven
+ç‰ˆæœ¬:eclipse Mars, maven
 
-Ê¹ÓÃmaven´´½¨webÏîÄ¿: ×Ô¼ºÏîÄ¿-ÓÒ¼ü-buildPath-liberies±êÇ©-addLibary-Ìí¼ÓwebAppLibaries,ServerRuntime(·ñÔòjsp»á±¨´íÃ»ÓĞHttpServlet)
+ä½¿ç”¨mavenåˆ›å»ºwebé¡¹ç›®: è‡ªå·±é¡¹ç›®-å³é”®-buildPath-liberiesæ ‡ç­¾-addLibary-æ·»åŠ webAppLibaries,ServerRuntime(å¦åˆ™jspä¼šæŠ¥é”™æ²¡æœ‰HttpServlet)
 
-pom.xml ±¨´í:org.apache.maven.archiver.MavenArchiver.getManifest(org.apache.maven.project.MavenProject, org.apache.maven.archiver.MavenArchiveConfiguration) pom.xml /<maven projectName> line 1 Maven Configuration Problem
+pom.xml æŠ¥é”™:org.apache.maven.archiver.MavenArchiver.getManifest(org.apache.maven.project.MavenProject, org.apache.maven.archiver.MavenArchiveConfiguration) pom.xml /<maven projectName> line 1 Maven Configuration Problem
 
-½â¾ö°ì·¨:
+è§£å†³åŠæ³•:
 
 Better solution: update Eclipse m2e extensions
 From Help > Install New Software.., add a new repository (via the Add.. option), pointing to any of the following URLs:
-https://otto.takari.io/content/sites/m2e.extras/m2eclipse-mavenarchiver/0.17.2/N/LATEST/   (²»¿ÉÓÃ)or
-http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-mavenarchiver/0.17.2/N/LATEST/  (¿ÉÓÃ)
+https://otto.takari.io/content/sites/m2e.extras/m2eclipse-mavenarchiver/0.17.2/N/LATEST/   (ä¸å¯ç”¨)or
+http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-mavenarchiver/0.17.2/N/LATEST/  (å¯ç”¨)
 Then follow the update wizard as usual. Eclipse would then require a restart. Afterwards, a further Update Project.. on the concerned Maven project would remove any error and your Maven build could then enjoy the benefit of the latest maven-jar-plugin version.
 
-²Î¿¼: https://stackoverflow.com/questions/37555557/m2e-error-in-mavenarchiver-getmanifest
+å‚è€ƒ: https://stackoverflow.com/questions/37555557/m2e-error-in-mavenarchiver-getmanifest
 
 ---
 
-**pom.xmlÖĞĞ´ÈëÒÀÀµºó²»×Ô¶¯ÏÂÔØ, ÇÒ±¨´í**
+**pom.xmlä¸­å†™å…¥ä¾èµ–åä¸è‡ªåŠ¨ä¸‹è½½, ä¸”æŠ¥é”™**
 
-mavenµÄÅäÖÃ, ½«auto download ´ò¿ª
+mavençš„é…ç½®, å°†auto download æ‰“å¼€
 
 https://blog.csdn.net/J080624/article/details/71747310
 
@@ -26,19 +26,19 @@ https://blog.csdn.net/J080624/article/details/71747310
 
 ---
 
-#### Eclipse ´´½¨ mavenÏîÄ¿
+#### Eclipse åˆ›å»º mavené¡¹ç›®
 
-1. Help -> install from site (¸üĞÂÒ»ÏÂm2eÊ²Ã´µÄ)
+1. Help -> install from site (æ›´æ–°ä¸€ä¸‹m2eä»€ä¹ˆçš„)
 
 2. http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-mavenarchiver/0.17.2/N/LATEST/
 
-3. µÈ(µÚÒ»´Î¿ÉÄÜ²»³É¹¦, ¶àÊÔÁ½´Î)
+3. ç­‰(ç¬¬ä¸€æ¬¡å¯èƒ½ä¸æˆåŠŸ, å¤šè¯•ä¸¤æ¬¡)
 
-4. ´´½¨mavenÏîÄ¿
+4. åˆ›å»ºmavené¡¹ç›®
 
-   Èç¹ûÌáÊ¾ÄÚ´æ²»×ãÊ²Ã´µÄ¿ÉÄÜÊÇÁªÍøÓĞÎÊÌâ
+   å¦‚æœæç¤ºå†…å­˜ä¸è¶³ä»€ä¹ˆçš„å¯èƒ½æ˜¯è”ç½‘æœ‰é—®é¢˜
 
-   ÔÚ.m2ÎÄ¼ş¼ĞÖĞÌí¼ÓÒ»¸ösettings.xml¿ÉÄÜÄÜ½â¾öÎÊÌâ:
+   åœ¨.m2æ–‡ä»¶å¤¹ä¸­æ·»åŠ ä¸€ä¸ªsettings.xmlå¯èƒ½èƒ½è§£å†³é—®é¢˜:
 
    ```xml
        <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"  
@@ -46,7 +46,7 @@ https://blog.csdn.net/J080624/article/details/71747310
                 xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0  
                    http://maven.apache.org/xsd/settings-1.0.0.xsd">  
              
-           <!-- Õâ¸öÊÇÅäÖÃ°¢ÀïMaven¾µÏñ -->  
+           <!-- è¿™ä¸ªæ˜¯é…ç½®é˜¿é‡ŒMavené•œåƒ -->  
            <mirrors>  
                <mirror>  
                  <id>aliyun</id>  
@@ -85,15 +85,15 @@ https://blog.csdn.net/J080624/article/details/71747310
        </settings>  
    ```
 
-5. ´´½¨mavenÏîÄ¿
+5. åˆ›å»ºmavené¡¹ç›®
 
    https://mvnrepository.com/
 
-6. Òª¸Ä³ÉwebÏîÄ¿: ÏîÄ¿ÉÏÓÒ¼ü - configure facets - manage - ¹´Ñ¡ Dynamic Web Module
+6. è¦æ”¹æˆwebé¡¹ç›®: é¡¹ç›®ä¸Šå³é”® - configure facets - manage - å‹¾é€‰ Dynamic Web Module
 
 
 
-#### ClassNotFound µ«ÊÇÃ÷Ã÷ÄÜÕÒµ½
+#### ClassNotFound ä½†æ˜¯æ˜æ˜èƒ½æ‰¾åˆ°
 
 You need to add the "Maven Dependency" in the Deployment Assembly
 
@@ -108,7 +108,7 @@ Rebuild and deploy again
 
 Note: This is also applicable for *non maven* project.
 
-#### Ìí¼Ójstl
+#### æ·»åŠ jstl
 
 ```xml
  <dependency>
@@ -118,10 +118,91 @@ Note: This is also applicable for *non maven* project.
         </dependency>
 ```
 
-#### maven Ô´Âë°ü ÖĞÎÄÂÒÂë
+#### maven æºç åŒ… ä¸­æ–‡ä¹±ç 
 
-- ĞŞ¸ÄEclipseÖĞÎÄ±¾ÎÄ¼şµÄÄ¬ÈÏ±àÂë£ºwindows->Preferences->general->Workspace->Text file encodingÉèÖÃÎªUTF-8
-- ĞŞ¸ÄJAVAÔ´ÎÄ¼şµÄÄ¬ÈÏ±àÂë£ºwindows->Preferences->general->Content Types->ÓÒ²àContext TypesÊ÷£¬µã¿ªText£¬Ñ¡ÔñJava Source File£¬ÔÚÏÂÃæµÄDefault encodingÊäÈë¿òÖĞÊäÈëUTF-8£¬µãUpdate£»
-- Èç¹û»¹ÊÇÂÒÂë£¬¼ÇµÃÖØÆôeclipse ¡£
+- ä¿®æ”¹Eclipseä¸­æ–‡æœ¬æ–‡ä»¶çš„é»˜è®¤ç¼–ç ï¼šwindows->Preferences->general->Workspace->Text file encodingè®¾ç½®ä¸ºUTF-8
+- ä¿®æ”¹JAVAæºæ–‡ä»¶çš„é»˜è®¤ç¼–ç ï¼šwindows->Preferences->general->Content Types->å³ä¾§Context Typesæ ‘ï¼Œç‚¹å¼€Textï¼Œé€‰æ‹©Java Source Fileï¼Œåœ¨ä¸‹é¢çš„Default encodingè¾“å…¥æ¡†ä¸­è¾“å…¥UTF-8ï¼Œç‚¹Updateï¼›
+- å¦‚æœè¿˜æ˜¯ä¹±ç ï¼Œè®°å¾—é‡å¯eclipse ã€‚
 
-²Î¿¼£º https://blog.csdn.net/zsw12013/article/details/51502876
+å‚è€ƒï¼š https://blog.csdn.net/zsw12013/article/details/51502876
+
+#### maven ç¼–è¯‘/è¿è¡Œ
+https://www.cnblogs.com/onetwo/p/7133226.html
+
+1. å»ºç«‹ç›®å½•
+mkdir src\main\java\hello
+2. å†™javaæ–‡ä»¶
+3. å†™pom.xmlæ–‡ä»¶
+ç”¨äºpackageçš„pom.xmlæ–‡ä»¶, é¡¹ç›®æ ¹ç›®å½•æ‰§è¡Œçš„è¯­å¥: mvn package:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.beyond</groupId>
+    <artifactId>mavencompile</artifactId>
+    <packaging>jar</packaging>
+    <version>0.1.0</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>  // å¯¹åº”çš„æ’ä»¶
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase> // å£°æ˜æ‰“åŒ…çš„æ—¶å€™ç”¨
+                        <goals>
+                            <goal>shade</goal> 
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>hello.HelloWorld</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+ç”¨äºtestçš„pom.xmlæ–‡ä»¶, é¡¹ç›®æ ¹ç›®å½•æ‰§è¡Œçš„è¯­å¥: mvn test:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.beyond</groupId>
+    <artifactId>mavencompile</artifactId>
+    <packaging>jar</packaging>
+    <version>0.1.0</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>  
+     <artifactId>exec-maven-plugin</artifactId>  
+     <version>1.1.1</version>  
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+						<mainClass>hello.HelloWorld</mainClass>
+                           
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
