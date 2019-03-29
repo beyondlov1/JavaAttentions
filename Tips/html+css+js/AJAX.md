@@ -14,13 +14,15 @@
 ## 亲测有效: spring-boot 中有 @CrossOrigin 的注解(CORS)可以支持跨域
 用法: 
 spring-boot:Controller:
+```
   @CrossOrigin
     @RequestMapping("/testPropertyString")
     public Object testPropertyString(){
         return serviceDemo.getPropertyDemo().getName();
     }
-
-ajax: 
+```
+ajax:
+```
 function query(callback){
         $.ajax({
             type : "post",
@@ -33,3 +35,4 @@ function query(callback){
             }
         });
     }
+```
