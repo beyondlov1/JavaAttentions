@@ -57,6 +57,7 @@ prop(操作DOM自带属性, 添加属性是添加jquery对象的属性, dom上�
 https://blog.csdn.net/starscao/article/details/72828944
 
 #### 页面自适应 使用layui 详情见layui.md
+```
 /** *窗口大小改变时执行** */
 $(window).resize(function() {	
 	resetSizeClass();
@@ -78,5 +79,9 @@ function resizeXxtx(){
 		$(".fd-xxtx-content .layui-table-view style").html(".laytable-cell-1-CXxlbMc{ width: 130px; }.laytable-cell-1-CNr{ width: "+(width-300)+"px; }.laytable-cell-1-CSfydMc{ width: 60px; }.laytable-cell-1-3{ width: 70px; }");
 	}
 }
-
+```
+#### js replace 全局
+```
+str.replace(/source/g,"target");
+```
 
