@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cross</title>
+    <script src="jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<span id="msg"></span>
+</body>
+<script>
+    /**
+     * 查询数据
+     */
+    function query(callback){
+        $.ajax({
+            type : "post",
+            url : "http://172.16.193.47:8080/testPropertyString",
+            contentType: "application/json",
+            dataType : "json",
+            success : callback,
+            error : function() {
+                console.log("请求失败");
+            }
+        });
+    }
+    query(function(data){
+        $("msg").text(data);
+    });
+</script>
+</html>
