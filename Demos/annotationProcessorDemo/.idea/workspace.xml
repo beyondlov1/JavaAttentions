@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8566aa64-09a9-42ff-98de-9c42a1474d19" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo-annotation/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo-annotation/src/main/java/annotation/Builder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo-client/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo-client/src/main/java/com/beyond/pojo/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo-client/src/main/java/com/beyond/service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo-processor/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo-processor/src/main/java/processor/BuilderProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo-processor/src/main/resources/META-INF/services/javax.annotation.processing.Processor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -159,7 +149,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -295,7 +285,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555054478441" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555320145533" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../民警执法平台/388BJCM/JY_minjingzhifapingtai/40_源码/java/jy-exchange/jy-exchange" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -391,12 +382,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555037000813</updated>
-      <workItem from="1555037006384" duration="13766000" />
+      <workItem from="1555037006384" duration="16186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13766000" />
+    <option name="totallyTimeSpent" value="16186000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -408,7 +399,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="JRebel" side_tool="true" />
       <window_info id="Capture Tool" />

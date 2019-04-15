@@ -96,16 +96,64 @@ xml方法
 
 ### spring core
 - BeanWrapper 这个接口用来将属性转化为bean， 实现类: BeanWrapperImpl 解决问题： 将属性放到bean里
+
 - PropertyEditor 用来转化新的类型， 将属性中的解析为bean中的属性 自定义: 继承PropertyEditorSupport， 并注册
-- BeanFactory 这个接口是BeanWrapper的扩展， 解决获取属性的问题， 
-- BeanFactoryPostProcessor: BeanFactory 也可以用PropertyEditor进行类型转换， 但是每次都要写好几个比较麻烦， 所以还可以用BeanFactoryPostProcessor。
-这个类里面可以有个属性： cutomEditors 用来存放各种PropertyEditor， 之后注册到BeanFactory中就可以进行类型转化了
+
+- BeanFactory 这个接口是BeanWrapper的扩展， 解决获取属性的问题。beanWrapper 解决了单个bean的加载问题， beanFactory 则解决多个bean的加载问题。
+
+  - bean属性值及依赖关系
+  - bean创建模式：是否为单例
+  - 初始化和销毁的方法
+  - bean的依赖关系
+
+- BeanFactoryPostProcessor: BeanFactory 也可以用PropertyEditor进行类型转换， 但是每次都要写好几个比较麻烦， 所以还可以用BeanFactoryPostProcessor, 实现类CustomEditorConfigurer。
+  这个类里面可以有个属性： cutomEditors 用来存放各种PropertyEditor， 之后注册到BeanFactory中就可以进行类型转化了
+
 - FactoryBean 是一个比较有用的接口， 实现类： MethodInvokingFactoryBean， 这个类可以执行某一个方法， 从而达到改变容器中某一个bean中的属性的目的
-相当从文件中获取到bean到真正获取bean之间的中间层， 可以在这个中间层中对这个bean进行一些操作， 比如：给属性赋值
+  相当从文件中获取到bean到真正获取bean之间的中间层， 可以在这个中间层中对这个bean进行一些操作， 比如：给属性赋值
+
 - ApplicationContext 是BeanFactory的扩展
   - 自动创建所有单例对象
+
   - 自动加载PostProcessor类， 进行类型转化
+
   - 同时载入多个配置文件
+
   - 资源载入
+
   - 国际化
+
+  - 事件传播
+
+    > 企业级服务：电子邮件、JNDI、EJB、远程调用、定是服务、模板框架（FreeMarker，Velocity
+    >
+    > ）
+
+###### spring event
+
+见demo
+
+@EventListener 的解析类：org.springframework.context.event.EventListenerMethodProcessor
+
+实现BeanFactoryPostProcessor接口
+
+###### bean生命周期
+
+1. instanitate 实例化
+2. populateProperties
+3. BeanNameAware setBeanName()
+4. BeanFactoryAware setBeanFactory()
+5. ApplicationContextAware setApplicationContext()   (just in context)
+6. Pre-initialization BeanPostProcessors postProcessBeforeInitialization()
+7. InitializingBean afterPropertiesSet()
+8. init-method
+9. Post-initialization BeanPostProcessors postProcessAfterInitialization()
+10. ready GO!
+
+---
+
+1. Container is shutdown
+2. disposableBean destroy()
+3. destroy-method
+4. end!
 
