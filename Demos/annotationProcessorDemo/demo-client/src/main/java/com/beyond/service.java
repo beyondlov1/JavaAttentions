@@ -3,6 +3,8 @@ package com.beyond;
 import com.beyond.gen.UserBuilder;
 import com.beyond.pojo.User;
 
+import java.util.Calendar;
+
 /**
  * @author beyondlov1
  * @date 2019/04/12
@@ -15,5 +17,6 @@ public class service {
                 .password("password")
                 .build();
         System.out.println(user.toString());
+
     }
 }

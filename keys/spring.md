@@ -129,7 +129,7 @@ xml方法
     >
     > ）
 
-###### spring event
+##### spring event
 
 见demo
 
@@ -137,7 +137,7 @@ xml方法
 
 实现BeanFactoryPostProcessor接口
 
-###### bean生命周期
+##### bean生命周期
 
 1. instanitate 实例化
 2. populateProperties
