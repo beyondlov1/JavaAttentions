@@ -32,8 +32,8 @@ class MyTask extends TimerTask{
             socket = new Socket();
             socket.setKeepAlive(true);
             SocketAddress socketAddress = new InetSocketAddress("localhost",7878);
-            socket.connect(socketAddress,1000);
-            socket.setSoTimeout(1000);
+            socket.connect(socketAddress,1000); // 连接超时
+            socket.setSoTimeout(1000); // SocketOption timeout 读超时
             is = socket.getInputStream();
             br =  new BufferedReader(new InputStreamReader(is));
             String info = null;

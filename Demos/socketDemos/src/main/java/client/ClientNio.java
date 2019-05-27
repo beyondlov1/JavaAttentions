@@ -22,7 +22,7 @@ public class ClientNio {
             Selector selector = Selector.open();
             //这里是有顺序的。要现配置，后connect
             socketChannel.configureBlocking(false);
-            socketChannel.connect(new InetSocketAddress("localhost", 7878));
+            socketChannel.connect(new InetSocketAddress("localhost", 7788));
             socketChannel.register(selector, SelectionKey.OP_CONNECT);
 
 //            while (true) {

@@ -2,7 +2,7 @@
  * @(#)NIOClient.java 2019-1-24上午11:02:05 Connection Copyright 2019 Thuisoft, Inc. All rights reserved. THUNISOFT PROPRIETARY/CONFIDENTIAL.
  * Use is subject to license terms.
  */
-package com.thunisoft.nioConn;
+package client;
 
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;

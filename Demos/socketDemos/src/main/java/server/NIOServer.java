@@ -2,7 +2,7 @@
  * @(#)NIOServer.java 2019-1-24上午11:01:54 Connection Copyright 2019 Thuisoft, Inc. All rights reserved. THUNISOFT PROPRIETARY/CONFIDENTIAL.
  * Use is subject to license terms.
  */
-package com.thunisoft.nioConn;
+package server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -25,8 +25,6 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class NIOServer {
-    //用于检测所有Channel状态的Selector
-    private Selector selector = null;
 
     //定义实现编码、解码的字符集对象
     private Charset charset = Charset.forName("UTF-8");
@@ -34,7 +32,8 @@ public class NIOServer {
     protected static final Logger logger = LoggerFactory.getLogger(NIOServer.class);
 
     public void init() throws IOException {
-        selector = Selector.open();
+        //用于检测所有Channel状态的Selector
+        Selector selector = Selector.open();
         //通过open方法来打开一个未绑定的ServerSocketChannel实例
         ServerSocketChannel server = ServerSocketChannel.open();
         InetSocketAddress isa = new InetSocketAddress("172.16.197.50", 30000);
