@@ -43,6 +43,14 @@ public class ServerNio2 {
                                     attachment.compact();
                                     channel.read(attachment, attachment, that);
                                 }
+                                try {
+                                    /**
+                                     * 这一句一定要加, 不然客户端会阻塞在read方法上
+                                     */
+                                    channel.shutdownOutput();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                             }
 
                             @Override

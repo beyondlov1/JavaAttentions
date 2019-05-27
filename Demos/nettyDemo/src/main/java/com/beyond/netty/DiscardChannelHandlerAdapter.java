@@ -14,12 +14,12 @@ public class DiscardChannelHandlerAdapter extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         ByteBuf in = (ByteBuf) msg;
         try {
-            while (in.isReadable()) { // (1)
+            while (in.isReadable()) {
                 System.out.print((char) in.readByte());
                 System.out.flush();
             }
         } finally {
-            ReferenceCountUtil.release(msg); // (2)
+            ReferenceCountUtil.release(msg);
         }
     }
 }
