@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be181579-0359-45b7-91ed-4a84e0bf0f10" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/promiseDemo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/src/main/java/com/beyond/promise/ArgCallable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/src/main/java/com/beyond/promise/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/src/main/java/com/beyond/promise/Promise.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../promiseDemo/src/main/java/com/beyond/promise/PromiseImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/netty/ServerDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/netty/ServerDemo.java" afterDir="false" />
-    </list>
+    <list default="true" id="be181579-0359-45b7-91ed-4a84e0bf0f10" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -265,7 +252,7 @@
     <property name="SearchEverywhereHistoryKey" value="Promise&#9;PSI&#9;JAVA://io.netty.util.concurrent.Promise&#10;ChannelContex&#9;PSI&#9;JAVA://io.netty.channel.ChannelHandlerContext&#10;ChannelInboundIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundInvoker&#10;ChannelIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundHandler" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559107896049" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559108682302" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../socketDemos" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -291,15 +278,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558937359554</updated>
-      <workItem from="1558937361124" duration="6180000" />
+      <workItem from="1558937361124" duration="6778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6180000" />
+    <option name="totallyTimeSpent" value="6778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="JRebel" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32995737" />
