@@ -108,9 +108,11 @@ xml方法
   - 初始化和销毁的方法
   - bean的依赖关系
 ---
-PropertiesBeanDefinitionReader: 从Resource中读取bean的属性, 并调用loadBeanDefinition(BeanFactory)加载到factory中. 这个方法不是由factory调用的原因可能是: factory更加专注于生产bean, 如何生产bean, 生产出什么样的bean. 并不倾向于factory的初始胡
+**PropertiesBeanDefinitionReader**: 从Resource中读取bean的属性, 并调用loadBeanDefinition(BeanFactory)加载到factory中. (这个方法不是由factory调用的原因可能是: factory更加专注于生产bean, 如何生产bean, 生产出什么样的bean. 并不倾向于关注factory的初始化)
 
-- BeanFactoryPostProcessor: BeanFactory 也可以用PropertyEditor进行类型转换， 但是每次都要写好几个比较麻烦， 所以还可以用BeanFactoryPostProcessor, 实现类CustomEditorConfigurer。
+---
+
+- **BeanFactoryPostProcessor**: BeanFactory 也可以用PropertyEditor进行类型转换， 但是每次都要写好几个比较麻烦， 所以还可以用BeanFactoryPostProcessor, 实现类CustomEditorConfigurer。
   这个类里面可以有个属性： cutomEditors 用来存放各种PropertyEditor， 之后注册到BeanFactory中就可以进行类型转化了
 
 - FactoryBean 是一个比较有用的接口， 实现类： MethodInvokingFactoryBean， 这个类可以执行某一个方法， 从而达到改变容器中某一个bean中的属性的目的
