@@ -103,14 +103,14 @@ xml方法
 
 - BeanFactory 这个接口是BeanWrapper的扩展， 解决获取属性的问题。beanWrapper 解决了单个bean的加载问题， beanFactory 则解决多个bean的加载问题。
 
-  - 获取属性: 解决对策-PropertiesBeanDefinitionReader 可以从外部资源加载属性值, 实现类-DefaultListableBeanFactory
+  - 获取属性: 解决对策-PropertiesBeanDefinitionReader 可以从外部资源加载属性值, 实现类-DefaultListableBeanFactory(properties)  XmlBeanFactory(xml)
   - bean属性值及依赖关系: 解决对策-在xml或者properties文件中配置
   - bean创建模式：是否为单例  解决对策-在xml或者properties文件中配置
   - 初始化和销毁的方法  解决对策-在xml或者properties文件中配置, 可配置init和destroy方法
   - bean的依赖关系 解决对策-在xml或者properties文件中配置
 ---
 **PropertiesBeanDefinitionReader**: 从Resource中读取bean的属性, 并调用loadBeanDefinition(BeanFactory)加载到factory中. (这个方法不是由factory调用的原因可能是: factory更加专注于生产bean, 如何生产bean, 生产出什么样的bean. 并不倾向于关注factory的初始化)
-
+**XmlBeanDefinitionReader **: 
 ---
 
 - **BeanFactoryPostProcessor**: BeanFactory 也可以用PropertyEditor进行类型转换， 但是每次都要写好几个比较麻烦， 所以还可以用BeanFactoryPostProcessor, 实现类CustomEditorConfigurer。
