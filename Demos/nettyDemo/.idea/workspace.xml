@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be181579-0359-45b7-91ed-4a84e0bf0f10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../promiseDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../promiseDemo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../socketDemos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../socketDemos/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -256,7 +255,7 @@
     <property name="SearchEverywhereHistoryKey" value="Promise&#9;PSI&#9;JAVA://io.netty.util.concurrent.Promise&#10;ChannelContex&#9;PSI&#9;JAVA://io.netty.channel.ChannelHandlerContext&#10;ChannelInboundIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundInvoker&#10;ChannelIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundHandler" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559211897600" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559212161657" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../socketDemos" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
