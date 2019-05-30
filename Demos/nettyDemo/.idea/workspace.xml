@@ -252,7 +252,7 @@
     <property name="SearchEverywhereHistoryKey" value="Promise&#9;PSI&#9;JAVA://io.netty.util.concurrent.Promise&#10;ChannelContex&#9;PSI&#9;JAVA://io.netty.channel.ChannelHandlerContext&#10;ChannelInboundIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundInvoker&#10;ChannelIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundHandler" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559187060433" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559193728889" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../socketDemos" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
