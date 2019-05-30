@@ -117,6 +117,9 @@ xml方法
 **XmlBeanDefinitionReader**: 读取xml
 
 ---
+注册PropertiesEditor
+  // 1. register globally         // PropertyEditorManager.registerEditor(Person[].class, ParentPropertyEditor.class);         // 2. regiser through factory         bf.registerCustomEditor(Person[].class, new ParentPropertyEditor());
+---
 
 - **BeanFactoryPostProcessor**: BeanFactory 也可以用PropertyEditor进行类型转换， 但是每次都要写好几个比较麻烦， 所以还可以用BeanFactoryPostProcessor, 实现类CustomEditorConfigurer。
   这个类里面可以有个属性： cutomEditors 用来存放各种PropertyEditor， 之后注册到BeanFactory中就可以进行类型转化了
