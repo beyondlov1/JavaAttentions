@@ -122,7 +122,7 @@ xml方法
 // 1. register globally
 PropertyEditorManager.registerEditor(Person[].class,ParentPropertyEditor.class);         
 // 2. regiser through factory         
-bf.registerCustomEditor(Person[].class, new ParentPropertyEditor());
+bf.registerCustomEditor(Person[].class, new ParentPropertyEditor()); // 继承自PropertyEditorSupport 
 ```
 ---
 
