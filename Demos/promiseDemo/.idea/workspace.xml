@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5d72905-8600-4277-b766-672f17096cce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../nettyDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../nettyDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../socketDemos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../socketDemos/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../keys/spring.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../keys/spring.md" afterDir="false" />
-    </list>
+    <list default="true" id="f5d72905-8600-4277-b766-672f17096cce" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -217,7 +213,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559185509585" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559186465476" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
