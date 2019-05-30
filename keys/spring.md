@@ -126,10 +126,13 @@ bf.registerCustomEditor(Person[].class, new ParentPropertyEditor()); // 继承�
 ```
 ---
 
-- **BeanFactoryPostProcessor**: BeanFactoryPostProcessor这个接口是用来在BeanFactory加载完bean之后对bean进行全局修改, 
+- **BeanFactoryPostProcessor**: BeanFactoryPostProcessor这个接口是用来在BeanFactory加载完bean之后对bean进行全局修改, 其实现类很多, 并不一定要以postProcessor结尾, 比如CustomEditorConfigure
 > Allows for custom modification of an application context's bean definitions,
- * adapting the bean property values of the context's underlying bean factory.
-  BeanFactory 也可以用PropertyEditor进行类型转换， 但是每次都要写好几个比较麻烦， 所以还可以用BeanFactoryPostProcessor, 实现类CustomEditorConfigurer。
+> adapting the bean property values of the context's underlying bean factory.
+>
+> Application contexts can auto-detect BeanFactoryPostProcessor beans in
+> their bean definitions and apply them before any other beans get created.
+-  BeanFactory 也可以用PropertyEditor进行类型转换， 但是每次都要写好几个比较麻烦， 所以还可以用BeanFactoryPostProcessor, 实现类CustomEditorConfigurer。
   这个类里面可以有个属性： cutomEditors 用来存放各种PropertyEditor， 之后注册到BeanFactory中就可以进行类型转化了
 
 - FactoryBean 是一个比较有用的接口， 实现类： MethodInvokingFactoryBean， 这个类可以执行某一个方法， 从而达到改变容器中某一个bean中的属性的目的
