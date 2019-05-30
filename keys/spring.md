@@ -99,12 +99,16 @@ xml方法
 
 - PropertyEditor 用来转化新的类型， 将属性中的解析为bean中的属性 自定义: 继承PropertyEditorSupport， 并注册
 
+---
+
 - BeanFactory 这个接口是BeanWrapper的扩展， 解决获取属性的问题。beanWrapper 解决了单个bean的加载问题， beanFactory 则解决多个bean的加载问题。
 
   - bean属性值及依赖关系
   - bean创建模式：是否为单例
   - 初始化和销毁的方法
   - bean的依赖关系
+---
+
 
 - BeanFactoryPostProcessor: BeanFactory 也可以用PropertyEditor进行类型转换， 但是每次都要写好几个比较麻烦， 所以还可以用BeanFactoryPostProcessor, 实现类CustomEditorConfigurer。
   这个类里面可以有个属性： cutomEditors 用来存放各种PropertyEditor， 之后注册到BeanFactory中就可以进行类型转化了
