@@ -103,6 +103,7 @@ xml方法
 
 - BeanFactory 这个接口是BeanWrapper的扩展， 解决获取属性的问题。beanWrapper 解决了单个bean的加载问题， beanFactory 则解决多个bean的加载问题。
 
+  - 获取属性: 
   - bean属性值及依赖关系
   - bean创建模式：是否为单例
   - 初始化和销毁的方法
