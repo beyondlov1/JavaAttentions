@@ -369,7 +369,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1932" />
@@ -475,7 +475,7 @@
     <property name="SearchEverywhereHistoryKey" value="channelPipeline&#9;FILE&#9;jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelPipeline.java&#10;ByteBufAll&#9;PSI&#9;JAVA://io.netty.buffer.ByteBufAllocator&#10;ByteBufferA&#9;PSI&#9;JAVA://com.sun.webkit.network.ByteBufferAllocator&#10;Promise&#9;PSI&#9;JAVA://io.netty.util.concurrent.Promise&#10;ChannelContex&#9;PSI&#9;JAVA://io.netty.channel.ChannelHandlerContext&#10;ChannelInboundIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundInvoker&#10;ChannelIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundHandler" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559640307171" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559640636468" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../socketDemos" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -510,7 +510,7 @@
     <option name="totallyTimeSpent" value="12227000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="JRebel" order="0" side_tool="true" />
