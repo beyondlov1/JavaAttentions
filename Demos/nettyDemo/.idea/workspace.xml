@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be181579-0359-45b7-91ed-4a84e0bf0f10" name="Default Changelist" comment="" />
+    <list default="true" id="be181579-0359-45b7-91ed-4a84e0bf0f10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../promiseDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../promiseDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../socketDemos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../socketDemos/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,89 +17,329 @@
     <session id="1992532677">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="20" />
+          <entry key="java" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="20" />
+          <entry key="JAVA" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="18" />
+          <entry key="java" value="107" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="18" />
+          <entry key="JAVA" value="107" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelHandlerContext.java">
+        <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/buffer/ByteBufAllocator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-160">
-              <caret line="124" column="34" lean-forward="true" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+            <state relative-caret-position="570">
+              <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/util/concurrent/Promise.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/netty/DiscardChannelHandlerAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/util/concurrent/DefaultPromise.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
+            <state relative-caret-position="325">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
-                <element signature="e#17576#17577#0" expanded="true" />
-                <element signature="e#17643#17644#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/util/concurrent/Future.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/netty/ServerDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <folding>
+                <element signature="e#851#1234#0" expanded="true" />
+                <element signature="e#1233#1234#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelPipeline.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="216" column="31" lean-forward="true" selection-start-line="216" selection-start-column="31" selection-end-line="216" selection-end-column="31" />
+              <folding>
+                <element signature="docComment;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addFirst#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addFirst#1;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addLast#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addLast#1;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addBefore#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addBefore#1;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addAfter#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addAfter#1;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addFirst#2;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addFirst#3;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addLast#2;class#ChannelPipeline#0" />
+                <element signature="docComment;method#addLast#3;class#ChannelPipeline#0" />
+                <element signature="docComment;method#remove#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#remove#1;class#ChannelPipeline#0" />
+                <element signature="docComment;method#remove#2;class#ChannelPipeline#0" />
+                <element signature="docComment;method#removeFirst#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#removeLast#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#replace#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#replace#1;class#ChannelPipeline#0" />
+                <element signature="docComment;method#replace#2;class#ChannelPipeline#0" />
+                <element signature="docComment;method#first#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#firstContext#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#last#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#lastContext#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#get#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#get#1;class#ChannelPipeline#0" />
+                <element signature="docComment;method#context#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#context#1;class#ChannelPipeline#0" />
+                <element signature="docComment;method#context#2;class#ChannelPipeline#0" />
+                <element signature="docComment;method#channel#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#names#0;class#ChannelPipeline#0" />
+                <element signature="docComment;method#toMap#0;class#ChannelPipeline#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/DefaultChannelPipeline.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="45" column="58" lean-forward="true" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
+              <folding>
+                <element signature="docComment;class#DefaultChannelPipeline#0" />
+                <element signature="e#3098#3564#0" />
+                <element signature="e#3633#3779#0" />
+                <element signature="e#3817#4203#0" />
+                <element signature="e#4209#4590#0" />
+                <element signature="e#4596#4736#0" />
+                <element signature="e#4742#4953#0" />
+                <element signature="e#4959#6015#0" />
+                <element signature="e#5629#5715#0" />
+                <element signature="e#6250#7352#0" />
+                <element signature="e#6636#6731#0" />
+                <element signature="e#7358#7603#0" />
+                <element signature="e#7755#8830#0" />
+                <element signature="e#8114#8209#0" />
+                <element signature="e#8836#9071#0" />
+                <element signature="e#9077#9248#0" />
+                <element signature="e#9254#10487#0" />
+                <element signature="e#9771#9866#0" />
+                <element signature="e#10493#10722#0" />
+                <element signature="e#10728#10933#0" />
+                <element signature="e#10939#11108#0" />
+                <element signature="e#11114#12352#0" />
+                <element signature="e#11630#11725#0" />
+                <element signature="e#12358#12586#0" />
+                <element signature="e#12841#13480#0" />
+                <element signature="e#13731#14126#0" />
+                <element signature="e#14132#15060#0" />
+                <element signature="e#14475#14579#0" />
+                <element signature="e#15200#15344#0" />
+                <element signature="e#15481#15511#0" />
+                <element signature="e#15481#15675#0" />
+                <element signature="e#15810#15949#0" />
+                <element signature="e#15955#16092#0" />
+                <element signature="e#16098#16355#0" />
+                <element signature="e#16361#17385#0" />
+                <element signature="e#16562#16657#0" />
+                <element signature="e#17391#17623#0" />
+                <element signature="e#17629#17827#0" />
+                <element signature="e#17833#18030#0" />
+                <element signature="e#18036#18252#0" />
+                <element signature="e#18258#18445#0" />
+                <element signature="e#18451#18460#0" />
+                <element signature="e#18451#18720#0" />
+                <element signature="e#18726#21057#0" />
+                <element signature="e#19428#19523#0" />
+                <element signature="e#20188#20282#0" />
+                <element signature="e#20693#20787#0" />
+                <element signature="e#21063#21909#0" />
+                <element signature="e#21351#21418#0" />
+                <element signature="e#21915#22412#0" />
+                <element signature="e#22418#23440#0" />
+                <element signature="e#23446#23831#0" />
+                <element signature="e#23837#24239#0" />
+                <element signature="e#24013#24112#0" />
+                <element signature="e#24245#24452#0" />
+                <element signature="e#24458#24676#0" />
+                <element signature="e#24682#24888#0" />
+                <element signature="e#24894#25104#0" />
+                <element signature="e#25110#25340#0" />
+                <element signature="e#25346#25376#0" />
+                <element signature="e#25346#25645#0" />
+                <element signature="e#25651#25850#0" />
+                <element signature="e#25856#26316#0" />
+                <element signature="e#26322#26838#0" />
+                <element signature="e#26844#27172#0" />
+                <element signature="e#27178#27568#0" />
+                <element signature="e#27715#27793#0" />
+                <element signature="e#27715#28496#0" />
+                <element signature="e#28502#28666#0" />
+                <element signature="e#28672#28840#0" />
+                <element signature="e#28846#29338#0" />
+                <element signature="e#29429#30315#0" />
+                <element signature="e#30321#31339#0" />
+                <element signature="e#31345#31501#0" />
+                <element signature="e#31507#31667#0" />
+                <element signature="e#32847#33018#0" />
+                <element signature="e#33317#33418#0" />
+                <element signature="e#33424#33578#0" />
+                <element signature="e#33584#33746#0" />
+                <element signature="e#33752#33969#0" />
+                <element signature="e#34361#34460#0" />
+                <element signature="e#34707#34854#0" />
+                <element signature="e#35099#35245#0" />
+                <element signature="e#35358#35501#0" />
+                <element signature="e#35604#35787#0" />
+                <element signature="e#35793#36113#0" />
+                <element signature="e#36119#36414#0" />
+                <element signature="e#36420#36753#0" />
+                <element signature="e#36759#37110#0" />
+                <element signature="e#37116#37990#0" />
+                <element signature="e#37564#37673#0" />
+                <element signature="e#37996#38590#0" />
+                <element signature="e#38596#38909#0" />
+                <element signature="e#38915#39125#0" />
+                <element signature="e#38915#39559#0" />
+                <element signature="e#39565#39722#0" />
+                <element signature="e#39565#39783#0" />
+                <element signature="e#39789#39949#0" />
+                <element signature="e#39789#40012#0" />
+                <element signature="e#40018#40335#0" />
+                <element signature="e#40018#40690#0" />
+                <element signature="e#40696#40860#0" />
+                <element signature="e#40696#40927#0" />
+                <element signature="e#40933#41263#0" />
+                <element signature="e#40933#41536#0" />
+                <element signature="e#41342#41409#0" />
+                <element signature="e#41542#41712#0" />
+                <element signature="e#41542#41778#0" />
+                <element signature="e#41784#42034#0" />
+                <element signature="e#42040#42290#0" />
+                <element signature="e#42296#44132#0" />
+                <element signature="e#42475#42626#0" />
+                <element signature="e#42732#42810#0" />
+                <element signature="e#42820#42900#0" />
+                <element signature="e#43348#43421#0" />
+                <element signature="e#43431#43506#0" />
+                <element signature="e#43516#43670#0" />
+                <element signature="e#44138#47868#0" />
+                <element signature="e#44318#44519#0" />
+                <element signature="e#44625#44726#0" />
+                <element signature="e#44736#44839#0" />
+                <element signature="e#44849#45039#0" />
+                <element signature="e#45049#45321#0" />
+                <element signature="e#46322#46491#0" />
+                <element signature="e#46501#46798#0" />
+                <element signature="e#46808#46960#0" />
+                <element signature="e#47243#47407#0" />
+                <element signature="e#47417#47555#0" />
+                <element signature="e#47874#48181#0" />
+                <element signature="e#48470#49185#0" />
+                <element signature="e#49197#50299#0" />
+                <element signature="e#49486#50293#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
-              <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+              <caret line="388" column="16" selection-start-line="388" selection-start-column="16" selection-end-line="388" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelOutboundInvoker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1439">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
               <folding>
-                <element signature="e#813#861#0" expanded="true" />
+                <element signature="docComment;method#bind#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#connect#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#connect#1;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#disconnect#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#close#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#deregister#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#bind#1;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#connect#2;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#connect#3;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#disconnect#1;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#close#1;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#deregister#1;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#read#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#write#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#write#1;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#flush#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#writeAndFlush#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#writeAndFlush#1;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#newPromise#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#newProgressivePromise#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#newSucceededFuture#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#newFailedFuture#0;class#ChannelOutboundInvoker#0" />
+                <element signature="docComment;method#voidPromise#0;class#ChannelOutboundInvoker#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="jar://E:/jdk/Java/jdk1.8.0_141/src.zip!/java/util/concurrent/Future.java">
+        <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelInboundInvoker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="77" column="16" lean-forward="true" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
+            <state relative-caret-position="390">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+              <folding>
+                <element signature="docComment;method#fireChannelRegistered#0;class#ChannelInboundInvoker#0" />
+                <element signature="docComment;method#fireChannelUnregistered#0;class#ChannelInboundInvoker#0" />
+                <element signature="docComment;method#fireChannelActive#0;class#ChannelInboundInvoker#0" />
+                <element signature="docComment;method#fireChannelInactive#0;class#ChannelInboundInvoker#0" />
+                <element signature="docComment;method#fireExceptionCaught#0;class#ChannelInboundInvoker#0" />
+                <element signature="docComment;method#fireUserEventTriggered#0;class#ChannelInboundInvoker#0" />
+                <element signature="docComment;method#fireChannelRead#0;class#ChannelInboundInvoker#0" />
+                <element signature="docComment;method#fireChannelReadComplete#0;class#ChannelInboundInvoker#0" />
+                <element signature="docComment;method#fireChannelWritabilityChanged#0;class#ChannelInboundInvoker#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -105,6 +349,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/netty/DiscardChannelHandlerAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/netty/ServerDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/netty/DefaultInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/netty/Demo.java" />
       </list>
     </option>
   </component>
@@ -220,25 +466,6 @@
               <item name="io" type="462c0819:PsiDirectoryNode" />
               <item name="netty" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="nettyDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: io.netty:netty-all:4.1.36.Final" type="70bed36:NamedLibraryElementNode" />
-              <item name="netty-all-4.1.36.Final.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="netty" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nettyDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: io.netty:netty-all:4.1.36.Final" type="70bed36:NamedLibraryElementNode" />
-              <item name="netty-all-4.1.36.Final.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="netty" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="concurrent" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -249,10 +476,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="Promise&#9;PSI&#9;JAVA://io.netty.util.concurrent.Promise&#10;ChannelContex&#9;PSI&#9;JAVA://io.netty.channel.ChannelHandlerContext&#10;ChannelInboundIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundInvoker&#10;ChannelIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundHandler" />
+    <property name="SearchEverywhereHistoryKey" value="channelPipeline&#9;FILE&#9;jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelPipeline.java&#10;ByteBufAll&#9;PSI&#9;JAVA://io.netty.buffer.ByteBufAllocator&#10;ByteBufferA&#9;PSI&#9;JAVA://com.sun.webkit.network.ByteBufferAllocator&#10;Promise&#9;PSI&#9;JAVA://io.netty.util.concurrent.Promise&#10;ChannelContex&#9;PSI&#9;JAVA://io.netty.channel.ChannelHandlerContext&#10;ChannelInboundIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundInvoker&#10;ChannelIn&#9;PSI&#9;JAVA://io.netty.channel.ChannelInboundHandler" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559216251685" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559628441723" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../socketDemos" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -279,37 +506,38 @@
       <option name="presentableId" value="Default" />
       <updated>1558937359554</updated>
       <workItem from="1558937361124" duration="6778000" />
+      <workItem from="1559554051131" duration="5449000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6778000" />
+    <option name="totallyTimeSpent" value="12227000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="JRebel" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32995737" />
-      <window_info id="Structure" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="JRebel Console" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Ant Build" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info id="JRebel" order="0" side_tool="true" />
+      <window_info id="Structure" order="1" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.18390192" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="JRebel Console" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Ant Build" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,16 +547,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/netty/DiscardChannelHandlerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/netty/EchoChannelHandlerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -357,27 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelInboundInvoker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/netty/ServerDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="35" column="40" lean-forward="true" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelPipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="216" column="49" selection-start-line="216" selection-start-column="49" selection-end-line="216" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelId.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -399,16 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelOutboundInvoker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="160" column="22" lean-forward="true" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/util/Attribute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -423,10 +610,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelHandlerContext.java">
+    <entry file="jar://E:/jdk/Java/jdk1.8.0_141/src.zip!/java/util/concurrent/Future.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
-          <caret line="124" column="34" lean-forward="true" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+        <state relative-caret-position="90">
+          <caret line="87" column="33" lean-forward="true" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/util/concurrent/Future.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="24" column="48" lean-forward="true" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -441,27 +635,519 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/util/concurrent/Future.java">
+    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/util/concurrent/Promise.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+        <state relative-caret-position="30">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelHandlerContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/jdk/Java/jdk1.8.0_141/javafx-src.zip!/com/sun/webkit/network/ByteBufferPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
           <folding>
-            <element signature="e#813#861#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/util/concurrent/Promise.java">
+    <entry file="jar://E:/jdk/Java/jdk1.8.0_141/src.zip!/java/nio/ByteBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        <state relative-caret-position="2458">
+          <caret line="309" column="29" selection-start-line="309" selection-start-column="29" selection-end-line="309" selection-end-column="29" />
+          <folding>
+            <element signature="e#9208#9209#0" expanded="true" />
+            <element signature="e#9261#9262#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/jdk/Java/jdk1.8.0_141/src.zip!/java/util/concurrent/Future.java">
+    <entry file="jar://E:/jdk/Java/jdk1.8.0_141/src.zip!/java/util/concurrent/Semaphore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="77" column="16" lean-forward="true" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
+        <state relative-caret-position="298">
+          <caret line="155" column="13" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/buffer/CompositeByteBuf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12570">
+          <caret line="2069" column="20" lean-forward="true" selection-start-line="2069" selection-start-column="20" selection-end-line="2069" selection-end-column="20" />
+          <folding>
+            <element signature="docComment;class#CompositeByteBuf#0" />
+            <element signature="e#2267#2878#0" />
+            <element signature="e#2884#3027#0" />
+            <element signature="e#3033#3205#0" />
+            <element signature="e#3211#3529#0" />
+            <element signature="e#3535#3883#0" />
+            <element signature="e#3889#4078#0" />
+            <element signature="class#4142:4406" />
+            <element signature="class#4476:4756" />
+            <element signature="e#4763#5111#0" />
+            <element signature="e#5117#5382#0" />
+            <element signature="e#5388#5638#0" />
+            <element signature="e#5644#6159#0" />
+            <element signature="e#6274#6908#0" />
+            <element signature="e#7030#7663#0" />
+            <element signature="e#7792#8409#0" />
+            <element signature="e#8544#8942#0" />
+            <element signature="e#8544#9110#0" />
+            <element signature="e#9116#9630#0" />
+            <element signature="e#9116#9896#0" />
+            <element signature="e#9902#10416#0" />
+            <element signature="e#9902#10598#0" />
+            <element signature="e#10604#11099#0" />
+            <element signature="e#10604#11357#0" />
+            <element signature="e#11363#11426#0" />
+            <element signature="e#11363#12337#0" />
+            <element signature="e#12343#13167#0" />
+            <element signature="e#13173#14063#0" />
+            <element signature="e#13173#14290#0" />
+            <element signature="e#14296#15972#0" />
+            <element signature="e#15978#16665#0" />
+            <element signature="e#16671#17392#0" />
+            <element signature="e#16671#17535#0" />
+            <element signature="e#17541#18208#0" />
+            <element signature="e#17541#20748#0" />
+            <element signature="e#19446#19470#0" />
+            <element signature="e#20754#22007#0" />
+            <element signature="e#22013#22180#0" />
+            <element signature="e#22013#22901#0" />
+            <element signature="e#22230#22319#0" />
+            <element signature="e#22907#23234#0" />
+            <element signature="e#23240#23696#0" />
+            <element signature="e#23702#24100#0" />
+            <element signature="e#24106#24260#0" />
+            <element signature="e#24106#24720#0" />
+            <element signature="e#24726#24971#0" />
+            <element signature="e#24726#25780#0" />
+            <element signature="e#25786#25957#0" />
+            <element signature="e#25963#26982#0" />
+            <element signature="e#26988#28057#0" />
+            <element signature="e#28063#28156#0" />
+            <element signature="e#28063#29319#0" />
+            <element signature="e#29325#29630#0" />
+            <element signature="e#29636#29876#0" />
+            <element signature="e#29882#30163#0" />
+            <element signature="e#30169#30473#0" />
+            <element signature="e#30479#30771#0" />
+            <element signature="e#30777#31130#0" />
+            <element signature="e#31136#31276#0" />
+            <element signature="e#31282#33161#0" />
+            <element signature="e#31765#31826#0" />
+            <element signature="e#32497#32566#0" />
+            <element signature="e#33337#33437#0" />
+            <element signature="e#33513#33609#0" />
+            <element signature="e#33690#33746#0" />
+            <element signature="e#33690#33868#0" />
+            <element signature="e#33874#34738#0" />
+            <element signature="e#34744#34865#0" />
+            <element signature="e#34871#35011#0" />
+            <element signature="e#35017#35162#0" />
+            <element signature="e#35168#35619#0" />
+            <element signature="e#35625#36080#0" />
+            <element signature="e#36086#36540#0" />
+            <element signature="e#36546#37008#0" />
+            <element signature="e#37014#37453#0" />
+            <element signature="e#37459#37910#0" />
+            <element signature="e#37916#38370#0" />
+            <element signature="e#38376#38842#0" />
+            <element signature="e#38848#39480#0" />
+            <element signature="e#39486#40246#0" />
+            <element signature="e#40252#40889#0" />
+            <element signature="e#40895#41413#0" />
+            <element signature="e#41419#42043#0" />
+            <element signature="e#42049#42620#0" />
+            <element signature="e#42626#42810#0" />
+            <element signature="e#42816#42972#0" />
+            <element signature="e#42978#43138#0" />
+            <element signature="e#43144#43623#0" />
+            <element signature="e#43629#44112#0" />
+            <element signature="e#44118#44280#0" />
+            <element signature="e#44286#44771#0" />
+            <element signature="e#44777#45270#0" />
+            <element signature="e#45276#45432#0" />
+            <element signature="e#45438#45923#0" />
+            <element signature="e#45929#46426#0" />
+            <element signature="e#46432#46591#0" />
+            <element signature="e#46597#47069#0" />
+            <element signature="e#47075#47559#0" />
+            <element signature="e#47565#48197#0" />
+            <element signature="e#48203#48963#0" />
+            <element signature="e#48969#49606#0" />
+            <element signature="e#49612#50693#0" />
+            <element signature="e#50699#51861#0" />
+            <element signature="e#51867#53066#0" />
+            <element signature="e#53072#53337#0" />
+            <element signature="e#53343#53864#0" />
+            <element signature="e#53870#54087#0" />
+            <element signature="e#53870#54220#0" />
+            <element signature="e#54226#54440#0" />
+            <element signature="e#54553#54830#0" />
+            <element signature="e#54553#54967#0" />
+            <element signature="e#54973#55252#0" />
+            <element signature="e#55468#55752#0" />
+            <element signature="e#55758#55984#0" />
+            <element signature="e#55990#56486#0" />
+            <element signature="e#56492#56909#0" />
+            <element signature="e#56915#57287#0" />
+            <element signature="e#57293#58054#0" />
+            <element signature="e#58060#59220#0" />
+            <element signature="e#59226#59286#0" />
+            <element signature="e#59226#59904#0" />
+            <element signature="e#59910#60101#0" />
+            <element signature="e#59910#60888#0" />
+            <element signature="e#60894#60957#0" />
+            <element signature="e#60894#62469#0" />
+            <element signature="e#62475#64336#0" />
+            <element signature="e#63741#63810#0" />
+            <element signature="e#64342#64478#0" />
+            <element signature="e#64484#64695#0" />
+            <element signature="e#64701#66465#0" />
+            <element signature="e#64904#65176#0" />
+            <element signature="e#65338#65518#0" />
+            <element signature="e#65528#65673#0" />
+            <element signature="e#65922#66459#0" />
+            <element signature="e#65948#66009#0" />
+            <element signature="e#66268#66340#0" />
+            <element signature="e#66471#66606#0" />
+            <element signature="e#66612#66747#0" />
+            <element signature="e#66753#66912#0" />
+            <element signature="e#66918#67015#0" />
+            <element signature="e#67021#67138#0" />
+            <element signature="e#67144#67263#0" />
+            <element signature="e#67269#67386#0" />
+            <element signature="e#67392#67511#0" />
+            <element signature="e#67517#67668#0" />
+            <element signature="e#67816#68037#0" />
+            <element signature="e#68577#68723#0" />
+            <element signature="e#68729#68885#0" />
+            <element signature="e#68891#69046#0" />
+            <element signature="e#69187#69322#0" />
+            <element signature="e#69328#69468#0" />
+            <element signature="e#69474#69613#0" />
+            <element signature="e#69619#69782#0" />
+            <element signature="e#69788#69921#0" />
+            <element signature="e#69927#70089#0" />
+            <element signature="e#70095#70217#0" />
+            <element signature="e#70223#70386#0" />
+            <element signature="e#70392#70513#0" />
+            <element signature="e#70519#70647#0" />
+            <element signature="e#70653#70808#0" />
+            <element signature="e#70814#70935#0" />
+            <element signature="e#70941#71064#0" />
+            <element signature="e#71070#71187#0" />
+            <element signature="e#71193#71313#0" />
+            <element signature="e#71319#71439#0" />
+            <element signature="e#71445#71591#0" />
+            <element signature="e#71597#71749#0" />
+            <element signature="e#71755#71897#0" />
+            <element signature="e#71903#72044#0" />
+            <element signature="e#72050#72215#0" />
+            <element signature="e#72221#72356#0" />
+            <element signature="e#72362#72526#0" />
+            <element signature="e#72532#72656#0" />
+            <element signature="e#72662#72783#0" />
+            <element signature="e#72789#72910#0" />
+            <element signature="e#72916#73015#0" />
+            <element signature="e#73425#73780#0" />
+            <element signature="e#73551#73608#0" />
+            <element signature="e#73931#74784#0" />
+            <element signature="e#74190#74652#0" />
+            <element signature="e#75014#75480#0" />
+            <element signature="e#75486#75587#0" />
+            <element signature="e#75593#76560#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/buffer/ByteBufAllocator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/netty/DiscardChannelHandlerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/netty/ServerDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="e#851#1234#0" expanded="true" />
+            <element signature="e#1233#1234#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelOutboundInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1439">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;method#bind#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#connect#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#connect#1;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#disconnect#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#close#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#deregister#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#bind#1;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#connect#2;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#connect#3;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#disconnect#1;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#close#1;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#deregister#1;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#read#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#write#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#write#1;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#flush#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#writeAndFlush#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#writeAndFlush#1;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#newPromise#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#newProgressivePromise#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#newSucceededFuture#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#newFailedFuture#0;class#ChannelOutboundInvoker#0" />
+            <element signature="docComment;method#voidPromise#0;class#ChannelOutboundInvoker#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/AbstractChannelHandlerContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="388" column="16" selection-start-line="388" selection-start-column="16" selection-end-line="388" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/DefaultChannelPipeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="45" column="58" lean-forward="true" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
+          <folding>
+            <element signature="docComment;class#DefaultChannelPipeline#0" />
+            <element signature="e#3098#3564#0" />
+            <element signature="e#3633#3779#0" />
+            <element signature="e#3817#4203#0" />
+            <element signature="e#4209#4590#0" />
+            <element signature="e#4596#4736#0" />
+            <element signature="e#4742#4953#0" />
+            <element signature="e#4959#6015#0" />
+            <element signature="e#5629#5715#0" />
+            <element signature="e#6250#7352#0" />
+            <element signature="e#6636#6731#0" />
+            <element signature="e#7358#7603#0" />
+            <element signature="e#7755#8830#0" />
+            <element signature="e#8114#8209#0" />
+            <element signature="e#8836#9071#0" />
+            <element signature="e#9077#9248#0" />
+            <element signature="e#9254#10487#0" />
+            <element signature="e#9771#9866#0" />
+            <element signature="e#10493#10722#0" />
+            <element signature="e#10728#10933#0" />
+            <element signature="e#10939#11108#0" />
+            <element signature="e#11114#12352#0" />
+            <element signature="e#11630#11725#0" />
+            <element signature="e#12358#12586#0" />
+            <element signature="e#12841#13480#0" />
+            <element signature="e#13731#14126#0" />
+            <element signature="e#14132#15060#0" />
+            <element signature="e#14475#14579#0" />
+            <element signature="e#15200#15344#0" />
+            <element signature="e#15481#15511#0" />
+            <element signature="e#15481#15675#0" />
+            <element signature="e#15810#15949#0" />
+            <element signature="e#15955#16092#0" />
+            <element signature="e#16098#16355#0" />
+            <element signature="e#16361#17385#0" />
+            <element signature="e#16562#16657#0" />
+            <element signature="e#17391#17623#0" />
+            <element signature="e#17629#17827#0" />
+            <element signature="e#17833#18030#0" />
+            <element signature="e#18036#18252#0" />
+            <element signature="e#18258#18445#0" />
+            <element signature="e#18451#18460#0" />
+            <element signature="e#18451#18720#0" />
+            <element signature="e#18726#21057#0" />
+            <element signature="e#19428#19523#0" />
+            <element signature="e#20188#20282#0" />
+            <element signature="e#20693#20787#0" />
+            <element signature="e#21063#21909#0" />
+            <element signature="e#21351#21418#0" />
+            <element signature="e#21915#22412#0" />
+            <element signature="e#22418#23440#0" />
+            <element signature="e#23446#23831#0" />
+            <element signature="e#23837#24239#0" />
+            <element signature="e#24013#24112#0" />
+            <element signature="e#24245#24452#0" />
+            <element signature="e#24458#24676#0" />
+            <element signature="e#24682#24888#0" />
+            <element signature="e#24894#25104#0" />
+            <element signature="e#25110#25340#0" />
+            <element signature="e#25346#25376#0" />
+            <element signature="e#25346#25645#0" />
+            <element signature="e#25651#25850#0" />
+            <element signature="e#25856#26316#0" />
+            <element signature="e#26322#26838#0" />
+            <element signature="e#26844#27172#0" />
+            <element signature="e#27178#27568#0" />
+            <element signature="e#27715#27793#0" />
+            <element signature="e#27715#28496#0" />
+            <element signature="e#28502#28666#0" />
+            <element signature="e#28672#28840#0" />
+            <element signature="e#28846#29338#0" />
+            <element signature="e#29429#30315#0" />
+            <element signature="e#30321#31339#0" />
+            <element signature="e#31345#31501#0" />
+            <element signature="e#31507#31667#0" />
+            <element signature="e#32847#33018#0" />
+            <element signature="e#33317#33418#0" />
+            <element signature="e#33424#33578#0" />
+            <element signature="e#33584#33746#0" />
+            <element signature="e#33752#33969#0" />
+            <element signature="e#34361#34460#0" />
+            <element signature="e#34707#34854#0" />
+            <element signature="e#35099#35245#0" />
+            <element signature="e#35358#35501#0" />
+            <element signature="e#35604#35787#0" />
+            <element signature="e#35793#36113#0" />
+            <element signature="e#36119#36414#0" />
+            <element signature="e#36420#36753#0" />
+            <element signature="e#36759#37110#0" />
+            <element signature="e#37116#37990#0" />
+            <element signature="e#37564#37673#0" />
+            <element signature="e#37996#38590#0" />
+            <element signature="e#38596#38909#0" />
+            <element signature="e#38915#39125#0" />
+            <element signature="e#38915#39559#0" />
+            <element signature="e#39565#39722#0" />
+            <element signature="e#39565#39783#0" />
+            <element signature="e#39789#39949#0" />
+            <element signature="e#39789#40012#0" />
+            <element signature="e#40018#40335#0" />
+            <element signature="e#40018#40690#0" />
+            <element signature="e#40696#40860#0" />
+            <element signature="e#40696#40927#0" />
+            <element signature="e#40933#41263#0" />
+            <element signature="e#40933#41536#0" />
+            <element signature="e#41342#41409#0" />
+            <element signature="e#41542#41712#0" />
+            <element signature="e#41542#41778#0" />
+            <element signature="e#41784#42034#0" />
+            <element signature="e#42040#42290#0" />
+            <element signature="e#42296#44132#0" />
+            <element signature="e#42475#42626#0" />
+            <element signature="e#42732#42810#0" />
+            <element signature="e#42820#42900#0" />
+            <element signature="e#43348#43421#0" />
+            <element signature="e#43431#43506#0" />
+            <element signature="e#43516#43670#0" />
+            <element signature="e#44138#47868#0" />
+            <element signature="e#44318#44519#0" />
+            <element signature="e#44625#44726#0" />
+            <element signature="e#44736#44839#0" />
+            <element signature="e#44849#45039#0" />
+            <element signature="e#45049#45321#0" />
+            <element signature="e#46322#46491#0" />
+            <element signature="e#46501#46798#0" />
+            <element signature="e#46808#46960#0" />
+            <element signature="e#47243#47407#0" />
+            <element signature="e#47417#47555#0" />
+            <element signature="e#47874#48181#0" />
+            <element signature="e#48470#49185#0" />
+            <element signature="e#49197#50299#0" />
+            <element signature="e#49486#50293#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelPipeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="216" column="31" lean-forward="true" selection-start-line="216" selection-start-column="31" selection-end-line="216" selection-end-column="31" />
+          <folding>
+            <element signature="docComment;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addFirst#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addFirst#1;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addLast#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addLast#1;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addBefore#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addBefore#1;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addAfter#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addAfter#1;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addFirst#2;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addFirst#3;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addLast#2;class#ChannelPipeline#0" />
+            <element signature="docComment;method#addLast#3;class#ChannelPipeline#0" />
+            <element signature="docComment;method#remove#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#remove#1;class#ChannelPipeline#0" />
+            <element signature="docComment;method#remove#2;class#ChannelPipeline#0" />
+            <element signature="docComment;method#removeFirst#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#removeLast#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#replace#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#replace#1;class#ChannelPipeline#0" />
+            <element signature="docComment;method#replace#2;class#ChannelPipeline#0" />
+            <element signature="docComment;method#first#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#firstContext#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#last#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#lastContext#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#get#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#get#1;class#ChannelPipeline#0" />
+            <element signature="docComment;method#context#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#context#1;class#ChannelPipeline#0" />
+            <element signature="docComment;method#context#2;class#ChannelPipeline#0" />
+            <element signature="docComment;method#channel#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#names#0;class#ChannelPipeline#0" />
+            <element signature="docComment;method#toMap#0;class#ChannelPipeline#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/netty/DefaultInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/netty/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/maven_repository/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final-sources.jar!/io/netty/channel/ChannelInboundInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="docComment;method#fireChannelRegistered#0;class#ChannelInboundInvoker#0" />
+            <element signature="docComment;method#fireChannelUnregistered#0;class#ChannelInboundInvoker#0" />
+            <element signature="docComment;method#fireChannelActive#0;class#ChannelInboundInvoker#0" />
+            <element signature="docComment;method#fireChannelInactive#0;class#ChannelInboundInvoker#0" />
+            <element signature="docComment;method#fireExceptionCaught#0;class#ChannelInboundInvoker#0" />
+            <element signature="docComment;method#fireUserEventTriggered#0;class#ChannelInboundInvoker#0" />
+            <element signature="docComment;method#fireChannelRead#0;class#ChannelInboundInvoker#0" />
+            <element signature="docComment;method#fireChannelReadComplete#0;class#ChannelInboundInvoker#0" />
+            <element signature="docComment;method#fireChannelWritabilityChanged#0;class#ChannelInboundInvoker#0" />
+          </folding>
         </state>
       </provider>
     </entry>
