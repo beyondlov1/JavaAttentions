@@ -41,4 +41,5 @@ https://www.cnblogs.com/harrychinese/p/springboot_flyway.html
 https://blog.csdn.net/weigeshikebi/article/details/80504895
 
 
-### 回退
+### 回退（未验证）
+https://bbs.csdn.net/topics/391815336
