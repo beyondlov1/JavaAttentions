@@ -75,4 +75,18 @@ ContextHolder.setContext(this);
 
 大坑：5.2.4 和 6.0.0-beta2 :
 新的采用链式编程， 在本机测试不支持android sqlite, 原因可能是判断sqlite版本错（源码中貌似是获取的sqlite数据库的version， 但是这个version是数据库更新（alter...）的版本， 不是数据库的版本, 这是个bug。
-不过通过反射的方式可以暂时更改数据库更新版本
+不过通过反射的方式可以暂时更改数据库更新版本：
+```
+        //添加在创建datasource后边
+        try {
+            DatabaseMetaData metaData = dataSource.getConnection().getMetaData();
+            Class<? extends DatabaseMetaData> aClass = metaData.getClass();
+            Field con = aClass.getDeclaredField("con");
+            con.setAccessible(true);
+            SQLDroidConnection connection = (SQLDroidConnection)con.get(metaData);
+            connection.getDb().getSqliteDatabase().setVersion(3);
+        } catch (SQLException | NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+```
+但是：
