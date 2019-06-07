@@ -14,6 +14,7 @@ spring.flyway.baselineOnMigrate=true
 spring.flyway.schemas=test
 ```
 baselineOnMigrate这个属性是如果启动时没有这个表， 就在数据新建这个表， 并且以现在的状态作为基线， ps： 这里会把版本设置V1， 所以文件以V1开头的脚本并不会执行
+schemas这个指定默认的schema
 
 ### 脚本文件格式
 V1__XXXX.sql
@@ -22,3 +23,11 @@ or V2__XXX.sql
 
 ### java 代码
 ```
+   // Create the Flyway instance and point it to the database
+        Flyway flyway = Flyway.configure().dataSource("jdbc:mysql://localhost:3306/test", "sa", "").load();
+
+        // Start the migration
+        flyway.migrate();
+
+```
+
