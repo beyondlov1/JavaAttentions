@@ -73,4 +73,5 @@ ContextHolder.setContext(this);
 ```
 这是3.0的写法
 
-大坑：5.2.4 和 6.0.0-
+大坑：5.2.4 和 6.0.0-beta2 :
+新的采用链式编程， 在本机测试不支持android sqlite, 
