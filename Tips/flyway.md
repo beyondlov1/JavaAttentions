@@ -47,5 +47,9 @@ https://bbs.csdn.net/topics/391815336
 demo: spring-boot-test
 
 ### android+flyway 超级大坑
-gradle: 
+gradle: dependency
 ```
+ implementation 'org.flywaydb:flyway-core:3.0'
+    implementation 'org.sqldroid:sqldroid:1.1.0-rc1'
+```
+ps: 这里要用3.0, 因为最新版本会报setEscapeProcessing not imple
