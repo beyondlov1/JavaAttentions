@@ -36,4 +36,4 @@ resourse/db/migration
 https://www.cnblogs.com/harrychinese/p/springboot_flyway.html
 
 ###  Migration checksum mismatch for migration version 1.3
-
+解决办法直接改表， 把对应
