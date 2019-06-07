@@ -15,3 +15,10 @@ spring.flyway.schemas=test
 ```
 baselineOnMigrate这个属性是如果启动时没有这个表， 就在数据新建这个表， 并且以现在的状态作为基线， ps： 这里会把版本设置V1， 所以文件以V1开头的脚本并不会执行
 
+### 脚本文件格式
+V1__XXXX.sql
+V1.1___XXX.sql
+or V2__XXX.sql
+
+### java 代码
+```
