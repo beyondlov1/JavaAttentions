@@ -63,4 +63,14 @@ android 的 json 下添加：
 ```
 java: 
 ```
+        DroidDataSource dataSource = new DroidDataSource(getPackageName(), "databases/beyond_not_safe_flyway_test");
+ContextHolder.setContext(this);
+        Flyway flyway = new Flyway();
+        flyway.setDataSource(dataSource);
+        flyway.setInitOnMigrate(true);
+
+        flyway.migrate();
 ```
+这是3.0的写法
+
+大坑：5.2.4 和 6.0.0-
