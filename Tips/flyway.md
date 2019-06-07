@@ -32,3 +32,8 @@ or V2__XXX.sql
 ```
 ### 默认脚本地址
 resourse/db/migration
+可由配置修改
+https://www.cnblogs.com/harrychinese/p/springboot_flyway.html
+
+###  Migration checksum mismatch for migration version 1.3
+
