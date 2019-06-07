@@ -13,4 +13,5 @@ spring.datasource.password=
 spring.flyway.baselineOnMigrate=true
 spring.flyway.schemas=test
 ```
-baselineOnMigrate这个属性是如果启动时没有这个表， 就在数据新建这个表， 并且以
+baselineOnMigrate这个属性是如果启动时没有这个表， 就在数据新建这个表， 并且以现在的状态作为基线， ps： 这里会把版本设置V1， 所以文件以V1开头的脚本并不会执行
+
