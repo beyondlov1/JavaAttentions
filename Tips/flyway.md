@@ -52,4 +52,15 @@ gradle: dependency
  implementation 'org.flywaydb:flyway-core:3.0'
     implementation 'org.sqldroid:sqldroid:1.1.0-rc1'
 ```
-ps: 这里要用3.0, 因为最新版本会报setEscapeProcessing not imple
+ps: 这里要用3.0, 因为最新版本会报setEscapeProcessing not implemented
+android 的 json 下添加：
+```
+
+    sourceSets {
+        // Place your db/migration folder here
+        main { assets.srcDirs = ['src/main/assets'] }
+    }
+```
+java: 
+```
+```
