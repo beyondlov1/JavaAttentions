@@ -91,4 +91,4 @@ ContextHolder.setContext(this);
 ```
 但是：这种方法有两个问题
 1. 这种方法会更改数据库的更新版本， 由于更新版本不能降级， 所以可能会出现问题，比如：greendao会默认将更新版本设置为1, 所以就会报错
-2. 在
+2. 在新版本中， 就算这样把版本的问题解决了， 还是会有其他问题， 比如：setEscapeProcessing not implemented 的错误。 从stackoverflow 上看到解决这个错误的
