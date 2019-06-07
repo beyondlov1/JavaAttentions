@@ -94,4 +94,4 @@ ContextHolder.setContext(this);
 2. 在新版本中， 就算这样把版本的问题解决了， 还是会有其他问题， 比如：setEscapeProcessing not implemented 的错误。 从 stackoverflow 上看到解决这个错误的方法也就貌似只有把flyway降级到 3.0 这个办法了。
 
 注意： DroidDataSource dataSource = new DroidDataSource(getPackageName(), "databases/beyond_not_safe_flyway_test");
-这里的路径是拼接起来的 /
+这里的路径是拼接起来的 /data/data/+xxx+.db ,所以不要多加 .db
