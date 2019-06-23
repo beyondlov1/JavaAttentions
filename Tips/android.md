@@ -553,4 +553,5 @@ recyclerView.setOnTouchListener(new View.OnTouchListener() {
                     }
                 });
 
-### 
+### SQLite
+SQLite 的文件是可以复制的， 但是如果用RE文件管理器复制，则需要在复制之后更改SE上下文， 修改为默认！！！
