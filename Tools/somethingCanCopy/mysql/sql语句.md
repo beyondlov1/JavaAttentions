@@ -19,3 +19,6 @@ https://codeday.me/bug/20190409/851403.html
 后者是把数据插入已经存在的一个表中，我个人喜欢后者，因为在编程的结构上，应用的范围上，第二条语句强于前者。
 
 insert into TEST select name,id,age from TEST2;
+
+### sql playground
+https://www.db-fiddle.com/
