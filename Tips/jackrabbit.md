@@ -60,3 +60,7 @@ public static byte[] get(String url, Map<String, String> headers) throws ClientP
 ```
 
 https://blog.csdn.net/User_xiangpeng/article/details/73742227
+
+
+### jackrabbit ubuntu 503
+原因是路径中存在汉字
