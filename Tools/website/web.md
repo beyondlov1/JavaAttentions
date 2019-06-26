@@ -8,4 +8,4 @@ https://www.json.cn/
 http://ip111.cn/
 
 ### distill web monitor
-good
+chrome 插件 - 可以检测网页的变化, 原理: 定时打开那个网页检测
