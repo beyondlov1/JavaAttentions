@@ -48,3 +48,7 @@ public static void resetStaticVar()
 方法: https://www.cnblogs.com/duwanjiang/p/6390379.html  (这个里面有添加库的引导)
 
 https://blog.csdn.net/jinny_0019/article/details/80065452 （这个里有选64位jre的引导）
+
+
+### zero copy
+https://developer.ibm.com/articles/j-zerocopy/
