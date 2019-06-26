@@ -21,6 +21,8 @@ MyEclipse中尽管都设置了utf-8，但是仍然会出现乱码
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 ```
 
+### 自适应页面
+http://www.ruanyifeng.com/blog/2012/05/responsive_web_design.html
 
 
 
