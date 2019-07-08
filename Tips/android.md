@@ -555,3 +555,9 @@ recyclerView.setOnTouchListener(new View.OnTouchListener() {
 
 ### SQLite
 SQLite 的文件是可以复制的， 但是如果用RE文件管理器复制，则需要在复制之后更改SE上下文， 修改为默认！！！
+
+### 状态栏 statusBar
+https://www.jianshu.com/p/18bed581a4f2
+https://www.jianshu.com/p/18bed581a4f2
+
+隐藏状态栏时跳一下的问题，解决方法：隐藏之前的状态栏要在Layout_FullScreen的状态， 隐藏时要|上以前的flags，参考 note5 中的 mainActivity -> detail 
