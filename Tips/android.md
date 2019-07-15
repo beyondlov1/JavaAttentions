@@ -574,4 +574,4 @@ https://www.jianshu.com/p/18bed581a4f2
 
 ### spanned
 各种span: https://aichixihongshi.iteye.com/blog/1207503
-suggestSpan: https://gist.github.com/iljaosintsev/98ff9f4b9a82d690c363790017521939
+suggestSpan: https://gist.github.com/iljaosintsev/98ff9f4b9a82d690c363790017521939, http://www.it610.com/article/1194533.htm
