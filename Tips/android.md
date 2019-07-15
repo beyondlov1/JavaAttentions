@@ -561,3 +561,12 @@ https://www.jianshu.com/p/18bed581a4f2
 https://www.jianshu.com/p/18bed581a4f2
 
 隐藏状态栏时跳一下的问题，解决方法：隐藏之前的状态栏要在Layout_FullScreen的状态， 隐藏时要|上以前的flags，参考 note5 中的 mainActivity -> detail 
+
+### editText 自动获取焦点问题
+
+```
+ android:focusable="true"
+ android:focusableInTouchMode="true"
+ ```
+ 参考: https://blog.csdn.net/c529836078/article/details/51595893
+ https://blog.csdn.net/zice_/article/details/51769354
