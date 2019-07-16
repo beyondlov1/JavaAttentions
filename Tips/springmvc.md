@@ -154,3 +154,18 @@ JSR的方式(javax接口):
 #### spring mvc 拦截器
 
 参考: https://blog.csdn.net/eson_15/article/details/51749880
+
+### spring boot+ jsp
+要加上这两个依赖
+  <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-jasper</artifactId>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+    </dependency>
+    
+    https://stackoverflow.com/questions/29782915/spring-boot-jsp-404
+    https://hellokoding.com/spring-boot-hello-world-example-with-jsp/
