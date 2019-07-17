@@ -71,3 +71,19 @@ mybatis 根据**接口返回值的类型**来决定用什么方法
         #{item.id}  
     </foreach>  
 </select>  
+
+### mybatis绑定错误 org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.yo.news.user.mapper.UserMapper.getUserByTelPwd
+pom.xml
+<build>
+<resources>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+            <filtering>false</filtering>
+        </resource>
+</resources>
+
+
+https://www.jianshu.com/p/800fe918cc7a
