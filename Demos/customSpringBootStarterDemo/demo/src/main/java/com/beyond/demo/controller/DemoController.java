@@ -1,5 +1,6 @@
 package com.beyond.demo.controller;
 
+import com.beyond.demo.mapper.UserMapper;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,5 +47,13 @@ public class DemoController {
     public Object testPathVariable(@PathVariable String id){
         System.out.println(id);
         return id;
+    }
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @RequestMapping("/testMybatis")
+    public Object testMybatis(){
+        return userMapper.selectAllUser();
     }
 }
