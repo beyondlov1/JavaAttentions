@@ -10,7 +10,10 @@ import org.springframework.integration.dsl.Pollers;
 import org.springframework.integration.file.dsl.Files;
 import org.springframework.integration.transformer.GenericTransformer;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 @MapperScan("com.beyond.demo.mapper")
 @SpringBootApplication
