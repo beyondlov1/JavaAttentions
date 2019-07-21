@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         SqlSession session = SessionUtil.getSession();
         UserMapper mapper = session.getMapper(UserMapper.class);
-        List<User> users = mapper.selectAllUser();
+        List<User> users = mapper.selectByUsername("beyond");
         for (User user : users) {
             System.out.println(user.getUsername());
         }
