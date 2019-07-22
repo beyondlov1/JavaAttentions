@@ -9,9 +9,19 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+//        SqlSession session = SessionUtil.getSession();
+//        UserMapper mapper = session.getMapper(UserMapper.class);
+//        List<User> users = mapper.selectByUsername("beyond");
+//        for (User user : users) {
+//            System.out.println(user.getUsername());
+//        }
+//        session.close();
+
         SqlSession session = SessionUtil.getSession();
         UserMapper mapper = session.getMapper(UserMapper.class);
-        List<User> users = mapper.selectByUsername("beyond");
+        User queryObject = new User();
+        queryObject.setUsername("beyond");
+        List<User> users = mapper.selectByUser(queryObject);
         for (User user : users) {
             System.out.println(user.getUsername());
         }

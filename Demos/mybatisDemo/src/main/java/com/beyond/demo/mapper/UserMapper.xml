@@ -14,4 +14,11 @@
         </where>;
     </select>
 
+    <select id="selectByUser" resultType="com.beyond.demo.bean.User">
+        SELECT * FROM bookshop.user
+        <where>
+            username = #{username}
+        </where>;
+    </select>
+
 </mapper>
