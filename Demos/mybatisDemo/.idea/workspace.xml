@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a19c842-7e86-4db3-a89a-35c77fd0a5a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/CompletionServiceDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/CountDownLatchDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/ClassLoadDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/src/main/java/com/beyond/demo/controller/SpringTraceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/src/main/java/com/beyond/demo/controller/SpringTraceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/demo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/demo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/SessionUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/SessionUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/bean/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/bean/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Main$RedoRecordProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Main$RedoRecordProxy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Main$RedoableFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Main$RedoableFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Signature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Signature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Target$Callback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Target$Callback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Target$MyCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Target$MyCallback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Target.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/Target.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/TargetInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/reflect/TargetInterface.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,13 +27,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2737" />
+          <entry key="java" value="2860" />
           <entry key="xml" value="164" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2737" />
+          <entry key="JAVA" value="2860" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="163" />
         </counts>
@@ -58,7 +41,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="java" value="317" />
+          <entry key="java" value="319" />
           <entry key="properties" value="2" />
           <entry key="xml" value="12" />
         </counts>
@@ -66,7 +49,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="317" />
+          <entry key="JAVA" value="319" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="12" />
         </counts>
@@ -82,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/CompletionServiceDemo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="202">
-              <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#467#476#0" expanded="true" />
@@ -106,7 +89,7 @@
         <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/LinkedBlockingQueue.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="212">
-              <caret line="80" column="29" lean-forward="true" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
+              <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
               <folding>
                 <element signature="e#7388#7389#0" expanded="true" />
                 <element signature="e#7427#7428#0" expanded="true" />
@@ -129,15 +112,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/Executors.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="217" column="52" lean-forward="true" selection-start-line="217" selection-start-column="52" selection-end-line="217" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/SynchronousQueue.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
@@ -150,14 +124,36 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/ExecutorCompletionService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="261">
-              <caret line="180" column="38" lean-forward="true" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
+              <caret line="180" column="38" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
               <folding>
                 <element signature="e#6000#6001#0" expanded="true" />
                 <element signature="e#6045#6046#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/ClassLoadDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/ToLoad.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+              <folding>
+                <element signature="e#145#146#0" expanded="true" />
+                <element signature="e#181#182#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -177,15 +173,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="219">
               <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="1236" column="71" selection-start-line="1236" selection-start-column="71" selection-end-line="1236" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -229,6 +216,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/CountDownLatchDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/CompleteServiceDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/CompletionServiceDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/ToLoadClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/ToLoad.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/ClassLoadDemo.java" />
       </list>
     </option>
   </component>
@@ -245,10 +235,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="30" />
+    <option name="y" value="-10" />
+    <option name="width" value="1350" />
+    <option name="height" value="690" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -577,7 +568,7 @@
     <property name="SearchEverywhereHistoryKey" value="ExecutorService&#9;PSI&#9;JAVA://java.util.concurrent.ExecutorService&#10;TypeHandler&#9;FILE&#9;jar://C:/Users/beyond/.m2/repository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/type/TypeHandler.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563785639795" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563886770690" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -609,7 +600,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CompletionServiceDemo">
+  <component name="RunManager" selected="Application.ClassLoadDemo">
+    <configuration name="ClassLoadDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.beyond.demo.playground.ClassLoadDemo" />
+      <module name="mybatisDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.beyond.demo.playground.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CompletionServiceDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.beyond.demo.playground.CompletionServiceDemo" />
       <module name="mybatisDemo" />
@@ -667,9 +671,11 @@
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.CountDownLatchDemo" />
       <item itemvalue="Application.CompletionServiceDemo" />
+      <item itemvalue="Application.ClassLoadDemo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClassLoadDemo" />
         <item itemvalue="Application.CompletionServiceDemo" />
         <item itemvalue="Application.CountDownLatchDemo" />
         <item itemvalue="Application.Main" />
@@ -689,15 +695,15 @@
       <updated>1563375950894</updated>
       <workItem from="1563375955505" duration="9392000" />
       <workItem from="1563515022206" duration="2306000" />
-      <workItem from="1563616754374" duration="25105000" />
+      <workItem from="1563616754374" duration="27966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36803000" />
+    <option name="totallyTimeSpent" value="39664000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49822065" visible="true" weight="0.17158177" />
@@ -811,23 +817,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/scripting/xmltags/WhereSqlNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/scripting/defaults/RawSqlSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#2189#2190#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/scripting/xmltags/TrimSqlNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -1217,7 +1206,7 @@
     <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/LinkedBlockingQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
-          <caret line="80" column="29" lean-forward="true" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
+          <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
           <folding>
             <element signature="e#7388#7389#0" expanded="true" />
             <element signature="e#7427#7428#0" expanded="true" />
@@ -1250,7 +1239,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/CompletionServiceDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
-          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#467#476#0" expanded="true" />
@@ -1284,11 +1273,29 @@
     <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/ExecutorCompletionService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
-          <caret line="180" column="38" lean-forward="true" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
+          <caret line="180" column="38" selection-start-line="180" selection-start-column="38" selection-end-line="180" selection-end-column="38" />
           <folding>
             <element signature="e#6000#6001#0" expanded="true" />
             <element signature="e#6045#6046#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/ToLoad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#145#146#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/demo/playground/ClassLoadDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>

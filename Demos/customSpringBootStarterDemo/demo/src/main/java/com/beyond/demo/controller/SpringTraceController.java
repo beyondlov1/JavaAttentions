@@ -1,5 +1,7 @@
 package com.beyond.demo.controller;
 
+import org.springframework.context.EnvironmentAware;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,7 +12,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @SessionAttributes("articleId")
-public class SpringTraceController {
+public class SpringTraceController implements EnvironmentAware {
+
+    private Environment environment;
+
     private String[] sensitiveStrs = new String[] {"a","b"};
 
     @ModelAttribute("comment")
@@ -38,5 +43,10 @@ public class SpringTraceController {
         model.addAttribute("articleTitle","articleTitle"+articleId);
         model.addAttribute("article","articleContent"+articleId);
         return "demo";
+    }
+
+    @Override
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
     }
 }
