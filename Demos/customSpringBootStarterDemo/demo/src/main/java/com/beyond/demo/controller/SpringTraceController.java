@@ -1,7 +1,9 @@
 package com.beyond.demo.controller;
 
+import com.beyond.demo.bean.User;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -44,6 +46,15 @@ public class SpringTraceController implements EnvironmentAware {
         model.addAttribute("article","articleContent"+articleId);
         return "demo";
     }
+
+
+    @RequestMapping("/showUser")
+    public HttpEntity showUser(User user){
+        System.out.println(user.getUsername());
+        System.out.println(user.getPassword());
+        return new HttpEntity<>(user);
+    }
+
 
     @Override
     public void setEnvironment(Environment environment) {
