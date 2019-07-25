@@ -92,3 +92,41 @@ Aspect中的@AfterReturning,@AfterThrowing注解的方法中有returnValue, Exce
 
 http://www.cnblogs.com/lzrabbit/p/3750803.html
 
+### @configurable 可以用来配置spring容器以外的bean
+可以将spring容器中的bean注入到自己新建的bean里面, 比如 new Foo() ...
+spring boot 需要增加 @EnableSpringConfigured
+
+maven:
+     <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+        </dependency>
+	
+	 <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <version>1.8</version>
+                <configuration>
+                    <complianceLevel>1.8</complianceLevel>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <outxml>true</outxml>
+                    <verbose>true</verbose>
+                    <showWeaveInfo>true</showWeaveInfo>
+                    <aspectLibraries>
+                        <aspectLibrary>
+                            <groupId>org.springframework</groupId>
+                            <artifactId>spring-aspects</artifactId>
+                        </aspectLibrary>
+                    </aspectLibraries>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
