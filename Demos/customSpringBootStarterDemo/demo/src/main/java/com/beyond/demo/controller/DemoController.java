@@ -1,8 +1,13 @@
 package com.beyond.demo.controller;
 
 import com.beyond.demo.mapper.UserMapper;
+import com.beyond.demo.palyground.configable.SelfCreated;
+import com.beyond.demo.palyground.configable.SelfCreatedInterface;
 import org.jooq.DSLContext;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,10 +19,13 @@ import org.springframework.web.client.RestTemplate;
  * @date 2019/04/05
  */
 @RestController
-public class DemoController {
+public class DemoController implements ApplicationContextAware {
 
     @Autowired
     DSLContext create;
+
+    private ApplicationContext applicationContext;
+
 
 //    @RequestMapping("/test")
 //    public Object test() {
@@ -46,6 +54,9 @@ public class DemoController {
     @RequestMapping("/testPathVariable/{id}")
     public Object testPathVariable(@PathVariable String id){
         System.out.println(id);
+        SelfCreatedInterface selfCreated1 = new SelfCreated();
+//        SelfCreatedInterface selfCreated = applicationContext.getBean("selfCreated", SelfCreatedInterface.class);
+//        selfCreated.play();
         return id;
     }
 
@@ -55,5 +66,10 @@ public class DemoController {
     @RequestMapping("/testMybatis")
     public Object testMybatis(){
         return userMapper.selectAllUser();
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
     }
 }

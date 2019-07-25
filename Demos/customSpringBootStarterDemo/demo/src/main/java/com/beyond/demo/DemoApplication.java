@@ -1,14 +1,17 @@
 package com.beyond.demo;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.dsl.Pollers;
 import org.springframework.integration.file.dsl.Files;
 import org.springframework.integration.transformer.GenericTransformer;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -17,7 +20,9 @@ import java.io.IOException;
 
 @MapperScan("com.beyond.demo.mapper")
 @SpringBootApplication
-public class DemoApplication {
+@Component
+@EnableSpringConfigured
+public class DemoApplication implements CommandLineRunner{
 
 
     @Bean
@@ -51,5 +56,11 @@ public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
+
+    @Override
+    public void run(String... args) throws Exception {
+
+    }
+
 
 }
