@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a19c842-7e86-4db3-a89a-35c77fd0a5a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/src/main/java/com/beyond/demo/palyground/configable/SelfCreated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/src/main/java/com/beyond/demo/palyground/configable/SelfCreatedInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/src/main/java/com/beyond/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/src/main/java/com/beyond/demo/DemoApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/src/main/java/com/beyond/demo/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/src/main/java/com/beyond/demo/controller/DemoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/src/main/java/com/beyond/demo/palyground/configable/SelfCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customSpringBootStarterDemo/demo/src/main/java/com/beyond/demo/palyground/configable/SelfCreated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,7 +19,7 @@
     <session id="1734593312">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.26" value="1" />
@@ -242,7 +240,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="30" />
     <option name="y" value="-10" />
     <option name="width" value="1350" />
@@ -703,16 +701,15 @@
       <workItem from="1563375955505" duration="9392000" />
       <workItem from="1563515022206" duration="2306000" />
       <workItem from="1563616754374" duration="30866000" />
-      <workItem from="1564058088039" duration="607000" />
+      <workItem from="1564058088039" duration="1204000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43171000" />
+    <option name="totallyTimeSpent" value="43768000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49822065" visible="true" weight="0.1735925" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

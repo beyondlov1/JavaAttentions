@@ -54,9 +54,9 @@ public class DemoController implements ApplicationContextAware {
     @RequestMapping("/testPathVariable/{id}")
     public Object testPathVariable(@PathVariable String id){
         System.out.println(id);
-        SelfCreatedInterface selfCreated1 = new SelfCreated();
-//        SelfCreatedInterface selfCreated = applicationContext.getBean("selfCreated", SelfCreatedInterface.class);
-//        selfCreated.play();
+        SelfCreatedInterface selfCreated = new SelfCreated();
+        DemoController demoController = ((SelfCreated) selfCreated).getDemoController();
+        System.out.println(demoController);
         return id;
     }
 
