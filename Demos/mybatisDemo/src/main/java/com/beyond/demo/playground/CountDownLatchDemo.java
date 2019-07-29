@@ -49,6 +49,17 @@ class Service implements Runnable{
         }finally {
             countDownLatch.countDown();
         }
+
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        doOthers();
+    }
+
+    private void doOthers() {
+        System.out.println("do others");
     }
 
     private void doService() {

@@ -1,8 +1,8 @@
 package com.beyond.demo.controller;
 
 import com.beyond.demo.mapper.UserMapper;
-import com.beyond.demo.palyground.configable.SelfCreated;
-import com.beyond.demo.palyground.configable.SelfCreatedInterface;
+import com.beyond.demo.playground.configable.SelfCreated;
+import com.beyond.demo.playground.configable.SelfCreatedInterface;
 import org.jooq.DSLContext;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;

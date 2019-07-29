@@ -1,4 +1,4 @@
-package com.beyond.demo.palyground.configable;
+package com.beyond.demo.playground.configable;
 
 public interface SelfCreatedInterface {
     void play();

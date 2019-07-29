@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="placeholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="com/beyond/demo/playground/spring/beans.properties"/>
+    </bean>
+    <bean id="hello" class="com.beyond.demo.playground.spring.Person">
+        <property name="name" value="${hello.name}"/>
+        <property name="age" value="12323"/>
+    </bean>
+</beans>

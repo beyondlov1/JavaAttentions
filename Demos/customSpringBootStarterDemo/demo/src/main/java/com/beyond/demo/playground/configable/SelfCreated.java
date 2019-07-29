@@ -1,4 +1,4 @@
-package com.beyond.demo.palyground.configable;
+package com.beyond.demo.playground.configable;
 
 import com.beyond.demo.controller.DemoController;
 import org.springframework.beans.factory.annotation.Autowire;
