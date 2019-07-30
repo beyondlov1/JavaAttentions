@@ -10,21 +10,21 @@ public class Main {
 //        Object bean1 = factory.getBean(Tool.class);
 //        System.out.println(bean1);
 
-        BeanInjectorImpl injector = new BeanInjectorImpl();
 
-        Person person = new Person();
-        injector.inject(person, new Material(), new Material());
+        Person person = new Child();
+        BeanInjectUtils.inject(person);
         Tool tool = person.getTool();
         Tool tool2 = person.getTool2();
         System.out.println(tool);
         System.out.println(tool2);
 
-        person = new Person();
-        injector.inject(person, new Material(), new Material());
+        person = new Child();
+        BeanInjectUtils.inject(person);
         tool = person.getTool();
         tool2 = person.getTool2();
         System.out.println(tool);
         System.out.println(tool2);
 
+        System.out.println(person);
     }
 }

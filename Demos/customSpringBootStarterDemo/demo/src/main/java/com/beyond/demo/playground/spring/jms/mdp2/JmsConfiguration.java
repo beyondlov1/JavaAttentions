@@ -1,10 +1,11 @@
-package com.beyond.demo.playground.spring.jms.mdp1;
+package com.beyond.demo.playground.spring.jms.mdp2;
 
 import org.apache.activemq.command.ActiveMQQueue;
-import org.apache.activemq.spring.ActiveMQConnectionFactory;
+import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jms.listener.DefaultMessageListenerContainer;
+import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
+import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
@@ -29,28 +30,13 @@ public class JmsConfiguration {
     }
 
     @Bean
-    public ConnectionFactory connectionFactory(){
-        return  new ActiveMQConnectionFactory();
+    public JmsListenerContainerFactory<?> myFactory(ConnectionFactory connectionFactory,
+                                                    DefaultJmsListenerContainerFactoryConfigurer configurer) {
+        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+        // This provides all boot's default to this factory, including the message converter
+        configurer.configure(factory, connectionFactory);
+        // You could still override some of Boot's default if necessary.
+        return factory;
     }
 
-    @Bean
-    public DefaultMessageListenerContainer messageListenerContainer(ConnectionFactory connectionFactory,
-                                                                    Destination destination,
-                                                                    SpringReceiver receiver){
-        DefaultMessageListenerContainer container = new DefaultMessageListenerContainer();
-        container.setConnectionFactory(connectionFactory);
-        container.setDestination(destination);
-        container.setMessageListener(receiver);
-        return container;
-    }
-
-//    @Bean
-//    public JmsListenerContainerFactory<?> myFactory(ConnectionFactory connectionFactory,
-//                                                    DefaultJmsListenerContainerFactoryConfigurer configurer) {
-//        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
-//        // This provides all boot's default to this factory, including the message converter
-//        configurer.configure(factory, connectionFactory);
-//        // You could still override some of Boot's default if necessary.
-//        return factory;
-//    }
 }

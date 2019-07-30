@@ -1,22 +1,14 @@
-package com.beyond.demo.playground.spring.jms.mdp1;
+package com.beyond.demo.playground.spring.jms.mdp2;
 
+import com.beyond.demo.playground.spring.Person;
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.TextMessage;
-
 @Component
-public class SpringReceiver implements MessageListener {
+public class SpringReceiver{
 
-    @Override
-    public void onMessage(Message message) {
-        System.out.println("onmessage");
-        try {
-            System.out.println(((TextMessage) message).getText());
-        } catch (JMSException e) {
-            e.printStackTrace();
-        }
+    @JmsListener(destination = "testQueue", containerFactory = "myFactory")
+    public void receive(Person person){
+        System.out.println(person);
     }
 }

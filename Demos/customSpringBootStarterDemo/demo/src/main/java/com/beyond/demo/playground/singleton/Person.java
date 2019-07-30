@@ -3,11 +3,14 @@ package com.beyond.demo.playground.singleton;
 public class Person implements Human {
     private String name;
 
-    @PrototypeInject
+    @SingletonInject
     private Tool tool;
 
     @SingletonInject
     private Tool tool2;
+
+    @SingletonInject
+    private MyInnerClass myInnerClass;
 
     public Person(){
         System.out.println("no param constructor");
@@ -41,6 +44,7 @@ public class Person implements Human {
                 "name='" + name + '\'' +
                 ", tool=" + tool +
                 ", tool2=" + tool2 +
+                ", myInnerClass=" + myInnerClass +
                 '}';
     }
 
@@ -55,5 +59,9 @@ public class Person implements Human {
 
     public void setTool2(Tool tool2) {
         this.tool2 = tool2;
+    }
+
+    class MyInnerClass{
+
     }
 }

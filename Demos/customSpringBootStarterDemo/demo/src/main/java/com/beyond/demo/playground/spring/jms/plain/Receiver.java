@@ -1,4 +1,4 @@
-package com.beyond.demo.playground.spring.jms;
+package com.beyond.demo.playground.spring.jms.plain;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 

@@ -1,13 +1,13 @@
 package com.beyond.demo.playground.singleton;
 
-public class Material implements IMaterial{
+public class Material2 implements IMaterial{
     private String name;
 
     @SingletonInject
     private Person person;
 
-    public Material() {
-        System.out.println("material is making");
+    public Material2() {
+        System.out.println("material2 is making");
     }
 
     public String getName() {

@@ -1,4 +1,4 @@
-package com.beyond.note5.inject;
+package com.beyond.demo.playground.singleton;
 
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
@@ -35,7 +35,7 @@ public class InjectContextImpl implements InjectContext {
     public Constructor chooseConstructor(Class tClass) {
         Constructor chosenConstructor = null;
         int parameterCount = 0;
-        Constructor[] constructors = tClass.getConstructors();
+        Constructor[] constructors = tClass.getDeclaredConstructors();
         for (Constructor constructor : constructors) {
             if (parameterCount <= constructor.getParameterTypes().length
                     && !containsBasicTypeOrArray(constructor)) {

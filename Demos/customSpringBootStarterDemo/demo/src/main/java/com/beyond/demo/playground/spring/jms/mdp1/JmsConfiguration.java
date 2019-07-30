@@ -1,9 +1,8 @@
-package com.beyond.demo.playground.spring.jms;
+package com.beyond.demo.playground.spring.jms.mdp1;
 
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.spring.ActiveMQConnectionFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.listener.DefaultMessageListenerContainer;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.jms.support.converter.MessageConverter;
@@ -12,43 +11,12 @@ import org.springframework.jms.support.converter.MessageType;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 
-@Configuration
 public class JmsConfiguration {
 
     @Bean
     public Destination destination(){
         return new ActiveMQQueue("testQueue");
     }
-
-//    @Bean
-//    public MessageConverter getConverter(){
-//        return new MessageConverter() {
-//            @Override
-//            public Message toMessage(Object o, Session session) throws JMSException, MessageConversionException {
-//                ObjectMapper mapper = new ObjectMapper();
-//                String jsonString = null;
-//                try {
-//                     jsonString = mapper.writerWithDefaultPrettyPrinter()
-//                            .writeValueAsString(o);
-//                } catch (JsonProcessingException e) {
-//                    e.printStackTrace();
-//                }
-//
-//                return session.createTextMessage(jsonString);
-//            }
-//
-//            @Override
-//            public Object fromMessage(Message message) throws JMSException, MessageConversionException {
-//                ObjectMapper mapper = new ObjectMapper();
-//                try {
-//                    return  mapper.readValue(((TextMessage)message).getText(), Person.class);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//                return null;
-//            }
-//        };
-//    }
 
     @Bean // Serialize message content to json using TextMessage
     public MessageConverter jacksonJmsMessageConverter() {
@@ -58,6 +26,7 @@ public class JmsConfiguration {
         return converter;
     }
 
+    // 这个必须有
     @Bean
     public ConnectionFactory connectionFactory(){
         return  new ActiveMQConnectionFactory();
@@ -74,13 +43,4 @@ public class JmsConfiguration {
         return container;
     }
 
-//    @Bean
-//    public JmsListenerContainerFactory<?> myFactory(ConnectionFactory connectionFactory,
-//                                                    DefaultJmsListenerContainerFactoryConfigurer configurer) {
-//        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
-//        // This provides all boot's default to this factory, including the message converter
-//        configurer.configure(factory, connectionFactory);
-//        // You could still override some of Boot's default if necessary.
-//        return factory;
-//    }
 }

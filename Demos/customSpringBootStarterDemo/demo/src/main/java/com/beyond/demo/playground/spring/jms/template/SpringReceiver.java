@@ -1,31 +1,17 @@
-package com.beyond.demo.playground.spring.jms;
+package com.beyond.demo.playground.spring.jms.template;
 
-import com.beyond.demo.playground.spring.Person;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
-import javax.jms.JMSException;
 import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.TextMessage;
 
-@Component
-public class SpringReceiver implements MessageListener {
+@Component("templateReceiver")
+public class SpringReceiver {
+    @Autowired
+    JmsTemplate jmsTemplate;
 
-//    @JmsListener(destination = "testQueue", containerFactory = "myFactory")
-    public void receive(Person person){
-        System.out.println(person);
-//        Object o = jmsTemplate.receiveAndConvert(destination);
-//        return o.toString();
-    }
-
-
-    @Override
     public void onMessage(Message message) {
-        System.out.println("onmessage");
-        try {
-            System.out.println(((TextMessage) message).getText());
-        } catch (JMSException e) {
-            e.printStackTrace();
-        }
+        Object o = jmsTemplate.receiveAndConvert();  // 阻塞
     }
 }

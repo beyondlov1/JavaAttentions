@@ -2,16 +2,12 @@ package com.beyond.demo.playground.singleton;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class BeanFactoryImpl implements BeanFactory {
-    private Map<Class, Object> singletonBeans = new HashMap<>();
+    private final InjectContext context;
 
-    private Map<Class, Class> interfaceImplMap = new HashMap<>();
-
-    public BeanFactoryImpl() {
-        
+    public BeanFactoryImpl(InjectContext context) {
+        this.context = context;
     }
 
     @Override
@@ -26,36 +22,30 @@ public class BeanFactoryImpl implements BeanFactory {
     @SuppressWarnings("unchecked")
     private Object createPrototypeBean(Class tClass, Object... params) {
         if (tClass.isInterface()) {
-            tClass = interfaceImplMap.get(tClass);
-        }
-        if (tClass == null) {
-            throw new RuntimeException("class not found");
-        }
-
-        Class[] paramTypes = new Class[params.length];
-        for (int i = 0; i < params.length; i++) {
-            paramTypes[i] = params[i].getClass();
+            tClass = context.getImplementClass(tClass);
         }
         try {
-            Constructor chosenConstructor = tClass.getConstructor(paramTypes);
+            Constructor chosenConstructor = chooseConstructor(tClass);
             return chosenConstructor.newInstance(params);
-        } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
             return null;
         }
     }
+
 
     @Override
     public <T> T getBean(Class<T> tClass) {
         return tClass.cast(getObjectBean(tClass));
     }
 
+    @SuppressWarnings("unchecked")
     private Object getObjectBean(Class tClass) {
-        Object o = singletonBeans.get(tClass);
+        Object o = context.getSingletonBean(tClass);
         if (o == null) {
             o = createBean(tClass);
             if (o != null) {
-                singletonBeans.put(tClass, o);
+                context.registerSingletonBean(tClass,o);
             }
         }
         return o;
@@ -63,7 +53,7 @@ public class BeanFactoryImpl implements BeanFactory {
 
     private Object createBean(Class tClass) {
         if (tClass.isInterface()) {
-            tClass = interfaceImplMap.get(tClass);
+            tClass = context.getImplementClass(tClass);
         }
         if (tClass == null) {
             throw new RuntimeException("class not found");
@@ -85,7 +75,7 @@ public class BeanFactoryImpl implements BeanFactory {
     }
 
     private Constructor chooseConstructor(Class tClass) {
-        return BeanInjectUtils.chooseConstructor(tClass);
+        return context.chooseConstructor(tClass);
     }
 
 }

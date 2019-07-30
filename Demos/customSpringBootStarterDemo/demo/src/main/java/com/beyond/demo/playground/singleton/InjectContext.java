@@ -1,4 +1,4 @@
-package com.beyond.note5.inject;
+package com.beyond.demo.playground.singleton;
 
 import java.lang.reflect.Constructor;
 

@@ -11,6 +11,7 @@ import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.dsl.Pollers;
 import org.springframework.integration.file.dsl.Files;
 import org.springframework.integration.transformer.GenericTransformer;
+import org.springframework.jms.annotation.EnableJms;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedInputStream;
@@ -22,6 +23,7 @@ import java.io.IOException;
 @SpringBootApplication
 @Component
 @EnableSpringConfigured
+@EnableJms
 public class DemoApplication implements CommandLineRunner{
 
 

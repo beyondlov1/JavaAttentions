@@ -1,4 +1,4 @@
-package com.beyond.demo.playground.spring.jms;
+package com.beyond.demo.playground.spring.jms.template;
 
 import com.beyond.demo.playground.spring.Person;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import javax.jms.Destination;
 
-@Component
+@Component("templateSender")
 public class SpringSender {
 
     @Autowired

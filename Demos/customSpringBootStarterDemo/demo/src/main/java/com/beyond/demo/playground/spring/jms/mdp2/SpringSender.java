@@ -1,4 +1,4 @@
-package com.beyond.demo.playground.spring.jms.mdp1;
+package com.beyond.demo.playground.spring.jms.mdp2;
 
 import com.beyond.demo.playground.spring.Person;
 import org.springframework.beans.factory.annotation.Autowired;
