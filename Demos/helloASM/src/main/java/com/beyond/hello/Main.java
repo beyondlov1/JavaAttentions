@@ -7,41 +7,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        ClassMetadata metadata = new ClassMetadata();
-        ClassReader classReader = new ClassReader("com.beyond.hello.Target");
-        ClassPrinter classVisitor = new ClassPrinter(metadata);
-        classReader.accept(classVisitor, 0);
 
-        System.out.println(metadata);
+    public static void main(String[] args) throws IOException {
+        Main main = new Main();
+        List<String> classNames = PackageScanner.scanForClassName("com.beyond.hello");
+        List<ClassMetadata> classMetadataList = new ArrayList<ClassMetadata>();
+        for (String className : classNames) {
+            classMetadataList.add(main.generate(className));
+        }
+
+        for (ClassMetadata classMetadata : classMetadataList) {
+            System.out.println(classMetadata.getName());
+        }
     }
 
-    private static class MethodAnnotationPrinter extends MethodVisitor{
+
+    public ClassMetadata generate(String className) throws IOException {
+        ClassMetadata metadata = new ClassMetadata();
+        ClassReader classReader = new ClassReader(className);
+        ClassMetadataCollector classVisitor = new ClassMetadataCollector(metadata);
+        classReader.accept(classVisitor, 0);
+        return metadata;
+    }
+
+    private class MethodMetadataCollector extends MethodVisitor{
 
         MethodMetadata metadata;
 
-        public MethodAnnotationPrinter(MethodMetadata metadata) {
+        public MethodMetadataCollector(MethodMetadata metadata) {
             super(Opcodes.ASM5);
             this.metadata = metadata;
         }
 
         @Override
         public AnnotationVisitor visitAnnotation(String descriptor, boolean visible) {
-            System.out.println(descriptor);
-            if (metadata.getAnnotationMetadatas() == null){
-                metadata.setAnnotationMetadatas(new ArrayList<AnnotationMetadata>());
+            if (metadata.getAnnotations() == null){
+                metadata.setAnnotations(new ArrayList<AnnotationMetadata>());
             }
             AnnotationMetadata annotationMetadata = new AnnotationMetadata();
             annotationMetadata.setName(descriptor);
-            metadata.getAnnotationMetadatas().add(annotationMetadata);
+            metadata.getAnnotations().add(annotationMetadata);
             return super.visitAnnotation(descriptor, visible);
         }
     }
 
 
-    private static class ClassPrinter extends ClassVisitor {
+    private class ClassMetadataCollector extends ClassVisitor {
         ClassMetadata metadata;
-        public ClassPrinter( ClassMetadata metadata) {
+        public ClassMetadataCollector(ClassMetadata metadata) {
             super(Opcodes.ASM5);
             this.metadata = metadata;
         }
@@ -49,32 +62,29 @@ public class Main {
         @Override
         public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
             super.visit(version, access, name, signature, superName, interfaces);
-            System.out.println(superName);
-            System.out.println(name);
             metadata.setName(name);
+            metadata.setSuperName(superName);
+            metadata.setInterfaceNames(interfaces);
         }
 
         @Override
         public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
-            System.out.println("methodName: " + name);
-            if (metadata.getMethodMetaDatas() == null){
-                metadata.setMethodMetaDatas(new ArrayList<MethodMetadata>());
+            if (metadata.getMethods() == null){
+                metadata.setMethods(new ArrayList<MethodMetadata>());
             }
             MethodMetadata methodMetadata = new MethodMetadata();
             methodMetadata.setName(name);
-            metadata.getMethodMetaDatas().add(methodMetadata);
-            return new MethodAnnotationPrinter(methodMetadata);
+            metadata.getMethods().add(methodMetadata);
+            return new MethodMetadataCollector(methodMetadata);
         }
 
         @Override
         public FieldVisitor visitField(int access, String name, String descriptor, String signature, Object value) {
-            System.out.println("fieldName:" + name);
             return super.visitField(access, name, descriptor, signature, value);
         }
 
         @Override
         public AnnotationVisitor visitAnnotation(String descriptor, boolean visible) {
-            System.out.println(descriptor);
             return super.visitAnnotation(descriptor, visible);
         }
     }

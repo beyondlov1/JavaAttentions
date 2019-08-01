@@ -3,40 +3,69 @@ package com.beyond.hello;
 import java.util.List;
 
 public class ClassMetadata extends Metadata {
-    private List<FieldMetadata> fieldMetadatas;
-    private List<MethodMetadata> methodMetaDatas;
-    private List<AnnotationMetadata> annotationMetadatas;
 
-    public List<FieldMetadata> getFieldMetadatas() {
-        return fieldMetadatas;
+    private ClassMetadata superClass;
+    private List<InterfaceMetadata> interfaces;
+    private List<FieldMetadata> fields;
+    private List<MethodMetadata> methods;
+    private List<AnnotationMetadata> annotations;
+    private String[] interfaceNames;
+    private String superName;
+
+    public ClassMetadata getSuperClass() {
+        return superClass;
     }
 
-    public void setFieldMetadatas(List<FieldMetadata> fieldMetadatas) {
-        this.fieldMetadatas = fieldMetadatas;
+    public void setSuperClass(ClassMetadata superClass) {
+        this.superClass = superClass;
     }
 
-    public List<MethodMetadata> getMethodMetaDatas() {
-        return methodMetaDatas;
+    public List<InterfaceMetadata> getInterfaces() {
+        return interfaces;
     }
 
-    public void setMethodMetaDatas(List<MethodMetadata> methodMetaDatas) {
-        this.methodMetaDatas = methodMetaDatas;
+    public void setInterfaces(List<InterfaceMetadata> interfaces) {
+        this.interfaces = interfaces;
     }
 
-    public List<AnnotationMetadata> getAnnotationMetadatas() {
-        return annotationMetadatas;
+    public List<FieldMetadata> getFields() {
+        return fields;
     }
 
-    public void setAnnotationMetadatas(List<AnnotationMetadata> annotationMetadatas) {
-        this.annotationMetadatas = annotationMetadatas;
+    public void setFields(List<FieldMetadata> fields) {
+        this.fields = fields;
     }
 
-    @Override
-    public String toString() {
-        return "ClassMetadata{" +
-                "fieldMetadatas=" + fieldMetadatas +
-                ", methodMetaDatas=" + methodMetaDatas +
-                ", annotationMetadatas=" + annotationMetadatas +
-                "} " + super.toString();
+    public List<MethodMetadata> getMethods() {
+        return methods;
+    }
+
+    public void setMethods(List<MethodMetadata> methods) {
+        this.methods = methods;
+    }
+
+    public List<AnnotationMetadata> getAnnotations() {
+        return annotations;
+    }
+
+    public void setAnnotations(List<AnnotationMetadata> annotations) {
+        this.annotations = annotations;
+    }
+
+
+    public void setInterfaceNames(String[] interfaceNames) {
+        this.interfaceNames = interfaceNames;
+    }
+
+    public String[] getInterfaceNames() {
+        return interfaceNames;
+    }
+
+    public void setSuperName(String superName) {
+        this.superName = superName;
+    }
+
+    public String getSuperName() {
+        return superName;
     }
 }

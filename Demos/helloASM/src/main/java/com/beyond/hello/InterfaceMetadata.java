@@ -2,8 +2,17 @@ package com.beyond.hello;
 
 import java.util.List;
 
-public class FieldMetadata extends Metadata{
+public class InterfaceMetadata extends Metadata{
+    private List<MethodMetadata> methods;
     private List<AnnotationMetadata> annotations;
+
+    public List<MethodMetadata> getMethods() {
+        return methods;
+    }
+
+    public void setMethods(List<MethodMetadata> methods) {
+        this.methods = methods;
+    }
 
     public List<AnnotationMetadata> getAnnotations() {
         return annotations;

@@ -8,7 +8,8 @@ import java.util.Enumeration;
 import java.util.List;
 
 public class PackageScanner {
-    public static void scan(String packageName) throws IOException {
+    public static List<String> scanForClassName(String packageName) throws IOException {
+        ArrayList<String> fileNameList = new ArrayList<String>();
         Enumeration<URL> resources = Thread.currentThread().getContextClassLoader().getResources(packageName.replaceAll("\\.", "/"));
         while (resources.hasMoreElements()) {
             URL url = resources.nextElement();
@@ -16,13 +17,11 @@ public class PackageScanner {
                 String protocol = url.getProtocol();
                 if (protocol.equals("file")) {
                     String packagePath = url.getPath();
-                    System.out.println(packagePath);
-                    ArrayList<String> fileNameList = new ArrayList<String>();
                     scanDir(packagePath,packageName,fileNameList);
-                    System.out.println(fileNameList);
                 }
             }
         }
+        return fileNameList;
     }
 
     private static void scanDir(String path, String packageName, List<String> fileNameList){
@@ -46,7 +45,7 @@ public class PackageScanner {
 
     public static void main(String[] args) {
         try {
-            scan("com.beyond.hello");
+            scanForClassName("com.beyond.hello");
         } catch (IOException e) {
             e.printStackTrace();
         }
