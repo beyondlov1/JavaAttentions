@@ -2,32 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abecee5a-9c96-47f5-bd45-dc6d901475b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../book-service-api/src/main/java/com/beyond/bookserviceapi/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book-service-api/src/main/java/com/beyond/bookserviceapi/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka_client_consumer_demo/src/main/java/com/beyond/eureka_client_consumer_demo/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka_client_provider_demo/src/main/java/com/beyond/eureka_client_provider_demo/controller/BookController2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../treedemo/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../treedemo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../treedemo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../treedemo/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../treedemo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/ThreadDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/array.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/tree/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/tree/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../treedemo/treedemo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka_client_consumer_demo/src/main/java/com/beyond/eureka_client_consumer_demo/EurekaClientConsumerDemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka_client_consumer_demo/src/main/java/com/beyond/eureka_client_consumer_demo/EurekaClientConsumerDemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka_client_consumer_demo/src/main/java/com/beyond/eureka_client_consumer_demo/controller/ConsumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka_client_consumer_demo/src/main/java/com/beyond/eureka_client_consumer_demo/controller/ConsumerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka_client_consumer_demo/src/main/java/com/beyond/eureka_client_consumer_demo/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka_client_consumer_demo/src/main/java/com/beyond/eureka_client_consumer_demo/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka_client_consumer_demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka_client_consumer_demo/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka_client_provider_demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka_client_provider_demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka_client_provider_demo/src/main/java/com/beyond/eureka_client_provider_demo/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka_client_provider_demo/src/main/java/com/beyond/eureka_client_provider_demo/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka_client_provider_demo/src/main/java/com/beyond/eureka_client_provider_demo/EurekaClientProviderDemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka_client_provider_demo/src/main/java/com/beyond/eureka_client_provider_demo/EurekaClientProviderDemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka_client_provider_demo/src/main/java/com/beyond/eureka_client_provider_demo/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka_client_provider_demo/src/main/java/com/beyond/eureka_client_provider_demo/controller/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/sync/DataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/sync/DataSourceNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/sync/IntegerMockDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/sync/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/sync/MockDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/sync/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/sync/SyncStamp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../treedemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../treedemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/ThreadDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../treedemo/src/main/java/com/beyond/ThreadDemo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,8 +25,11 @@
     <session id="-1184222758">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -80,16 +67,12 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/FeiginDemoApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
               <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-              <folding>
-                <element signature="e#258#259#0" expanded="true" />
-                <element signature="e#330#331#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -97,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+            <state relative-caret-position="475">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -112,17 +95,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/BookController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
+            <state relative-caret-position="247">
               <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#379#380#0" expanded="true" />
                 <element signature="e#424#425#0" expanded="true" />
-                <element signature="e#490#491#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/BookService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+              <caret line="5" column="68" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -175,8 +156,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="347" />
-    <option name="y" value="-27" />
+    <option name="x" value="345" />
+    <option name="y" value="-30" />
     <option name="width" value="1155" />
     <option name="height" value="745" />
   </component>
@@ -253,9 +234,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -265,7 +246,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564922480048" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564976249642" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -300,48 +281,51 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564898301364</updated>
-      <workItem from="1564898304991" duration="5047000" />
+      <workItem from="1564898304991" duration="5659000" />
+      <workItem from="1564939383854" duration="13000" />
+      <workItem from="1564976234829" duration="26000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5047000" />
+    <option name="totallyTimeSpent" value="5698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Capture Tool" />
-      <window_info id="Web" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32707775" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32707775" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.48368794" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48368794" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,52 +338,11 @@
     <entry file="file://$PROJECT_DIR$/mvnw.cmd">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/BookServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding>
-            <element signature="e#130#131#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/BookServiceImpl.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/io/github/openfeign/feign-core/10.2.3/feign-core-10.2.3.jar!/feign/ReflectiveFeign.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="335" selection-start-line="335" selection-end-line="335" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/FeiginDemoApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#330#331#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/BookService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -410,17 +353,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/FeiginDemoApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/BookController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
+        <state relative-caret-position="247">
           <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#379#380#0" expanded="true" />
             <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/feigin_demo/BookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="68" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
         </state>
       </provider>
     </entry>
