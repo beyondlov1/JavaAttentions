@@ -52,3 +52,6 @@ https://blog.csdn.net/jinny_0019/article/details/80065452 （这个里有选64�
 
 ### zero copy
 https://developer.ibm.com/articles/j-zerocopy/
+
+### java报错: 找不到或无法加载主类
+https://blog.csdn.net/snowlive/article/details/54880537
