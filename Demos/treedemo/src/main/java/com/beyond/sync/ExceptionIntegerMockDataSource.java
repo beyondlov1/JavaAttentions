@@ -5,11 +5,12 @@ import java.util.List;
 
 public class ExceptionIntegerMockDataSource extends IntegerMockDataSource {
 
-    public ExceptionIntegerMockDataSource() {
-        int rand = random.nextInt(5)+1;
-        for (int i = 0; i < rand; i++) {
-            list.add(i);
-        }
+    public ExceptionIntegerMockDataSource(){
+        super();
+    }
+
+    public ExceptionIntegerMockDataSource(String key,String lastSyncKey) {
+        super(key,lastSyncKey);
     }
 
     @Override

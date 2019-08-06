@@ -6,15 +6,27 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
-public class MockDataSource<T> implements DataSource<T> {
+public class MockDataSource<T> implements MultiDataSource<T> {
 
     static Random random = new Random();
 
-    private String key = random.nextInt()+"号";
-
     List<T> list = new ArrayList<T>();
 
+    private String lastSyncKey;
+
+    private String key;
+
+    public MockDataSource(){
+        super();
+    }
+
+    public MockDataSource(String key,String lastSyncKey) {
+        this.key = key;
+        this.lastSyncKey = lastSyncKey;
+    }
+
     public String getKey() {
+
         return key;
     }
 
@@ -64,4 +76,7 @@ public class MockDataSource<T> implements DataSource<T> {
         return null;
     }
 
+    public String getChosenLastSyncKey() {
+        return lastSyncKey;
+    }
 }

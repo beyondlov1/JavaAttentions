@@ -8,5 +8,11 @@ create table user (
 
 insert into user (id, username, password)
 values (replace(uuid(),'-',''),'username','password');
+insert into user (id, username, password)
+values (replace(uuid(),'-',''),'username2','password');
+insert into user (id, username, password)
+values (replace(uuid(),'-',''),'username3','password');
+insert into user (id, username, password)
+values (replace(uuid(),'-',''),'username4','password');
 
 select database()

@@ -8,13 +8,13 @@ public class AsyncDataSourceNode2<T> {
 
     private AsyncDataSourceNode2<T> parent;
     private List<AsyncDataSourceNode2<T>> children = new ArrayList<AsyncDataSourceNode2<T>>();
-    private DataSource<T> dataSource;
+    private MultiDataSource<T> dataSource;
     private List<T> modifiedData = new ArrayList<T>();
     private Set<T> notMineData = new HashSet<T>();
     private ExecutorService executorService;
 
 
-    public static <T> AsyncDataSourceNode2<T> of(DataSource<T> dataSource) {
+    public static <T> AsyncDataSourceNode2<T> of(MultiDataSource<T> dataSource) {
         AsyncDataSourceNode2<T> node = new AsyncDataSourceNode2<T>();
         node.setDataSource(dataSource);
         return node;
@@ -49,7 +49,7 @@ public class AsyncDataSourceNode2<T> {
     }
 
     public List<T> initModifiedData() throws IOException {
-        DataSource<T> parentDataSource = parent.getDataSource();
+        MultiDataSource<T> parentDataSource = parent.getDataSource();
         SyncStamp lastSyncStamp = this.dataSource.getLastSyncStamp(parentDataSource);
         modifiedData = this.dataSource.getChangedData(lastSyncStamp);
         return modifiedData;
@@ -89,11 +89,11 @@ public class AsyncDataSourceNode2<T> {
         }
     }
 
-    public DataSource<T> getDataSource() {
+    public MultiDataSource<T> getDataSource() {
         return dataSource;
     }
 
-    public void setDataSource(DataSource<T> dataSource) {
+    public void setDataSource(MultiDataSource<T> dataSource) {
         this.dataSource = dataSource;
     }
 

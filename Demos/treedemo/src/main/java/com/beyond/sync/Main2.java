@@ -55,21 +55,21 @@ public class Main2 {
     }
 
     private static AsyncDataSourceNode2<Integer> constructNode() {
-        return AsyncDataSourceNode2.of(new IntegerMockDataSource())
+        return AsyncDataSourceNode2.of(new IntegerMockDataSource("root",""))
                 .addChild(
-                        AsyncDataSourceNode2.of(new IntegerMockDataSource())
+                        AsyncDataSourceNode2.of(new IntegerMockDataSource("1.1",""))
                                 .addChild(
-                                        AsyncDataSourceNode2.of(new ExceptionIntegerMockDataSource())
-                                                .addChild(AsyncDataSourceNode2.of(new IntegerMockDataSource())))
+                                        AsyncDataSourceNode2.of(new ExceptionIntegerMockDataSource("2.1",""))
+                                                .addChild(AsyncDataSourceNode2.of(new IntegerMockDataSource("3.1",""))))
                                 .addChild(
-                                        AsyncDataSourceNode2.of(new IntegerMockDataSource())
-                                                .addChild(AsyncDataSourceNode2.of(new IntegerMockDataSource()))
+                                        AsyncDataSourceNode2.of(new IntegerMockDataSource("2.2",""))
+                                                .addChild(AsyncDataSourceNode2.of(new IntegerMockDataSource("3.2","")))
                                 ))
                 .addChild(
-                        AsyncDataSourceNode2.of(new IntegerMockDataSource())
+                        AsyncDataSourceNode2.of(new IntegerMockDataSource("1.2",""))
                                 .addChild(
-                                        AsyncDataSourceNode2.of(new IntegerMockDataSource())
-                                                .addChild(AsyncDataSourceNode2.of(new IntegerMockDataSource()))
+                                        AsyncDataSourceNode2.of(new IntegerMockDataSource("2.3",""))
+                                                .addChild(AsyncDataSourceNode2.of(new IntegerMockDataSource("3.3","")))
                                 ));
 
     }

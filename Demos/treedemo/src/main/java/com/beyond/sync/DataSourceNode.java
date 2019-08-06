@@ -7,12 +7,12 @@ public class DataSourceNode<T> {
 
     private DataSourceNode<T> parent;
     private List<DataSourceNode<T>> children = new ArrayList<DataSourceNode<T>>();
-    private DataSource<T> dataSource;
+    private MultiDataSource<T> dataSource;
     private List<T> changedData = new ArrayList<T>();
     private Set<T> notMineData = new HashSet<T>();
 
 
-    public static <T> DataSourceNode<T> of(DataSource<T> dataSource) {
+    public static <T> DataSourceNode<T> of(MultiDataSource<T> dataSource) {
         DataSourceNode<T> node = new DataSourceNode<T>();
         node.setDataSource(dataSource);
         return node;
@@ -39,7 +39,7 @@ public class DataSourceNode<T> {
     }
 
     private List<T> getModifiedData() throws IOException {
-        DataSource<T> parentDataSource = parent.getDataSource();
+        MultiDataSource<T> parentDataSource = parent.getDataSource();
         SyncStamp lastSyncStamp = this.dataSource.getLastSyncStamp(parentDataSource);
         changedData = this.dataSource.getChangedData(lastSyncStamp);
         return changedData;
@@ -79,11 +79,11 @@ public class DataSourceNode<T> {
         }
     }
 
-    public DataSource<T> getDataSource() {
+    public MultiDataSource<T> getDataSource() {
         return dataSource;
     }
 
-    public void setDataSource(DataSource<T> dataSource) {
+    public void setDataSource(MultiDataSource<T> dataSource) {
         this.dataSource = dataSource;
     }
 
