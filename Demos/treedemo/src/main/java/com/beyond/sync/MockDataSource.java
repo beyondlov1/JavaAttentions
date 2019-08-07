@@ -3,6 +3,7 @@ package com.beyond.sync;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
@@ -76,7 +77,23 @@ public class MockDataSource<T> implements MultiDataSource<T> {
         return null;
     }
 
+    public String setChosenLastSyncKey() {
+        return null;
+    }
+
     public String getChosenLastSyncKey() {
         return lastSyncKey;
+    }
+
+    public Map<String, SyncStamp> getAllLastSycnStampCache() {
+        return null;
+    }
+
+    public void setAllLastSyncStampsCache(Map<String, SyncStamp> syncStamps) {
+
+    }
+
+    public void initLastSyncStamps() {
+
     }
 }

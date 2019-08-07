@@ -9,5 +9,7 @@ import java.util.concurrent.ExecutionException;
 public interface MultiDataSource<T>  extends DataSource<T>{
     String setChosenLastSyncKey();
     String getChosenLastSyncKey();
-    Map<String,SyncStamp> getAllLastSycnStamp();
+    Map<String,SyncStamp> getAllLastSycnStampCache();
+    void setAllLastSyncStampsCache(Map<String,SyncStamp> syncStamps);
+    void initLastSyncStamps();
 }

@@ -2,48 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5530fb48-dde8-41dc-af78-ee043d3798f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../beanDefinitionDemos/bean-definition-register-demos/src/main/java/com/beyond/beandefinitionregisterdemos/CustomRegistrar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../beanDefinitionDemos/bean-definition-register-demos/src/main/java/com/beyond/beandefinitionregisterdemos/controller/RegisteredBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../beanDefinitionDemos/bean-definition-register-demos/src/main/java/com/beyond/beandefinitionregisterdemos/controller/RegisteredProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../beanDefinitionDemos/bean-definition-register-demos/src/main/java/com/beyond/beandefinitionregisterdemos/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eruekaDemos/config-client-demo/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/datasource/DataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/datasource/DataSourceAspectJ.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/datasource/DataSourceConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/datasource/DataSourceKeyHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/datasource/DataSourceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/datasource/MultiDataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/datasource/PointCutFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/Main3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/MultiDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/MultiDatasourceDemosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/java/com/beyond/multidatasourcedemos/MultiDatasourceDemosApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/resources/db/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../multiDataSourceDemos/multi-datasource-demos/src/main/resources/db/init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mybatisDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mybatisDemo/src/main/java/com/beyond/demo/playground/BeanWrapperDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatisDemo/src/main/java/com/beyond/demo/playground/BeanWrapperDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/sync/AsyncDataSourceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/AsyncDataSourceNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/sync/AsyncDataSourceNode2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/AsyncDataSourceNode2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/sync/DataSourceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/DataSourceNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/sync/ExceptionIntegerMockDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/ExceptionIntegerMockDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/sync/IntegerMockDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/IntegerMockDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/sync/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/Main2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/ThreadDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/ThreadDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/sync/Main3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/Main3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/sync/MockDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/MockDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/AsyncDataSourceNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/AsyncDataSourceNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/AsyncDataSourceNode2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/AsyncDataSourceNode2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/DataSourceNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/DataSourceNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/ExceptionIntegerMockDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/ExceptionIntegerMockDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/IntegerMockDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/IntegerMockDataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/Main2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/Main2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/MainSync.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/MainSync.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/sync/MultiDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/sync/MultiDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/ThreadDemo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/ThreadDemo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/ThreadDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/ThreadDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/Main3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/Main3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/Main3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/Main3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/MockDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/MockDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/sync/MultiDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/sync/MultiDataSource.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,6 +23,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/treedemo$Main3.ic" NAME="Main3 Coverage Results" MODIFIED="1565103762660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.beyond.sync.*</FILTER>
+    </SUITE>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -93,18 +69,19 @@
     <session id="-1448961685">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="44" />
+          <entry key="java" value="52" />
           <entry key="sql" value="2" />
           <entry key="user" value="1" />
           <entry key="views" value="1" />
@@ -113,52 +90,76 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="2" />
-          <entry key="JAVA" value="44" />
+          <entry key="JAVA" value="52" />
           <entry key="Scratch" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4977" />
+          <entry key="dummy" value="2" />
+          <entry key="java" value="5908" />
           <entry key="sql" value="237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4977" />
+          <entry key="JAVA" value="5908" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="Scratch" value="237" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/MainSync.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/Main2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="71" column="112" selection-start-line="71" selection-start-column="112" selection-end-line="71" selection-end-column="112" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/Main3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="105" column="20" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
+            <state relative-caret-position="180">
+              <caret line="114" column="51" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="51" />
               <folding>
-                <element signature="e#2086#2112#0" expanded="true" />
+                <element signature="method#getExecutorService#0;class#Main3#0" />
+                <element signature="e#4417#4629#0" expanded="true" />
+                <element signature="e#4628#4629#0" expanded="true" />
+                <element signature="method#blockExecute#0;class#Main3#0" />
+                <element signature="class#BlockExecuteException#0;class#Main3#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/Future.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2223">
+              <caret line="150" column="51" selection-start-line="150" selection-start-column="51" selection-end-line="150" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/ExecutionException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://D:/software/jdk/src.zip!/java/lang/Throwable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7999">
+              <caret line="453" column="34" selection-start-line="453" selection-start-column="34" selection-end-line="453" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/ThreadDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -167,61 +168,16 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/MultiDataSource.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/DataSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/AsyncDataSourceNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2006">
-              <caret line="111" column="45" selection-start-line="111" selection-start-column="45" selection-end-line="111" selection-end-column="45" />
-              <folding>
-                <element signature="e#870#887#0" expanded="true" />
-                <element signature="e#1013#1403#0" expanded="true" />
-                <element signature="e#1402#1403#0" expanded="true" />
-                <element signature="e#1950#1951#0" expanded="true" />
-                <element signature="e#1988#1989#0" expanded="true" />
-                <element signature="e#3054#3055#0" expanded="true" />
-                <element signature="e#3088#3089#0" expanded="true" />
-                <element signature="e#3142#3143#0" expanded="true" />
-                <element signature="e#3188#3189#0" expanded="true" />
-                <element signature="e#3245#3246#0" expanded="true" />
-                <element signature="e#3276#3277#0" expanded="true" />
-                <element signature="e#3536#3537#0" expanded="true" />
-                <element signature="e#3569#3570#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/AsyncDataSourceNode2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1767">
-              <caret line="95" column="45" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
-              <folding>
-                <element signature="e#1344#1345#0" expanded="true" />
-                <element signature="e#1382#1383#0" expanded="true" />
-                <element signature="e#2454#2455#0" expanded="true" />
-                <element signature="e#2488#2489#0" expanded="true" />
-                <element signature="e#2542#2543#0" expanded="true" />
-                <element signature="e#2588#2589#0" expanded="true" />
-                <element signature="e#2646#2647#0" expanded="true" />
-                <element signature="e#2677#2678#0" expanded="true" />
-                <element signature="e#2939#2940#0" expanded="true" />
-                <element signature="e#2972#2973#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="399">
+              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -229,12 +185,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/IntegerMockDataSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" selection-start-line="3" selection-end-line="6" selection-end-column="5" />
-              <folding>
-                <element signature="e#134#135#0" expanded="true" />
-                <element signature="e#159#160#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -242,13 +194,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/MockDataSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="1159">
+              <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="69" selection-end-column="5" />
               <folding>
-                <element signature="e#422#423#0" expanded="true" />
-                <element signature="e#445#446#0" expanded="true" />
-                <element signature="e#1661#1662#0" expanded="true" />
-                <element signature="e#1688#1689#0" expanded="true" />
+                <element signature="e#1883#1884#0" expanded="true" />
+                <element signature="e#1910#1911#0" expanded="true" />
+                <element signature="e#2052#2053#0" expanded="true" />
+                <element signature="e#2079#2080#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -262,8 +214,6 @@
               <folding>
                 <element signature="e#198#199#0" expanded="true" />
                 <element signature="e#221#222#0" expanded="true" />
-                <element signature="e#228#229#0" expanded="true" />
-                <element signature="e#266#267#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -303,7 +253,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/tree/Node.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/tree/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/array.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/beyond/ThreadDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/SyncStamp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/Node.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/MainSync.java" />
@@ -313,11 +262,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/DataSourceNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/AsyncDataSourceNode2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/AsyncDataSourceNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/MockDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/IntegerMockDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/ExceptionIntegerMockDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/Main2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/version3/AsyncDataSourceNode2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/version3/AsyncDSNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/MultiDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/MockDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/ThreadDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/beyond/sync/Main3.java" />
       </list>
     </option>
@@ -337,7 +289,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="345" />
-    <option name="y" value="-29" />
+    <option name="y" value="-30" />
     <option name="width" value="1155" />
     <option name="height" value="745" />
   </component>
@@ -347,6 +299,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -401,16 +355,6 @@
             </path>
             <path>
               <item name="treedemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treedemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="beyond" type="462c0819:PsiDirectoryNode" />
-              <item name="tree" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treedemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
             <path>
@@ -428,8 +372,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -437,7 +379,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565088051566" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565104223529" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -449,6 +391,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.beyond.sync.version3" />
       <recent name="com.beyond.sync" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -543,10 +486,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main3" />
+        <item itemvalue="Application.ThreadDemo" />
         <item itemvalue="Application.Main2" />
         <item itemvalue="Application.MainSync" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.ThreadDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -564,18 +507,19 @@
       <workItem from="1564931304558" duration="5760000" />
       <workItem from="1564976263276" duration="14017000" />
       <workItem from="1565010678362" duration="31000" />
-      <workItem from="1565064196651" duration="5929000" />
+      <workItem from="1565064196651" duration="10583000" />
+      <workItem from="1565159490818" duration="616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31024000" />
+    <option name="totallyTimeSpent" value="36294000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26340482" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3652815" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -584,8 +528,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21843971" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.2397163" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32056737" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.27429804" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -604,6 +548,7 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3297587" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -711,58 +656,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/ThreadDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="12" column="55" lean-forward="true" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://3d5429d1-df47-436c-93ad-768d10c6e545/schema/information_schema/view/views" />
     <entry file="das://3d5429d1-df47-436c-93ad-768d10c6e545/schema/db_1/table/user" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3d5429d1-df47-436c-93ad-768d10c6e545/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/DataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/DataSourceNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1596">
           <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
-          <folding>
-            <element signature="e#2029#2030#0" expanded="true" />
-            <element signature="e#2063#2064#0" expanded="true" />
-            <element signature="e#2117#2118#0" expanded="true" />
-            <element signature="e#2163#2164#0" expanded="true" />
-            <element signature="e#2215#2216#0" expanded="true" />
-            <element signature="e#2246#2247#0" expanded="true" />
-            <element signature="e#2496#2497#0" expanded="true" />
-            <element signature="e#2529#2530#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/AsyncDataSourceNode2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1767">
-          <caret line="95" column="45" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
-          <folding>
-            <element signature="e#1344#1345#0" expanded="true" />
-            <element signature="e#1382#1383#0" expanded="true" />
-            <element signature="e#2454#2455#0" expanded="true" />
-            <element signature="e#2488#2489#0" expanded="true" />
-            <element signature="e#2542#2543#0" expanded="true" />
-            <element signature="e#2588#2589#0" expanded="true" />
-            <element signature="e#2646#2647#0" expanded="true" />
-            <element signature="e#2677#2678#0" expanded="true" />
-            <element signature="e#2939#2940#0" expanded="true" />
-            <element signature="e#2972#2973#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -770,21 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2006">
           <caret line="111" column="45" selection-start-line="111" selection-start-column="45" selection-end-line="111" selection-end-column="45" />
-          <folding>
-            <element signature="e#870#887#0" expanded="true" />
-            <element signature="e#1013#1403#0" expanded="true" />
-            <element signature="e#1402#1403#0" expanded="true" />
-            <element signature="e#1950#1951#0" expanded="true" />
-            <element signature="e#1988#1989#0" expanded="true" />
-            <element signature="e#3054#3055#0" expanded="true" />
-            <element signature="e#3088#3089#0" expanded="true" />
-            <element signature="e#3142#3143#0" expanded="true" />
-            <element signature="e#3188#3189#0" expanded="true" />
-            <element signature="e#3245#3246#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3536#3537#0" expanded="true" />
-            <element signature="e#3569#3570#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,19 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/MockDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#1661#1662#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/MainSync.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -815,13 +689,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/Main2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="71" column="112" selection-start-line="71" selection-start-column="112" selection-end-line="71" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/three.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/AsyncDataSourceNode2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/version3/AsyncDSNode.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/Main3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="114" column="51" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="51" />
+          <folding>
+            <element signature="method#getExecutorService#0;class#Main3#0" />
+            <element signature="e#4417#4629#0" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="method#blockExecute#0;class#Main3#0" />
+            <element signature="class#BlockExecuteException#0;class#Main3#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/Future.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2223">
+          <caret line="150" column="51" selection-start-line="150" selection-start-column="51" selection-end-line="150" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/software/jdk/src.zip!/java/util/concurrent/ExecutionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/software/jdk/src.zip!/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7999">
+          <caret line="453" column="34" selection-start-line="453" selection-start-column="34" selection-end-line="453" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/ThreadDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/MultiDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/DataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/IntegerMockDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="6" selection-end-column="5" />
+        <state relative-caret-position="285">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/MockDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1159">
+          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="69" selection-end-column="5" />
           <folding>
-            <element signature="e#134#135#0" expanded="true" />
-            <element signature="e#159#160#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#2052#2053#0" expanded="true" />
+            <element signature="e#2079#2080#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -833,32 +788,6 @@
           <folding>
             <element signature="e#198#199#0" expanded="true" />
             <element signature="e#221#222#0" expanded="true" />
-            <element signature="e#228#229#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/Main2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="71" column="112" selection-start-line="71" selection-start-column="112" selection-end-line="71" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/MultiDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/sync/Main3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="105" column="20" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
-          <folding>
-            <element signature="e#2086#2112#0" expanded="true" />
           </folding>
         </state>
       </provider>

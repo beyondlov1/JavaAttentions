@@ -1,5 +1,7 @@
 package com.beyond.sync;
 
+import com.sun.corba.se.impl.presentation.rmi.ExceptionHandler;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,41 +13,36 @@ public class Main3 {
 
         long start = System.currentTimeMillis();
 
-        // init ModifiedData
         AsyncDataSourceNode2<Integer> root = constructNode();
-        ArrayList<AsyncDataSourceNode2<Integer>> allChildren = new ArrayList<AsyncDataSourceNode2<Integer>>();
-        root.getAllChildren(allChildren);
-        List<Future<List<Integer>>> futures = new ArrayList<Future<List<Integer>>>();
-        for (final AsyncDataSourceNode2<Integer> child : allChildren) {
-            Future<List<Integer>> future = getExecutorService().submit(new Callable<List<Integer>>() {
-                public List<Integer> call() throws Exception {
-                    child.initModifiedData();
-                    return null;
-                }
-            });
-            futures.add(future);
-        }
-        int index = 0 ;
-        for (Future<List<Integer>> future : futures) {
-            try {
-                future.get();
-            }catch (Exception e) {
-                e.printStackTrace();
-                // 把子节点从树中移除
-                AsyncDataSourceNode2<Integer> child = allChildren.get(index);
-                child.getParent().getChildren().remove(child);
-                child.setParent(null);
-            }
-            index++;
-        }
+
+        initModifiedData(root);
 
         List<Integer> childrenModifiedData = root.getValidChildrenModifiedData();
+
         System.out.println(childrenModifiedData);
 
         long end = System.currentTimeMillis();
         System.out.println((end-start)/1000);
 
         root.saveChildrenData(childrenModifiedData);
+    }
+
+    private static void initModifiedData(AsyncDataSourceNode2<Integer> root) throws IOException {
+        ArrayList<AsyncDataSourceNode2<Integer>> allChildren = new ArrayList<AsyncDataSourceNode2<Integer>>();
+        root.getAllChildren(allChildren);
+
+        blockExecute(new ParamCallable<AsyncDataSourceNode2<Integer>>() {
+            public void call(AsyncDataSourceNode2<Integer> singleExecutor) throws Exception {
+                singleExecutor.initModifiedData();
+            }
+        },new ParamCallable<AsyncDataSourceNode2<Integer>>() {
+            public void call(AsyncDataSourceNode2<Integer> singleExecutor) throws Exception {
+                // 把子节点从树中移除
+                singleExecutor.getParent().getChildren().remove(singleExecutor);
+                singleExecutor.setParent(null);
+            }
+        },allChildren);
+
     }
 
     private static ExecutorService getExecutorService() {
@@ -74,6 +71,8 @@ public class Main3 {
         list.add(new IntegerMockDataSource("1.3.3.1","1.3.3"));
         list.add(new IntegerMockDataSource("1.3.3.9","1.3.6"));
 
+        chooseRoot(list);
+
         AsyncDataSourceNode2<Integer> root = AsyncDataSourceNode2.of(new IntegerMockDataSource("root", ""));
         constructTree(list,root);
         return root;
@@ -99,10 +98,80 @@ public class Main3 {
 
 
     private static AsyncDataSourceNode2<Integer> chooseRoot(List<MultiDataSource<Integer>> list){
-//        init(list);
-//        filterInner(list);
-//        sortInner(list);
+        initSyncStamps(list);
+//        filterIsolated(list);
+//        sortCandidate(list);
 //        choose(list);
         return null;
     }
+
+    private static void initSyncStamps(List<MultiDataSource<Integer>> list) {
+        blockExecute(new ParamCallable<MultiDataSource<Integer>>() {
+            public void call(MultiDataSource<Integer> singleExecutor) throws Exception {
+                singleExecutor.initLastSyncStamps();
+            }
+        },new ParamCallable<MultiDataSource<Integer>>() {
+            public void call(MultiDataSource<Integer> singleExecutor) throws Exception {
+                System.out.println(singleExecutor);
+            }
+        },list);
+    }
+
+    @SuppressWarnings("unchecked")
+    private static  <V> void blockExecute(final ParamCallable<V> callable,
+                                          ParamCallable<V> exceptionHandler,
+                                          List<V> targetList){
+        List<Future<?>> futures = new ArrayList<Future<?>>();
+
+        for (final V object : targetList) {
+            Future<?> future = getExecutorService().submit(new Callable<Object>() {
+                public Object call() throws Exception {
+                    try {
+                        callable.call(object);
+                    }catch (Exception e){
+                        BlockExecuteException exception = new BlockExecuteException();
+                        exception.setObject(object);
+                        exception.initCause(e);
+                        throw exception;
+                    }
+                    return object;
+                }
+            });
+            futures.add(future);
+        }
+        for (Future<?> future : futures) {
+            try {
+                future.get();
+            } catch (Exception e) {
+                if (exceptionHandler == null){
+                    return;
+                }
+                if (e.getCause() instanceof BlockExecuteException){
+                    try {
+                        exceptionHandler.call((V) ((BlockExecuteException)(e.getCause())).getObject());
+                    } catch (Exception e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
+
+    private interface ParamCallable<V>{
+        void call(V singleExecutor) throws Exception;
+    }
+
+    private static class BlockExecuteException extends Exception{
+
+        private Object object;
+
+        public Object getObject() {
+            return object;
+        }
+
+        public void setObject(Object object) {
+            this.object = object;
+        }
+    }
+
 }
