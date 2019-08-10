@@ -10,7 +10,7 @@ public class IntegerMockDataSource extends MockDataSource<Integer> {
         super(key,lastSyncKey);
         int rand = random.nextInt(5)+1;
         for (int i = 0; i < rand; i++) {
-            list.add(i);
+            modifiedData.add(i);
         }
     }
 

@@ -1,27 +1,29 @@
 package com.beyond.sync;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 public class MockDataSource<T> implements MultiDataSource<T> {
 
     static Random random = new Random();
 
-    List<T> list = new ArrayList<T>();
+    protected List<T> modifiedData = new ArrayList<T>();
 
     private String lastSyncKey;
 
     private String key;
 
-    public MockDataSource(){
+    private String chosenLastSyncKey;
+
+    private Map<String, SyncStamp> syncStampsCache;
+
+
+    public MockDataSource() {
         super();
     }
 
-    public MockDataSource(String key,String lastSyncKey) {
+    public MockDataSource(String key, String lastSyncKey) {
         this.key = key;
         this.lastSyncKey = lastSyncKey;
     }
@@ -32,7 +34,7 @@ public class MockDataSource<T> implements MultiDataSource<T> {
     }
 
     public void saveAll(List<T> ts) throws IOException {
-        System.out.println(getKey()+":"+ts);
+        System.out.println(getKey() + ":" + ts);
     }
 
     public void saveAll(List<T> ts, String source) throws IOException {
@@ -53,8 +55,8 @@ public class MockDataSource<T> implements MultiDataSource<T> {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(getKey()+" changed collected "+list);
-        return list;
+        System.out.println(getKey() + " changed collected " + modifiedData);
+        return modifiedData;
     }
 
     public SyncStamp getLastSyncStamp(DataSource<T> targetDataSource) throws IOException {
@@ -77,23 +79,73 @@ public class MockDataSource<T> implements MultiDataSource<T> {
         return null;
     }
 
-    public String setChosenLastSyncKey() {
-        return null;
+
+    public String setChosenKey(String key) {
+        return chosenLastSyncKey;
     }
 
-    public String getChosenLastSyncKey() {
-        return lastSyncKey;
+    public String getChosenKey() {
+        return chosenLastSyncKey;
     }
 
-    public Map<String, SyncStamp> getAllLastSycnStampCache() {
-        return null;
+    public Map<String, SyncStamp> getSyncStampsCache() {
+        return syncStampsCache;
     }
 
-    public void setAllLastSyncStampsCache(Map<String, SyncStamp> syncStamps) {
-
+    public void setSyncStampsCache(Map<String, SyncStamp> syncStamps) {
+        this.syncStampsCache = syncStamps;
     }
 
     public void initLastSyncStamps() {
 
+        List<String> names = listAllSyncStampsNames();
+
+        initSyncStampsCache(names);
+
+        sort();
+
     }
+
+    private void sort() {
+        TreeMap<SyncStamp,String> sortMap = new TreeMap<SyncStamp, String>(new Comparator<SyncStamp>() {
+            public int compare(SyncStamp o1, SyncStamp o2) {
+                if (o1.getLastModifyTime().compareTo(o2.getLastModifyTime())!=0){
+                    return -o1.getLastModifyTime().compareTo(o2.getLastModifyTime());
+                }else{
+                    return -o1.getLastSyncTimeEnd().compareTo(o2.getLastSyncTimeEnd());
+                }
+            }
+        });
+        for (String key : syncStampsCache.keySet()) {
+            sortMap.put(syncStampsCache.get(key),key);
+        }
+        syncStampsCache.clear();
+        for (SyncStamp syncStamp : sortMap.keySet()) {
+            syncStampsCache.put(sortMap.get(syncStamp), syncStamp);
+        }
+    }
+
+    private List<String> listAllSyncStampsNames() {
+        return null;
+    }
+
+    private void initSyncStampsCache(List<String> urls) {
+        MultiExecuteUtils.blockExecute(null, new MultiExecuteUtils.ParamCallable<String>() {
+            public void call(String name) throws Exception {
+                SyncStamp syncStamp = getSyncStampFromName(name);
+                String key = getKeyFromName();
+                syncStampsCache.put(key, syncStamp);
+            }
+        },null,urls);
+    }
+
+    private String getKeyFromName() {
+        return null;
+    }
+
+    private SyncStamp getSyncStampFromName(String name) {
+        return null;
+    }
+
+
 }

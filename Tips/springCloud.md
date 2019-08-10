@@ -6,3 +6,14 @@
 客户端配置文件中添加:
 management.endpoints.web.exposure.include=refresh
 客户端: http://localhost:1120/actuator/refresh
+
+### spring cloud bus
+
+与配置中心结合时, spring-boot 2.0 修改了刷新的端口, 由原来的 **bus/refresh** 改为了 **actuator/bus-refresh**
+
+并且配置中要添加
+
+```
+
+```
+

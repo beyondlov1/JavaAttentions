@@ -103,30 +103,45 @@ maven:
         </dependency>
 	
 	 <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>aspectj-maven-plugin</artifactId>
-                <version>1.8</version>
-                <configuration>
-                    <complianceLevel>1.8</complianceLevel>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <outxml>true</outxml>
-                    <verbose>true</verbose>
-                    <showWeaveInfo>true</showWeaveInfo>
-                    <aspectLibraries>
-                        <aspectLibrary>
-                            <groupId>org.springframework</groupId>
-                            <artifactId>spring-aspects</artifactId>
-                        </aspectLibrary>
-                    </aspectLibraries>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>process-classes</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+	            <groupId>org.codehaus.mojo</groupId>
+	            <artifactId>aspectj-maven-plugin</artifactId>
+	            <version>1.8</version>
+	            <configuration>
+	                <complianceLevel>1.8</complianceLevel>
+	                <source>1.8</source>
+	                <target>1.8</target>
+	                <outxml>true</outxml>
+	                <verbose>true</verbose>
+	                <showWeaveInfo>true</showWeaveInfo>
+	                <aspectLibraries>
+	                    <aspectLibrary>
+	                        <groupId>org.springframework</groupId>
+	                        <artifactId>spring-aspects</artifactId>
+	                    </aspectLibrary>
+	                </aspectLibraries>
+	            </configuration>
+	            <executions>
+	                <execution>
+	                    <phase>process-classes</phase>
+	                    <goals>
+	                        <goal>compile</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	        </plugin>
 
+### spring boot 动态注册 bean
+
+使用 ImportBeanDefinitionRegistrar 此接口在 BeanFactoryPostProcessor 中执行, 因此可以动态注册. 这个要配合 @Configuration , 在Configuration类上 @Import(XXXRegistrar.class)
+
+里面可以用  ClassPathBeanDefinitionScanner 进行扫描注册, 添加filter后运行scan() 方法自动注册. 
+
+demo: bean-definition-register-demos
+
+参考: <https://www.jianshu.com/p/2b993ced6a4c> 
+
+<https://zhuanlan.zhihu.com/p/30123517> 	
+
+<https://blog.csdn.net/canyanruxue/article/details/81475473> 
+
+ImportBeanDefinitionRegistrar  中接口方法中 importingClassMetadata 参数代表着 import的类, 也就是Configuration 类的注解

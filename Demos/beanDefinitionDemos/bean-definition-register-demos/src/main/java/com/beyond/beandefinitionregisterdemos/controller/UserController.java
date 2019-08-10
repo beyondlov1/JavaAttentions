@@ -1,5 +1,6 @@
 package com.beyond.beandefinitionregisterdemos.controller;
 
+import com.beyond.beandefinitionregisterdemos.CustomRegisterTarget;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,5 +20,14 @@ public class UserController {
     @RequestMapping("/registeredBean2")
     public Object registeredBean2(){
         return obj2Bean.getName();
+    }
+
+
+    @Autowired
+    CustomRegisterTarget target;
+
+    @RequestMapping("/customRegisterTarget")
+    public Object customRegisterTarget(){
+        return target.showMe();
     }
 }
