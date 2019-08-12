@@ -11,6 +11,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<package name="com.beyond.demo.bean" />
 	</typeAliases>
+	<typeHandlers>
+		<typeHandler handler="com.beyond.demo.CustomEnumTypeHanlder" javaType="com.beyond.demo.bean.SexEnum"/>
+	</typeHandlers>
+	<plugins>
+		<plugin interceptor="com.beyond.demo.PageInterceptor"/>
+	</plugins>
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
@@ -25,5 +31,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<package name="com/beyond/demo/mapper" />
 	</mappers>
+
 
 </configuration>
