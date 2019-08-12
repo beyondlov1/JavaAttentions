@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a19c842-7e86-4db3-a89a-35c77fd0a5a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/CustomEnumTypeHanlder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/PageInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/bean/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/bean/SexEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/demo/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/bean/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/demo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/demo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/beyond/demo/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/bean/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/bean/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/beyond/demo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/beyond/demo/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Tips/mybatis.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Tips/mybatis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../keys/mybatis-pro.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../keys/mybatis-pro.md" afterDir="false" />
-    </list>
+    <list default="true" id="7a19c842-7e86-4db3-a89a-35c77fd0a5a6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -385,7 +365,7 @@
     <property name="SearchEverywhereHistoryKey" value="Executor&#9;FILE&#9;jar://C:/Users/beyond/.m2/repository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/executor/Executor.java&#10;Mapped&#9;FILE&#9;jar://C:/Users/beyond/.m2/repository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/mapping/MappedStatement.java&#10;SqlNode&#9;PSI&#9;JAVA://org.apache.ibatis.scripting.xmltags.SqlNode&#10;TypeHandlerRe&#9;FILE&#9;jar://C:/Users/beyond/.m2/repository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/type/TypeHandlerRegistry.java&#10;EnumTypeHandler&#9;FILE&#9;jar://C:/Users/beyond/.m2/repository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/type/EnumTypeHandler.java&#10;MapperMetho&#9;PSI&#9;JAVA://org.apache.ibatis.binding.MapperMethod&#10;ExecutorService&#9;PSI&#9;JAVA://java.util.concurrent.ExecutorService&#10;TypeHandler&#9;FILE&#9;jar://C:/Users/beyond/.m2/repository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/type/TypeHandler.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565585831058" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565589276461" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -523,16 +503,15 @@
       <workItem from="1565011450975" duration="1887000" />
       <workItem from="1565058329153" duration="1251000" />
       <workItem from="1565484155354" duration="14037000" />
-      <workItem from="1565579751253" duration="5469000" />
+      <workItem from="1565579751253" duration="6121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69995000" />
+    <option name="totallyTimeSpent" value="70647000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49822065" visible="true" weight="0.23927614" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
