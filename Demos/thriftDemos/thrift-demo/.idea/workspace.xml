@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9a18684-eb5f-4f06-99f7-a2647f7f527f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../avroDemos/avrodemos/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../avroDemos/avrodemos/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../avroDemos/avrodemos/src/main/java/com/beyond/avro/auto/ReadDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../avroDemos/avrodemos/src/main/java/com/beyond/avro/auto/WriteDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../avroDemos/avrodemos/src/main/java/com/beyond/avro/manual/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../avroDemos/avrodemos/src/main/java/com/beyond/avro/manual/WriteDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../avroDemos/avrodemos/src/main/resources/avro/User2.avsc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../protobufDemos/protobuf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../protobufDemos/protobuf/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../avroDemos/avrodemos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../avroDemos/avrodemos/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,7 +16,7 @@
     <session id="-296022422">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="2" />
