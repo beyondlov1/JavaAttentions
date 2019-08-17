@@ -55,6 +55,18 @@
    ```
 
 4. dataDir 中添加 myid 文件
-  里面写 编号  也就是 server.xxx 中的 xxx
+    里面写 编号  也就是 server.xxx 中的 xxx
 
 5. 这里要注意: config 文件中 dataDir 要用 / 不要用 \
+
+### 查看server 状态
+
+- 默认会启动一个 adminServer, 默认地址: localhost:8080
+- 可在zoo.conf 中修改: 添加 admin.serverPort=8083
+- 然后访问: http://localhost:8083/commands/monitor
+
+这个可能也有用, 但是没试过: https://blog.csdn.net/x763795151/article/details/80599498
+
+<https://www.cnblogs.com/qlqwjy/p/10491456.html> 
+
+<https://blog.csdn.net/qq_36148847/article/details/80114283> 
