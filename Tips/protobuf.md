@@ -7,7 +7,7 @@
 1. 从release 页面下载 windows 版本的编译器
 
 2. ```
-   
+   protoc -I=$SRC_DIR --java_out=$DST_DIR $SRC_DIR/addressbook.proto
    ```
 
 3. 然后会生成 java代码

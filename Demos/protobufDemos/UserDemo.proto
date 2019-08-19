@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.beyond.protobuf;
+
+message User {
+    string name = 1;
+    int32 age = 2;
+    
+    enum Sex{
+        MALE = 0;
+        FEMAILE = 1;
+    }
+    Sex sex = 3;
+}
