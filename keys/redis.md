@@ -67,4 +67,65 @@
 
 - 空转时长 LRU策略
 
+
+### 数据库
+
+- redisServer 中有个 db 数组 和 dbnum
+- 默认db数组大小为 16 
+- 可以通过select 切换 db
+- 切换的时候只是 client 指向数组不同的地方
+- 键空间: 可以通过``` subscribe __keyspace@0__:message ``` 对message 这个键进行监控, 可设置
+- pub/sub : 可以监控一个channel, 如: subscribe msg / publish msg yes
+- expire , ttl : 实现原理: 在db中保存着一个 dict, key-timestamp
+- 过期键删除策略: 定时删除, 惰性删除, 定期删除
+- 持久化时过期键的策略: 主从模式只能由主删除( 保持一致性), 其他情况下 RDB 的方式不会保存过期的, AOF 会增加一个DEL 语句
+
+### RDB 持久化
+
+- 快照
+
+- 在未开启aof的情况下由RDB恢复数据
+
+- save 阻塞  bgsave 异步
+
+- 载入 阻塞
+
+- 自动间隔性保存
+
+- dirty 计数器, lastsave: 未刷入磁盘的数据叫 dirty 的数据, 在上一次刷盘之前, 每进行一次修改操作, dirty 计数器就会 + 1, 刷了之后reset
+
+- RDB 文件结构
+
+  ![1566293932105](redis.assets/1566293932105.png)
+
+![1566293962230](redis.assets/1566293962230.png)
+
+![1566293985887](redis.assets/1566293985887.png)
+
+保存具体数据时根据encoding不同, 比较复杂, 看书吧
+
+
+
+### AOF 持久化
+
+- aop_buf
+
+- 写入, 刷到磁盘
+
+- appendfsync: 操作系统为了性能, 一般会在写入时不会直接写入磁盘, 而是先写到缓存, 到达一定程度在写到磁盘, 这个参数就是控制什么时候写到磁盘
+
+  always, everysec, no
+
+  always 每次都写, 效率较低
+
+  everysec 每秒写一次
+
+  no 操作系统控制
+
+- aof重写: 根据数据库现在的状态写出一个精简版的aof文件, 然后替换掉原来的文件
+
+- aof重写期间的数据: 放到 aof重写缓存, 在重写完成之后吧重写缓存里面的合并到aof文件中
+
+  ![1566294423177](redis.assets/1566294423177.png)
+
   
