@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chat-room</title>
+    <script src="jquery.js"></script>
+    <style>
+        #sendBox{
+            position: fixed;
+            top: 90%;
+        }
+        #message_list{
+            position: relative;
+            height: 500px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+<div id="message_list">
+
+</div>
+<form id="sendBox" action="/send">
+    <label>
+        channel:
+        <input type="text" id="channel" name="channel">
+    </label>
+    <label>
+        message:
+        <input type="text" id="msg" name="msg">
+    </label>
+</form>
+</body>
+<script>
+
+    $(function () {
+       $("#msg").on("keyup",function (event) {
+           console.log(event);
+           if (event.keyCode === 13) {
+               send();
+               $("#msg").val(null);
+           }
+       })
+    });
+   function sync() {
+       var url = "/sync";
+       var param = {"channel":"hello"};
+       $.post(url,param,function(data){
+           if (data.length !== 0) {
+               for (var i = 0; i < data.length; i++) {
+                   var message = data[i];
+                   $("#message_list").append($("<p>"+message+"</p>"))
+                   $("#message_list").scrollTop(10000000)
+               }
+           }
+           setTimeout(sync,1000);
+       });
+   }
+
+   setTimeout(sync, 1000);
+
+   function send() {
+       var url = "/send";
+       var msg = $("#msg").val();
+       var channel = $("#channel").val();
+
+       if (msg == null || channel == null || msg == "" || channel == "") {
+           return;
+       }
+       var param = {"channel": channel,"msg": msg};
+       $.post(url,param,function(data){
+           console.log(data)
+       });
+   }
+</script>
+</html>
