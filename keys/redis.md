@@ -171,4 +171,47 @@
   - min-slaves 配置可以设置最少的slave数量和最大slave延迟(如果延迟秒数过多就认为是断了), 如果slave 状态不对, 就不进行下面的命令了
   - 检测命令丢失
 
-  
+
+### 集群
+
+- 分片, 将keys 分配到 2048*8个 slot 里面, 然后nodes 瓜分这些slots
+
+- clusterNode clusterState clusterLink  结构
+
+- 添加node : cluster meet <host> <port>
+
+- 槽指派: cluster addslots ....  这里比较坑的是要一个一个写, for循环的方式还没搞懂怎么写
+
+  可以修改生成出来的 nodes.config : 0-1000
+
+- 每个节点知道所有的slot 对应node 的信息, 还有slot key对应的跳表, 可以根据spot查询所有key
+
+- 执行命令时, 如果当前分区中有相应的key 就自己处理, 如果没有则返回MOVED错误重定向处理
+
+- 重新分片: 重新分片会对spot进行迁移, 如果迁移过程中访问相应的key, 如果还没迁移过去会返回ASK错误, 然后重定向处理
+
+- 设置从节点 cluster replicate <node_id>
+
+- 故障检测: 每个节点定期ping, 如果检测到某个节点超时, 就标记为疑似下线. 同时其他节点会广播自己发现的疑似下线的report, 此时这个节点就会记录下来, 如果半数以上认为下线了, 那就下线了
+
+- 故障转移: 选举新的主节点: 所有主节点只有一票, 故障的主节点的从节点发送选举信息, 其他主节点会给第一个收到的从节点投票, 超过半数的当选.
+
+  类似于哨兵机制
+
+- 消息: 集群publish的时候, 一个node 发送, 其他节点也会发送
+
+  协议: Gossip
+
+### 发布订阅
+
+- PSUBSCRIBE : Pattern
+- PUBSUB CHANNELS <pattern>
+- PUBSUB NUMSUB
+- PUBSUB NUMPAT
+
+### 事务
+
+- Multi Exec
+- Watch : 乐观锁, 如果监视的key变化了就打开REDIS_DIRTY_CAS ,  然后事务就失败了, 返回空
+- 实现是每个client都有一个事务状态的结构, 里面会把事务中的命令放到一个FIFO的队列里面, 执行的时候依次执行
+
