@@ -1,3 +1,7 @@
+### PyCharm 破解
+https://blog.csdn.net/Delong_Zhang_China/article/details/89167172
+文件在百度网盘
+
 ### Python json
 
 ValueError: Invalid control character at: line 1 column 33 (char 33)
