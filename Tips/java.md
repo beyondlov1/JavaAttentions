@@ -55,3 +55,6 @@ https://developer.ibm.com/articles/j-zerocopy/
 
 ### java报错: 找不到或无法加载主类
 https://blog.csdn.net/snowlive/article/details/54880537
+
+### 获取源码根目录
+(new File("")).getAbsolutePath()
