@@ -57,4 +57,4 @@ https://developer.ibm.com/articles/j-zerocopy/
 https://blog.csdn.net/snowlive/article/details/54880537
 
 ### 获取源码根目录
-(new File("")).getAbsolutePath()
+(new File("")).getAbsolutePath()  得到的是项目根目录
