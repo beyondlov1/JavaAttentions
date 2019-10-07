@@ -579,3 +579,7 @@ https://www.jianshu.com/p/1956e15c9a27
 
 ### okhttp 返回结果503, 但是网页可以打开的问题
 缺少User-Agent 的header
+
+
+### unsupported modules detected Compilation is not supported for following modules: app. Unfortunately you can’t have non-Gradle Java modules and Android-Gradle modules in one project
+https://blog.csdn.net/qq_30552993/article/details/83383095
