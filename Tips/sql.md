@@ -115,3 +115,27 @@ index	在list和数组中,index是元素的序号，在map中，index是元素�
 tinyint(M) 这个M代表只是展示的位数（在选中是否填充0的情况下有用）
 tinyint(1) 和 boolean 同义词
 
+### MySQL按天/月统计
+<!-- 按日查询 -->  
+SELECT DATE_FORMAT(created_date,'%Y-%m-%d') as time,sum(money) money FROM o_finance_detail where org_id = 1000  GROUP BY  time  
+<!-- 按月查询 -->  
+SELECT DATE_FORMAT(created_date,'%Y-%m') as time,sum(money)  money FROM o_finance_detail where org_id = 1000  GROUP BY  time  
+<!-- 按年查询 -->  
+SELECT DATE_FORMAT(created_date,'%Y') as time,sum(money)  money FROM o_finance_detail where org_id = 1000  GROUP BY  time   
+<!-- 按周查询 -->  
+SELECT DATE_FORMAT(created_date,'%Y-%u') as time,sum(money)  money FROM o_finance_detail where org_id = 1000  GROUP BY  time
+
+https://www.cnblogs.com/shaoing/p/8971758.html
+### MySQL 时间戳和日期的相互转换
+1.日期转时间戳
+select UNIX_TIMESTAMP('2018-12-25 12:25:00');
+结果：1545711900
+
+2.时间戳转日期：FROM_UNIXTIME(unix_timestamp) --unix_timestamp为时间戳
+select FROM_UNIXTIME(1545711900);
+结果：2018-12-25 12:25:00
+
+3.时间戳转日期，自定义返回日期格式：FROM_UNIXTIME(unix_timestamp,format) -- format请参考后面的截图
+select FROM_UNIXTIME(1545711900,'%Y-%m-%d %T');
+-- 结果：2018-12-25 12:25:00
+https://blog.csdn.net/qq_25112523/article/details/85251808
