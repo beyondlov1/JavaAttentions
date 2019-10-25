@@ -145,3 +145,19 @@ demo: bean-definition-register-demos
 <https://blog.csdn.net/canyanruxue/article/details/81475473> 
 
 ImportBeanDefinitionRegistrar  中接口方法中 importingClassMetadata 参数代表着 import的类, 也就是Configuration 类的注解
+
+### spring 自定义JsonSerializer
+public class BigDecimalScaleSerializer extends JsonSerializer<BigDecimal> {
+    @Override
+    public void serialize(BigDecimal value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
+        if(Objects.isNull(value)) {
+            gen.writeNull();
+        } else {
+            gen.writeNumber(value.setScale(2, RoundingMode.HALF_UP));
+        }
+    }
+}
+
+使用：在返回 Model 中添加注解
+@JsonSerialize(using = BigDecimalScaleSerializer.class)
+private BigDecimal tAmt;
