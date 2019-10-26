@@ -6,4 +6,3 @@ execution(@com.beyond.commute.permission.RequirePermission * *(..))
 
 详细的见下边这个网址,如果打不开去 onenote/technology/JAVA/Spring中找:
 http://blog.espenberntsen.net/2010/03/20/aspectj-cheat-sheet/
-https://www.cnblogs.com/weizhxa/p/8567942.html
