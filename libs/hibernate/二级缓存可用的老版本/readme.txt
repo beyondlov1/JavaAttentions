@@ -1,1 +1,0 @@
-hibernate3没有Hikari数据源的支持, 只能用c3p0
