@@ -5,3 +5,13 @@
 查询可用SimpleQuery, 条件用 Criteria , 
 simpleQuery(Criteria.Wildcard)
 Criteria(field)
+
+
+### solr elevate
+solr的 elevate 的提升受filterQuery的影响，而不受query的影响（即结果集中不会出现filter掉的结果， 即使elevateIds中声明了）
+elevate 在xml配置的时候会配置一个query的字符串， 以判断搜索哪个词的时候会出现
+
+参考官方文档：
+The fq Parameter
+Query elevation respects the standard filter query (fq) parameter. That is, if the query contains the fq parameter, all results will be within that filter even if elevate.xml adds other documents to the result set.
+https://lucene.apache.org/solr/guide/6_6/the-query-elevation-component.html
