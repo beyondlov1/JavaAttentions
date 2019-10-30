@@ -53,9 +53,3 @@ https://blog.csdn.net/qq_26787115/article/details/52133008
 #### git 用 ssh
 https://blog.csdn.net/Felicity294250051/article/details/53606158
 
-### 修改名字邮箱
-git config --global user.name "zhang san"
-
-git config --global user.email john@example.com
-
-修改一个 把 global 去掉
