@@ -59,3 +59,5 @@ git config --global user.name "zhang san"
 git config --global user.email john@example.com
 
 修改一个 把 global 去掉
+
+参考（git笔记）：https://www.jianshu.com/p/e405f9857b52

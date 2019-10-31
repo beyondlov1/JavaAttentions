@@ -58,3 +58,9 @@ https://blog.csdn.net/snowlive/article/details/54880537
 
 ### 获取源码根目录
 (new File("")).getAbsolutePath()  得到的是项目根目录
+
+### 查看对象个数
+jconsole或者jvisualVm 堆dump
+
+### java 对象大小
+https://blog.csdn.net/jiafu1115/article/details/7017719
