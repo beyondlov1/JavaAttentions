@@ -1,9 +1,0 @@
-server:
-  port: 8080
-
-spring:
-  data:
-    solr:
-      repositories:
-        enabled: true
-      host: http://127.0.0.1:8983/solr

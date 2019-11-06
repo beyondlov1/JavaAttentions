@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b32fa214-78cc-4b71-b574-0dbd37849fca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/SolrSpringDemo2Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/config/SolrConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/converter/NumberToBigDecimalConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/converter/SolrDocumentToBookConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/converter/StringToBigDecimalConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/QueryDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/beyond/solrdemo/SolrSpringDemo2ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/beyond/solrdemo/solr/QueryDemoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/src/main/java/com/beyond/solrspringdemo/SolrSpringDemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/src/main/java/com/beyond/solrspringdemo/solr/SolrConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/src/main/java/com/beyond/solrspringdemo/solr/SolrController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/src/main/java/com/beyond/solrspringdemo/solr/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo/src/test/java/com/beyond/solrspringdemo/SolrSpringDemoApplicationTests.java" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1945906519">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="24" />
+          <entry key="java" value="108" />
+          <entry key="properties" value="3" />
+          <entry key="xml" value="1" />
+          <entry key="yml" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="24" />
+          <entry key="JAVA" value="108" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="1" />
+          <entry key="YAML" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="2078" />
+          <entry key="yml" value="61" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="2078" />
+          <entry key="YAML" value="61" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-229251973">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="670" />
+          <entry key="txt" value="3" />
+          <entry key="yml" value="99" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="670" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="YAML" value="99" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="4" />
+          <entry key="java" value="46" />
+          <entry key="properties" value="1" />
+          <entry key="xml" value="1" />
+          <entry key="yml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="4" />
+          <entry key="JAVA" value="46" />
+          <entry key="Properties" value="1" />
+          <entry key="XML" value="1" />
+          <entry key="YAML" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0-sources.jar!/org/apache/solr/client/solrj/response/QueryResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
+              <caret line="645" column="23" selection-start-line="645" selection-start-column="23" selection-end-line="645" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0-sources.jar!/org/apache/solr/client/solrj/SolrClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0-sources.jar!/org/apache/solr/client/solrj/beans/DocumentObjectBinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+              <folding>
+                <element signature="e#1892#1893#0" expanded="true" />
+                <element signature="e#1938#1939#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0-sources.jar!/org/apache/solr/client/solrj/beans/Field.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>long</find>
+      <find>customReadTargetTypes</find>
+      <find>readingPairs</find>
+      <find>addConverter</find>
+      <find>projectionOnFields</find>
+      <find>facet.query</find>
+      <find>facet.field</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/Deserializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/MySolrConversions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/MySolrConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/WholesaleDrug.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/MyConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/MyConverter2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/MyMapperConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/StringToBigDecimalConvertor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/StringToBigDecimalConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/SolrDocumentToWholesaleDrugConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/QueryDemo2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/NumberToBigDecimalConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/SolrDocumentToBookConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/converter/NumberToBigDecimalConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/SolrSpringDemo2Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/solr/SolrQueryComponent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/SolrQueryComponent.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/beyond/solrdemo/solr/QueryDemoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/filter/FilterQueryComp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/QueryComp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/SolrQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/config/SolrConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/BookRaw.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/QueryDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/MyDocumentObjectBinder.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$USER_HOME$/software/maven/apache-maven-3.6.1-bin/apache-maven-3.6.1" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="582" />
+    <option name="y" value="224" />
+    <option name="width" value="976" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="solr-spring-demo-2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solr-spring-demo-2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="solr-spring-demo-2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="solr-spring-demo-2" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572832630084" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.beyond.solrdemo.solr" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.beyond.solrdemo.entity" />
+      <recent name="com.beyond.solrdemo.solr" />
+      <recent name="com.beyond.solrdemo.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\beyond\document\github\JavaAttentions\Demos\solrSpringDemos\solr-spring-demo-2\src\main\java\com\beyond\solrdemo\solr" />
+      <recent name="C:\Users\beyond\document\work\demo\solr-spring-demo-2\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.QueryDemoTest.query">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryDemoTest.facet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="solr-spring-demo-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.beyond.solrdemo.solr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.beyond.solrdemo.solr" />
+      <option name="MAIN_CLASS_NAME" value="com.beyond.solrdemo.solr.QueryDemoTest" />
+      <option name="METHOD_NAME" value="facet" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryDemoTest.query" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="solr-spring-demo-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.beyond.solrdemo.solr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.beyond.solrdemo.solr" />
+      <option name="MAIN_CLASS_NAME" value="com.beyond.solrdemo.solr.QueryDemoTest" />
+      <option name="METHOD_NAME" value="query" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryDemoTest.query2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="solr-spring-demo-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.beyond.solrdemo.solr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.beyond.solrdemo.solr" />
+      <option name="MAIN_CLASS_NAME" value="com.beyond.solrdemo.solr.QueryDemoTest" />
+      <option name="METHOD_NAME" value="query2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SolrSpringDemo2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="solr-spring-demo-2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.beyond.solrdemo.SolrSpringDemo2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.SolrSpringDemo2Application" />
+      <item itemvalue="JUnit.QueryDemoTest.query" />
+      <item itemvalue="JUnit.QueryDemoTest.query2" />
+      <item itemvalue="JUnit.QueryDemoTest.facet" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.QueryDemoTest.query" />
+        <item itemvalue="JUnit.QueryDemoTest.facet" />
+        <item itemvalue="JUnit.QueryDemoTest.query2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b32fa214-78cc-4b71-b574-0dbd37849fca" name="Default Changelist" comment="" />
+      <created>1572245086128</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572245086128</updated>
+      <workItem from="1572245090427" duration="13618000" />
+      <workItem from="1572334929107" duration="6749000" />
+      <workItem from="1572504406324" duration="7320000" />
+    </task>
+    <task id="LOCAL-00001" summary="add">
+      <created>1572504479412</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572504479412</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="QueryDemoTest_query - 2019.11.01 at 14h 37m 00s.xml">
+      <configuration name="QueryDemoTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryDemoTest_query - 2019.11.01 at 14h 38m 13s.xml">
+      <configuration name="QueryDemoTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryDemoTest_query - 2019.11.01 at 14h 38m 46s.xml">
+      <configuration name="QueryDemoTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryDemoTest_query - 2019.11.01 at 14h 58m 25s.xml">
+      <configuration name="QueryDemoTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryDemoTest_query - 2019.11.01 at 14h 59m 40s.xml">
+      <configuration name="QueryDemoTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryDemoTest_query - 2019.11.01 at 15h 02m 09s.xml">
+      <configuration name="QueryDemoTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryDemoTest_query - 2019.11.01 at 15h 02m 47s.xml">
+      <configuration name="QueryDemoTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryDemoTest_query - 2019.11.01 at 15h 03m 51s.xml">
+      <configuration name="QueryDemoTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryDemoTest_query - 2019.11.01 at 15h 08m 04s.xml">
+      <configuration name="QueryDemoTest.query" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryDemoTest_query - 2019.11.01 at 15h 08m 53s.xml">
+      <configuration name="QueryDemoTest.query" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="27687000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20362474" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3355049" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32899022" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="right" id="Api Debugger" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Mybatis datasource" order="5" show_stripe_button="false" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add" />
+    <option name="LAST_COMMIT_MESSAGE" value="add" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.2.0.RELEASE/spring-data-commons-2.2.0.RELEASE.jar!/org/springframework/data/convert/CustomConversions.class</url>
+          <line>106</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0-sources.jar!/org/apache/solr/client/solrj/beans/DocumentObjectBinder.java</url>
+          <line>130</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.2.0.RELEASE/spring-core-5.2.0.RELEASE-sources.jar!/org/springframework/core/convert/support/GenericConversionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/convert/SolrConverterBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.2.0.RELEASE/spring-data-commons-2.2.0.RELEASE-sources.jar!/org/springframework/data/convert/CustomConversions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="328" selection-start-line="328" selection-end-line="328" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/software/jdk/jdk/src.zip!/java/util/Collections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="1287" column="30" selection-start-line="1287" selection-start-column="30" selection-end-line="1287" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/query/SimpleQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="151" column="37" selection-start-line="151" selection-start-column="37" selection-end-line="151" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/query/Query.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/QueryDemo2.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.2.0.RELEASE/spring-boot-autoconfigure-2.2.0.RELEASE.jar!/org/springframework/boot/autoconfigure/solr/SolrProperties.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.2.0.RELEASE/spring-data-commons-2.2.0.RELEASE-sources.jar!/org/springframework/data/util/Streamable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="41" column="56" lean-forward="true" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.2.0.RELEASE/spring-data-commons-2.2.0.RELEASE-sources.jar!/org/springframework/data/domain/Slice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.2.0.RELEASE/spring-data-commons-2.2.0.RELEASE-sources.jar!/org/springframework/data/domain/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/convert/SolrJConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/software/jdk/jdk/src.zip!/java/math/BigDecimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="1271" column="29" selection-start-line="1271" selection-start-column="29" selection-end-line="1271" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/SolrDocumentToWholesaleDrugConverter.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/WholesaleDrug.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/query/FacetQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/query/Field.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+          <folding>
+            <element signature="e#1690#1691#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/beyond/solrdemo/SolrSpringDemo2ApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/query/SimpleFacetQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding>
+            <element signature="e#1037#1038#0" expanded="true" />
+            <element signature="e#1051#1052#0" expanded="true" />
+            <element signature="e#1098#1099#0" expanded="true" />
+            <element signature="e#1125#1126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/query/Criteria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="51" column="11" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
+          <folding>
+            <element signature="e#2088#2089#0" expanded="true" />
+            <element signature="e#2127#2128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/software/jdk/jdk/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="237" column="12" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/query/FacetOptions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+          <folding>
+            <element signature="docComment;class#FacetOptions#0" />
+            <element signature="e#2100#2194#0" />
+            <element signature="e#2100#2448#0" />
+            <element signature="e#2451#2509#0" />
+            <element signature="e#2451#2733#0" />
+            <element signature="e#2736#2823#0" />
+            <element signature="e#2736#3075#0" />
+            <element signature="e#3078#3160#0" />
+            <element signature="e#3078#3413#0" />
+            <element signature="e#3416#3518#0" />
+            <element signature="e#3416#3646#0" />
+            <element signature="e#3649#3815#0" />
+            <element signature="e#3649#4113#0" />
+            <element signature="e#4116#4203#0" />
+            <element signature="e#4116#4628#0" />
+            <element signature="e#4631#4651#0" />
+            <element signature="e#4631#5010#0" />
+            <element signature="e#5013#5098#0" />
+            <element signature="e#5013#5336#0" />
+            <element signature="e#5339#5411#0" />
+            <element signature="e#5339#5584#0" />
+            <element signature="e#5587#5644#0" />
+            <element signature="e#5756#5905#0" />
+            <element signature="e#5756#6023#0" />
+            <element signature="e#6026#6116#0" />
+            <element signature="e#6026#6223#0" />
+            <element signature="e#6226#6356#0" />
+            <element signature="e#6700#6768#0" />
+            <element signature="e#6885#7025#0" />
+            <element signature="e#7093#7168#0" />
+            <element signature="e#7230#7305#0" />
+            <element signature="e#7371#7429#0" />
+            <element signature="e#7553#7649#0" />
+            <element signature="e#7553#7749#0" />
+            <element signature="e#7752#7820#0" />
+            <element signature="e#7893#7969#0" />
+            <element signature="e#7893#8079#0" />
+            <element signature="e#8082#8139#0" />
+            <element signature="e#8253#8317#0" />
+            <element signature="e#8398#8457#0" />
+            <element signature="e#8617#8696#0" />
+            <element signature="e#8814#8869#0" />
+            <element signature="e#8958#9306#0" />
+            <element signature="e#9309#9477#0" />
+            <element signature="e#9480#12745#0" />
+            <element signature="e#9686#9714#0" />
+            <element signature="e#9686#9851#0" />
+            <element signature="e#9855#9893#0" />
+            <element signature="e#10003#10029#0" />
+            <element signature="e#10003#10130#0" />
+            <element signature="e#10134#10172#0" />
+            <element signature="e#10244#10271#0" />
+            <element signature="e#10244#10424#0" />
+            <element signature="e#10428#10466#0" />
+            <element signature="e#10575#10603#0" />
+            <element signature="e#10575#10747#0" />
+            <element signature="e#10751#10789#0" />
+            <element signature="e#10900#10930#0" />
+            <element signature="e#10900#11095#0" />
+            <element signature="e#11099#11137#0" />
+            <element signature="e#11240#11282#0" />
+            <element signature="e#11240#11430#0" />
+            <element signature="e#11434#11472#0" />
+            <element signature="e#11585#11626#0" />
+            <element signature="e#11585#11769#0" />
+            <element signature="e#11773#11811#0" />
+            <element signature="e#11921#12021#0" />
+            <element signature="e#11921#12183#0" />
+            <element signature="e#12187#12510#0" />
+            <element signature="e#12514#12603#0" />
+            <element signature="e#12514#12741#0" />
+            <element signature="e#12748#12783#0" />
+            <element signature="e#12748#12938#0" />
+            <element signature="e#12941#13154#0" />
+            <element signature="e#12941#17676#0" />
+            <element signature="e#13318#13489#0" />
+            <element signature="e#13318#14079#0" />
+            <element signature="e#14083#14548#0" />
+            <element signature="e#14083#14726#0" />
+            <element signature="e#14730#14982#0" />
+            <element signature="e#15102#15436#0" />
+            <element signature="e#15102#15625#0" />
+            <element signature="e#15629#15825#0" />
+            <element signature="e#15948#16185#0" />
+            <element signature="e#15948#16384#0" />
+            <element signature="e#16388#16601#0" />
+            <element signature="e#16730#17006#0" />
+            <element signature="e#17010#17154#0" />
+            <element signature="e#17247#17398#0" />
+            <element signature="e#17495#17583#0" />
+            <element signature="e#17679#17801#0" />
+            <element signature="e#17679#18062#0" />
+            <element signature="e#18065#18190#0" />
+            <element signature="e#18065#18466#0" />
+            <element signature="e#18334#18462#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/SolrSpringDemo2Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/convert/SolrConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/SolrTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="668" column="58" selection-start-line="668" selection-start-column="58" selection-end-line="668" selection-end-column="58" />
+          <folding>
+            <element signature="e#5434#5435#0" expanded="true" />
+            <element signature="e#5484#5485#0" expanded="true" />
+            <element signature="e#5686#5687#0" expanded="true" />
+            <element signature="e#5738#5739#0" expanded="true" />
+            <element signature="e#25585#25586#0" expanded="true" />
+            <element signature="e#25617#25618#0" expanded="true" />
+            <element signature="e#26242#26243#0" expanded="true" />
+            <element signature="e#26283#26284#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-solr/4.1.0.RELEASE/spring-data-solr-4.1.0.RELEASE-sources.jar!/org/springframework/data/solr/core/convert/MappingSolrConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="132" column="11" selection-start-line="132" selection-start-column="11" selection-end-line="132" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/converter/StringToBigDecimalConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/converter/SolrDocumentToBookConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/converter/NumberToBigDecimalConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/filter/StoreSubtypeFilterQueryComp.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/filter/AreaFilterQueryComp.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/QueryComp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/SolrQueryComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/SolrQueryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/SortComp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/component/filter/FilterQueryComp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/config/SolrConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/beyond/solrdemo/solr/QueryDemoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0.jar!/org/apache/solr/client/solrj/beans/DocumentObjectBinder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0.jar!/org/apache/solr/client/solrj/response/QueryResponse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="639" column="91" selection-start-line="639" selection-start-column="91" selection-end-line="639" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/BookRaw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0-sources.jar!/org/apache/solr/client/solrj/beans/Field.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/solr/QueryDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0-sources.jar!/org/apache/solr/client/solrj/response/QueryResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="645" column="23" selection-start-line="645" selection-start-column="23" selection-end-line="645" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0-sources.jar!/org/apache/solr/client/solrj/SolrClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/beyond/solrdemo/entity/MyDocumentObjectBinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/8.2.0/solr-solrj-8.2.0-sources.jar!/org/apache/solr/client/solrj/beans/DocumentObjectBinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+          <folding>
+            <element signature="e#1892#1893#0" expanded="true" />
+            <element signature="e#1938#1939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
