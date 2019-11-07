@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/db_test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true
+  data:
+    solr:
+      repositories:
+        enabled: true
+      host: http://127.0.0.1:8983/solr
