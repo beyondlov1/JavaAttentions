@@ -1,13 +1,14 @@
 package com.beyond.solrdemo.solr.component;
 
+import com.beyond.solrdemo.solr.component.facet.FacetParamSource;
 import com.beyond.solrdemo.solr.component.filter.FilterQueryComp;
 import com.ctc.wstx.util.StringUtil;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.springframework.util.CollectionUtils;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author beyondlov1
@@ -18,6 +19,8 @@ public class SolrQueryBuilder {
     private SolrQuery query;
 
     private Set<SolrQueryComponent> components = new HashSet<>();
+
+    private List<FacetParamSource> facetParamSources = new ArrayList<>();
 
     public SolrQueryBuilder() {
         this.query = new SolrQuery("*:*");
@@ -39,6 +42,16 @@ public class SolrQueryBuilder {
 
     public SolrQueryBuilder query(QueryComp query){
         components.add(query);
+        return this;
+    }
+
+    public SolrQueryBuilder add(SolrQueryComponent queryComponent){
+        components.add(queryComponent);
+        return this;
+    }
+
+    public SolrQueryBuilder facet(FacetParamSource facetParamSource) {
+        facetParamSources.add(facetParamSource);
         return this;
     }
 
@@ -74,6 +87,24 @@ public class SolrQueryBuilder {
         for (SolrQueryComponent component : components) {
             component.chain(query);
         }
+
+        if (!CollectionUtils.isEmpty(facetParamSources)){
+            Map<String, Object> param = new LinkedHashMap<>();
+            for (FacetParamSource facetParamSource : facetParamSources) {
+                param.putAll(facetParamSource.getFacetParam());
+            }
+            ObjectMapper objectMapper = new ObjectMapper();
+            try {
+                query.set("json.facet", objectMapper.writeValueAsString(param));
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException("生成 json.facet 字符串失败");
+            }
+            query.setFacet(true);
+            query.setRows(0);
+        }
+
         return query;
     }
+
+
 }

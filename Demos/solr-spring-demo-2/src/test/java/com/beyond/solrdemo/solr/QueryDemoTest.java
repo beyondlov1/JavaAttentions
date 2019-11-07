@@ -33,4 +33,9 @@ class QueryDemoTest {
     void springFacet() throws JsonProcessingException {
         queryDemo.springFacet();
     }
+
+    @Test
+    void solrJFacet() throws IOException, SolrServerException {
+        queryDemo.solrJFacet();
+    }
 }

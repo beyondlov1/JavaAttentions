@@ -4,6 +4,11 @@ import com.beyond.solrdemo.entity.Book;
 import com.beyond.solrdemo.entity.BookRaw;
 import com.beyond.solrdemo.solr.component.QueryComp;
 import com.beyond.solrdemo.solr.component.SolrQueryBuilder;
+import com.beyond.solrdemo.solr.component.facet.IdFacetQueryComp;
+import com.beyond.solrdemo.solr.component.facet.PriceFacetQueryComp;
+import com.beyond.solrdemo.solr.result.IdFacetResult;
+import com.beyond.solrdemo.solr.result.PriceFacetResult;
+import com.beyond.solrdemo.solr.result.ResultContainer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.solr.client.solrj.SolrClient;
@@ -19,6 +24,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author beyondlov1
@@ -39,10 +45,13 @@ public class QueryDemo {
     @Autowired
     private SolrClient solrClient;
 
+    @Autowired
+    private ResultContainer resultContainer;
+
     public void solrJQuery() throws IOException, SolrServerException {
         SolrQuery query = new SolrQueryBuilder()
                 .query(new QueryComp("name", "video"))
-                .set("fl","id,name,price")
+                .set("fl", "id,name,price")
                 .build();
         QueryResponse book = solrClient.query("techproducts", query);
         List<BookRaw> books = book.getBeans(BookRaw.class);
@@ -77,10 +86,23 @@ public class QueryDemo {
     public void solrJBinderQuery() throws IOException, SolrServerException {
         SolrQuery query = new SolrQueryBuilder()
                 .query(new QueryComp("name", "video"))
-                .set("fl","id,name,price")
+                .set("fl", "id,name,price")
                 .build();
         QueryResponse response = solrClient.query("techproducts", query);
         List<Book> books = response.getBeans(Book.class);
         System.out.println(objectMapper.writeValueAsString(books));
+    }
+
+    public void solrJFacet() throws IOException, SolrServerException {
+        SolrQuery query = new SolrQueryBuilder()
+                .facet(new IdFacetQueryComp())
+                .facet(new PriceFacetQueryComp())
+                .build();
+        QueryResponse response = solrClient.query("techproducts", query);
+        resultContainer.setResponse(response);
+        Map<Object, IdFacetResult> idFacet = resultContainer.getFacetResultByFieldName("id", IdFacetResult.class);
+        System.out.println(objectMapper.writeValueAsString(idFacet));
+        Map<Object, PriceFacetResult> priceFacet = resultContainer.getFacetResultByFieldName("price", PriceFacetResult.class);
+        System.out.println(objectMapper.writeValueAsString(priceFacet));
     }
 }

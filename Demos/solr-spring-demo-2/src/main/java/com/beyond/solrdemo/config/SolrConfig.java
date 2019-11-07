@@ -1,9 +1,8 @@
 package com.beyond.solrdemo.config;
 
-import com.beyond.solrdemo.converter.NumberToBigDecimalConverter;
-import com.beyond.solrdemo.converter.SolrDocumentToBookConverter;
-import com.beyond.solrdemo.converter.StringToBigDecimalConverter;
+import com.beyond.solrdemo.converter.*;
 import com.beyond.solrdemo.entity.MyDocumentObjectBinder;
+import com.beyond.solrdemo.solr.result.ResultContainer;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -90,6 +89,14 @@ public class SolrConfig {
                 .withZkHost(environment.getRequiredProperty("spring.data.component.zk-host"))
                 .withHttpClient(client)
                 .build();
+    }
+
+    @Bean
+    public ResultContainer resultContainer(){
+        ResultContainer resultContainer = new ResultContainer();
+        resultContainer.addConverter(new BucketJsonFacetToIdFacetResultConverter());
+        resultContainer.addConverter(new BucketJsonFacetToPriceFacetResultConverter());
+        return resultContainer;
     }
 
 }
