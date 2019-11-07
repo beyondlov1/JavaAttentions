@@ -7,5 +7,7 @@ import lombok.Data;
  * @date 2019/11/07
  */
 @Data
-public class PriceFacetResult extends BaseFacetResult{
+public class BaseFacetResult {
+    private Object val;
+    private Long count;
 }

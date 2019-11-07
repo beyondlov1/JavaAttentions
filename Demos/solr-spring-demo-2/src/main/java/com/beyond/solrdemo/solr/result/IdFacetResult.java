@@ -7,9 +7,7 @@ import lombok.Data;
  * @date 2019/11/07
  */
 @Data
-public class IdFacetResult {
-    private Object val;
-    private Long count;
+public class IdFacetResult extends BaseFacetResult{
     private Double sumAmount;
     private Number storeCount;
 }
