@@ -96,6 +96,7 @@ public class SolrConfig {
         ResultContainer resultContainer = new ResultContainer();
         resultContainer.addConverter(new BucketJsonFacetToIdFacetResultConverter());
         resultContainer.addConverter(new BucketJsonFacetToPriceFacetResultConverter());
+        resultContainer.addConverter(new BucketJsonFacetToSimpleFacetResultConverter());
         return resultContainer;
     }
 

@@ -6,9 +6,11 @@ import com.beyond.solrdemo.solr.component.QueryComp;
 import com.beyond.solrdemo.solr.component.SolrQueryBuilder;
 import com.beyond.solrdemo.solr.component.facet.IdFacetQueryComp;
 import com.beyond.solrdemo.solr.component.facet.PriceFacetQueryComp;
+import com.beyond.solrdemo.solr.component.facet.SimpleFacetQueryComp;
 import com.beyond.solrdemo.solr.result.IdFacetResult;
 import com.beyond.solrdemo.solr.result.PriceFacetResult;
 import com.beyond.solrdemo.solr.result.ResultContainer;
+import com.beyond.solrdemo.solr.result.SimpleFacetResult;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.solr.client.solrj.SolrClient;
@@ -97,6 +99,7 @@ public class QueryDemo {
         SolrQuery query = new SolrQueryBuilder()
                 .facet(new IdFacetQueryComp())
                 .facet(new PriceFacetQueryComp())
+                .facet(new SimpleFacetQueryComp("name"))
                 .build();
         QueryResponse response = solrClient.query("techproducts", query);
         resultContainer.setResponse(response);
@@ -104,5 +107,7 @@ public class QueryDemo {
         System.out.println(objectMapper.writeValueAsString(idFacet));
         Map<Object, PriceFacetResult> priceFacet = resultContainer.getFacetResultByFieldName("price", PriceFacetResult.class);
         System.out.println(objectMapper.writeValueAsString(priceFacet));
+        Map<Object, SimpleFacetResult> nameFacet = resultContainer.getFacetResultByFieldName("name", SimpleFacetResult.class);
+        System.out.println(objectMapper.writeValueAsString(nameFacet));
     }
 }

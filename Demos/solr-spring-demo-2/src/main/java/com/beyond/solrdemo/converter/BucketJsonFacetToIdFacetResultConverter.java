@@ -5,7 +5,7 @@ import org.apache.solr.client.solrj.response.json.BucketJsonFacet;
 import org.springframework.core.convert.converter.Converter;
 
 /**
- * @author chenshipeng
+ * @author beyondlov1
  * @date 2019/11/07
  */
 public class BucketJsonFacetToIdFacetResultConverter implements Converter<BucketJsonFacet, IdFacetResult> {

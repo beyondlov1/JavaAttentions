@@ -14,7 +14,7 @@ import java.beans.PropertyDescriptor;
 import java.util.*;
 
 /**
- * @author chenshipeng
+ * @author beyondlov1
  * @date 2019/11/07
  */
 public class ResultContainer {
@@ -33,8 +33,7 @@ public class ResultContainer {
     }
 
     @SuppressWarnings("unchecked")
-    @Deprecated
-    private Map<String, Map<Object, Object>> getFacetResults(Class commonClass) {
+    public Map<String, Map<Object, Object>> getFacetResults(Class commonClass) {
 
         Map<String, Map<Object, Object>> results = new HashMap<>();
         NestableJsonFacet jsonFacetingResponse = response.getJsonFacetingResponse();
@@ -45,6 +44,19 @@ public class ResultContainer {
 
         return results;
     }
+
+    public Map<String, Map<?, ?>> getFacetResults(Map<String,Class<?>> classMap) {
+
+        Map<String, Map<?, ?>> results = new HashMap<>();
+        NestableJsonFacet jsonFacetingResponse = response.getJsonFacetingResponse();
+        Set<String> bucketBasedFacetNames = jsonFacetingResponse.getBucketBasedFacetNames();
+        for (String bucketBasedFacetName : bucketBasedFacetNames) {
+            results.put(bucketBasedFacetName, getFacetResultByFacetName(bucketBasedFacetName, classMap.get(bucketBasedFacetName)));
+        }
+
+        return results;
+    }
+
 
     private <T> T getObjectFromBucket(BucketJsonFacet bucket, Class<T> clazz) {
 
@@ -60,9 +72,11 @@ public class ResultContainer {
             if (StringUtils.equals(propertyDescriptor.getName(), "val")) {
                 Object val = bucket.getVal();
                 setValue(instance, val, propertyDescriptor);
+                continue;
             }
             if (StringUtils.equals(propertyDescriptor.getName(), "count")) {
                 setValue(instance, bucket.getCount(), propertyDescriptor);
+                continue;
             }
             for (String name : names) {
                 if (StringUtils.equals(propertyDescriptor.getName(), name)) {
