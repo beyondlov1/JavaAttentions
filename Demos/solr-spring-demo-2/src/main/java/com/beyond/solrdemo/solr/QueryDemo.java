@@ -48,7 +48,7 @@ public class QueryDemo {
     private SolrClient solrClient;
 
     @Autowired
-    private ResultContainer resultContainer;
+    private BolrTemplate bolrTemplate;
 
     public void solrJQuery() throws IOException, SolrServerException {
         SolrQuery query = new SolrQueryBuilder()
@@ -101,8 +101,7 @@ public class QueryDemo {
                 .facet(new PriceFacetQueryComp())
                 .facet(new SimpleFacetQueryComp("name"))
                 .build();
-        QueryResponse response = solrClient.query("techproducts", query);
-        resultContainer.setResponse(response);
+        ResultContainer resultContainer = bolrTemplate.query("techproducts", query,solrClient);
         Map<Object, IdFacetResult> idFacet = resultContainer.getFacetResultByFieldName("id", IdFacetResult.class);
         System.out.println(objectMapper.writeValueAsString(idFacet));
         Map<Object, PriceFacetResult> priceFacet = resultContainer.getFacetResultByFieldName("price", PriceFacetResult.class);

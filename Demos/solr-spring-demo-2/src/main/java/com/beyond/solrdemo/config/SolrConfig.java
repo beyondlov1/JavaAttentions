@@ -2,6 +2,7 @@ package com.beyond.solrdemo.config;
 
 import com.beyond.solrdemo.converter.*;
 import com.beyond.solrdemo.entity.MyDocumentObjectBinder;
+import com.beyond.solrdemo.solr.BolrTemplate;
 import com.beyond.solrdemo.solr.result.ResultContainer;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
@@ -92,12 +93,12 @@ public class SolrConfig {
     }
 
     @Bean
-    public ResultContainer resultContainer(){
-        ResultContainer resultContainer = new ResultContainer();
-        resultContainer.addConverter(new BucketJsonFacetToIdFacetResultConverter());
-        resultContainer.addConverter(new BucketJsonFacetToPriceFacetResultConverter());
-        resultContainer.addConverter(new BucketJsonFacetToSimpleFacetResultConverter());
-        return resultContainer;
+    public BolrTemplate bolrTemplate(){
+        BolrTemplate bolrTemplate = new BolrTemplate();
+        bolrTemplate.addConverter(new BucketJsonFacetToIdFacetResultConverter());
+        bolrTemplate.addConverter(new BucketJsonFacetToPriceFacetResultConverter());
+        bolrTemplate.addConverter(new BucketJsonFacetToSimpleFacetResultConverter());
+        return bolrTemplate;
     }
 
 }
