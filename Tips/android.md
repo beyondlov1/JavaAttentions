@@ -590,3 +590,12 @@ apply plugin: 'com.android.application'  import org.aspectj.bridge.IMessage impo
 ### android 定位中国用有问题
 解决办法: 用高德/百度的sdk
 高德地址:https://lbs.amap.com/api/android-location-sdk/guide/android-location/getlocation#result
+
+### 整合讯飞
+
+https://blog.csdn.net/qq_36784975/article/details/89219504
+
+### C++无法正确使用问题
+https://stackoverflow.com/questions/41791429/error-your-project-contains-c-files-but-it-is-not-using-a-supported-native-bu/42364491
+
+You can find your Android.mk in; app/build/intermediates/ndk/debug
