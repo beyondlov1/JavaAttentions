@@ -25,8 +25,10 @@ import org.springframework.data.solr.core.query.result.FacetPage;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author beyondlov1
@@ -108,5 +110,38 @@ public class QueryDemo {
         System.out.println(objectMapper.writeValueAsString(priceFacet));
         Map<Object, SimpleFacetResult> nameFacet = resultContainer.getFacetResultByFieldName("name", SimpleFacetResult.class);
         System.out.println(objectMapper.writeValueAsString(nameFacet));
+    }
+
+    public static void main(String[] args) {
+
+        Criteria criteria = new Criteria(Criteria.WILDCARD);
+        criteria.is("c").and("b").in("bcc", "fege");
+
+        if (criteria.getParent() instanceof Criteria){
+            printCriteria((Criteria) criteria.getParent());
+        }
+
+
+    }
+
+    private static void printCriteria(Criteria criteria) {
+        if (criteria instanceof Crotch){
+            Collection<Criteria> siblings = criteria.getSiblings();
+            System.out.println("---- "+ (criteria.isOr()?"or":"and")+" ----");
+            for (Criteria sibling : siblings) {
+                printCriteria(sibling);
+            }
+        }else if (criteria != null){
+            Field field = criteria.getField();
+            Set<Criteria.Predicate> predicates = criteria.getPredicates();
+            for (Criteria.Predicate predicate : predicates) {
+                String key = predicate.getKey();
+                Object value = predicate.getValue();
+                System.out.println("---- sibling ----");
+                System.out.println(field);
+                System.out.println(key);
+                System.out.println(value);
+            }
+        }
     }
 }

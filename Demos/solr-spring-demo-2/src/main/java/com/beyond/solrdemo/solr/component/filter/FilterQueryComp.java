@@ -4,6 +4,7 @@ import com.beyond.solrdemo.solr.component.SolrQueryComponent;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.solr.client.solrj.SolrQuery;
+import org.springframework.data.solr.core.query.Criteria;
 
 /**
  * @author beyondlov1
