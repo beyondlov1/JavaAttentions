@@ -13,6 +13,7 @@ import com.beyond.solrdemo.solr.result.ResultContainer;
 import com.beyond.solrdemo.solr.result.SimpleFacetResult;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.logging.log4j.util.StringBuilders;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -103,7 +104,7 @@ public class QueryDemo {
                 .facet(new PriceFacetQueryComp())
                 .facet(new SimpleFacetQueryComp("name"))
                 .build();
-        ResultContainer resultContainer = bolrTemplate.query("techproducts", query,solrClient);
+        ResultContainer resultContainer = bolrTemplate.query("techproducts", query, solrClient);
         Map<Object, IdFacetResult> idFacet = resultContainer.getFacetResultByFieldName("id", IdFacetResult.class);
         System.out.println(objectMapper.writeValueAsString(idFacet));
         Map<Object, PriceFacetResult> priceFacet = resultContainer.getFacetResultByFieldName("price", PriceFacetResult.class);
@@ -114,24 +115,69 @@ public class QueryDemo {
 
     public static void main(String[] args) {
 
-        Criteria criteria = new Criteria(Criteria.WILDCARD);
-        criteria.is("c").and("b").in("bcc", "fege");
+        Criteria criteria1E = new Criteria("e").is("e").and("g").is("g");
+        criteria1E.and("h").is("h");
 
-        if (criteria.getParent() instanceof Criteria){
-            printCriteria((Criteria) criteria.getParent());
+        Criteria criteria = new Criteria(Criteria.WILDCARD);
+        criteria.is("c")
+                .and("b").in("bcc", "fege")
+                .and("d").is("d")
+                .or(criteria1E)
+                .or(new Criteria("f").is("f"));
+
+        Criteria criteria1 = new Criteria("ccc");
+        criteria1.is("cc");
+        criteria.or(criteria1);
+
+        StringBuilder sb = new StringBuilder();
+        Node parent = criteria.getParent();
+        while (parent != null) {
+            sb.append(getNodeStr(parent));
+            parent = parent.getParent();
         }
 
+        System.out.println(sb);
+    }
 
+    private static String getNodeStr(Node node) {
+        if (node instanceof Crotch) {
+            Collection<Criteria> siblings = node.getSiblings();
+            StringBuilder sb = new StringBuilder();
+            sb.append(node.isOr() ? " or " : " and " );
+            sb.append("(");
+            for (Criteria sibling : siblings) {
+                sb.append(getNodeStr(sibling));
+            }
+            sb.append(")");
+            return sb.toString();
+        } else if (node instanceof Criteria) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(node.isOr() ? " or " : " and ");
+            sb.append(((Criteria) node).getField());
+            sb.append(":");
+            sb.append(((Criteria) node).getPredicates());
+            return sb.toString();
+        }
+        return null;
+    }
+
+    private static void concat(Node sibling, Node root, StringBuilder stringBuilder) {
+        Node parent = sibling.getParent();
+        if (parent != root && parent != null) {
+            concat(parent, root, stringBuilder);
+        } else {
+            System.out.println(sibling);
+        }
     }
 
     private static void printCriteria(Criteria criteria) {
-        if (criteria instanceof Crotch){
+        if (criteria instanceof Crotch) {
             Collection<Criteria> siblings = criteria.getSiblings();
-            System.out.println("---- "+ (criteria.isOr()?"or":"and")+" ----");
+            System.out.println("---- " + (criteria.isOr() ? "or" : "and") + " ----");
             for (Criteria sibling : siblings) {
                 printCriteria(sibling);
             }
-        }else if (criteria != null){
+        } else if (criteria != null) {
             Field field = criteria.getField();
             Set<Criteria.Predicate> predicates = criteria.getPredicates();
             for (Criteria.Predicate predicate : predicates) {
