@@ -18,7 +18,7 @@ public class SolrQueryBuilder {
 
     private SolrQuery query;
 
-    private Set<SolrQueryComponent> components = new HashSet<>();
+    private List<SolrQueryComponent> components = new ArrayList<>();
 
     private List<FacetParamSource> facetParamSources = new ArrayList<>();
 
@@ -85,7 +85,7 @@ public class SolrQueryBuilder {
             query = new SolrQuery("*:*");
         }
         for (SolrQueryComponent component : components) {
-            component.chain(query);
+            query = component.chain(query);
         }
 
         if (!CollectionUtils.isEmpty(facetParamSources)){
@@ -105,6 +105,5 @@ public class SolrQueryBuilder {
 
         return query;
     }
-
 
 }

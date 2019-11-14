@@ -2,25 +2,28 @@ package com.beyond.solrdemo.solr;
 
 import com.beyond.solrdemo.entity.Book;
 import com.beyond.solrdemo.entity.BookRaw;
+import com.beyond.solrdemo.solr.component.CriteriaQueryComp;
 import com.beyond.solrdemo.solr.component.QueryComp;
 import com.beyond.solrdemo.solr.component.SolrQueryBuilder;
 import com.beyond.solrdemo.solr.component.facet.IdFacetQueryComp;
 import com.beyond.solrdemo.solr.component.facet.PriceFacetQueryComp;
 import com.beyond.solrdemo.solr.component.facet.SimpleFacetQueryComp;
+import com.beyond.solrdemo.solr.component.filter.CriteriaFilterQueryComp;
 import com.beyond.solrdemo.solr.result.IdFacetResult;
 import com.beyond.solrdemo.solr.result.PriceFacetResult;
 import com.beyond.solrdemo.solr.result.ResultContainer;
 import com.beyond.solrdemo.solr.result.SimpleFacetResult;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.logging.log4j.util.StringBuilders;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.solr.core.DefaultQueryParser;
 import org.springframework.data.solr.core.SolrTemplate;
+import org.springframework.data.solr.core.mapping.SimpleSolrMappingContext;
 import org.springframework.data.solr.core.query.*;
 import org.springframework.data.solr.core.query.result.FacetPage;
 import org.springframework.stereotype.Component;
@@ -59,7 +62,9 @@ public class QueryDemo {
                 .set("fl", "id,name,price")
                 .build();
         QueryResponse book = solrClient.query("techproducts", query);
-        List<BookRaw> books = book.getBeans(BookRaw.class);
+        List<BookRaw> bookRaws = book.getBeans(BookRaw.class);
+        List<Book> books = book.getBeans(Book.class);
+        System.out.println(objectMapper.writeValueAsString(bookRaws));
         System.out.println(objectMapper.writeValueAsString(books));
     }
 
@@ -111,6 +116,32 @@ public class QueryDemo {
         System.out.println(objectMapper.writeValueAsString(priceFacet));
         Map<Object, SimpleFacetResult> nameFacet = resultContainer.getFacetResultByFieldName("name", SimpleFacetResult.class);
         System.out.println(objectMapper.writeValueAsString(nameFacet));
+    }
+
+    public void solrCriteriaQuery() throws IOException, SolrServerException {
+        DefaultQueryParser defaultQueryParser = new DefaultQueryParser(new SimpleSolrMappingContext());
+        Query query = new SimpleQuery(Criteria.WILDCARD);
+        Criteria criteria = new Criteria("name");
+        criteria.contains("video");
+        query.addCriteria(criteria);
+        SolrQuery solrQuery = defaultQueryParser.doConstructSolrQuery(query, Book.class);
+        QueryResponse response = solrClient.query("techproducts",solrQuery);
+        List<Book> books = response.getBeans(Book.class);
+        System.out.println(objectMapper.writeValueAsString(books));
+    }
+
+    public void solrJCriteriaQuery() throws IOException, SolrServerException {
+        Criteria criteria = new Criteria("id").is("100-435805").and("name").is("video");
+        Criteria criteria2 = new Criteria("price").greaterThan(100);
+        Criteria queryCriteria = new Criteria("name").contains("card");
+        SolrQuery solrQuery = new SolrQueryBuilder()
+                .query(new CriteriaQueryComp(queryCriteria))
+                .filter(new CriteriaFilterQueryComp(criteria))
+                .filter(new CriteriaFilterQueryComp(criteria2))
+                .build();
+        QueryResponse response = solrClient.query("techproducts", solrQuery);
+        List<Book> books = response.getBeans(Book.class);
+        System.out.println(objectMapper.writeValueAsString(books));
     }
 
     public static void main(String[] args) {

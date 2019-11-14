@@ -20,6 +20,10 @@ public class QueryComp implements SolrQueryComponent {
     private String queryFields;
     private String[] queryFieldArray;
     private String queryKey;
+    private String expression;
+
+    public QueryComp() {
+    }
 
     public QueryComp(String queryFields, String queryKey) {
         this.queryFields = queryFields;
@@ -31,8 +35,14 @@ public class QueryComp implements SolrQueryComponent {
         this.queryKey = queryKey;
     }
 
+    protected void init(){
+        // for inherit
+    }
+
+
     @Override
     public SolrQuery chain(SolrQuery solrQuery) {
+        init();
         if (StringUtils.isEmpty(queryKey)) {
             solrQuery.setQuery("*:*");
         } else {
@@ -58,5 +68,14 @@ public class QueryComp implements SolrQueryComponent {
             solrQuery.set("qf", queryFieldsList.toArray(new String[0]));
         }
         return solrQuery;
+    }
+
+
+    public void setExpression(String expression) {
+        this.expression = expression;
+    }
+
+    public String getExpression() {
+        return expression;
     }
 }

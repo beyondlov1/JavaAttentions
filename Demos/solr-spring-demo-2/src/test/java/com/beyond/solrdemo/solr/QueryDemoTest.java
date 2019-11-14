@@ -38,4 +38,14 @@ class QueryDemoTest {
     void solrJFacet() throws IOException, SolrServerException {
         queryDemo.solrJFacet();
     }
+
+    @Test
+    void solrCriteriaQuery() throws IOException, SolrServerException {
+        queryDemo.solrCriteriaQuery();
+    }
+
+    @Test
+    void solrJCriteriaQuery() throws IOException, SolrServerException {
+        queryDemo.solrJCriteriaQuery();
+    }
 }

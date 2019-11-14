@@ -1,4 +1,4 @@
-package com.beyond.solrdemo.solr.component.filter;
+package com.beyond.solrdemo.solr.component;
 
 import org.springframework.data.solr.core.DefaultQueryParser;
 import org.springframework.data.solr.core.mapping.SimpleSolrMappingContext;
@@ -8,13 +8,14 @@ import org.springframework.data.solr.core.query.Criteria;
  * @author beyondlov1
  * @date 2019/11/11
  */
-public class CriteriaFilterQueryComp extends FilterQueryComp {
+public class CriteriaQueryComp extends QueryComp {
 
     private Criteria criteria;
 
     private DefaultQueryParser defaultQueryParser = new DefaultQueryParser(new SimpleSolrMappingContext());
 
-    public CriteriaFilterQueryComp(Criteria criteria) {
+
+    public CriteriaQueryComp(Criteria criteria) {
         this.criteria = criteria;
     }
 

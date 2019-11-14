@@ -29,7 +29,9 @@ public class MyDocumentObjectBinder extends DocumentObjectBinder {
             Book book = new Book();
             book.setId((String) solrDoc.getFieldValue("id"));
             book.setName((String) solrDoc.getFieldValue("name"));
-            book.setPrice(new BigDecimal(String.valueOf(solrDoc.getFieldValue("price"))));
+            if (solrDoc.getFieldValue("price")!=null){
+                book.setPrice(new BigDecimal(String.valueOf(solrDoc.getFieldValue("price"))));
+            }
             return clazz.cast(book);
         }
         return super.getBean(clazz, solrDoc);
