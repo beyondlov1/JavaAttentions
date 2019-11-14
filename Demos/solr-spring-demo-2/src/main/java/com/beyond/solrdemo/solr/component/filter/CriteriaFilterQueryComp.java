@@ -61,7 +61,8 @@ public class CriteriaFilterQueryComp extends FilterQueryComp {
     }
 
     public static void main(String[] args) {
-        Criteria criteria1E = new Criteria("e").is("e").and("g").is("g");
+        Criteria criteria1E = new Criteria("e").is("e")
+                .and("g").is("g");
         criteria1E.and("h").is("h");
 
         Criteria criteria = new Criteria(Criteria.WILDCARD);
