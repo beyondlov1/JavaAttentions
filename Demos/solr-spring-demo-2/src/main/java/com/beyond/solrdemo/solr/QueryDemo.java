@@ -2,8 +2,8 @@ package com.beyond.solrdemo.solr;
 
 import com.beyond.solrdemo.entity.Book;
 import com.beyond.solrdemo.entity.BookRaw;
-import com.beyond.solrdemo.solr.component.CriteriaQueryComp;
-import com.beyond.solrdemo.solr.component.QueryComp;
+import com.beyond.solrdemo.solr.component.query.CriteriaQueryComp;
+import com.beyond.solrdemo.solr.component.query.SimpleQueryComp;
 import com.beyond.solrdemo.solr.component.SolrQueryBuilder;
 import com.beyond.solrdemo.solr.component.facet.IdFacetQueryComp;
 import com.beyond.solrdemo.solr.component.facet.PriceFacetQueryComp;
@@ -58,7 +58,7 @@ public class QueryDemo {
 
     public void solrJQuery() throws IOException, SolrServerException {
         SolrQuery query = new SolrQueryBuilder()
-                .query(new QueryComp("name", "video"))
+                .query(new SimpleQueryComp("name", "video"))
                 .set("fl", "id,name,price")
                 .build();
         QueryResponse book = solrClient.query("techproducts", query);
@@ -70,7 +70,7 @@ public class QueryDemo {
 
     public void springQuery() throws JsonProcessingException {
         Query query = new SimpleQuery(Criteria.WILDCARD);
-        Criteria criteria = new Criteria("name");
+        Criteria criteria = Criteria.where("name");
         criteria.contains("video");
         query.addCriteria(criteria);
         query.addProjectionOnField(Field.of("id"));
@@ -95,7 +95,7 @@ public class QueryDemo {
 
     public void solrJBinderQuery() throws IOException, SolrServerException {
         SolrQuery query = new SolrQueryBuilder()
-                .query(new QueryComp("name", "video"))
+                .query(new SimpleQueryComp("name", "video"))
                 .set("fl", "id,name,price")
                 .build();
         QueryResponse response = solrClient.query("techproducts", query);
@@ -121,7 +121,7 @@ public class QueryDemo {
     public void solrCriteriaQuery() throws IOException, SolrServerException {
         DefaultQueryParser defaultQueryParser = new DefaultQueryParser(new SimpleSolrMappingContext());
         Query query = new SimpleQuery(Criteria.WILDCARD);
-        Criteria criteria = new Criteria("name");
+        Criteria criteria = Criteria.where("name");
         criteria.contains("video");
         query.addCriteria(criteria);
         SolrQuery solrQuery = defaultQueryParser.doConstructSolrQuery(query, Book.class);
@@ -131,10 +131,10 @@ public class QueryDemo {
     }
 
     public void solrJCriteriaQuery() throws IOException, SolrServerException {
-        Criteria criteria = new Criteria("id").is("100-435805").and("name").is("video");
-        Criteria criteria2 = new Criteria("price").greaterThan(100);
-        Criteria queryCriteria = new Criteria("name").contains("card");
-        SolrQuery solrQuery = new SolrQueryBuilder()
+        Criteria criteria = Criteria.where("id").is("100-435805").and("name").is("video");
+        Criteria criteria2 = Criteria.where("price").greaterThan(100);
+        Criteria queryCriteria = Criteria.where("name").contains("card");
+        SolrQuery solrQuery = new SolrQueryBuilder(Book.class)
                 .query(new CriteriaQueryComp(queryCriteria))
                 .filter(new CriteriaFilterQueryComp(criteria))
                 .filter(new CriteriaFilterQueryComp(criteria2))
@@ -146,17 +146,17 @@ public class QueryDemo {
 
     public static void main(String[] args) {
 
-        Criteria criteria1E = new Criteria("e").is("e").and("g").is("g");
+        Criteria criteria1E = Criteria.where("e").is("e").and("g").is("g");
         criteria1E.and("h").is("h");
 
-        Criteria criteria = new Criteria(Criteria.WILDCARD);
+        Criteria criteria = Criteria.where(Criteria.WILDCARD);
         criteria.is("c")
                 .and("b").in("bcc", "fege")
                 .and("d").is("d")
                 .or(criteria1E)
-                .or(new Criteria("f").is("f"));
+                .or(Criteria.where("f").is("f"));
 
-        Criteria criteria1 = new Criteria("ccc");
+        Criteria criteria1 = Criteria.where("ccc");
         criteria1.is("cc");
         criteria.or(criteria1);
 
@@ -167,7 +167,9 @@ public class QueryDemo {
             parent = parent.getParent();
         }
 
-        System.out.println(sb);
+        DefaultQueryParser defaultQueryParser = new DefaultQueryParser(new SimpleSolrMappingContext());
+        String queryString = defaultQueryParser.createQueryStringFromNode(criteria, null);
+        System.out.println(queryString);
     }
 
     private static String getNodeStr(Node node) {

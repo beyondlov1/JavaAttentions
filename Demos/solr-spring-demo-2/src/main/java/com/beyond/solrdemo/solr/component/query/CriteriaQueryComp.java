@@ -1,4 +1,4 @@
-package com.beyond.solrdemo.solr.component.filter;
+package com.beyond.solrdemo.solr.component.query;
 
 import com.beyond.solrdemo.solr.component.DomainTypeSetter;
 import org.apache.solr.client.solrj.SolrQuery;
@@ -11,7 +11,7 @@ import org.springframework.lang.Nullable;
  * @author beyondlov1
  * @date 2019/11/11
  */
-public class CriteriaFilterQueryComp extends AbstractFilterQueryComp implements DomainTypeSetter {
+public class CriteriaQueryComp extends AbstractQueryComp implements DomainTypeSetter {
 
     private Criteria criteria;
 
@@ -19,17 +19,16 @@ public class CriteriaFilterQueryComp extends AbstractFilterQueryComp implements 
 
     private static DefaultQueryParser defaultQueryParser = new DefaultQueryParser(new SimpleSolrMappingContext());
 
-    public CriteriaFilterQueryComp(Criteria criteria) {
+    public CriteriaQueryComp(Criteria criteria) {
         this.criteria = criteria;
     }
-
-    public CriteriaFilterQueryComp(Criteria criteria, @Nullable Class domainType) {
+    public CriteriaQueryComp(Criteria criteria, @Nullable Class domainType) {
         this.criteria = criteria;
         this.domainType = domainType;
     }
 
     @Override
-    protected void init(SolrQuery query) {
+    protected void init(SolrQuery solrQuery) {
         expression = defaultQueryParser.createQueryStringFromNode(criteria, domainType);
     }
 

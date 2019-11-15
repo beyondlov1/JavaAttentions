@@ -1,6 +1,7 @@
 package com.beyond.solrdemo.solr.component.filter;
 
 import lombok.Data;
+import org.apache.solr.client.solrj.SolrQuery;
 
 /**
  * 供货对象过滤
@@ -9,7 +10,7 @@ import lombok.Data;
  * @date 2019/11/01
  */
 @Data
-public class StoreSubtypeFilterQueryComp extends FilterQueryComp {
+public class StoreSubtypeFilterQueryComp extends AbstractFilterQueryComp {
 
     private final int storeSubtype;
 
@@ -17,11 +18,12 @@ public class StoreSubtypeFilterQueryComp extends FilterQueryComp {
         this.storeSubtype = storeSubtype;
     }
 
+
     @Override
-    protected void init() {
+    protected void init(SolrQuery query) {
         if (storeSubtype != -1) {
-            String expression = String.format("storetype_gp_id:0 OR store_subtypes:%s", storeSubtype);
-            setExpression(expression);
+            expression = String.format("storetype_gp_id:0 OR store_subtypes:%s", storeSubtype);
         }
     }
+
 }

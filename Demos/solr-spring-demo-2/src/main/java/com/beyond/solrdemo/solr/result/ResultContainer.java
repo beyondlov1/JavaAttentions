@@ -32,6 +32,11 @@ public class ResultContainer {
         this.response = response;
     }
 
+    /** --------------------- facet --------------------- */
+
+    /**
+     * {facetName:{facetVal:facetData}}
+     */
     @SuppressWarnings("unchecked")
     public Map<String, Map<Object, Object>> getFacetResults(Class commonClass) {
 
@@ -57,6 +62,23 @@ public class ResultContainer {
         return results;
     }
 
+    public <T> Map<Object, T> getFacetResultByFieldName(String fieldName, Class<T> clazz) {
+        String bucketBasedFacetName = fieldName + FACET_SUFFIX;
+        return getFacetResultByFacetName(bucketBasedFacetName, clazz);
+    }
+
+    public <T> Map<Object, T> getFacetResultByFacetName(String facetName, Class<T> clazz) {
+        NestableJsonFacet jsonFacetingResponse = response.getJsonFacetingResponse();
+        BucketBasedJsonFacet statFacet = jsonFacetingResponse.getBucketBasedFacets(facetName);
+        List<BucketJsonFacet> buckets = statFacet.getBuckets();
+        Map<Object, T> result = new LinkedHashMap<>();
+        for (BucketJsonFacet bucket : buckets) {
+            Object key = bucket.getVal();
+            T t = getObjectFromBucket(bucket, clazz);
+            result.put(key, t);
+        }
+        return result;
+    }
 
     private <T> T getObjectFromBucket(BucketJsonFacet bucket, Class<T> clazz) {
 
@@ -99,23 +121,13 @@ public class ResultContainer {
         }
     }
 
-    public <T> Map<Object, T> getFacetResultByFieldName(String fieldName, Class<T> clazz) {
-        String bucketBasedFacetName = fieldName + FACET_SUFFIX;
-        return getFacetResultByFacetName(bucketBasedFacetName, clazz);
-    }
+    /** --------------------- facet --------------------- */
 
-    public <T> Map<Object, T> getFacetResultByFacetName(String facetName, Class<T> clazz) {
-        NestableJsonFacet jsonFacetingResponse = response.getJsonFacetingResponse();
-        BucketBasedJsonFacet statFacet = jsonFacetingResponse.getBucketBasedFacets(facetName);
-        List<BucketJsonFacet> buckets = statFacet.getBuckets();
-        Map<Object, T> result = new LinkedHashMap<>();
-        for (BucketJsonFacet bucket : buckets) {
-            Object key = bucket.getVal();
-            T t = getObjectFromBucket(bucket, clazz);
-            result.put(key, t);
-        }
-        return result;
-    }
+    /** --------------------- query --------------------- */
+
+
+
+    /** --------------------- query --------------------- */
 
     public void addConverter(Converter<?, ?> converter) {
         conversionService.addConverter(converter);

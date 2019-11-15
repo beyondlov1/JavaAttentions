@@ -142,3 +142,41 @@ https://blog.csdn.net/qq_25112523/article/details/85251808
 
 ### MySQL 书籍
 https://www.cnblogs.com/prettyisshit/p/5841055.html
+
+### in / exists
+
+**如果查询的两个表大小相当，那么用in和exists差别不大**。 
+
+如果两个表中一个较小，一个是大表，则子查询表大的用exists，子查询表小的用in： 
+
+例如：表A（小表），表B（大表）
+
+1：
+
+select * from A where cc in (select cc from B) 效率低，用到了A表上cc列的索引；
+
+select * from A where exists(select cc from B where cc=A.cc) 效率高，用到了B表上cc列的索引。 
+
+相反的
+
+2：
+
+select * from B where cc in (select cc from A) 效率高，用到了B表上cc列的索引；
+
+select * from B where exists(select cc from A where cc=B.cc) 效率低，用到了A表上cc列的索引。
+
+ 
+
+not in 和not exists如果查询语句使用了not in 那么内外表都进行全表扫描，没有用到索引；而not extsts 的子查询依然能用到表上的索引。**所以无论那个表大，用not exists都比not in要快**。 
+
+in 与 =的区别 
+
+select name from student where name in ('zhang','wang','li','zhao'); 
+
+与 
+
+select name from student where name='zhang' or name='li' or name='wang' or name='zhao' 
+
+的结果是相同的。
+
+参考(值得点开)：https://www.cnblogs.com/beijingstruggle/p/5885137.html

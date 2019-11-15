@@ -1,14 +1,18 @@
 package com.beyond.solrdemo.solr.component;
 
 import com.beyond.solrdemo.solr.component.facet.FacetParamSource;
-import com.beyond.solrdemo.solr.component.filter.FilterQueryComp;
+import com.beyond.solrdemo.solr.component.filter.AbstractFilterQueryComp;
+import com.beyond.solrdemo.solr.component.query.AbstractQueryComp;
 import com.ctc.wstx.util.StringUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.springframework.util.CollectionUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author beyondlov1
@@ -16,21 +20,42 @@ import java.util.*;
  */
 public class SolrQueryBuilder {
 
+    private Class domainType;
+
     private SolrQuery query;
 
     private List<SolrQueryComponent> components = new ArrayList<>();
 
     private List<FacetParamSource> facetParamSources = new ArrayList<>();
 
+
     public SolrQueryBuilder() {
-        this.query = new SolrQuery("*:*");
+        this(null, null);
     }
 
     public SolrQueryBuilder(SolrQuery query) {
-        this.query = query;
+        this(query, null);
     }
 
-    public SolrQueryBuilder filter(FilterQueryComp filterQuery){
+    /**
+     * @param domainType 用来映射查询时的输入字段的，并不改变结果处理
+     */
+    public SolrQueryBuilder(Class domainType) {
+        this(null, domainType);
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    public SolrQueryBuilder(SolrQuery query, Class domainType) {
+        if (this.query == null){
+            this.query = new SolrQuery("*:*");
+        }else {
+            this.query = query;
+        }
+        this.domainType = domainType;
+    }
+
+
+    public SolrQueryBuilder filter(AbstractFilterQueryComp filterQuery){
         components.add(filterQuery);
         return this;
     }
@@ -40,7 +65,7 @@ public class SolrQueryBuilder {
         return this;
     }
 
-    public SolrQueryBuilder query(QueryComp query){
+    public SolrQueryBuilder query(AbstractQueryComp query){
         components.add(query);
         return this;
     }
@@ -84,6 +109,13 @@ public class SolrQueryBuilder {
         if (query==null){
             query = new SolrQuery("*:*");
         }
+
+        for (SolrQueryComponent component : components) {
+            if (component instanceof DomainTypeSetter){
+                ((DomainTypeSetter) component).setDomainType(this.domainType);
+            }
+        }
+
         for (SolrQueryComponent component : components) {
             query = component.chain(query);
         }
