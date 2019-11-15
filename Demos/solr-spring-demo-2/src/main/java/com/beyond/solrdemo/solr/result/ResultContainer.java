@@ -5,9 +5,12 @@ import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.client.solrj.response.json.BucketBasedJsonFacet;
 import org.apache.solr.client.solrj.response.json.BucketJsonFacet;
 import org.apache.solr.client.solrj.response.json.NestableJsonFacet;
+import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
 import org.springframework.beans.BeanUtils;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.support.GenericConversionService;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ReflectionUtils;
 
 import java.beans.PropertyDescriptor;
@@ -50,7 +53,7 @@ public class ResultContainer {
         return results;
     }
 
-    public Map<String, Map<?, ?>> getFacetResults(Map<String,Class<?>> classMap) {
+    public Map<String, Map<?, ?>> getFacetResults(Map<String, Class<?>> classMap) {
 
         Map<String, Map<?, ?>> results = new HashMap<>();
         NestableJsonFacet jsonFacetingResponse = response.getJsonFacetingResponse();
@@ -118,16 +121,51 @@ public class ResultContainer {
         if (conversionService.canConvert(val.getClass(), propertyDescriptor.getPropertyType())) {
             ReflectionUtils.invokeMethod(propertyDescriptor.getWriteMethod(), instance,
                     conversionService.convert(val, propertyDescriptor.getPropertyType()));
+        }else {
+            throw new RuntimeException(String.format("类型不能转换: %s -> %s", val.getClass().getName(), propertyDescriptor.getPropertyType()));
         }
     }
 
     /** --------------------- facet --------------------- */
 
-    /** --------------------- query --------------------- */
+    /**
+     * --------------------- query ---------------------
+     */
 
+    public <T> List<T> getQueryResult(Class<T> clazz) {
+        SolrDocumentList results = response.getResults();
+        if (CollectionUtils.isEmpty(results)){
+            return Collections.emptyList();
+        }
+        List<T> queryResult = new ArrayList<>(results.size());
+        PropertyDescriptor[] propertyDescriptors = BeanUtils.getPropertyDescriptors(clazz);
+        for (SolrDocument solrDocument : results) {
+            if (conversionService.canConvert(SolrDocument.class, clazz)) {
+                queryResult.add(conversionService.convert(solrDocument, clazz));
+            }else {
+                queryResult.add(createObjectFromSolrDocument(clazz, propertyDescriptors, solrDocument));
+            }
+        }
+        return queryResult;
+    }
 
+    private <T> T createObjectFromSolrDocument(Class<T> clazz, PropertyDescriptor[] propertyDescriptors, SolrDocument solrDocument) {
+        T instance = BeanUtils.instantiateClass(clazz);
+        for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
+            Collection<String> fieldNames = solrDocument.getFieldNames();
+            for (String fieldName : fieldNames) {
+                if (StringUtils.equals(propertyDescriptor.getName(),fieldName)) {
+                    setValue(instance, solrDocument.getFieldValue(fieldName), propertyDescriptor);
+                    break;
+                }
+            }
+        }
+        return instance;
+    }
 
-    /** --------------------- query --------------------- */
+    /**
+     * --------------------- query ---------------------
+     */
 
     public void addConverter(Converter<?, ?> converter) {
         conversionService.addConverter(converter);

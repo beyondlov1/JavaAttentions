@@ -139,6 +139,11 @@ public class QueryDemo {
                 .filter(new CriteriaFilterQueryComp(criteria))
                 .filter(new CriteriaFilterQueryComp(criteria2))
                 .build();
+
+        ResultContainer resultContainer = bolrTemplate.query("techproducts", solrQuery, solrClient);
+        List<Book> books1 = resultContainer.getQueryResult(Book.class);
+        System.out.println(objectMapper.writeValueAsString(books1));
+
         QueryResponse response = solrClient.query("techproducts", solrQuery);
         List<Book> books = response.getBeans(Book.class);
         System.out.println(objectMapper.writeValueAsString(books));

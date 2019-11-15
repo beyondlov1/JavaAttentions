@@ -3,7 +3,6 @@ package com.beyond.solrdemo.config;
 import com.beyond.solrdemo.converter.*;
 import com.beyond.solrdemo.entity.MyDocumentObjectBinder;
 import com.beyond.solrdemo.solr.BolrTemplate;
-import com.beyond.solrdemo.solr.result.ResultContainer;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -98,6 +97,7 @@ public class SolrConfig {
         bolrTemplate.addConverter(new BucketJsonFacetToIdFacetResultConverter());
         bolrTemplate.addConverter(new BucketJsonFacetToPriceFacetResultConverter());
         bolrTemplate.addConverter(new BucketJsonFacetToSimpleFacetResultConverter());
+        bolrTemplate.addConverter(new NumberToBigDecimalConverter());
         return bolrTemplate;
     }
 
