@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.beyond</groupId>
-    <artifactId>solr-spring-demo-2</artifactId>
+    <artifactId>bolr-spring-boot-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>solr-spring-demo-2</name>
+    <name>bolr-spring-boot-starter</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -71,13 +71,13 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <!--<build>-->
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    <!--</build>-->
 
 </project>

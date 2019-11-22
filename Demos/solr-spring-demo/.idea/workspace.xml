@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8a4e497-3e83-4e2c-9480-8fc738be844e" name="Default Changelist" comment="" />
+    <list default="true" id="a8a4e497-3e83-4e2c-9480-8fc738be844e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/converter/MyDocumentObjectBinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/config/SolrConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/config/SolrConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/converter/BucketJsonFacetToIdFacetResultConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/converter/BucketJsonFacetToIdFacetResultConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/converter/BucketJsonFacetToPriceFacetResultConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/converter/BucketJsonFacetToPriceFacetResultConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/converter/BucketJsonFacetToSimpleFacetResultConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/converter/BucketJsonFacetToSimpleFacetResultConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/converter/NumberToBigDecimalConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/converter/NumberToBigDecimalConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/converter/SolrDocumentToBookConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/converter/SolrDocumentToBookConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/converter/StringToBigDecimalConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/converter/StringToBigDecimalConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/entity/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/entity/BookRaw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/entity/BookRaw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/entity/MyDocumentObjectBinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/converter/AbstractDocumentObjectBinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/BolrTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/BolrTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/QueryDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/QueryDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/component/facet/IdFacetQueryComp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/facet/IdFacetQueryComp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/component/facet/PriceFacetQueryComp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/facet/PriceFacetQueryComp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/component/filter/AreaFilterQueryComp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/filter/AreaFilterQueryComp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/component/filter/StoreSubtypeFilterQueryComp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/filter/StoreSubtypeFilterQueryComp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/result/facet/IdFacetResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/result/facet/IdFacetResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/result/facet/PriceFacetResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/demo/result/facet/PriceFacetResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/result/facet/ResultContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/main/java/com/beyond/solrdemo/solr/result/ResultContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solr-spring-demo-2/src/test/java/com/beyond/solrdemo/solr/QueryDemoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solr-spring-demo-2/src/test/java/com/beyond/solrdemo/solr/QueryDemoTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,17 +52,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="btc@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="btc@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="btc@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="btc: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
@@ -47,14 +59,15 @@
     <session id="1758310139">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -200,9 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -277,6 +287,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,11 +385,12 @@
       <workItem from="1572191123319" duration="17000" />
       <workItem from="1572265430206" duration="1710000" />
       <workItem from="1572271960277" duration="8000" />
+      <workItem from="1574434116241" duration="10000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7578000" />
+    <option name="totallyTimeSpent" value="7588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />

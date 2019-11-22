@@ -1,5 +1,6 @@
-package com.beyond.solrdemo.solr.result.facet;
+package com.beyond.solrdemo.demo.result.facet;
 
+import com.beyond.solrdemo.solr.result.facet.SimpleFacetResult;
 import lombok.Data;
 
 /**

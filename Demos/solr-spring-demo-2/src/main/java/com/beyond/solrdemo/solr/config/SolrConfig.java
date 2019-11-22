@@ -1,7 +1,6 @@
-package com.beyond.solrdemo.config;
+package com.beyond.solrdemo.solr.config;
 
-import com.beyond.solrdemo.converter.*;
-import com.beyond.solrdemo.entity.MyDocumentObjectBinder;
+import com.beyond.solrdemo.demo.converter.*;
 import com.beyond.solrdemo.solr.BolrTemplate;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
@@ -10,8 +9,11 @@ import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.beans.DocumentObjectBinder;
 import org.apache.solr.client.solrj.impl.CloudSolrClient;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.env.Environment;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.data.solr.core.convert.MappingSolrConverter;
@@ -20,6 +22,7 @@ import org.springframework.data.solr.core.mapping.SimpleSolrMappingContext;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
+import java.util.List;
 
 @Configuration
 public class SolrConfig {
@@ -27,19 +30,26 @@ public class SolrConfig {
     private Environment environment;
 
     @Bean
-    public SolrClient solrClient() {
+    @ConditionalOnMissingBean
+    @Primary
+    public SolrClient solrClient(DocumentObjectBinder documentObjectBinder) {
         HttpSolrClient httpSolrClient = new HttpSolrClient.Builder()
                 .withBaseSolrUrl(environment.getProperty("spring.data.solr.host"))
                 .build();
 
-        return injectBinder(httpSolrClient);
+        return injectBinder(httpSolrClient,documentObjectBinder);
     }
 
-    private SolrClient injectBinder(SolrClient solrClient) {
-        return injectBinder(solrClient, new MyDocumentObjectBinder());
+    @Bean
+    @ConditionalOnMissingBean
+    public DocumentObjectBinder documentObjectBinder(){
+        return new DocumentObjectBinder();
     }
 
     private SolrClient injectBinder(SolrClient solrClient, DocumentObjectBinder binder) {
+        if (binder == null){
+            return solrClient;
+        }
         try {
             Field field = SolrClient.class.getDeclaredField("binder");
             field.setAccessible(true);
@@ -92,12 +102,15 @@ public class SolrConfig {
     }
 
     @Bean
-    public BolrTemplate bolrTemplate(){
+    @ConditionalOnMissingBean
+    public BolrTemplate bolrTemplate(List<Converter> converters){
         BolrTemplate bolrTemplate = new BolrTemplate();
-        bolrTemplate.addConverter(new BucketJsonFacetToIdFacetResultConverter());
-        bolrTemplate.addConverter(new BucketJsonFacetToPriceFacetResultConverter());
-        bolrTemplate.addConverter(new BucketJsonFacetToSimpleFacetResultConverter());
-        bolrTemplate.addConverter(new NumberToBigDecimalConverter());
+        if (converters == null){
+            return bolrTemplate;
+        }
+        for (Converter converter : converters) {
+            bolrTemplate.addConverter(converter);
+        }
         return bolrTemplate;
     }
 

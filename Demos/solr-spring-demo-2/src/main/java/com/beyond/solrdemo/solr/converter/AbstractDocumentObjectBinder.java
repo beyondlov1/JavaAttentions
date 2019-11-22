@@ -1,10 +1,11 @@
-package com.beyond.solrdemo.entity;
+package com.beyond.solrdemo.solr.converter;
 
 import org.apache.solr.client.solrj.beans.DocumentObjectBinder;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 
-import java.math.BigDecimal;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * @author beyondlov1
  * @date 2019/11/01
  */
-public class MyDocumentObjectBinder extends DocumentObjectBinder {
+public abstract class AbstractDocumentObjectBinder<M> extends DocumentObjectBinder {
 
     @Override
     public <T> List<T> getBeans(Class<T> clazz, SolrDocumentList solrDocList) {
@@ -25,15 +26,19 @@ public class MyDocumentObjectBinder extends DocumentObjectBinder {
 
     @Override
     public <T> T getBean(Class<T> clazz, SolrDocument solrDoc) {
-        if (Book.class.isAssignableFrom(clazz)) {
-            Book book = new Book();
-            book.setId((String) solrDoc.getFieldValue("id"));
-            book.setName((String) solrDoc.getFieldValue("name"));
-            if (solrDoc.getFieldValue("price")!=null){
-                book.setPrice(new BigDecimal(String.valueOf(solrDoc.getFieldValue("price"))));
-            }
-            return clazz.cast(book);
+        if (clazz().isAssignableFrom(clazz)) {
+            M m = getBeanInternal(solrDoc);
+            return clazz.cast(m);
         }
         return super.getBean(clazz, solrDoc);
+    }
+
+    protected abstract M getBeanInternal(SolrDocument solrDoc);
+
+    @SuppressWarnings("unchecked")
+    protected Class<M> clazz(){
+        ParameterizedType type = (ParameterizedType)this.getClass().getGenericSuperclass();
+        Type[] actualTypeArguments = type.getActualTypeArguments();
+        return (Class<M>) actualTypeArguments[0];
     }
 }

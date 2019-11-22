@@ -1,5 +1,6 @@
-package com.beyond.solrdemo.solr.component.facet;
+package com.beyond.solrdemo.demo.facet;
 
+import com.beyond.solrdemo.solr.component.facet.FacetParamSource;
 import lombok.Data;
 
 import java.util.HashMap;
@@ -11,7 +12,7 @@ import java.util.Map;
  * @date 2019/11/06
  */
 @Data
-public class PriceFacetQueryComp implements FacetParamSource{
+public class PriceFacetQueryComp implements FacetParamSource {
 
     @Override
     public Map<String,Object> getFacetParam(){

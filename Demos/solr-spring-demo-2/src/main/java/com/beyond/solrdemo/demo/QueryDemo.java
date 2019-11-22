@@ -1,17 +1,18 @@
-package com.beyond.solrdemo.solr;
+package com.beyond.solrdemo.demo;
 
-import com.beyond.solrdemo.entity.Book;
-import com.beyond.solrdemo.entity.BookRaw;
+import com.beyond.solrdemo.demo.entity.Book;
+import com.beyond.solrdemo.demo.entity.BookRaw;
+import com.beyond.solrdemo.demo.facet.IdFacetQueryComp;
+import com.beyond.solrdemo.demo.facet.PriceFacetQueryComp;
+import com.beyond.solrdemo.demo.result.facet.IdFacetResult;
+import com.beyond.solrdemo.demo.result.facet.PriceFacetResult;
+import com.beyond.solrdemo.solr.BolrTemplate;
 import com.beyond.solrdemo.solr.component.query.CriteriaQueryComp;
 import com.beyond.solrdemo.solr.component.query.SimpleQueryComp;
 import com.beyond.solrdemo.solr.component.SolrQueryBuilder;
-import com.beyond.solrdemo.solr.component.facet.IdFacetQueryComp;
-import com.beyond.solrdemo.solr.component.facet.PriceFacetQueryComp;
 import com.beyond.solrdemo.solr.component.facet.SimpleFacetQueryComp;
 import com.beyond.solrdemo.solr.component.filter.CriteriaFilterQueryComp;
-import com.beyond.solrdemo.solr.result.facet.IdFacetResult;
-import com.beyond.solrdemo.solr.result.facet.PriceFacetResult;
-import com.beyond.solrdemo.solr.result.facet.ResultContainer;
+import com.beyond.solrdemo.solr.result.ResultContainer;
 import com.beyond.solrdemo.solr.result.facet.SimpleFacetResult;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

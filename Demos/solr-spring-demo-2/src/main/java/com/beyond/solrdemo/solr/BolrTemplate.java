@@ -1,6 +1,6 @@
 package com.beyond.solrdemo.solr;
 
-import com.beyond.solrdemo.solr.result.facet.ResultContainer;
+import com.beyond.solrdemo.solr.result.ResultContainer;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;

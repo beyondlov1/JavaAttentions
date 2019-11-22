@@ -1,4 +1,4 @@
-package com.beyond.solrdemo.entity;
+package com.beyond.solrdemo.demo.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package com.beyond.solrdemo.entity;
+package com.beyond.solrdemo.demo.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 public class Book {
-    @Field("usre_id")
+    @Field
     private String id;
     @Field
     private String name;

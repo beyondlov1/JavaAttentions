@@ -1,5 +1,6 @@
 package com.beyond.solrdemo.solr;
 
+import com.beyond.solrdemo.demo.QueryDemo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.junit.jupiter.api.Test;

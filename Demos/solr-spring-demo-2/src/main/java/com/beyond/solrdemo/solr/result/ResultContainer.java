@@ -1,4 +1,4 @@
-package com.beyond.solrdemo.solr.result.facet;
+package com.beyond.solrdemo.solr.result;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.solr.client.solrj.response.QueryResponse;

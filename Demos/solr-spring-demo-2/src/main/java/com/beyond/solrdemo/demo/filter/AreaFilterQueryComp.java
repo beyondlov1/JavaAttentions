@@ -1,5 +1,6 @@
-package com.beyond.solrdemo.solr.component.filter;
+package com.beyond.solrdemo.demo.filter;
 
+import com.beyond.solrdemo.solr.component.filter.AbstractFilterQueryComp;
 import com.ctc.wstx.util.StringUtil;
 import lombok.Data;
 import org.apache.solr.client.solrj.SolrQuery;

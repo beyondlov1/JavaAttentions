@@ -1,9 +1,10 @@
-package com.beyond.solrdemo.converter;
+package com.beyond.solrdemo.demo.converter;
 
-import com.beyond.solrdemo.entity.Book;
+import com.beyond.solrdemo.demo.entity.Book;
 import org.apache.solr.common.SolrDocument;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.convert.ReadingConverter;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -12,6 +13,7 @@ import java.math.RoundingMode;
  * @author beyondlov1
  * @date 2019/10/31
  */
+@Component
 @ReadingConverter
 public class SolrDocumentToBookConverter implements Converter<SolrDocument, Book> {
     @Override
