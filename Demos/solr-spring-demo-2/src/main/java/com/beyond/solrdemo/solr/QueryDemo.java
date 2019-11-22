@@ -71,7 +71,7 @@ public class QueryDemo {
     public void springQuery() throws JsonProcessingException {
         Query query = new SimpleQuery(Criteria.WILDCARD);
         Criteria criteria = Criteria.where("name");
-        criteria.contains("video");
+        criteria.fuzzy("我们都",1);
         query.addCriteria(criteria);
         query.addProjectionOnField(Field.of("id"));
         query.addProjectionOnField(Field.of("name"));

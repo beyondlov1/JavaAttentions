@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 public class Book {
-    @Field
+    @Field("usre_id")
     private String id;
     @Field
     private String name;

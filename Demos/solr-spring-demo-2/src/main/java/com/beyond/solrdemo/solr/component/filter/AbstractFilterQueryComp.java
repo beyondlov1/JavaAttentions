@@ -29,6 +29,7 @@ public abstract class AbstractFilterQueryComp implements SolrQueryComponent {
         }
         if (StringUtils.isNotBlank(field) && StringUtils.isNotBlank(filterExpr)){
             this.expression = field+":"+filterExpr;
+            query.addFilterQuery(expression);
         }
         return chainInternal(query);
     }
