@@ -1,6 +1,6 @@
 package com.beyond.solrdemo.converter;
 
-import com.beyond.solrdemo.solr.result.PriceFacetResult;
+import com.beyond.solrdemo.solr.result.facet.PriceFacetResult;
 import org.apache.solr.client.solrj.response.json.BucketJsonFacet;
 import org.springframework.core.convert.converter.Converter;
 

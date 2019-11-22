@@ -1,4 +1,4 @@
-package com.beyond.solrdemo.solr.result;
+package com.beyond.solrdemo.solr.result.facet;
 
 import lombok.Data;
 

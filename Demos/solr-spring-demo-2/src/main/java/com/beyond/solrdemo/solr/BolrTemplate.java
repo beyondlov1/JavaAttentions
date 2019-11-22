@@ -1,6 +1,6 @@
 package com.beyond.solrdemo.solr;
 
-import com.beyond.solrdemo.solr.result.ResultContainer;
+import com.beyond.solrdemo.solr.result.facet.ResultContainer;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -31,7 +31,7 @@ public class BolrTemplate {
         for (Converter converter : converters) {
             resultContainer.addConverter(converter);
         }
-        QueryResponse response = solrClient.query("techproducts", query);
+        QueryResponse response = solrClient.query(collection, query);
         resultContainer.setResponse(response);
         return resultContainer;
     }

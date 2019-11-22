@@ -1,6 +1,6 @@
 package com.beyond.solrdemo.converter;
 
-import com.beyond.solrdemo.solr.result.SimpleFacetResult;
+import com.beyond.solrdemo.solr.result.facet.SimpleFacetResult;
 import org.apache.solr.client.solrj.response.json.BucketJsonFacet;
 import org.springframework.core.convert.converter.Converter;
 
