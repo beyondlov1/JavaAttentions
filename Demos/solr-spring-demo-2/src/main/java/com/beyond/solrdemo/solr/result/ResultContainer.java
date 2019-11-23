@@ -10,6 +10,7 @@ import org.apache.solr.common.SolrDocumentList;
 import org.springframework.beans.BeanUtils;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.support.GenericConversionService;
+import org.springframework.data.domain.Pageable;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ReflectionUtils;
 
@@ -83,6 +84,23 @@ public class ResultContainer {
         return result;
     }
 
+    public <T> BPage<T> getFacetResultPageByFieldName(String fieldName, Pageable pageable, Class<T> clazz) {
+        String bucketBasedFacetName = fieldName + FACET_SUFFIX;
+        return getFacetResultPageByFacetName(bucketBasedFacetName,pageable,clazz);
+    }
+
+    public <T> BPage<T> getFacetResultPageByFacetName(String facetName, Pageable pageable, Class<T> clazz) {
+        NestableJsonFacet jsonFacetingResponse = response.getJsonFacetingResponse();
+        long count = jsonFacetingResponse.getCount();
+        Map<Object, T> facetResultByFacetName = getFacetResultByFacetName(facetName, clazz);
+        BPage<T> bPage = new BPage<>();
+        bPage.setContent(facetResultByFacetName);
+        bPage.setCurrPage(pageable.getPageNumber());
+        bPage.setQueryNum(count);
+        bPage.setTotalPage((int) (count%pageable.getPageSize() == 0?count/pageable.getPageSize():count/pageable.getPageSize()+1));
+        return bPage;
+    }
+
     private <T> T getObjectFromBucket(BucketJsonFacet bucket, Class<T> clazz) {
 
         if (conversionService.canConvert(BucketJsonFacet.class, clazz)) {
@@ -124,6 +142,40 @@ public class ResultContainer {
         }else {
             throw new RuntimeException(String.format("类型不能转换: %s -> %s", val.getClass().getName(), propertyDescriptor.getPropertyType()));
         }
+    }
+
+    public Map<Object, Map<String,Object>> getFacetResultByFieldName(String fieldName) {
+        String bucketBasedFacetName = fieldName + FACET_SUFFIX;
+        return getFacetResultByFacetName(bucketBasedFacetName);
+    }
+
+    public Map<Object, Map<String,Object>> getFacetResultByFacetName(String facetName) {
+        NestableJsonFacet jsonFacetingResponse = response.getJsonFacetingResponse();
+        BucketBasedJsonFacet statFacet = jsonFacetingResponse.getBucketBasedFacets(facetName);
+        List<BucketJsonFacet> buckets = statFacet.getBuckets();
+        Map<Object,  Map<String,Object>> result = new LinkedHashMap<>();
+        for (BucketJsonFacet bucket : buckets) {
+            Object key = bucket.getVal();
+            Map<String, Object> t = getMapFromBucket(bucket);
+            result.put(key, t);
+        }
+        return result;
+    }
+
+    private Map<String, Object> getMapFromBucket(BucketJsonFacet bucket){
+
+        Map<String, Object> facetMap = new HashMap<>();
+
+        facetMap.put("val", bucket.getVal());
+        facetMap.put("count", bucket.getCount());
+
+        Set<String> names = bucket.getStatFacetNames();
+        for (String name : names) {
+            Number statFacetValue = bucket.getStatFacetValue(name);
+            facetMap.put(name, statFacetValue);
+        }
+
+        return facetMap;
     }
 
     /** --------------------- facet --------------------- */
@@ -174,4 +226,6 @@ public class ResultContainer {
     public void setResponse(QueryResponse response) {
         this.response = response;
     }
+
+
 }

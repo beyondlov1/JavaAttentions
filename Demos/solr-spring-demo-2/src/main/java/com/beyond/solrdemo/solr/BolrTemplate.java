@@ -21,6 +21,10 @@ public class BolrTemplate {
 
     private List<Converter> converters = new ArrayList<>();
 
+    public BolrTemplate(SolrClient solrClient) {
+        this.solrClient = solrClient;
+    }
+
     public ResultContainer query(String collection, SolrQuery query) throws IOException, SolrServerException {
         assert solrClient != null;
         return query(collection, query, solrClient);

@@ -2,17 +2,27 @@ package com.beyond.solrdemo.demo.facet;
 
 import com.beyond.solrdemo.solr.component.facet.FacetParamSource;
 import lombok.Data;
+import org.springframework.data.domain.Pageable;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @author chenshipeng
+ * @author beyondlov1
  * @date 2019/11/06
  */
 @Data
 public class IdFacetQueryComp implements FacetParamSource {
+
+    private Pageable pageable;
+
+    public IdFacetQueryComp() {
+    }
+
+    public IdFacetQueryComp(Pageable pageable) {
+        this.pageable = pageable;
+    }
 
     @Override
     public Map<String,Object> getFacetParam(){
@@ -20,7 +30,13 @@ public class IdFacetQueryComp implements FacetParamSource {
         Map<String, Object> facetParams = new LinkedHashMap<>();
         facetParams.put("type", "terms");
         facetParams.put("field", fieldName);
-        facetParams.put("limit", 1000);
+        if (pageable!=null){
+            facetParams.put("offset", pageable.getOffset());
+            facetParams.put("limit", pageable.getPageSize());
+        }else {
+            facetParams.put("offset", 0);
+            facetParams.put("limit", 10000);
+        }
 
         HashMap<String, Object> sorts = new LinkedHashMap<>();
         sorts.put("sumAmount", "desc");

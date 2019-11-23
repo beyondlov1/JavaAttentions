@@ -103,8 +103,8 @@ public class SolrConfig {
 
     @Bean
     @ConditionalOnMissingBean
-    public BolrTemplate bolrTemplate(List<Converter> converters){
-        BolrTemplate bolrTemplate = new BolrTemplate();
+    public BolrTemplate bolrTemplate(SolrClient solrClient,List<Converter> converters){
+        BolrTemplate bolrTemplate = new BolrTemplate(solrClient);
         if (converters == null){
             return bolrTemplate;
         }

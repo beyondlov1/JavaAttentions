@@ -12,6 +12,7 @@ import com.beyond.solrdemo.solr.component.query.SimpleQueryComp;
 import com.beyond.solrdemo.solr.component.SolrQueryBuilder;
 import com.beyond.solrdemo.solr.component.facet.SimpleFacetQueryComp;
 import com.beyond.solrdemo.solr.component.filter.CriteriaFilterQueryComp;
+import com.beyond.solrdemo.solr.result.BPage;
 import com.beyond.solrdemo.solr.result.ResultContainer;
 import com.beyond.solrdemo.solr.result.facet.SimpleFacetResult;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -22,6 +23,8 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.solr.core.DefaultQueryParser;
 import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.data.solr.core.mapping.SimpleSolrMappingContext;
@@ -72,7 +75,8 @@ public class QueryDemo {
     public void springQuery() throws JsonProcessingException {
         Query query = new SimpleQuery(Criteria.WILDCARD);
         Criteria criteria = Criteria.where("name");
-        criteria.fuzzy("我们都",1);
+        // 不支持中文?
+        criteria.contains("我们都");
         query.addCriteria(criteria);
         query.addProjectionOnField(Field.of("id"));
         query.addProjectionOnField(Field.of("name"));
@@ -105,11 +109,13 @@ public class QueryDemo {
     }
 
     public void solrJFacet() throws IOException, SolrServerException {
+        Pageable pageable = PageRequest.of(1, 5);
         SolrQuery query = new SolrQueryBuilder()
-                .facet(new IdFacetQueryComp())
+                .facet(new IdFacetQueryComp(pageable))
                 .facet(new PriceFacetQueryComp())
                 .facet(new SimpleFacetQueryComp("name"))
                 .build();
+
         ResultContainer resultContainer = bolrTemplate.query("techproducts", query, solrClient);
         Map<Object, IdFacetResult> idFacet = resultContainer.getFacetResultByFieldName("id", IdFacetResult.class);
         System.out.println(objectMapper.writeValueAsString(idFacet));
@@ -117,6 +123,11 @@ public class QueryDemo {
         System.out.println(objectMapper.writeValueAsString(priceFacet));
         Map<Object, SimpleFacetResult> nameFacet = resultContainer.getFacetResultByFieldName("name", SimpleFacetResult.class);
         System.out.println(objectMapper.writeValueAsString(nameFacet));
+
+        Map<Object, Map<String, Object>> mapFacetResultByFacetName = resultContainer.getFacetResultByFieldName("id");
+        System.out.println(mapFacetResultByFacetName);
+        BPage<IdFacetResult> bPage = resultContainer.getFacetResultPageByFieldName("id", pageable, IdFacetResult.class);
+        System.out.println(bPage.getContent());
     }
 
     public void solrCriteriaQuery() throws IOException, SolrServerException {
