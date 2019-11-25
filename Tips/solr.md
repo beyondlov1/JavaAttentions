@@ -9,4 +9,7 @@ java -Dauto=yes -Dc=core_test2 -jar example\exampledocs\post.jar example\example
 ### field/fieldType ... 
 参考：https://blog.csdn.net/supermao1013/article/details/83628344
 
-
+### df
+schema中可以设置默认的查询字段, 这会导致指定了qf却查出更多documnet
+所以, 如果qf失效了, 可以先看一下是不是设置了df(solrconfig.xml)
+参考: https://lucene.apache.org/solr/guide/6_6/the-standard-query-parser.html#TheStandardQueryParser-StandardQueryParserParameters
