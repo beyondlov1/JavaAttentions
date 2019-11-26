@@ -1,7 +1,7 @@
 package com.beyond.query.demo.converter;
 
 import com.beyond.query.demo.entity.Book;
-import com.beyond.query.solr.converter.AbstractDocumentObjectBinder;
+import com.beyond.query.solr.AbstractDocumentObjectBinder;
 import org.apache.solr.common.SolrDocument;
 import org.springframework.stereotype.Component;
 

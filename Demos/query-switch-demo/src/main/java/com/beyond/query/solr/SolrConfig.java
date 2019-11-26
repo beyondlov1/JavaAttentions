@@ -1,4 +1,4 @@
-package com.beyond.query.solr.config;
+package com.beyond.query.solr;
 
 import com.beyond.query.QueryTemplate;
 import com.beyond.query.demo.converter.NumberToBigDecimalConverter;

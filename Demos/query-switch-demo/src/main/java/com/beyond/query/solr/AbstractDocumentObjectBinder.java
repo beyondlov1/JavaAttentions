@@ -1,4 +1,4 @@
-package com.beyond.query.solr.converter;
+package com.beyond.query.solr;
 
 import org.apache.solr.client.solrj.beans.DocumentObjectBinder;
 import org.apache.solr.common.SolrDocument;
