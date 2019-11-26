@@ -6,7 +6,6 @@ import com.beyond.query.QueryTemplate;
 import com.beyond.query.ResultContainer;
 import com.beyond.query.demo.entity.Book;
 import com.beyond.query.es.EsQueryChainBuilder;
-import com.beyond.query.es.component.PriceRangeEsQueryComp;
 import com.beyond.query.es.component.SimpleEsQueryComp;
 import com.beyond.query.solr.SolrQueryChainBuilder;
 import com.beyond.query.solr.component.query.SimpleQueryComp;
@@ -20,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -53,7 +51,6 @@ public class QueryDemo {
         QueryChainBuilder<BoolQueryBuilder> queryChainBuilder = new EsQueryChainBuilder();
         BoolQueryBuilder queryBuilder = queryChainBuilder
                 .add(new SimpleEsQueryComp("id", "2114"))
-                .add(new PriceRangeEsQueryComp(BigDecimal.valueOf(1000),BigDecimal.valueOf(9999)))
                 .build();
         ResultContainer<SearchResult> resultContainer = esQueryTemplate.query(queryBuilder);
         Page<Book> page = resultContainer.getQueryResultPage(Book.class, PageRequest.of(1, 2));
