@@ -599,3 +599,8 @@ https://blog.csdn.net/qq_36784975/article/details/89219504
 https://stackoverflow.com/questions/41791429/error-your-project-contains-c-files-but-it-is-not-using-a-supported-native-bu/42364491
 
 You can find your Android.mk in; app/build/intermediates/ndk/debug
+
+
+### android lib
+could not get unknown property for 'applicationVariants' for BuildType
+https://stackoverflow.com/questions/45101309/could-not-get-unknown-property-for-applicationvariants-for-buildtype-decorated
