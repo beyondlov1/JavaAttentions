@@ -100,7 +100,7 @@ public class QueryDemo {
 
     public void solrJBinderQuery() throws IOException, SolrServerException {
         SolrQuery query = new SolrQueryBuilder()
-                .query(new SimpleQueryComp("name", "video"))
+                .query(new SimpleQueryComp("name", "card"))
                 .set("fl", "id,name,price")
                 .build();
         QueryResponse response = solrClient.query("techproducts", query);
