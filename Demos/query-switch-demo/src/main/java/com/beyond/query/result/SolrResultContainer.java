@@ -184,7 +184,7 @@ public class SolrResultContainer implements ResultContainer<QueryResponse> {
     /** --------------------- facet --------------------- */
 
     /**
-     * --------------------- query ---------------------
+     * --------------------- queryForResult ---------------------
      */
 
     @Override
@@ -231,7 +231,7 @@ public class SolrResultContainer implements ResultContainer<QueryResponse> {
     }
 
     /**
-     * --------------------- query ---------------------
+     * --------------------- queryForResult ---------------------
      */
 
     public void addConverter(Converter<?, ?> converter) {

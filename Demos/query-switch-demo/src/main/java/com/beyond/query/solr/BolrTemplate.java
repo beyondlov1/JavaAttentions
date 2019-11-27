@@ -20,6 +20,7 @@ public class BolrTemplate implements SolrQueryTemplate{
     private SolrClient solrClient;
 
     private List<Converter> converters = new ArrayList<>();
+
     private String collection;
 
     public BolrTemplate(SolrClient solrClient) {
@@ -28,11 +29,11 @@ public class BolrTemplate implements SolrQueryTemplate{
 
     public SolrResultContainer query(String collection, SolrQuery query) throws IOException, SolrServerException {
         assert solrClient != null;
-        return query(collection, query, solrClient);
+        return queryForResult(collection, query, solrClient);
     }
 
     @Override
-    public SolrResultContainer query(String collection, SolrQuery query, SolrClient solrClient) throws IOException, SolrServerException {
+    public SolrResultContainer queryForResult(String collection, SolrQuery query, SolrClient solrClient) throws IOException, SolrServerException {
         SolrResultContainer solrResultContainer = new SolrResultContainer();
         for (Converter converter : converters) {
             solrResultContainer.addConverter(converter);
@@ -62,5 +63,10 @@ public class BolrTemplate implements SolrQueryTemplate{
 
     public void setCollection(String collection){
         this.collection = collection;
+    }
+
+    @Override
+    public QueryResponse query(SolrQuery query) throws Exception {
+        return solrClient.query(collection, query);
     }
 }

@@ -24,7 +24,7 @@ public class SimpleInFilterQueryComp extends AbstractFilterQueryComp {
     @Override
     protected void init(SolrQuery query) {
         if (CollectionUtils.isEmpty(values)){
-            log.info("field:"+field+"; values is empty, this filter query will be abort;");
+            log.info("field:"+field+"; values is empty, this filter queryForResult will be abort;");
             return;
         }
         filterExpr = "(" +

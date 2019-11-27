@@ -21,7 +21,7 @@ public class EsQueryTemplate implements QueryTemplate<QueryBuilder, SearchResult
     private JestClient jestClient;
 
     @Override
-    public ResultContainer<SearchResult> query(QueryBuilder queryBuilder) throws Exception {
+    public ResultContainer<SearchResult> queryForResult(QueryBuilder queryBuilder) throws Exception {
         Search search = new Search.Builder(new SearchSourceBuilder().query(queryBuilder).toString()).build();
         SearchResult result = jestClient.execute(search);
         System.out.println(result);
@@ -29,5 +29,11 @@ public class EsQueryTemplate implements QueryTemplate<QueryBuilder, SearchResult
         ResultContainer<SearchResult> resultContainer = new EsResultContainer();
         resultContainer.setResponse(result);
         return resultContainer;
+    }
+
+    @Override
+    public SearchResult query(QueryBuilder queryBuilder) throws Exception {
+        Search search = new Search.Builder(new SearchSourceBuilder().query(queryBuilder).toString()).build();
+        return jestClient.execute(search);
     }
 }

@@ -42,7 +42,7 @@ public class QueryDemo {
         SolrQuery query = queryChainBuilder
                 .add(new SimpleQueryComp("name", "card"))
                 .build();
-        ResultContainer<QueryResponse> resultContainer = solrQueryTemplate.query(query);
+        ResultContainer<QueryResponse> resultContainer = solrQueryTemplate.queryForResult(query);
         List<Book> queryResult = resultContainer.getQueryResult(Book.class);
         System.out.println(objectMapper.writeValueAsString(queryResult));
     }
@@ -52,7 +52,7 @@ public class QueryDemo {
         BoolQueryBuilder queryBuilder = queryChainBuilder
                 .add(new SimpleEsQueryComp("id", "2114"))
                 .build();
-        ResultContainer<SearchResult> resultContainer = esQueryTemplate.query(queryBuilder);
+        ResultContainer<SearchResult> resultContainer = esQueryTemplate.queryForResult(queryBuilder);
         Page<Book> page = resultContainer.getQueryResultPage(Book.class, PageRequest.of(1, 2));
         System.out.println(objectMapper.writeValueAsString(page));
     }

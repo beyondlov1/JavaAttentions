@@ -16,11 +16,11 @@ import java.io.IOException;
 public interface SolrQueryTemplate extends QueryTemplate<SolrQuery, QueryResponse> {
 
     @Override
-    default  ResultContainer<QueryResponse> query(SolrQuery query) throws Exception {
-        return query(getCollection(),query,getSolrClient());
+    default ResultContainer<QueryResponse> queryForResult(SolrQuery query) throws Exception {
+        return queryForResult(getCollection(), query, getSolrClient());
     }
 
-    ResultContainer<QueryResponse> query(String collection, SolrQuery query, SolrClient solrClient) throws IOException, SolrServerException;
+    ResultContainer<QueryResponse> queryForResult(String collection, SolrQuery query, SolrClient solrClient) throws IOException, SolrServerException;
 
     SolrClient getSolrClient();
 
