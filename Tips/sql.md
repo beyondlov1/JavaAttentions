@@ -180,3 +180,25 @@ select name from student where name='zhang' or name='li' or name='wang' or name=
 的结果是相同的。
 
 参考(值得点开)：https://www.cnblogs.com/beijingstruggle/p/5885137.html
+
+### 优化
+
+https://www.cnblogs.com/xupccc/p/9661972.html
+
+查询模式
+
+联表时第一个会把where条件中自己可查的and 的where条件加上, 筛选出第一批
+
+之后用筛选出的去根据第二个表的查询条件筛选出第二批
+
+以此类推.... (nested loop)
+
+
+
+非关联子查询
+
+子查询中不需要父查询传入数据
+
+关联子查询
+
+子查询中需要父查询传入数据, 外边的查询一次, 子查询就执行一次(尽量不要用, 有OR和LIKE的时候会奇慢无比, 暂未找到原因)
