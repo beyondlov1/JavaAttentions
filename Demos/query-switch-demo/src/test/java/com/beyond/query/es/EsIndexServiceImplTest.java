@@ -17,22 +17,22 @@ class EsIndexServiceImplTest {
 
     @Test
     void createIndex() {
-        esIndexService.createIndex("book_index", "book");
+//        esIndexService.createIndex("book_index", "book");
     }
 
     @Test
     void insertIndex() {
-        Book book = new Book();
-        book.setId("2115");
-        book.setName("name");
-        book.setPrice(BigDecimal.valueOf(2115));
-        esIndexService.insertIndex("book_index", "book", book);
-
-
-        Book book1 = new Book();
-        book1.setId("2114");
-        book1.setName("name2");
-        book1.setPrice(BigDecimal.valueOf(2114));
-        esIndexService.insertIndex("book_index", "book", book1);
+//        Book book = new Book();
+//        book.setId("2115");
+//        book.setName("name");
+//        book.setPrice(BigDecimal.valueOf(2115));
+//        esIndexService.insertIndex("book_index", "book", book);
+//
+//
+//        Book book1 = new Book();
+//        book1.setId("2114");
+//        book1.setName("name2");
+//        book1.setPrice(BigDecimal.valueOf(2114));
+//        esIndexService.insertIndex("book_index", "book", book1);
     }
 }

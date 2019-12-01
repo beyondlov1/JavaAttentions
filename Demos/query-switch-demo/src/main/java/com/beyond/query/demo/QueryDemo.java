@@ -47,7 +47,7 @@ public class QueryDemo {
         System.out.println(objectMapper.writeValueAsString(queryResult));
     }
 
-    public void esQuery() throws Exception {
+    public Object esQuery() throws Exception {
         QueryChainBuilder<BoolQueryBuilder> queryChainBuilder = new EsQueryChainBuilder();
         BoolQueryBuilder queryBuilder = queryChainBuilder
                 .add(new SimpleEsQueryComp("id", "2114"))
@@ -55,5 +55,6 @@ public class QueryDemo {
         ResultContainer<SearchResult> resultContainer = esQueryTemplate.queryForResult(queryBuilder);
         Page<Book> page = resultContainer.getQueryResultPage(Book.class, PageRequest.of(1, 2));
         System.out.println(objectMapper.writeValueAsString(page));
+        return page;
     }
 }

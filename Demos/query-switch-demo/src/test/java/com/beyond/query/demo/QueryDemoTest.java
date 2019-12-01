@@ -19,6 +19,6 @@ class QueryDemoTest {
 
     @Test
     void esQuery() throws Exception {
-        queryDemo.esQuery();
+//        queryDemo.esQuery();
     }
 }
