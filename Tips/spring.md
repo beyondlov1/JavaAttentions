@@ -102,6 +102,7 @@ maven:
             <artifactId>spring-aspects</artifactId>
         </dependency>
 	
+
 	 <plugin>
 	            <groupId>org.codehaus.mojo</groupId>
 	            <artifactId>aspectj-maven-plugin</artifactId>
@@ -129,6 +130,12 @@ maven:
 	                </execution>
 	            </executions>
 	        </plugin>
+
+注意: @Configurable(autowire = Autowire.BY_TYPE)  这个里面的autowire属性一定要写, 不然默认是Autowire.NO 
+
+ 如果是第一次创建这个类, 用这种方法是有一定损耗的,性能会损耗十几毫秒的样子, 但是如果是已经创建过这种类的对象, 再次创建基本没有损耗, 所以对于web应用来说, 损耗可以忽略(感觉spring会在创建的时候生成一种模板之类的, 所以第一次创建会损耗些性能)
+
+示例: Demos\customSpringBootStarterDemo\demo\src\main\java\com\beyond\demo\playground\configable
 
 ### spring boot 动态注册 bean
 

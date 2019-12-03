@@ -22,6 +22,11 @@ public class QueryController {
     @Autowired
     EsIndexService esIndexService;
 
+    @RequestMapping("solrQuery")
+    public Object solrQuery() throws Exception {
+        return queryDemo.solrQuery();
+    }
+
     @RequestMapping("esQuery")
     public Object esQuery() throws Exception {
         return queryDemo.esQuery();

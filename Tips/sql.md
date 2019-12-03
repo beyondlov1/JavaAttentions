@@ -202,3 +202,8 @@ https://www.cnblogs.com/xupccc/p/9661972.html
 关联子查询
 
 子查询中需要父查询传入数据, 外边的查询一次, 子查询就执行一次(尽量不要用, 有OR和LIKE的时候会奇慢无比, 暂未找到原因)
+
+
+### Transaction VS for update
+for update 可以锁住一行, 但是要加上事务才会起作用
+示例:Demos/spring-boot-playground/com.beyond.transaction

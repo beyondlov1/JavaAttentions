@@ -5,9 +5,11 @@ import org.apache.solr.common.SolrDocument;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.convert.ReadingConverter;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 
 /**
  * @author beyondlov1
@@ -16,6 +18,7 @@ import java.math.RoundingMode;
 @Component
 @ReadingConverter
 public class SolrDocumentToBookConverter implements Converter<SolrDocument, Book> {
+    @SuppressWarnings("unchecked")
     @Override
     public Book convert(SolrDocument source) {
         Object priceObj = source.getFieldValue("price");
@@ -28,7 +31,10 @@ public class SolrDocumentToBookConverter implements Converter<SolrDocument, Book
 
         Book book = new Book();
         book.setId((String) source.getFieldValue("id"));
-        book.setName((String) source.getFieldValue("name"));
+        List<String> nameList = (List<String>) source.getFieldValue("name");
+        if (!CollectionUtils.isEmpty(nameList)){
+            book.setName(nameList.get(0));
+        }
         book.setPrice(priceBigDecimal);
         return book;
     }

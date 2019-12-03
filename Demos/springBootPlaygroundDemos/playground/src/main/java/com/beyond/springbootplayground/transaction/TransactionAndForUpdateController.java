@@ -1,7 +1,7 @@
 package com.beyond.springbootplayground.transaction;
 
 import com.beyond.springbootplayground.transaction.repository.TFullTextTestMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2019/12/02
  */
 @RestController
+@RequiredArgsConstructor
 public class TransactionAndForUpdateController {
 
-    @Autowired
-    TFullTextTestMapper tFullTextTestMapper;
+    private final TFullTextTestMapper tFullTextTestMapper;
 
     @RequestMapping("/start")
     @Transactional(rollbackFor = Exception.class)

@@ -152,3 +152,4 @@ demo: Demos/mybatisDemo
 看有没有加 Mapper 的注解
 如果加了注解， idea 还能正常显示
 那么可能是依赖有问题， mybatis-spring-boot-start 是第三方的 ， 要写版本号！要写版本号！要写版本号！
+

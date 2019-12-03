@@ -1,10 +1,9 @@
 package com.beyond.query.demo;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class QueryDemoTest {
@@ -12,9 +11,13 @@ class QueryDemoTest {
     @Autowired
     QueryDemo queryDemo;
 
+    @Autowired
+    ObjectMapper objectMapper;
+
     @Test
     void solrQuery() throws Exception {
-        queryDemo.solrQuery();
+        Object o = queryDemo.solrQuery();
+        System.out.println(objectMapper.writeValueAsString(o));
     }
 
     @Test

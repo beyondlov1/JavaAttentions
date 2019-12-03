@@ -10,10 +10,6 @@ import org.apache.solr.client.solrj.SolrQuery;
 @Data
 public class SimpleFilterQueryComp extends AbstractFilterQueryComp {
 
-    private String field;
-    private String filterExpr;
-    private String expression;
-
     public SimpleFilterQueryComp() {
     }
 

@@ -1,9 +1,9 @@
 package com.beyond.query.demo;
 
 import com.beyond.query.Page;
-import com.beyond.query.QueryChainBuilder;
 import com.beyond.query.QueryTemplate;
 import com.beyond.query.ResultContainer;
+import com.beyond.query.demo.comp.SimpleQueryCompComposite;
 import com.beyond.query.demo.entity.Book;
 import com.beyond.query.es.EsQueryChainBuilder;
 import com.beyond.query.es.component.SimpleEsQueryComp;
@@ -15,21 +15,23 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilder;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
+import org.springframework.util.StopWatch;
 
 /**
  * @author beyondlov1
  * @date 2019/10/28
  */
 @Component
-public class QueryDemo {
+public class QueryDemo implements BeanFactoryAware {
 
     @Autowired
-    private QueryTemplate<SolrQuery,QueryResponse> solrQueryTemplate;
+    private QueryTemplate<SolrQuery, QueryResponse> solrQueryTemplate;
 
     @Autowired
     private QueryTemplate<QueryBuilder, SearchResult> esQueryTemplate;
@@ -37,24 +39,35 @@ public class QueryDemo {
     @Autowired
     private ObjectMapper objectMapper;
 
-    public void solrQuery() throws Exception {
-        QueryChainBuilder<SolrQuery> queryChainBuilder = new SolrQueryChainBuilder();
-        SolrQuery query = queryChainBuilder
+    BeanFactory beanFactory;
+
+    public Object solrQuery() throws Exception {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        SolrQuery query = new SolrQueryChainBuilder()
                 .add(new SimpleQueryComp("name", "card"))
+                .add(new SimpleQueryCompComposite())
                 .build();
+        stopWatch.stop();
+
+        System.out.println("time:"+stopWatch.getLastTaskTimeMillis());
+
         ResultContainer<QueryResponse> resultContainer = solrQueryTemplate.queryForResult(query);
-        List<Book> queryResult = resultContainer.getQueryResult(Book.class);
-        System.out.println(objectMapper.writeValueAsString(queryResult));
+        return resultContainer.getQueryResult(Book.class);
     }
 
     public Object esQuery() throws Exception {
-        QueryChainBuilder<BoolQueryBuilder> queryChainBuilder = new EsQueryChainBuilder();
-        BoolQueryBuilder queryBuilder = queryChainBuilder
+        BoolQueryBuilder queryBuilder = new EsQueryChainBuilder()
                 .add(new SimpleEsQueryComp("id", "2114"))
                 .build();
         ResultContainer<SearchResult> resultContainer = esQueryTemplate.queryForResult(queryBuilder);
         Page<Book> page = resultContainer.getQueryResultPage(Book.class, PageRequest.of(1, 2));
         System.out.println(objectMapper.writeValueAsString(page));
         return page;
+    }
+
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        this.beanFactory = beanFactory;
     }
 }
