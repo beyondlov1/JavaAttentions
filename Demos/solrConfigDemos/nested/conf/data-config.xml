@@ -1,0 +1,42 @@
+
+
+<dataConfig>
+  <dataSource type="JdbcDataSource" 
+              driver="com.mysql.jdbc.Driver"
+              convertType="true"
+              batchSize="-1"
+              netTimeoutForStreamingResults="0"
+              url="jdbc:mysql://localhost:3306/world?serverTimezone=GMT%2B8&amp;useUnicode=true&amp;characterEncoding=utf-8" 
+              user="root"
+              password="root"/>
+  <document>
+    <entity name="country" 
+        query=
+            "SELECT code as id,name,continent FROM  world.country;" 
+    
+    > 
+      <!-- considered difference from UTC timezone in solr-->
+
+      <!-- rush wholesales are included in delta import until 1 hour after end of rush-->
+      
+      <!-- use 'UNION ALL' instead of 'OR' to allow mysql to use index-->
+      
+      <entity name="city" 
+        query=
+            "SELECT id cityId, name cityName from world.city where countryCode = '${country.id}';" 
+    
+    > 
+      <!-- considered difference from UTC timezone in solr-->
+
+      <!-- rush wholesales are included in delta import until 1 hour after end of rush-->
+      
+      <!-- use 'UNION ALL' instead of 'OR' to allow mysql to use index-->
+      
+      
+    </entity>
+    </entity>
+
+	
+  </document>
+</dataConfig>
+
