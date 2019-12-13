@@ -21,7 +21,6 @@ import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StopWatch;
 
 /**
  * @author beyondlov1
@@ -42,16 +41,10 @@ public class QueryDemo implements BeanFactoryAware {
     BeanFactory beanFactory;
 
     public Object solrQuery() throws Exception {
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start();
         SolrQuery query = new SolrQueryChainBuilder()
                 .add(new SimpleQueryComp("name", "card"))
                 .add(new SimpleQueryCompComposite())
                 .build();
-        stopWatch.stop();
-
-        System.out.println("time:"+stopWatch.getLastTaskTimeMillis());
-
         ResultContainer<QueryResponse> resultContainer = solrQueryTemplate.queryForResult(query);
         return resultContainer.getQueryResult(Book.class);
     }

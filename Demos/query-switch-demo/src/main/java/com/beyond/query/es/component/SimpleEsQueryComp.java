@@ -2,6 +2,10 @@ package com.beyond.query.es.component;
 
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.springframework.util.CollectionUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author chenshipeng
@@ -23,4 +27,9 @@ public class SimpleEsQueryComp extends AbstractEsQueryComp {
         return QueryBuilders.termQuery(field, value);
     }
 
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(null);
+        System.out.println(CollectionUtils.isEmpty(list));
+    }
 }

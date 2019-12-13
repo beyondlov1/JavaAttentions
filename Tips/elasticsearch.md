@@ -40,3 +40,39 @@ cluster.initial_master_nodes: ["node-1"]
 要复制, 中间的空格不能删减
 
 https://www.cnblogs.com/zhi-leaf/p/8484337.html
+
+###### 集群部署
+修改配置文件:
+master:
+
+cluster.name: elasticsearch-beyond
+node.name: node-1
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+network.host: 192.168.1.128
+bootstrap.memory_lock: false
+bootstrap.system_call_filter: false
+cluster.initial_master_nodes: ["node-1"]
+node.master: true
+discovery.zen.ping_timeout: 80s
+discovery.zen.ping.unicast.hosts: ["192.168.1.128:9300","192.168.1.129:9300"]
+
+data:
+
+cluster.name: elasticsearch-beyond
+node.name: node-2
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+network.host: 192.168.1.129
+bootstrap.memory_lock: false
+bootstrap.system_call_filter: false
+cluster.initial_master_nodes: ["node-1"]
+node.master: false
+discovery.zen.ping_timeout: 80s
+discovery.zen.ping.unicast.hosts: ["192.168.1.128:9300","192.168.1.129:9300"]
+
+PS:
+如果因为全复制的, 可能会报下边的错误
+搭建elsticsearch集群 报错with the same id but is a different node instance解决办法
+解决方法: 清空data下的文件
+https://blog.csdn.net/qq_24879495/article/details/77718032

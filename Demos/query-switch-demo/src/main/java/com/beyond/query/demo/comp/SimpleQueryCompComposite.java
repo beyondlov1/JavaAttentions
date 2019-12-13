@@ -19,14 +19,14 @@ import java.util.List;
 public class SimpleQueryCompComposite implements QueryComponent<SolrQuery> {
 
     @Autowired
-    private WhateverBean whateverBean;
+    private WhateverService whateverService;
 
     @Override
     public SolrQuery chain(SolrQuery query) {
-        whateverBean.print();
         List<QueryComponent<SolrQuery>> queryComponents  = new ArrayList<>();
         queryComponents.add(new SimpleFilterQueryComp("name", "ATI Radeon X1900 XTX 512 MB PCIE Video Card"));
         queryComponents.add(new SimpleFilterQueryComp("id", "100-435805"));
+        queryComponents.add(new SimpleFilterQueryComp("param", whateverService.getParam()));
         return QueryComponentUtils.chain(queryComponents,query);
     }
 }

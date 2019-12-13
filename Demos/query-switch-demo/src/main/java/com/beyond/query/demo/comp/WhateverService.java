@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
  * @date 2019/12/02
  */
 @Component
-public class WhateverBean {
-    public void print(){
-        System.out.println(this);
+public class WhateverService {
+    public String getParam(){
+        return "param";
     }
 }
