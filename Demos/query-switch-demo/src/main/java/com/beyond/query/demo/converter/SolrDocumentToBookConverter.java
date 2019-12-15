@@ -30,11 +30,9 @@ public class SolrDocumentToBookConverter implements Converter<SolrDocument, Book
         priceBigDecimal = priceBigDecimal.setScale(4, RoundingMode.HALF_UP);
 
         Book book = new Book();
-        book.setId((String) source.getFieldValue("id"));
-        List<String> nameList = (List<String>) source.getFieldValue("name");
-        if (!CollectionUtils.isEmpty(nameList)){
-            book.setName(nameList.get(0));
-        }
+        book.setId((Integer) source.getFieldValue("id"));
+        String name = (String) source.getFieldValue("name");
+        book.setName(name);
         book.setPrice(priceBigDecimal);
         return book;
     }

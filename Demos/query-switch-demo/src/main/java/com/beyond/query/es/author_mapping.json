@@ -1,0 +1,39 @@
+{
+    "properties": {
+      "books": {
+        "type": "nested",
+        "properties": {
+          "category": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "price": {
+            "type": "double"
+          }
+        }
+      },
+      "id": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      }
+    }
+}

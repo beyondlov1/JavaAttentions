@@ -2,13 +2,22 @@ package com.beyond.query.es;
 
 import com.beyond.query.demo.entity.Book;
 import io.searchbox.client.JestClient;
+import io.searchbox.client.JestResult;
+import io.searchbox.core.DocumentResult;
 import io.searchbox.core.Index;
 import io.searchbox.indices.CreateIndex;
+import io.searchbox.indices.DeleteIndex;
+import io.searchbox.indices.mapping.PutMapping;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.Charset;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author chenshipeng
@@ -16,30 +25,52 @@ import java.io.IOException;
  */
 @Component
 @Slf4j
-public class EsIndexServiceImpl implements EsIndexService<Book> {
+public class EsIndexServiceImpl implements EsIndexService<Object> {
     @Autowired
     private JestClient jestClient;
 
     @Override
-    public void createIndex(String indexName, String type) {
+    public void createIndex(String indexName) {
         /**
          * 创建索引
          */
-        CreateIndex createIndex = new CreateIndex.Builder(indexName).build();
+        String mapping = getMapping();
+        CreateIndex createIndex = new CreateIndex.Builder(indexName).mappings(mapping).build();
         try {
-            jestClient.execute(createIndex);
+            JestResult createIndexResult = jestClient.execute(createIndex);
+            log.info(createIndexResult.getJsonString());
         } catch (IOException e) {
             log.error("创建索引", e);
         }
     }
 
-    @Override
-    public void insertIndex(String indexName, String type, Book book) {
-        Index index = new Index.Builder(book).index(indexName).type(type).build();
+    private String getMapping()  {
+        InputStream mappingInputStream = this.getClass().getResourceAsStream("author_mapping.json");
         try {
-            jestClient.execute(index);
+            return IOUtils.toString(mappingInputStream, Charset.defaultCharset());
+        } catch (IOException e) {
+            throw new RuntimeException("读取author_mapping失败",e);
+        }
+    }
+
+    @Override
+    public void insertIndex(String indexName, Object obj) {
+        Index index = new Index.Builder(obj).index(indexName).type("_doc").build();
+        try {
+            DocumentResult result = jestClient.execute(index);
+            log.info(result.getJsonString());
         } catch (IOException e) {
             log.error("插入单个索引信息", e);
+        }
+    }
+
+    @Override
+    public void deleteIndex(String indexName) {
+        DeleteIndex deleteIndex = new DeleteIndex.Builder(indexName).build();
+        try {
+            jestClient.execute(deleteIndex);
+        } catch (IOException e) {
+            log.error("创建索引", e);
         }
     }
 }

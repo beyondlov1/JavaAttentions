@@ -34,20 +34,20 @@ public class QueryController {
 
     @RequestMapping("createEsIndex")
     public Object createEsIndex(){
-        esIndexService.createIndex("book_index", "book");
+        esIndexService.createIndex("book_index");
 
         Book book = new Book();
-        book.setId("2115");
+        book.setId(2115);
         book.setName("name");
         book.setPrice(BigDecimal.valueOf(2115));
-        esIndexService.insertIndex("book_index", "book", book);
+        esIndexService.insertIndex("book_index", book);
 
 
         Book book1 = new Book();
-        book1.setId("2114");
+        book1.setId(2114);
         book1.setName("name2");
         book1.setPrice(BigDecimal.valueOf(2114));
-        esIndexService.insertIndex("book_index", "book", book1);
+        esIndexService.insertIndex("book_index",  book1);
         return "ok";
     }
 }

@@ -15,18 +15,18 @@ import java.util.List;
  * @author chenshipeng
  * @date 2019/12/02
  */
-@Configurable(autowire = Autowire.BY_TYPE)
+//@Configurable(autowire = Autowire.BY_TYPE)
 public class SimpleQueryCompComposite implements QueryComponent<SolrQuery> {
 
-    @Autowired
-    private WhateverService whateverService;
+//    @Autowired
+//    private WhateverService whateverService;
 
     @Override
     public SolrQuery chain(SolrQuery query) {
         List<QueryComponent<SolrQuery>> queryComponents  = new ArrayList<>();
         queryComponents.add(new SimpleFilterQueryComp("name", "ATI Radeon X1900 XTX 512 MB PCIE Video Card"));
         queryComponents.add(new SimpleFilterQueryComp("id", "100-435805"));
-        queryComponents.add(new SimpleFilterQueryComp("param", whateverService.getParam()));
+//        System.out.println(whateverService.getParam());
         return QueryComponentUtils.chain(queryComponents,query);
     }
 }

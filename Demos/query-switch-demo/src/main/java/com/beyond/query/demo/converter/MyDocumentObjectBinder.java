@@ -17,7 +17,7 @@ public class MyDocumentObjectBinder extends AbstractDocumentObjectBinder<Book> {
     @Override
     protected Book getBeanInternal(SolrDocument solrDoc) {
         Book book = new Book();
-        book.setId((String) solrDoc.getFieldValue("id"));
+        book.setId((Integer) solrDoc.getFieldValue("id"));
         book.setName((String) solrDoc.getFieldValue("name"));
         if (solrDoc.getFieldValue("price")!=null){
             book.setPrice(new BigDecimal(String.valueOf(solrDoc.getFieldValue("price"))));

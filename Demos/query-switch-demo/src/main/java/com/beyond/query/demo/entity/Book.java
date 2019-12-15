@@ -14,9 +14,11 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class Book {
     @Field
-    private String id;
+    private Integer id;
     @Field
     private String name;
+    @Field
+    private Integer category;
     @Field
     private BigDecimal price;
 }

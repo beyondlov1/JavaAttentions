@@ -13,4 +13,4 @@ spring:
       host: http://127.0.0.1:8983/solr
   elasticsearch:
     jest:
-      uris: http://localhost:9200
+      uris: http://192.168.100.131:9200
