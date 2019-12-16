@@ -76,3 +76,19 @@ PS:
 搭建elsticsearch集群 报错with the same id but is a different node instance解决办法
 解决方法: 清空data下的文件
 https://blog.csdn.net/qq_24879495/article/details/77718032
+
+
+### join VS nested
+**nested 和 parent-child的区别以及使用场景**
+
+    主要区别：
+    由于存储结构的不同，nested和parent-child的方式有不同的应用场景
+    nested 所有实体存储在同一个文档，parent-child模式，子type和父type存储在不同的文档里。
+    所以查询效率上nested要高于parent-child，但是更新的时候nested模式下，es会删除整个文档再创建，而parent-child只会删除你更新的文档在重新创建，不影响其他文档。所以更新效率上parent-child要高于nested。
+
+    使用场景：
+    nested：在少量子文档，并且不会经常改变的情况下使用。
+    比如：订单里面的产品，一个订单不可能会有成千上万个不同的产品，一般不会很多，并且一旦下单后，下单的产品是不可更新的。
+    parent-child：在大量文档，并且会经常发生改变的情况下使用。
+    比如：用户的浏览记录，浏览记录会很大，并且会频繁更新
+https://blog.csdn.net/tuposky/article/details/80988915#t3
