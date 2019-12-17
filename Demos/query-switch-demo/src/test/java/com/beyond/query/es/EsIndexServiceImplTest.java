@@ -3,14 +3,10 @@ package com.beyond.query.es;
 import com.beyond.query.demo.entity.Book;
 import com.beyond.query.demo.entity.Author;
 import io.searchbox.client.JestClient;
-import io.searchbox.core.Search;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,15 +20,17 @@ class EsIndexServiceImplTest {
     @Autowired
     JestClient jestClient;
 
+    private static final String INDEX_NAME = "author_join_index";
+
 
     @Test
     void deleteIndex() {
-        esIndexService.deleteIndex("author_index");
+        esIndexService.deleteIndex(INDEX_NAME);
     }
 
     @Test
     void createIndex() {
-        esIndexService.createIndex("author_index");
+        esIndexService.createIndex(INDEX_NAME);
     }
 
     @Test
@@ -58,8 +56,8 @@ class EsIndexServiceImplTest {
 
         books.add(book);
         books.add(book1);
-        author.setBooks(books);
-        esIndexService.insertIndex("author_index",  author);
+//        author.setBooks(books);
+        esIndexService.insertIndex(INDEX_NAME, author);
 
         Author author2 = new Author();
         author2.setId(23);
@@ -88,12 +86,19 @@ class EsIndexServiceImplTest {
         books2.add(book3);
         books2.add(book4);
         books2.add(book5);
-        author2.setBooks(books2);
-        esIndexService.insertIndex("author_index",  author2);
+//        author2.setBooks(books2);
+        esIndexService.insertIndex(INDEX_NAME, author2);
+
+        for (Book book2 : books2) {
+            esIndexService.insertIndex(INDEX_NAME,book2);
+        }
+        for (Book book2 : books) {
+            esIndexService.insertIndex(INDEX_NAME,book2);
+        }
     }
 
 
     @Test
-    public void aggregationTest(){
+    public void aggregationTest() {
     }
 }

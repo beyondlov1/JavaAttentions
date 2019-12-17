@@ -21,4 +21,6 @@ public class Book {
     private Integer category;
     @Field
     private BigDecimal price;
+    private String docType = "books";
+    private Integer parent;
 }

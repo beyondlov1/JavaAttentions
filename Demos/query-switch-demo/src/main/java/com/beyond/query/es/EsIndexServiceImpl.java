@@ -34,7 +34,7 @@ public class EsIndexServiceImpl implements EsIndexService<Object> {
         /**
          * 创建索引
          */
-        String mapping = getMapping();
+        String mapping = getJoinMapping();
         CreateIndex createIndex = new CreateIndex.Builder(indexName).mappings(mapping).build();
         try {
             JestResult createIndexResult = jestClient.execute(createIndex);
@@ -48,6 +48,15 @@ public class EsIndexServiceImpl implements EsIndexService<Object> {
         InputStream mappingInputStream = this.getClass().getResourceAsStream("author_mapping.json");
         try {
             return IOUtils.toString(mappingInputStream, Charset.defaultCharset());
+        } catch (IOException e) {
+            throw new RuntimeException("读取author_mapping失败",e);
+        }
+    }
+
+    private String getJoinMapping()  {
+        InputStream joinMappingInputStream = this.getClass().getResourceAsStream("author_join_mapping.json");
+        try {
+            return IOUtils.toString(joinMappingInputStream, Charset.defaultCharset());
         } catch (IOException e) {
             throw new RuntimeException("读取author_mapping失败",e);
         }

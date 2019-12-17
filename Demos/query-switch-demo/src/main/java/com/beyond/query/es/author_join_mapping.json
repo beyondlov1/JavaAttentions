@@ -1,0 +1,40 @@
+{
+    "properties": {
+      "docType":{
+        "type": "join",
+        "relations":{
+          "author":"books"
+        }
+      },
+      "id": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "category": {
+        "type": "integer"
+      },
+      "books.id": {
+        "type": "integer"
+      },
+      "books.name": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "books.price": {
+        "type": "double"
+      }
+    }
+}

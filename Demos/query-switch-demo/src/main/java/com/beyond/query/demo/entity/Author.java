@@ -12,5 +12,6 @@ import java.util.List;
 public class Author {
     private Integer id;
     private String name;
-    private List<Book> books;
+//    private List<Book> books;
+    private String docType = "author";
 }
