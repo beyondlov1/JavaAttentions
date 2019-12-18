@@ -9,7 +9,7 @@ import java.util.List;
  * @date 2019/12/14
  */
 @Data
-public class Author {
+public class Author  implements Keyed{
     private Integer id;
     private String name;
 //    private List<Book> books;

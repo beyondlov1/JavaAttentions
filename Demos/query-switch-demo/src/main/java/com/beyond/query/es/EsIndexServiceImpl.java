@@ -1,6 +1,7 @@
 package com.beyond.query.es;
 
 import com.beyond.query.demo.entity.Book;
+import com.beyond.query.demo.entity.Keyed;
 import io.searchbox.client.JestClient;
 import io.searchbox.client.JestResult;
 import io.searchbox.core.DocumentResult;
@@ -25,7 +26,7 @@ import java.util.Map;
  */
 @Component
 @Slf4j
-public class EsIndexServiceImpl implements EsIndexService<Object> {
+public class EsIndexServiceImpl implements EsIndexService<Keyed> {
     @Autowired
     private JestClient jestClient;
 
@@ -63,8 +64,24 @@ public class EsIndexServiceImpl implements EsIndexService<Object> {
     }
 
     @Override
-    public void insertIndex(String indexName, Object obj) {
-        Index index = new Index.Builder(obj).index(indexName).type("_doc").build();
+    public void insertIndex(String indexName, Keyed obj) {
+        Index index = new Index.Builder(obj).index(indexName).type("_doc").id(String.valueOf(obj.getId())).build();
+        try {
+            DocumentResult result = jestClient.execute(index);
+            log.info(result.getJsonString());
+        } catch (IOException e) {
+            log.error("插入单个索引信息", e);
+        }
+    }
+
+    @Override
+    public void insertIndex(String indexName, Keyed obj, Integer routing) {
+        Index index = new Index.Builder(obj)
+                .index(indexName)
+                .type("_doc")
+                .id(String.valueOf(obj.getId()))
+                .setParameter("routing",routing)
+                .build();
         try {
             DocumentResult result = jestClient.execute(index);
             log.info(result.getJsonString());

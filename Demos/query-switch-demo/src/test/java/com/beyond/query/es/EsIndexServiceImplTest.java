@@ -2,6 +2,7 @@ package com.beyond.query.es;
 
 import com.beyond.query.demo.entity.Book;
 import com.beyond.query.demo.entity.Author;
+import com.beyond.query.demo.entity.JoinType;
 import io.searchbox.client.JestClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +61,7 @@ class EsIndexServiceImplTest {
         esIndexService.insertIndex(INDEX_NAME, author);
 
         Author author2 = new Author();
-        author2.setId(23);
+        author2.setId(24);
         author2.setName("金庸");
 
         List<Book> books2 = new ArrayList<>();
@@ -70,6 +71,7 @@ class EsIndexServiceImplTest {
         book3.setName("神雕侠侣");
         book3.setPrice(BigDecimal.valueOf(778));
         book3.setCategory(2);
+
 
         Book book4 = new Book();
         book4.setId(7002);
@@ -89,11 +91,14 @@ class EsIndexServiceImplTest {
 //        author2.setBooks(books2);
         esIndexService.insertIndex(INDEX_NAME, author2);
 
-        for (Book book2 : books2) {
-            esIndexService.insertIndex(INDEX_NAME,book2);
-        }
+
         for (Book book2 : books) {
-            esIndexService.insertIndex(INDEX_NAME,book2);
+            book2.setDocType(JoinType.bookType(author.getId()));
+            esIndexService.insertIndex(INDEX_NAME,book2,author.getId());
+        }
+        for (Book book2 : books2) {
+            book2.setDocType(JoinType.bookType(author2.getId()));
+            esIndexService.insertIndex(INDEX_NAME,book2,author2.getId());
         }
     }
 

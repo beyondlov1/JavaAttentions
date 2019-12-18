@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  */
 @Data
 @NoArgsConstructor
-public class Book {
+public class Book implements Keyed{
     @Field
     private Integer id;
     @Field
@@ -21,6 +21,6 @@ public class Book {
     private Integer category;
     @Field
     private BigDecimal price;
-    private String docType = "books";
-    private Integer parent;
+    private JoinType docType ;
+
 }
