@@ -14,3 +14,14 @@ client的集群是在选择用clusterConnector的时候就启用的, 这个不�
 直接投递到kafka时要注意投递的flatMessage是不是等于true
 如果为true则kafkaclient要用getFlatListWithoutAck方法
 如果为false则用getListWithoutAck
+
+
+### 指定位置同步
+1. 
+修改
+canal.instance.master.journal.name=mysql-bin.000006
+canal.instance.master.position=202
+canal.instance.master.timestamp=
+删除 meta.dat 文件
+2.
+直接修改 meta.dat 文件
