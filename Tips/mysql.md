@@ -46,7 +46,15 @@ server_id=1 # 配置 MySQL replaction 需要定义，不要和 canal 的 slaveId
 	show slave status;
 
 ### 查看binlog
-show binary logs ;
-show binlog events in 'mysql-bin.000047';
+show binary logs;  
+show binlog events in 'mysql-bin.000047';  
 
 参考: https://blog.csdn.net/silentwolfyh/article/details/82684203
+
+### 在线修改 binlog_format
+stop slave;  
+set global binlog_format='ROW';  
+start slave;  
+
+### binlog文件与format
+修改format不会添加mysql-bin的log文件, 而是会继续写, 靠 EvenType 来区分
