@@ -44,3 +44,9 @@ server_id=1 # 配置 MySQL replaction 需要定义，不要和 canal 的 slaveId
 	show variables like 'binlog_format';
 	show master status;
 	show slave status;
+
+### 查看binlog
+show binary logs ;
+show binlog events in 'mysql-bin.000047';
+
+参考: https://blog.csdn.net/silentwolfyh/article/details/82684203
