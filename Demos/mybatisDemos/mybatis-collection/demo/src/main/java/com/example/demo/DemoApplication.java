@@ -18,11 +18,12 @@ public class DemoApplication {
 
     @RequestMapping("/hello")
     public Object hello(){
-        return orderMapper.selectByPrimaryKey("2");
+        return orderMapper.selectByAmount(26);
     }
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
+
 
 }
