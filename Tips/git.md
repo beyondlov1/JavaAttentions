@@ -61,3 +61,7 @@ git config --global user.email john@example.com
 修改一个 把 global 去掉
 
 参考（git笔记）：https://www.jianshu.com/p/e405f9857b52
+
+
+### 文档路径过深
+    git config --system core.longpaths true  
