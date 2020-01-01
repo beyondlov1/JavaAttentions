@@ -207,3 +207,13 @@ https://www.cnblogs.com/xupccc/p/9661972.html
 ### Transaction VS for update
 for update 可以锁住一行, 但是要加上事务才会起作用
 示例:Demos/spring-boot-playground/com.beyond.transaction
+
+
+### tinyint 会被封装为boolean的解决办法
+
+
+1.链接改后缀添加tinyInt1isBit=false 例： jdbc:mysql://{host}/{database}?tinyInt1isBit=false
+
+2.修改对应映射源码
+
+https://blog.csdn.net/qq_22587123/article/details/83657354
