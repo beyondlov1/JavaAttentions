@@ -16,10 +16,12 @@ https://blog.csdn.net/zsg88/article/details/75095229
 ### 定时任务
 crontab -l 查看任务
 crontab -e 编辑/添加任务
+* * * * * echo hello >> /root/hello4.txt
 
 以上命令修改的其实是  /var/spool/cron 下的用户名文件
 
 systemctl status crond.service
+
 
 参考:https://blog.csdn.net/xiyuan1999/article/details/8160998
 
