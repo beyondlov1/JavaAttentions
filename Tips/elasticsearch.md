@@ -92,3 +92,22 @@ https://blog.csdn.net/qq_24879495/article/details/77718032
     parent-child：在大量文档，并且会经常发生改变的情况下使用。
     比如：用户的浏览记录，浏览记录会很大，并且会频繁更新
 https://blog.csdn.net/tuposky/article/details/80988915#t3
+
+
+### logstash 导入报错
+
+[2020-01-05T13:03:46,036][ERROR][logstash.outputs.elasticsearch][.monitoring-logstash] Encountered a retryable error. Will Retry with exponential backoff  {:code=>500, :url=>"http://192.168.0.44:9200/_monitoring/bulk?system_id=logstash&system_api_version=7&interval=1s"}
+[2020-01-05T13:16:04,892][ERROR][logstash.outputs.elasticsearch][.monitoring-logstash] Encountered a retryable error. Will Retry with exponential backoff  {:code=>500, :url=>"http://192.168.0.44:9200/_monitoring/bulk?system_id=logstash&system_api_version=7&interval=1s"}
+[2020-01-05T13:19:00,856][WARN ][logstash.outputs.elasticsearch][.monitoring-logstash] Restored connection to ES instance {:url=>"http://192.168.0.42:9200/"}
+[2020-01-05T13:25:54,426][WARN ][logstash.outputs.elasticsearch][.monitoring-logstash] Restored connection to ES instance {:url=>"http://192.168.0.42:9200/"}
+[2020-01-05T13:27:16,646][WARN ][logstash.outputs.elasticsearch][.monitoring-logstash] Restored connection to ES instance {:url=>"http://192.168.0.42:9200/"}
+[2020-01-05T13:31:08,822][WARN ][logstash.outputs.elasticsearch][.monitoring-logstash] Restored connection to ES instance {:url=>"http://192.168.0.42:9200/"}
+
+这里报错是因为批量导入时的发送的数据太大了
+这里伴随着es也会报一个错, 是因为有一个字段特别长, 导致超过了限制
+ps: 这里logstash不会自动停止, 而是会重试
+
+this seems to be caused by ES rejecting a bulk request due to it being larger than http.max_content_length after being uncompressed. currently logstash checks for the size of the bulk request after compression, which means that a heavily compressed bulk request of 200kb can carry 200mb of data, causing a 413.
+This plugin needs to be changed to perform the size check before compression
+https://github.com/logstash-plugins/logstash-output-elasticsearch/issues/823
+解决办法: 去除那么长的字段
