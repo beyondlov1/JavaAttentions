@@ -42,3 +42,19 @@ sed -i '1,$s/old/new/g' test.txt # 修改原始文件
 ${str//old/new} 替换
 
 默认分隔符: 空格 制表符 换行
+
+### 查看磁盘大小
+ df -hl 
+
+### 查看cpu
+总核数 = 物理CPU个数 X 每颗物理CPU的核数 
+总逻辑CPU数 = 物理CPU个数 X 每颗物理CPU的核数 X 超线程数
+
+查看物理CPU个数
+cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+
+查看每个物理CPU中core的个数(即核数)
+cat /proc/cpuinfo| grep "cpu cores"| uniq
+
+查看逻辑CPU的个数
+cat /proc/cpuinfo| grep "processor"| wc -l
