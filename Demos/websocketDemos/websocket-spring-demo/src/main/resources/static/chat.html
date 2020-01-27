@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>hello chat</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<div id="messageContainer"></div>
+<div id="userContainer"></div>
+<label for="toUserId">toUserId:</label><input id="toUserId" type="text">
+<label for="userName">username:</label><input id="userName" type="text">
+<label for="message">message:</label><input id="message" type="text">
+<button id="send">send</button>
+</body>
+
+<script>
+    var userId = ""+random(0,1000000);
+    var ws = new WebSocket("ws://localhost:8080/chat?userId="+userId);
+
+    ws.onopen = function(evt) {
+        console.log("Connection open ...");
+    };
+
+    ws.onmessage = function(evt) {
+        console.log("Received Message: " + evt.data);
+        var data = JSON.parse(evt.data);
+        if (data.userId && data.msg) {
+            if (data.toUserId == userId) {
+                $("#messageContainer").append($("<p style='color: red;'>"+data.userName+": "+data.msg+"</p>"))
+            }else {
+                $("#messageContainer").append($("<p>"+data.userName+": "+data.msg+"</p>"))
+            }
+        }
+    };
+
+    ws.onclose = function(evt) {
+        console.log("Connection closed.");
+    };
+
+    function random(min,max){
+        return parseInt(Math.random()*(max-min+1)+min,10);
+    }
+
+    function createMessage(){
+        var toUserId = $("#toUserId").val();
+        var userName = $("#userName").val();
+        var msg = $("#message").val();
+
+        var fullMessage = {};
+        fullMessage.userId = userId;
+        fullMessage.toUserId = toUserId;
+        fullMessage.userName = userName;
+        fullMessage.msg = msg;
+        return JSON.stringify(fullMessage);
+    }
+
+    function sendMessage(fullMessage){
+        ws.send(fullMessage);
+    }
+
+    $("#send").on("click",function(e){
+        sendMessage(createMessage());
+        $("#message").val(null);
+    });
+
+    $('#message').on("keydown",function(e){
+        if(e.keyCode==13){
+            sendMessage(createMessage());
+            $("#message").val(null);
+        }
+    });
+
+
+
+    var userWs = new WebSocket("ws://localhost:8080/users?userId="+userId);
+
+    userWs.onopen = function(evt) {
+        console.log("Connection open ...");
+    };
+
+    userWs.onmessage = function(evt) {
+        console.log("Received Message: " + evt.data);
+        var data = JSON.parse(evt.data);
+        var $userContainer = $("#userContainer");
+        $userContainer.empty();
+        for (x in data) {
+            $userContainer.append($("<p class='userListItem' onclick='chooseUserId(this)'>"+data[x]+"</p>"))
+        }
+    };
+
+    userWs.onclose = function(evt) {
+        console.log("Connection closed.");
+    };
+
+    function fetchUserIds(){
+        userWs.send(userId);
+        setTimeout(fetchUserIds,1000)
+    }
+    setTimeout(fetchUserIds,1000);
+
+    function chooseUserId(target) {
+        $("#toUserId").val($(target)[0].textContent);
+
+    }
+
+</script>
+</html>
