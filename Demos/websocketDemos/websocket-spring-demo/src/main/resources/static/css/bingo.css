@@ -1,0 +1,28 @@
+.container{
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.board {
+    display: inline;
+}
+
+#userInfos{
+    text-align: center;
+    margin: 0 auto;
+}
+
+#userContainer{
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.user-dialog-content{
+    width: 320px; 
+    padding: 30px;
+    text-align: center;
+    margin: 0 auto;
+}

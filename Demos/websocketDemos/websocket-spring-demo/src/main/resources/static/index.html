@@ -1,0 +1,33 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <head>
+        <title>bingo</title>
+        <link rel="stylesheet" href="css/bingo.css">
+        <link rel="stylesheet" type="text/css" href="css/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="css/themes/icon.css">
+        <link rel="stylesheet" type="text/css" href="css/bingo.css">
+    </head>
+    <body>
+
+       <div id="container" class="container">
+           <canvas id="board" class="board" width="500px" height="500px"></canvas>
+       </div>
+       <div id="userInfos">
+        <label for="myUserId">myUserId:</label><input id="myUserId" type="text" disabled>
+        <label for="toUserId">toUserId:</label><input id="toUserId" type="text" disabled>
+        <label for="userName">userName:</label><input id="userName" type="text">
+        <label for="myType">myType:</label><input id="myType" type="text" disabled>
+       </div>
+       
+       <div id="userContainer"></div>
+       <div id="dlg" class="easyui-dialog" title="输入昵称" data-options="iconCls:'icon-save'">
+        <div class="user-dialog-content"><label for="dialogUserName">userName:</label><input id="dialogUserName" type="text"></div>
+       </div>
+
+    </body>
+    
+    <script src="js/jquery-3.4.1.min.js"  language="javascript" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.easyui.min.js"></script>
+    <script src="js/bingo-websocket.js"  language="javascript" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bingo.js"  language="javascript" type="text/javascript" charset="utf-8" ></script>
+</html>
