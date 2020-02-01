@@ -29,13 +29,12 @@ public class UserEndPoint {
         Properties properties = StringUtil.parseQueryString(session);
         String userId = properties.getProperty("userId");
         updateUser(userId,message);
-        HashSet<String> onlineUserIdsWithoutMe = new HashSet<>(onlineUserIds);
-        onlineUserIdsWithoutMe.remove(userId);
-        List<User> onlineUsersWithoutMe = new ArrayList<>();
-        for (String onlineUserId : onlineUserIdsWithoutMe) {
-            onlineUsersWithoutMe.add(userMap.get(onlineUserId));
+        HashSet<String> onlineUserIdsWithMe = new HashSet<>(onlineUserIds);
+        List<User> onlineUsersWithMe = new ArrayList<>();
+        for (String onlineUserId : onlineUserIdsWithMe) {
+            onlineUsersWithMe.add(userMap.get(onlineUserId));
         }
-        echo(objectMapper.writeValueAsString(onlineUsersWithoutMe),session);
+        echo(objectMapper.writeValueAsString(onlineUsersWithMe),session);
     }
 
     private void updateUser(String userId, String message) throws JsonProcessingException {

@@ -34,10 +34,20 @@ public class GoodByeEndPoint extends AbstractBusiEndPoint {
     @Override
     protected BasicMessage getToSendMessage(String message) throws IOException {
         BasicMessage basicMessage = objectMapper.readValue(message, BasicMessage.class);
-        InviteStatus inviteStatus = InviteEndPoint.userStatusMap.get(basicMessage.getUserId());
-        if (inviteStatus!=null){
-            inviteStatus.setStatus(1);
-            inviteStatus.setType(null);
+
+        if (StringUtils.isNotBlank(basicMessage.getUserId()) ){
+            InviteStatus inviteStatus = InviteEndPoint.userStatusMap.get(basicMessage.getUserId());
+            if (inviteStatus!=null){
+                inviteStatus.setStatus(1);
+                inviteStatus.setType(null);
+            }
+        }
+        if (StringUtils.isNotBlank(basicMessage.getToUserId())){
+            InviteStatus toUserInviteStatus = InviteEndPoint.userStatusMap.get(basicMessage.getToUserId());
+            if (toUserInviteStatus!=null){
+                toUserInviteStatus.setStatus(1);
+                toUserInviteStatus.setType(null);
+            }
         }
         return basicMessage;
     }

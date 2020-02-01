@@ -12,6 +12,9 @@
        <div id="container" class="container">
            <canvas id="board" class="board" width="500px" height="500px"></canvas>
        </div>
+       <div class="center">
+           <p id="gameMessage" style="display: inline;"></p>
+       </div>
        <div id="userInfos">
         <label for="myUserId">myUserId:</label><input id="myUserId" type="text" disabled>
         <label for="toUserId">toUserId:</label><input id="toUserId" type="text" disabled>
@@ -19,6 +22,7 @@
         <label for="myType">myType:</label><input id="myType" type="text" disabled>
        </div>
        
+       <div class="center" style="padding-top: 10px;">---------------users-------------</div>
        <div id="userContainer"></div>
        <div id="dlg" class="easyui-dialog" title="输入昵称" data-options="iconCls:'icon-save'">
         <div class="user-dialog-content"><label for="dialogUserName">userName:</label><input id="dialogUserName" type="text"></div>

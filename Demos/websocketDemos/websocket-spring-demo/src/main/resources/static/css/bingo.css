@@ -19,6 +19,10 @@
     margin: 0 auto;
 }
 
+.center{
+    text-align: center;
+    margin: 0 auto;
+}
 
 .user-dialog-content{
     width: 320px; 

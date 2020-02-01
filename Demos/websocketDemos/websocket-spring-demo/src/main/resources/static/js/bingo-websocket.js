@@ -47,7 +47,19 @@ userWs.onmessage = function(evt) {
     var data = JSON.parse(evt.data);
     var $userContainer = $("#userContainer");
     $userContainer.empty();
+
+    var myUser = null;
+    data.forEach(user => {
+        if(user!=null && user.userId ==  window.userId){
+            myUser = user;
+        }
+    });
+
+    var isToUserExist = false;
     for (x in data) {
+        if (data[x] != null && data[x]["userId"] == window.userId) {
+            continue;
+        }
         var userName = "";
         var userId = "";
         var inviteStatus = {};
@@ -62,14 +74,17 @@ userWs.onmessage = function(evt) {
             $userContainer.append($("<p class='userListItem' onclick='chooseUserId(this,"+JSON.stringify(data[x])+")'>"+userId+": "+userName+"</p>"))
         }
 
-        // 判断对方是否掉线
-        if ($("#toUserId").val() != "" && $("#toUserId").val() == userId && inviteStatus !=null && inviteStatus.hasOwnProperty("status") && inviteStatus.status != 2 ) {
-            // 掉线
-            sendGoodByeMessage(createGoodByeMessage());
-            $("#toUserId").val("");
-            $("#myType").val("");
-            clear(canvas);
+        if(userId == $("#toUserId").val()){
+            isToUserExist = true;
         }
+    }
+
+    if ( $("#toUserId").val() != "" && !isToUserExist) {
+        sendGoodByeMessage(createMyGoodByeMessage());
+        alert("对方断开");
+        $("#toUserId").val("");
+        $("#myType").val("");
+        clear(canvas);
     }
 };
 
@@ -175,7 +190,6 @@ goodByeWs.onmessage = function(evt) {
     var data = JSON.parse(evt.data);
     if (data.userId ) {
         alert("对方断开");
-        sendGoodByeMessage(createReplyGoodByeMessage());
         $("#toUserId").val("");
         $("#myType").val("");
         clear(canvas);
@@ -198,7 +212,7 @@ function createGoodByeMessage(){
 }
 
 
-function createReplyGoodByeMessage(){
+function createMyGoodByeMessage(){
     var userName = $("#userName").val();
 
     var fullMessage = {};
