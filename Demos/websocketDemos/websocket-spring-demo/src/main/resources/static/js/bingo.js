@@ -32,6 +32,10 @@ $(function(){
         const ctx = canvas.getContext('2d');
         ctx.translate(100,100);
 
+        if ($("#toUserId").val() == "" && $("#myType").val() == "") {
+            drawText(ctx,'请选择一个对手');
+        }
+
         ctx.strokeRect(0, 0, 3*unitLength, 3*unitLength);
     
         ctx.beginPath();
@@ -48,6 +52,13 @@ $(function(){
         ctx.lineTo(2*unitLength,3*unitLength);
         ctx.closePath();
         ctx.stroke();
+    }
+
+    function drawText(ctx,text){
+        ctx.font = "bold 40px '字体','字体','微软雅黑','宋体'"; //设置字体
+        ctx.textAlign='center';
+        ctx.textBaseline='middle';
+        ctx.fillText(text, 150,150); //设置文本内容
     }
 
     function drawCircle(canvas, pos){
@@ -124,34 +135,6 @@ $(function(){
             }
         }
     },false);
-
-    ws.onmessage = function(evt) {
-        console.log("Received Message: " + evt.data);
-        var data = JSON.parse(evt.data);
-        if (data.userId && data.userId != userId && data.msg) {
-            var pos = JSON.parse(data.msg);
-            var nextTurnType = pos.type;
-            if(writeResult(pos,nextTurnType)){
-                draw(canvas,pos,nextTurnType);
-                if(judge(result)){
-                    if(nextTurnType == $("#myType").val()){
-                       alert("恭喜你赢了");
-                    }else{
-                       alert("你输了");
-                    }
-                   clear(canvas);
-                }else{
-                    if (isDrew(result)) {
-                        alert("平局");
-                        clear(canvas);
-                    }
-                }
-            }else{
-                console.log("please wait");
-            }
-        }
-    };
-
 
     function isDrew(result){
         for (let i = 0; i < result.length; i++) {

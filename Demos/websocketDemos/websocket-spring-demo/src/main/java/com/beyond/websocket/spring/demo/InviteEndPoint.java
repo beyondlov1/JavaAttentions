@@ -2,6 +2,7 @@ package com.beyond.websocket.spring.demo;
 
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.Session;
@@ -35,7 +36,12 @@ public class InviteEndPoint extends AbstractBusiEndPoint{
                 inviteMessage.setSuccess(true);
                 for (InviteStatus inviteStatus : inviteStatuses) {
                     if (!StringUtils.equals(inviteStatus.getUserId(),inviteMessage.getToUserId())){
-                        sendTo(inviteStatus.getUserId(),objectMapper.writeValueAsString(inviteMessage));
+                        InviteMessage newInviteMessage = new InviteMessage();
+                        BeanUtils.copyProperties(inviteMessage,newInviteMessage);
+                        newInviteMessage.setUserId(inviteMessage.getToUserId());
+                        newInviteMessage.setToUserId(inviteMessage.getUserId());
+                        newInviteMessage.setUserName(UserEndPoint.userMap.get(newInviteMessage.getUserId()).getUserName());
+                        sendTo(inviteStatus.getUserId(),objectMapper.writeValueAsString(newInviteMessage));
                     }
                 }
                 return inviteMessage;

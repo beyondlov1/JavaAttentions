@@ -1,12 +1,39 @@
 
 var host = window.location.host;
-host = "localhost:8080"
+// host = "localhost:8080"
 
 var userId = ""+random(0,1000000);
 var ws = new WebSocket("ws://"+host+"/bingo?userId="+userId);
 
 ws.onopen = function(evt) {
     console.log("Connection open ...");
+};
+
+ws.onmessage = function(evt) {
+    console.log("Received Message: " + evt.data);
+    var data = JSON.parse(evt.data);
+    if (data.userId && data.userId != userId && data.msg) {
+        var pos = JSON.parse(data.msg);
+        var nextTurnType = pos.type;
+        if(writeResult(pos,nextTurnType)){
+            draw(canvas,pos,nextTurnType);
+            if(judge(result)){
+                if(nextTurnType == $("#myType").val()){
+                   alert("恭喜你赢了");
+                }else{
+                   alert("你输了");
+                }
+               clear(canvas);
+            }else{
+                if (isDrew(result)) {
+                    alert("平局");
+                    clear(canvas);
+                }
+            }
+        }else{
+            console.log("please wait");
+        }
+    }
 };
 
 ws.onclose = function(evt) {
@@ -69,9 +96,9 @@ userWs.onmessage = function(evt) {
             inviteStatus = data[x]["inviteStatus"];
         }
         if (inviteStatus!=null && inviteStatus.status == 2) {
-            $userContainer.append($("<p class='userListItem' style='color:gray' onclick='alertPlaying(this,"+JSON.stringify(data[x])+")'>"+userId+": "+userName+"</p>"))
-        }else{
-            $userContainer.append($("<p class='userListItem' onclick='chooseUserId(this,"+JSON.stringify(data[x])+")'>"+userId+": "+userName+"</p>"))
+            $userContainer.append($("<p class='userListItem' style='color:gray;' onclick='alertPlaying(this,"+JSON.stringify(data[x])+")'>"+userId+": "+userName+"</p>"))
+        }else{ 
+            $userContainer.append($("<p class='userListItem' style='cursor:pointer;' onclick='chooseUserId(this,"+JSON.stringify(data[x])+")'>"+userId+": "+userName+"</p>"))
         }
 
         if(userId == $("#toUserId").val()){
@@ -138,6 +165,8 @@ inviteWs.onmessage = function(evt) {
                     $("#myType").val(inviteStatus.type);
                 }
             });
+            clear(canvas);
+            showInviteResultMessage(data);
         }else{
             if (inviteStatuses.length == 1) {
                 acceptInvite(data);
@@ -147,6 +176,10 @@ inviteWs.onmessage = function(evt) {
         }
     }
 };
+
+function showInviteResultMessage(inviteMessage){
+    $("#gameMessage").text("正在与"+inviteMessage.userName +"对战...");
+}
 
 function acceptInvite(inviateMessage){
     inviateMessage.msg.push({userId:userId,status:1});

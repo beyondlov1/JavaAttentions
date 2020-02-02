@@ -16,16 +16,18 @@
            <p id="gameMessage" style="display: inline;"></p>
        </div>
        <div id="userInfos">
-        <label for="myUserId">myUserId:</label><input id="myUserId" type="text" disabled>
-        <label for="toUserId">toUserId:</label><input id="toUserId" type="text" disabled>
-        <label for="userName">userName:</label><input id="userName" type="text">
-        <label for="myType">myType:</label><input id="myType" type="text" disabled>
+           <div hidden>
+            <label for="myUserId">myUserId:</label><input id="myUserId" type="text" disabled>
+            <label for="toUserId">toUserId:</label><input id="toUserId" type="text" disabled>
+            <label for="myType">myType:</label><input id="myType" type="text" disabled>
+           </div>
+         <label for="userName">昵称:</label><input id="userName" type="text">
        </div>
        
-       <div class="center" style="padding-top: 10px;">---------------users-------------</div>
+       <div class="center" style="padding-top: 10px;">---------------可对战用户列表-------------</div>
        <div id="userContainer"></div>
        <div id="dlg" class="easyui-dialog" title="输入昵称" data-options="iconCls:'icon-save'">
-        <div class="user-dialog-content"><label for="dialogUserName">userName:</label><input id="dialogUserName" type="text"></div>
+        <div class="user-dialog-content"><label for="dialogUserName">昵称:</label><input id="dialogUserName" type="text"></div>
        </div>
 
     </body>

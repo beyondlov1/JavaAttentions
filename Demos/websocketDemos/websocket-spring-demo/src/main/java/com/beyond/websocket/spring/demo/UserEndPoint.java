@@ -16,7 +16,7 @@ public class UserEndPoint {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    private static Map<String,User> userMap = new ConcurrentHashMap<>();
+    public static Map<String,User> userMap = new ConcurrentHashMap<>();
 
     @OnOpen
     public void onOpen(Session session) {
