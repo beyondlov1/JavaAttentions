@@ -1,6 +1,6 @@
 
 var host = window.location.host;
-// host = "localhost:8080"
+host = "localhost:8080"
 
 var userId = ""+random(0,1000000);
 var ws = new WebSocket("ws://"+host+"/bingo?userId="+userId);
