@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="week.PlanMapper">
-    <select id="selectAllPlan" resultType="java.util.Map">
-        select * from ZZ_SB..task WHERE rwms = '手动计划' ORDER BY start
-    </select>
-</mapper>
