@@ -19,3 +19,9 @@ spring.datasource.url=jdbc:mysql://localhost:3306/btc?serverTimezone=GMT%2B8&use
 ### 嵌套的保存
 org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.beyond.btc.websocket.KlineStream.data -> com.beyond.btc.websocket.KlineStream$DataBean
 要加上@OneToOne 或者 @OneToMany 的注解， 并且设置 cascade 参数为 PERSIST
+
+### UnsupportedOperationException
+原因为列表初始化的时候默认了Collections.emptyList() 这个list没有重写add方法导致报错. 说明jpa不是动态判断类型, 而是根据初始化的对象判断类型?
+
+参考: https://segmentfault.com/a/1190000018619089
+http://westerly-lzh.github.io/cn/2014/12/JPA-CascadeType-Explaining/
