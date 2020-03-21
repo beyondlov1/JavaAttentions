@@ -79,3 +79,39 @@ https://blog.sunriseydy.top/technology/big-data/hadoop/cannotfind-mrappmaster/
 https://blog.csdn.net/ytangdigl/article/details/79796961
 
 关闭防火墙即可
+
+
+### 官方在维护两个版本, 要注意!!!
+
+### but there is no HDFS_SECONDARYNAMENODE_USER defined. Aborting operation.
+export HDFS_NAMENODE_USER="root"
+export HDFS_DATANODE_USER="root"
+export HDFS_SECONDARYNAMENODE_USER="root"
+export YARN_RESOURCEMANAGER_USER="root"
+export YARN_NODEMANAGER_USER="root"
+https://stackoverflow.com/questions/48129029/hdfs-namenode-user-hdfs-datanode-user-hdfs-secondarynamenode-user-not-defined
+
+### 理解
+hadoop 是个分布式存储系统
+https://blog.csdn.net/w12345_ww/article/details/51910889
+
+
+### 修改hostname
+ hostnamectl set-hostname centos77.magedu.com             # 使用这个命令会立即生效且重启也生效
+https://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_043_hostname.html
+
+### 执行mapReduce 找不到类
+https://blog.csdn.net/hongxiao2016/article/details/88919176
+
+
+### linux 查看端口占用
+lsof -i:port
+如果没有命令
+yum install lsof
+
+
+### mapReduce 适用范围
+但是，Map/Reduce并不是万能的，适用于Map/Reduce计算有先提条件：
+（1）待处理的数据集可以分解成许多小的数据集；
+（2）而且每一个小数据集都可以完全并行地进行处理；
+若不满足以上两条中的任意一条，则不适合适用Map/Reduce模式。
