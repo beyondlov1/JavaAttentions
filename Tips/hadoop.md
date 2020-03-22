@@ -115,3 +115,21 @@ yum install lsof
 （1）待处理的数据集可以分解成许多小的数据集；
 （2）而且每一个小数据集都可以完全并行地进行处理；
 若不满足以上两条中的任意一条，则不适合适用Map/Reduce模式。
+
+
+### Type mismatch in key from map: expected org.apache.hadoop.io.LongWritable, received org.apache.hadoop.io.Text
+job.setMapOutputKeyClass(Text.class);
+job.setMapOutputValueClass(IntWritable.class);
+
+### 免密登陆其他机器
+master机器:
+```
+ssh-keygen -t rsa # 不要更改默认名
+scp /root/.ssh/id_rsa.pub root@slave:~/.ssh  # 注意不要覆盖
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+``` 
+slave机器: 
+```
+cat ~/.ssh/传过来的文件名.pub >> ~/.ssh/authorized_keys
+```
