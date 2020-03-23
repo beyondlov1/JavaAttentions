@@ -133,3 +133,19 @@ slave机器:
 ```
 cat ~/.ssh/传过来的文件名.pub >> ~/.ssh/authorized_keys
 ```
+
+### LoggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback
+
+<dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>2.2.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+		
+https://blog.csdn.net/Dongguabai/article/details/82966440
