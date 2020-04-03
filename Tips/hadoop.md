@@ -149,3 +149,26 @@ cat ~/.ssh/传过来的文件名.pub >> ~/.ssh/authorized_keys
         </dependency>
 		
 https://blog.csdn.net/Dongguabai/article/details/82966440
+
+
+### 免密
+客户端: 
+```
+ssh-keygen
+```
+一路回车
+复制 id_rsa.pub 中的内容到服务端的 ~/.ssh/authorized_keys 中
+
+
+windows的操作也是一样的, 不同的bash客户端要单独生成
+
+```
+ssh-keygen
+scp ~/.ssh/id_rsa.pub root@server:~/.ssh/id_rsa.pub
+ssh root@server
+cat ~/.ssh/id_rsa.pub >> authorized_keys
+```
+
+
+### idea 用bash的控制台
+Terminal 插件 , 设置, 把cmd.ext 改成 git bash 的路径
