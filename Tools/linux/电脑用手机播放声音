@@ -1,7 +1,0 @@
-SoundWireServer
-
-https://www.jianshu.com/p/fcb81ba41969
-
-sudo apt-get install libportaudio2
-sudo apt-get install libcurl4
-

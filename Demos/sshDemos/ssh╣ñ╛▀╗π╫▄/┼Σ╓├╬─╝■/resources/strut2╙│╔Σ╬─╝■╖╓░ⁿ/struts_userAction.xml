@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<package name="user_action_1" extends="struts-default"
+		namespace="/">
+
+		<interceptors>
+			<interceptor name="encryptInterceptor"
+				class="com.beyond.interceptor.EncryptInterceptor"></interceptor>
+			<!-- 用到了userService，所以需要spring注入对象 -->
+			<interceptor name="isUsernameRepeatInterceptor"
+				class="isUsernameRepeatInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="encryptInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 主要方法 -->
+		<action name="userAction_login"
+			class="com.beyond.action.UserAction" method="login">
+			<interceptor-ref name="myStack"></interceptor-ref>
+			<result name="success" type="redirect">bookAction_findBooksByUser.action
+			</result>
+			<result name="input">/login.jsp</result>
+		</action>
+
+		<action name="userAction_signup" class="userAction"
+			method="signup">
+			<interceptor-ref name="myStack"></interceptor-ref>
+			<interceptor-ref name="isUsernameRepeatInterceptor" />
+			<result name="success">/login.jsp</result>
+			<result name="input">/signup_jquery.jsp</result>
+		</action>
+
+
+
+		<!-- init方法 -->
+		<action name="userAction_initLogin" class="userAction"
+			method="initLogin">
+			<result name="success" type="redirect">/login.jsp</result>
+		</action>
+
+		<action name="userAction_initSignup" class="userAction"
+			method="initSignup">
+			<result name="success">/signup_jquery.jsp</result>
+		</action>
+
+		<action name="userAction_findAllUser" class="userAction"
+			method="findAllUser">
+			<result name="success">/findAllUser.jsp</result>
+			<result name="input">/signup_jquery.jsp</result>
+		</action>
+
+
+		<!-- ajax -->
+		<action name="userAction_ajaxVertifyUser"
+			class="com.beyond.action.UserAction" method="ajaxVertifyUser">
+			<result name="success">/login.jsp</result>
+			<result name="input">/signup_jquery.jsp</result>
+		</action>
+	</package>
+</struts>
+	

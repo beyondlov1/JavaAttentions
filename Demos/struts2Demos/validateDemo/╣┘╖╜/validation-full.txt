@@ -1,0 +1,94 @@
+²Î¿¼ÍøÖ·£ºhttps://www.tutorialspoint.com/struts_2/xml_based_validators.htm
+
+date validator
+<field name = "birthday">
+   <field-validator type = "date">
+      <param name = "min">01/01/1990</param>
+      <param name = "max">01/01/2000</param>
+      <message>
+         Birthday must be within ${min} and ${max}
+      </message>
+   </field-validator>
+</field>
+double validator
+<field name = "percentage">
+   <field-validator type = "double">
+      <param name = "minExclusive">0.123</param>
+      <param name = "maxExclusive">99.98</param>
+      <message>
+         Percentage needs to be between ${minExclusive}
+         ${maxExclusive} (exclusive)
+      </message>
+   </field-validator>
+</field>
+email validator
+<field name = "myEmail">
+   <field-validator type = "email">
+      <message>
+         Must provide a valid email
+      </message>
+   </field-validator>
+</field>
+expression validator
+A Non-Field Level validator that validates based on regular expression supplied.
+
+<field-validator type = "expression">
+   <param name = "expression">....</param>
+   <message>
+      Failed to meet Ognl Expression  .... 
+   </message>
+</field-validator>
+int validator
+<field name = "age">
+   <field-validator type = "int">
+      <param name = "min">5</param>
+      <param name = "max">50</param>
+      <message>
+         Age needs to be between ${min} and ${max}
+      </message>
+   </field-validator>
+</field>
+regex validator
+<field name = "myStrangePostcode">
+   <field-validator type = "regex">
+      <param name = "fieldName">myStrangePostcode</param>
+         <param name = "expression">
+         <![CDATA[([aAbBcCdD][123][eEfFgG][456])]]>
+      </param>
+   </field-validator>
+</field>
+required validator
+<field name = "username">
+   <field-validator type = "required">
+      <message>
+         username must not be null
+      </message>
+   </field-validator>
+</field>
+requiredstring validator
+<field name = "username">
+   <field-validator type = "requiredstring">
+     <param name = "trim">true</param>
+     <message>
+         username must not be null
+      </message>
+   </field-validator>
+</field>
+stringlength validator
+<field name = "username">
+   <field-validator type = "stringlength">
+      <param name = "minLength">10</param>
+      <param name = "maxLength">10</param>
+      <param name = "trim">true</param>
+      <message>
+         Your username needs to be 10 characters long
+      </message>
+   </field-validator>
+</field>
+url validator
+<field-validator type = "url">
+   <param name = "fieldName">myHomePageURL</param>
+   <message>
+     Invalid homepage url
+   </message>
+</field-validator>
