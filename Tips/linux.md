@@ -64,3 +64,12 @@ cat /proc/cpuinfo| grep "processor"| wc -l
 firewall-cmd --query-port=14343/tcp
 firewall -cmd --remove-port=14343/tcp --permanent
 firewall-cmd --remove-port=14343/tcp --permanent
+
+### centos 日志打印乱码问题
+```
+cd ~
+vi .bashrc
+export LC_CTYPE='zh_CN.UTF-8'
+	如果提示没有zh_CN.UTF-8， 就安装： yum install -y langpacks-zh_CN
+source .bashrc
+```
