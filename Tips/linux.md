@@ -62,7 +62,7 @@ cat /proc/cpuinfo| grep "processor"| wc -l
 
 ### tcp 端口（centos）
 firewall-cmd --query-port=14343/tcp
-firewall -cmd --remove-port=14343/tcp --permanent
+firewall-cmd --add-port=14343/tcp --permanent
 firewall-cmd --remove-port=14343/tcp --permanent
 
 ### centos 日志打印乱码问题
