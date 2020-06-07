@@ -71,6 +71,7 @@ sudo /etc/init.d/polipo restart
 export http_proxy="http://127.0.0.1:8123/"
 ```
 
+
 接着测试下能否翻墙：
 
 curl www.google.com
@@ -81,3 +82,5 @@ curl www.google.com
 服务器重启后，下面两句需要重新执行：
 sudo sslocal -c shawdowsocks.json -d start
 export http_proxy="http://127.0.0.1:8123/"
+
+https://jingsam.github.io/2016/05/08/setup-shadowsocks-http-proxy-on-ubuntu-server.html

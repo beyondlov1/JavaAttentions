@@ -49,3 +49,40 @@ menu:
 ascii_composer:
   switch_key:
     Shift_L: commit_code #左shift提交字母
+
+
+### 修改dock栏操作
+方法1  - 使用gsettings命令
+
+gsettings是gsettings的命令行接口，它允许我们获取、设置或监视单击键的更改。
+
+这是启用“点击最小化”功能的最快方法。您只需复制/粘贴以下命令即可立即启用此功能。
+
+linuxidc@linuxidc:~/www.linuxidc.com$ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+
+如果要预览是否打开了相同应用程序的多个窗口，请改用以下命令：
+
+linuxidc@linuxidc:~/www.linuxidc.com$ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-overview'
+
+只要点击任何一个窗口，就可以把它打开。这是我喜欢的方式。
+
+要恢复到默认设置，只需：
+
+linuxidc@linuxidc:~/www.linuxidc.com$ $ gsettings reset org.gnome.shell.extensions.dash-to-dock click-action
+
+要查看所有可能的选项，请运行：
+
+linuxidc@linuxidc:~/www.linuxidc.com$ gsettings range org.gnome.shell.extensions.dash-to-dock click-action
+
+输出如下：
+
+enum
+'skip'
+'minimize'
+'launch'
+'cycle-windows'
+'minimize-or-overview'
+'previews'
+'quit'
+
+参考： https://www.linuxidc.com/Linux/2019-07/159400.htm
