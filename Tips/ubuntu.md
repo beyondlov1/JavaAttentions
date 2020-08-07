@@ -86,3 +86,6 @@ enum
 'quit'
 
 参考： https://www.linuxidc.com/Linux/2019-07/159400.htm
+
+### dpkg 安装到目录
+dpkg -x xxx.deb TAEGET_DIR
