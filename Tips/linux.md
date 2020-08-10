@@ -65,6 +65,8 @@ firewall-cmd --query-port=14343/tcp
 firewall-cmd --add-port=14343/tcp --permanent
 firewall-cmd --remove-port=14343/tcp --permanent
 
+firewall-cmd --reload
+
 ### centos 日志打印乱码问题
 ```
 cd ~
