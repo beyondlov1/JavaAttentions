@@ -17,3 +17,7 @@ https://stackoverflow.com/questions/9295439/python-json-loads-fails-with-valueer
 
 ValueError: Invalid \escape
 https://www.crifan.com/python_json_loads_valueerror_invalid_escape_line_1_column_145_char_145/
+
+
+### python 引用其他文件
+https://blog.csdn.net/winycg/article/details/78512300
