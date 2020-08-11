@@ -36,3 +36,12 @@ language messages zh_CN.utf-8
 ### 设置默认显示行号
 _vimrc文件中添加：
 set number
+
+### 设置默认显示行号2
+~/.vimrc
+增加: 
+set nu
+
+### 修改配色
+git clone https://github.com/tomasr/molokai.git
+cp molokai/colors ~/.vim/
