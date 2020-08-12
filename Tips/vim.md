@@ -45,3 +45,4 @@ set nu
 ### 修改配色
 git clone https://github.com/tomasr/molokai.git  
 cp -r molokai/colors ~/.vim/
+echo "colorscheme molokai" >> .vimrc
