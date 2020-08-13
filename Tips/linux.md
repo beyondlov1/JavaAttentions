@@ -73,3 +73,6 @@ export LC_CTYPE='zh_CN.UTF-8'
 	如果提示没有zh_CN.UTF-8， 就安装： yum install -y langpacks-zh_CN
 source .bashrc
 ```
+
+### 查看端口被占用
+ss -tnlp | grep 8080
