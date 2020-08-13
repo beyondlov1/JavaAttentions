@@ -89,3 +89,7 @@ enum
 
 ### dpkg 安装到目录
 dpkg -x xxx.deb TAEGET_DIR
+
+### 添加环境变量
+vim ~/.bashrc
+source ~/.bashrc
