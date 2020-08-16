@@ -11,6 +11,15 @@ vim.useSystemClipboard=true
 ```
 https://codeyarns.com/2018/04/26/how-to-use-clipboard-for-vim-in-vscode/
 
+gvim --version | grep clipboard
+如果clipboard前边是加号则表示支持复制到剪切板, 如果不是则：
+sudo apt install vim-gtk
+
+ubuntu 如果设置后没有效果则改成：
+```
+set clipboard=unnamedplus
+```
+参考: https://www.zhihu.com/question/19863631
 ### 设置vim编码
 
 在gvm配置文件中：

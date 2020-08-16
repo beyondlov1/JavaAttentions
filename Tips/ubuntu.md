@@ -93,3 +93,6 @@ dpkg -x xxx.deb TAEGET_DIR
 ### 添加环境变量
 vim ~/.bashrc
 source ~/.bashrc
+
+### xfce panel悬浮
+setting editor -> xfce-panel -> disable-structs
