@@ -6,3 +6,7 @@ xrandr --output default --mode "1920x1080"
 xrandr --output VGA1 --right-of HDMI1 --auto
 
 参考：http://www.mikewootc.com/wiki/linux/usage/set_x_reso.html
+
+
+### keycode 对照表
+https://www.cnblogs.com/lxwphp/p/9548823.html
