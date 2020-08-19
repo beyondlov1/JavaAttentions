@@ -9,3 +9,7 @@ xrandr --output VGA1 --right-of HDMI1 --auto
 ### 移动当前窗口到另一个屏幕
 mod4+o
 参考： https://gist.github.com/fancyoung/7556281
+
+### 查看keycode
+xmodmap -pke
+(这和普通的keycode不一样， 貌似是专用的， 所以要现查)
