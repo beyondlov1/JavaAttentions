@@ -55,3 +55,17 @@ set nu
 git clone https://github.com/tomasr/molokai.git  
 cp -r molokai/colors ~/.vim/
 echo "colorscheme molokai" >> .vimrc
+
+### fzf 插件安装
+1. 下载： https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+2. 放到 ~/.vim/autoload 文件夹下， 没有就创建一个
+3. .vimrc 中添加
+```
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+```
+4. 在vim中执行 :source .vimrc 刷新配置文件(貌似重新打开也可以)
+5. vim 中执行 :PlugInstall
+
