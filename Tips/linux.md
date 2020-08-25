@@ -78,3 +78,22 @@ source .bashrc
 
 ### 查看端口被占用
 ss -tnlp | grep 8080
+
+
+### 增加swap空间
+查看(如果该命令没有返回出结果，则代表该系统尚未配置过swap。)：
+swapon -s
+
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+永久生效：
+sudo nano /etc/fstab
+末尾添加
+/swapfile   swap    swap    sw  0   0
+
+
+
+https://blog.csdn.net/zstack_org/article/details/53258588
