@@ -97,3 +97,10 @@ sudo nano /etc/fstab
 
 
 https://blog.csdn.net/zstack_org/article/details/53258588
+
+
+### 免密登录
+
+ssh-keygen
+scp id_rsa.pub root@xxxx
+id_rsa.pub >> ~/.ssh/authorized_keys
