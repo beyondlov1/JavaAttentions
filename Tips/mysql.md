@@ -58,3 +58,6 @@ start slave;
 
 ### binlog文件与format
 修改format不会添加mysql-bin的log文件, 而是会继续写, 靠 EvenType 来区分
+
+### mysql查询优化
+https://www.mysqlzh.com/doc/66/627.html
