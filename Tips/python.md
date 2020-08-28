@@ -21,3 +21,8 @@ https://www.crifan.com/python_json_loads_valueerror_invalid_escape_line_1_column
 
 ### python 引用其他文件
 https://blog.csdn.net/winycg/article/details/78512300
+
+
+### shutil
+https://www.cnblogs.com/MnCu8261/p/5494807.html
+3.8新增了功能
