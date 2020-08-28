@@ -69,3 +69,7 @@ call plug#end()
 4. 在vim中执行 :source .vimrc 刷新配置文件(貌似重新打开也可以)
 5. vim 中执行 :PlugInstall
 
+
+### vim快捷键
+选中一个word: viw/vaw
+删除一个word: diw/daw
