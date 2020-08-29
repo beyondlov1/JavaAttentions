@@ -1,7 +1,9 @@
 ### 调整屏幕
 xrandr
 设置分辨率
-xrandr --output default --mode "1920x1080"
+xrandr --output DP-1 --mode "1920x1080"
+xrandr --output HDMI-2 --mode "1920x1080"
+
 双屏
 xrandr --output DP-1 --right-of HDMI-2 --auto
 
