@@ -104,3 +104,10 @@ https://blog.csdn.net/zstack_org/article/details/53258588
 ssh-keygen
 scp id_rsa.pub root@xxxx
 id_rsa.pub >> ~/.ssh/authorized_keys
+
+
+### tree 命令安装
+wget ftp://mama.indstate.edu/linux/tree/tree-1.8.0.tgz
+tar -zxvf tree-1.8.0.tgz
+cd tree-1.8.0
+make install
