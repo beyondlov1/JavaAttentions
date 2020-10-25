@@ -96,3 +96,42 @@ source ~/.bashrc
 
 ### xfce panel悬浮
 setting editor -> xfce-panel -> disable-structs
+
+### 休眠
+Install pm-utils and hibernate:
+```
+sudo apt install pm-utils hibernate
+```
+Then:
+```
+cat /sys/power/state
+```
+You should see:
+```
+freeze mem disk
+```
+Then run:
+```
+grep swap /etc/fstab
+```
+Copy the UUID value. You will need it later. Then run:
+```
+sudo nano /etc/default/grub
+```
+(or your favourite editor if not nano). Change the line that says
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+```
+so that it instead says:
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=YOUR_VALUE"
+```
+Then, after saving the file and quitting the text editor, run:
+```
+sudo update-grub
+```
+To test it, run:
+```
+sudo systemctl hibernate
+```
+参考： https://askubuntu.com/questions/1240123/how-to-enable-hibernate-option-in-ubuntu-20-04

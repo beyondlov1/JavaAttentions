@@ -122,3 +122,21 @@ make install
 7、*.tar.Z 用tar –xZf 解压
 8、*.rar 用 unrar e解压
 9、*.zip 用 unzip 解压
+
+### 查看网速工具
+sudo nethogs -a wlo1
+其中wlo1为网卡名称
+
+
+### 更改环境变量
+~/.bashrc
+/etc/profile
+
+
+### sed 正则表达式获取括号中的值
+\1  \2
+sed 's/dfad/\1/g
+
+
+### feem 局域网传输
+appImage文件， 赋予可执行权限直接执行

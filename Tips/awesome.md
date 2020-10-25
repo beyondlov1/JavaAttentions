@@ -8,7 +8,6 @@ xrandr --output HDMI-2 --mode "1920x1080"
 xrandr --output DP-1 --right-of HDMI-2 --auto
 
 参考：http://www.mikewootc.com/wiki/linux/usage/set_x_reso.html
-<<<<<<< HEAD
 ### 移动当前窗口到另一个屏幕
 mod4+o
 参考： https://gist.github.com/fancyoung/7556281
@@ -21,4 +20,6 @@ xmodmap -pke
 
 ### keycode 对照表
 https://www.cnblogs.com/lxwphp/p/9548823.html
->>>>>>> d3caa0306a99eb433d1dea8b0bc997c0a1e91104
+
+### 移动窗口到另一个tag
+shift+mod4+N
