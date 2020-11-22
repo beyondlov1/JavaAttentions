@@ -23,3 +23,6 @@ https://www.cnblogs.com/lxwphp/p/9548823.html
 
 ### 移动窗口到另一个tag
 shift+mod4+N
+
+### 显示wifi图标
+nm-applet --sm-disable 2>&1 &
