@@ -135,3 +135,19 @@ To test it, run:
 sudo systemctl hibernate
 ```
 参考： https://askubuntu.com/questions/1240123/how-to-enable-hibernate-option-in-ubuntu-20-04
+
+
+### 关闭tracker-miner-fs
+tracker-miner-fs 有的时候会在启动的时候占用大量的io（查看top wa%, 超过10%就算大), 所以要关掉
+echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-extract.desktop
+echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-apps.desktop
+echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-fs.desktop
+echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-miner-user-guides.desktop
+echo -e "\nHidden=true\n"|sudo tee --append /etc/xdg/autostart/tracker-store.desktop
+
+gsettings set org.freedesktop.Tracker.Miner.Files crawling-interval -2
+gsettings set org.freedesktop.Tracker.Miner.Files enable-monitors false
+
+tracker reset --hard
+
+参考: https://ubuntuqa.com/article/488.html
