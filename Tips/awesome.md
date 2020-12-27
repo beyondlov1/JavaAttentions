@@ -8,7 +8,7 @@ xrandr --output HDMI-2 --mode "1920x1080"
 扩展：
 xrandr --output DP-1 --right-of HDMI-2 --auto
 镜像：
-xrandr --auto --output DP-1 --pos 0x0 --mode 1920x1080 --output HDMI-1 --same-as DP-1
+xrandr --auto --output DP-1 --pos 0x0 --mode 1920x1080 --output HDMI-2 --same-as DP-1
 
 参考：http://www.mikewootc.com/wiki/linux/usage/set_x_reso.html
 ### 移动当前窗口到另一个屏幕
