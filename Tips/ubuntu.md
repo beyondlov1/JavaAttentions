@@ -151,3 +151,21 @@ gsettings set org.freedesktop.Tracker.Miner.Files enable-monitors false
 tracker reset --hard
 
 参考: https://ubuntuqa.com/article/488.html
+
+
+### 蓝牙问题
+```
+sudo apt-get install pulseaudio-module-bluetooth  
+pactl load-module module-bluetooth-discover  
+```
+第一行执行完会出现:20
+参考： https://askubuntu.com/questions/1115671/blueman-protocol-not-available
+
+### chromium 开启chrome sync
+参考:https://stackoverflow.com/questions/21276763/google-api-keys-missing-warning-message-when-using-chromium-portable
+
+```
+export GOOGLE_API_KEY="AIzaSyCkfPOPZXDKNn8hhgu3JrA62wIgC93d44k"
+export GOOGLE_DEFAULT_CLIENT_ID="811574891467.apps.googleusercontent.com"
+export GOOGLE_DEFAULT_CLIENT_SECRET="kdloedMFGdGla2P1zacGjAQh"
+```
