@@ -38,28 +38,24 @@ public class JoinUtils {
 
     static class JoinResultChain {
         private List<JoinResult<?, ?>> joinResults = new ArrayList<>();
-        private Map<Class, JoinResult> joinResultMap = new HashMap<>();
+        private Map<ClassPair, JoinResult> joinResultMap = new HashMap<>();
 
         public <T1, T2> void addJoinResult(JoinResult<T1, T2> joinResult, Class<T1> leftClass, Class<T2> rightClass) {
             joinResults.add(joinResult);
             if (joinResultMap.get(leftClass) != null){
                 throw new RuntimeException("join class duplicate (no duplicate class is allowed between start() and end())");
             }
-            joinResultMap.put(leftClass, joinResult);
+            joinResultMap.put(ClassPair.of(leftClass,rightClass), joinResult);
         }
 
         @SuppressWarnings("unchecked")
         public <T1, T2> Map<T1, List<T2>> getOne2ManyMap(Class<T1> t1Class, Class<T2> t2Class) {
-            Map<T1, List<T2>> data = ((One2ManyJoinResult<T1, T2>) (joinResultMap.get(t1Class))).data;
-            checkType(data.values().stream().filter(Objects::nonNull).collect(Collectors.toList()), t2Class);
-            return data;
+            return ((One2ManyJoinResult<T1, T2>) (joinResultMap.get(ClassPair.of(t1Class,t2Class)))).data;
         }
 
         @SuppressWarnings("unchecked")
         public <T1, T2> Map<T1, T2> getOne2OneMap(Class<T1> t1Class, Class<T2> t2Class) {
-            Map<T1, T2> data = ((One2OneJoinResult<T1, T2>) (joinResultMap.get(t1Class))).data;
-            checkType(data.values(), t2Class);
-            return data;
+            return ((One2OneJoinResult<T1, T2>) (joinResultMap.get(ClassPair.of(t1Class,t2Class)))).data;
         }
 
         @SuppressWarnings("unchecked")
@@ -95,11 +91,6 @@ public class JoinUtils {
 
         JoinResultChain end();
     }
-
-    static abstract class AbstractJoinResult<T1, T2> implements JoinResult<T1, T2> {
-
-    }
-
 
     static class One2ManyJoinResult<T1, T2> implements JoinResult<T1, T2> {
 
@@ -162,7 +153,6 @@ public class JoinUtils {
         }
     }
 
-
     static class One2OneJoinResult<T1, T2> implements JoinResult<T1, T2> {
 
         private Map<T1, T2> data;
@@ -223,7 +213,6 @@ public class JoinUtils {
         }
     }
 
-
     public static class RootJoinResult<T> extends One2ManyJoinResult<Root, T> {
 
         public RootJoinResult(List<T> data, Class<T> tClass) {
@@ -237,5 +226,33 @@ public class JoinUtils {
 
     public static class Root {
         public static final Root INSTANCE = new Root();
+    }
+
+    private static class ClassPair{
+        private Class leftClass;
+        private Class rightClass;
+
+        private ClassPair(Class leftClass, Class rightClass) {
+            this.leftClass = leftClass;
+            this.rightClass = rightClass;
+        }
+
+        public static ClassPair of(Class leftClass, Class rightClass){
+            return new ClassPair(leftClass, rightClass);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            ClassPair classPair = (ClassPair) o;
+            return Objects.equals(leftClass, classPair.leftClass) &&
+                    Objects.equals(rightClass, classPair.rightClass);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(leftClass, rightClass);
+        }
     }
 }
