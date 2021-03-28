@@ -169,3 +169,18 @@ export GOOGLE_API_KEY="AIzaSyCkfPOPZXDKNn8hhgu3JrA62wIgC93d44k"
 export GOOGLE_DEFAULT_CLIENT_ID="811574891467.apps.googleusercontent.com"
 export GOOGLE_DEFAULT_CLIENT_SECRET="kdloedMFGdGla2P1zacGjAQh"
 ```
+
+### resolv.conf
+sudo apt-get install resolvconf
+修改/etc/resolvconf/resolv.conf.d/head或者base
+
+### i3wm 注销
+$mod Shift E
+
+
+### 安装xfce
+sudo apt-get install xorg xdm xfce4
+选择 gdm3
+
+### xfce 快捷键配置文件
+~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
