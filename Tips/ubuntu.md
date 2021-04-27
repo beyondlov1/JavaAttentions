@@ -184,3 +184,14 @@ sudo apt-get install xorg xdm xfce4
 
 ### xfce 快捷键配置文件
 ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+
+### xfce 去除alt+click 移动窗口
+following worked for me
+type xfce4-settings-manager in terminal
+and then click 'settings editor'
+then to the left click xfwm4 channel then in the right pane change the value of easy_click  from <alt> to nothing
+
+Now alt+mouse right click wont move your window........................
+its a very crap setting..............
+
+窗口微调

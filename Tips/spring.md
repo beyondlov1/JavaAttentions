@@ -185,3 +185,15 @@ private BigDecimal tAmt;
         </dependency>
 		
 https://blog.csdn.net/Dongguabai/article/details/82966440
+
+### 关闭httpclient的日志
+解决：
+官方提供了log4j、Commons Logging、java.util.logging三种日志关闭的方法，但是没有提供SLF4J日志的关闭方法，方法如下：
+
+在classpath下（resources目录下）建立一个logback.xml，内容如下：
+
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <logger name="*" level="warn" />
+</configuration>
