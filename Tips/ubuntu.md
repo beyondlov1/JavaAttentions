@@ -195,3 +195,10 @@ Now alt+mouse right click wont move your window........................
 its a very crap setting..............
 
 窗口微调
+
+### 控制窗口
+wmctrl (https://linux.die.net/man/1/wmctrl)
+- 当前窗口置顶: wmctrl -r :ACTIVE: -b toggle,above
+
+jumpapp (依赖wmctrl) 没有则启动,有则跳转
+- jumpapp x-terminal-emulator
