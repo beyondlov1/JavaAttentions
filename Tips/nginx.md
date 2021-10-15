@@ -180,3 +180,8 @@ http {
 ## .davpasswd
 echo "admin:$(openssl passwd 123456)" > /home/beyond/software/bin/nginx/nginx/conf/.davpasswd
 
+
+
+# proxy pass 路由规则
+https://blog.csdn.net/guyue35/article/details/53907421
+https://blog.csdn.net/weixin_44367006/article/details/101715799
