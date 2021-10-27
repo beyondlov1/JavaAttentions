@@ -202,3 +202,7 @@ wmctrl (https://linux.die.net/man/1/wmctrl)
 
 jumpapp (依赖wmctrl) 没有则启动,有则跳转
 - jumpapp x-terminal-emulator
+
+
+### docker 占用 172.17 网段解决
+https://blog.51cto.com/wujianwei/2656527
