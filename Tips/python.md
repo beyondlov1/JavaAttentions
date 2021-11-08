@@ -31,3 +31,8 @@ https://www.cnblogs.com/MnCu8261/p/5494807.html
 ### json dump 中文unicode
 dump方法中加入参数，ensure_ascii=False
 https://blog.csdn.net/firefox1/article/details/78331369
+
+
+### json key 排序
+dump 方法上加 sort_keys=True
+https://www.iplaypy.com/json/7094.html
