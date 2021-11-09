@@ -61,3 +61,8 @@ start slave;
 
 ### mysql查询优化
 https://www.mysqlzh.com/doc/66/627.html
+
+
+### mycat 两阶段提交 分布式事务
+https://www.cnblogs.com/libin6505/p/11290141.html
+https://cloud.tencent.com/developer/article/1643274
