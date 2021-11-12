@@ -67,3 +67,9 @@ https://www.mysqlzh.com/doc/66/627.html
 https://www.cnblogs.com/libin6505/p/11290141.html
 https://cloud.tencent.com/developer/article/1643274
 https://www.cnblogs.com/cxxjohnson/p/9145548.html
+
+### mysql proxy
+https://downloads.mysql.com/archives/proxy/
+https://cloud.tencent.com/developer/article/1047570
+
+有hook, lua脚本
