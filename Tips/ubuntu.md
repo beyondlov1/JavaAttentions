@@ -206,3 +206,45 @@ jumpapp (依赖wmctrl) 没有则启动,有则跳转
 
 ### docker 占用 172.17 网段解决
 https://blog.51cto.com/wujianwei/2656527
+
+### xbindkeys
+
+- xev
+功能：通过它可以知道键盘上每一个按键的编码，即keycode， 这个键码与键盘硬件有关系，固定不变的。你想想啊，键盘上这么多按键，怎么让计算机去区分啊？就是通过这个keycode值，每当我们按下一个键时，内核中中断系统就会接收到一个keycode， 从而判断你按下了哪个键。具体操作系统怎么处理这个按键，那就需要keycode值到keysym的映射来决定了。
+https://www.cnblogs.com/yinheyi/p/10146900.html
+
+- 如何查看keysym
+sudo apt-get install x11proto-core-dev
+https://askubuntu.com/questions/93772/where-do-i-find-a-list-of-all-x-keysyms-these-days
+
+- 如何查看keycode
+xmodmap -pke
+或者 https://www.bejson.com/othertools/keycodes/
+
+- xmodmap
+https://wiki.archlinux.org/title/Xmodmap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E9%94%AE%E6%98%A0%E5%B0%84%E8%A1%A8
+
+- xbindkeys 
+m: 代表state, 可以从 xev 输出中获取到, 表示当时的状态，如numlock有没有开, control有没有按下之类. 这应该是个flag, 用二进制 & 做的
+b: 鼠标按键, 后边时keycode， 十进制或者十六进制
+c: keycode
+可以用 xbindkeys -k 之后按键查看到对应的按键
+
+
+### dns
+https://blog.csdn.net/lsc_1893/article/details/118696693
+https://bbs.archlinux.org/viewtopic.php?id=268676
+
+
+### 窗口激活顺序
+stack=$(xprop -root | grep '_NET_CLIENT_LIST_STACKING(WINDOW)' | awk -F'# ' '{print $2}');
+stack_array_prop=(${stack//,/ })
+stack_array_reversed=()
+len=${#stack_array_prop[*]}
+for((i=$len-1;i>=0;i--));
+do
+    id='0x0'$(echo ${stack_array_prop[i]} | cut -d 'x' -f 2 )
+    stack_array_reversed[${#stack_array_reversed[*]}]=$id
+done
+
+echo ${stack_array_reversed[*]}

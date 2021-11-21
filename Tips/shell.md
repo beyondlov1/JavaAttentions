@@ -52,3 +52,25 @@ return 返回只能是数字
 [ ARG1 OP ARG2 ] “OP” is one of -eq, -ne, -lt, -le, -gt or -ge. These arithmetic binary operators return true if “ARG1” is equal to, not equal to, less than, less than or equal to, greater than, or greater than or equal to “ARG2”, respectively. “ARG1” and “ARG2” are integers.
 
 ref: https://blog.csdn.net/sunboy_2050/article/details/5904632
+
+
+### 数组排序
+sort -t : -k 2
+sort是对多行字符串排序, -k 2 代表永第二列排序, -t : 代表用冒号分割每一行
+-r 是反向排序
+参考: https://blog.csdn.net/monkeyduck/article/details/10097829
+
+数组排序: 
+```
+IFS=$'\n' sorted=($(sort <<<"${array[*]}"))
+unset IFS
+```
+IFS=$'\n'表示array[*]打印时用\n分割
+参考: https://qastack.cn/programming/7442417/how-to-sort-an-array-in-bash
+
+```
+IFS=$'\n' sorted=($(sort -r -k 1 -t : <<<"${depth_win_arr[*]}"))
+unset IFS
+```
+
+
