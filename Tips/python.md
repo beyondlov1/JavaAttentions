@@ -26,3 +26,13 @@ https://blog.csdn.net/winycg/article/details/78512300
 ### shutil
 https://www.cnblogs.com/MnCu8261/p/5494807.html
 3.8新增了功能
+
+
+### json dump 中文unicode
+dump方法中加入参数，ensure_ascii=False
+https://blog.csdn.net/firefox1/article/details/78331369
+
+
+### json key 排序
+dump 方法上加 sort_keys=True
+https://www.iplaypy.com/json/7094.html

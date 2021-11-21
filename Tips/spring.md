@@ -197,3 +197,9 @@ https://blog.csdn.net/Dongguabai/article/details/82966440
     <include resource="org/springframework/boot/logging/logback/base.xml" />
     <logger name="*" level="warn" />
 </configuration>
+
+
+
+### 判断当前事务是否激活
+TransactionSynchronizationManager.isActualTransactionActive()
+参考: https://www.jdon.com/55176
