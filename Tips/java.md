@@ -64,3 +64,8 @@ jconsole或者jvisualVm 堆dump
 
 ### java 对象大小
 https://blog.csdn.net/jiafu1115/article/details/7017719
+
+
+### dump 内存
+jmap -dump:live,format=b,file=dump.hprof 124474
+查看: jprofiler
