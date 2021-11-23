@@ -140,3 +140,21 @@ sed 's/dfad/\1/g
 
 ### feem 局域网传输
 appImage文件， 赋予可执行权限直接执行
+
+
+### 制作服务
+cat >>/usr/lib/systemd/system/node_exporter.service <<EOF
+[UNIT]
+Description=node_exporter
+After=network.target
+[Service]
+Type=simple
+ExecStart=/opt/tools/node_exporter/node_exporter
+ExecReload=
+ExecStop=
+PrivateTmp=True
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl daemon-reload
