@@ -95,6 +95,8 @@ insert 要在 #{} 里面配置 typeHandler=xxx 才能生效
 
 ### plugin
 
+https://www.cnblogs.com/chenpi/p/10498921.html
+
 ```
 package com.beyond.demo;
 
