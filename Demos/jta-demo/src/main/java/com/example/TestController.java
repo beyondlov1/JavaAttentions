@@ -25,11 +25,13 @@ public class TestController {
     @Transactional
     @RequestMapping("hello")
     public Object hello(){
-        ds1Template.execute("insert into db_test.book (id, name, page)values(1,'hello',43)");
 
+//        ds1Template.execute("insert into db_test.book (id, name, page)values(1,'hello',43)");
+//        List<Map<String, Object>> maps = ds1Template.queryForList("select * from db_test.book");
+//        System.out.println(maps);
         ds2Template.execute("insert into db_test.author (id, name, country) values(1,'hello',9999)");
 
-        int i=1/0;
+//        int i=1/0;
         return "yes";
     }
 }

@@ -8,7 +8,11 @@ my:
       url: jdbc:mysql://192.168.2.159:3306/db_test?socketTimeout=15000
       user: root
       password: root
+#    ds2:
+#      url: jdbc:mysql://192.168.2.170:63306/db_test?socketTimeout=15000
+#      user: root
+#      password: 123456
     ds2:
-      url: jdbc:mysql://192.168.2.170:63306/db_test?socketTimeout=15000
-      user: root
+      url: jdbc:mysql://192.168.0.174:4000/db_test?socketTimeout=15000
+      user: beyond
       password: 123456
