@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+
+my:
+  datasource:
+    ds1:
+      url: mysql
+      user: aa
+      password: a
+    ds2:
+      url: tidb
+      user: bb
+      password: b
