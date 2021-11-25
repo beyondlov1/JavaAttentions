@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "my",
+      "type": "com.example.DataSourceProperties",
+      "sourceType": "com.example.DataSourceProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "my.datasource",
+      "type": "java.util.Map<java.lang.String,java.util.Properties>",
+      "sourceType": "com.example.DataSourceProperties"
+    }
+  ],
+  "hints": []
+}
