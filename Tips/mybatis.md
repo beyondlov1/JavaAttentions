@@ -155,3 +155,29 @@ demo: Demos/mybatisDemo
 如果加了注解， idea 还能正常显示
 那么可能是依赖有问题， mybatis-spring-boot-start 是第三方的 ， 要写版本号！要写版本号！要写版本号！
 
+
+### 反射工具
+
+SystemMetaObject
+
+```
+import org.apache.ibatis.reflection.SystemMetaObject;
+
+public class Test {
+    public static void main(String[] args) {
+        TestChild config = new TestChild();
+        Object coupon = SystemMetaObject.forObject(config).getValue("name");
+        System.out.println(coupon);
+    }
+
+    public static class TestParent{
+        private String name = "parent";
+    }
+
+    public static class TestChild extends TestParent{
+
+    }
+}
+
+```
+
