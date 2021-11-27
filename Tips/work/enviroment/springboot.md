@@ -83,3 +83,6 @@ pom.xml build标签中加入
         </includes>  
       </resource> 
 ```
+
+### tomcat 线程限制
+https://www.jianshu.com/p/5d13568c8158
