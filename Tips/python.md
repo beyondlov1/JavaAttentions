@@ -44,3 +44,14 @@ python3 setup.py install
 env PYTHONPATH=/home/hzh/learn/python/tu/lib/python3.4/site-packages/ python setup.py install --prefix=~/learn/python/tu --record ~/files.txt
 
 参考: https://www.cnblogs.com/welhzh/p/5975944.html
+
+### requirements.txt
+```
+# 安装
+pip3 install pipreqs
+# 在当前目录生成
+pipreqs . --encoding=utf8 --force
+
+pip3 install -r requirements.txt
+```
+参考: https://www.jb51.net/article/170248.htm
