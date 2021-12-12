@@ -36,3 +36,11 @@ https://blog.csdn.net/firefox1/article/details/78331369
 ### json key 排序
 dump 方法上加 sort_keys=True
 https://www.iplaypy.com/json/7094.html
+
+### setup.py 安装
+普通安装:
+python3 setup.py install
+安装到制定路径(虚拟环境的情况):
+env PYTHONPATH=/home/hzh/learn/python/tu/lib/python3.4/site-packages/ python setup.py install --prefix=~/learn/python/tu --record ~/files.txt
+
+参考: https://www.cnblogs.com/welhzh/p/5975944.html
