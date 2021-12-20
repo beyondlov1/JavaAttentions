@@ -25,3 +25,7 @@ https://riptutorial.com/gtk3
 剪切板
 https://www.cnblogs.com/silvermagic/p/9087648.html
 https://docs.gtk.org/gtk3/class.Clipboard.html
+
+parcellite:
+原理: 定时检测剪切板中的数据是否有变化, 如果有变化则更新剪切板历史: main.check_clipboards_tic
+自动粘贴: 模拟粘贴按键 main 1647 key ctrl+v
