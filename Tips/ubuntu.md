@@ -276,3 +276,8 @@ sudo iptables -A OUTPUT -o <yourinterface> -p tcp --sport 1714:1764 -m state --s
 windows关闭防火墙
 
 https://userbase.kde.org/KDEConnect#Share_and_Receive
+
+
+### ubuntu idea 不能输入中文
+ibus-daemon -r -d -x
+https://www.cnblogs.com/silentdoer/p/8907310.html
