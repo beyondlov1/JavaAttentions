@@ -73,4 +73,5 @@ IFS=$'\n' sorted=($(sort -r -k 1 -t : <<<"${depth_win_arr[*]}"))
 unset IFS
 ```
 
-
+### 全文搜索
+grep -r "xxx" ./*
