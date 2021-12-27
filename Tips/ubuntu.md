@@ -281,3 +281,5 @@ https://userbase.kde.org/KDEConnect#Share_and_Receive
 ### ubuntu idea 不能输入中文
 ibus-daemon -r -d -x
 https://www.cnblogs.com/silentdoer/p/8907310.html
+
+meld 文本对比, 目录对比
