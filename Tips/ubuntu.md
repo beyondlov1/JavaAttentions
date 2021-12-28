@@ -284,3 +284,9 @@ https://www.cnblogs.com/silentdoer/p/8907310.html
 
 meld 文本对比, 目录对比
 
+
+
+### vscode 自动切换中文输入法
+https://www.zhihu.com/question/303850876
+https://github.com/daipeihust/im-select#installation
+
