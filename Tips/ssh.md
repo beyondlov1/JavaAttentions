@@ -213,3 +213,16 @@ public BaseDaoImpl() {
 	}
 ```
 
+
+
+### ssh 长时间会断开
+修改本地参数
+也可以让客户端向服务器发送保持连接信号,路径是/etc/ssh/ssh_config
+
+在其中类似的添加相应的参数也行
+```
+ServerAliveInterval  60
+ServerAliveCountMax  60
+```
+https://blog.csdn.net/hustcw98/article/details/79325878
+
