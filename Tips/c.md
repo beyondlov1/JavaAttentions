@@ -119,3 +119,12 @@ pkg-config --libs gtk+-3.0
 
 
 https://code.visualstudio.com/docs/cpp/config-linux
+
+###编译多个文件
+https://zhuanlan.zhihu.com/p/419473501
+https://blog.csdn.net/hzf978742221/article/details/116101789
+
+
+
+### 教程
+http://www.weixueyuan.net/a/81.html

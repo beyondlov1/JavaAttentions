@@ -290,3 +290,9 @@ meld 文本对比, 目录对比
 https://www.zhihu.com/question/303850876
 https://github.com/daipeihust/im-select#installation
 
+
+
+### rime 关闭F4快捷键
+vi /home/beyond/.config/ibus/rime/build/default.yaml
+搜索 F4 注释掉
+
