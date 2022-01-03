@@ -158,3 +158,9 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
+
+
+### tmux
+http://c.biancheng.net/linux/tmux.html
+分屏: https://blog.csdn.net/xiaochonghao/article/details/69397564
+
