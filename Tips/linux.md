@@ -164,3 +164,9 @@ systemctl daemon-reload
 http://c.biancheng.net/linux/tmux.html
 分屏: https://blog.csdn.net/xiaochonghao/article/details/69397564
 
+
+
+### cron
+linux 的cron 不管命令执行多久, 都会到点执行
+logstash jdbc 插件中的schedule, 如果有一次卡住了, 不会执行之后的, 后边的会等前一个执行完再立即执行, 并且, 会把之前应该执行的次数短时间内全都补回来(<1s?)
+
