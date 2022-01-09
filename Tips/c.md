@@ -133,3 +133,15 @@ http://www.weixueyuan.net/a/81.html
 ### getchar EOF 
 linux: 终端输入 ctrl+d returns EOF
 https://stackoverflow.com/questions/10720821/im-trying-to-understand-getchar-eof#:~:text=getchar%20%28%29%20is%20a%20function%20that%20reads%20a,you%20run%20your%20program%20in%20unix%20like%20this%3A
+
+
+### c github 项目
+webbench
+tinyhttpd
+cjson
+memcached
+lua
+sqlite
+unix v6
+netBSD
+
