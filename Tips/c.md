@@ -145,3 +145,8 @@ sqlite
 unix v6
 netBSD
 
+
+
+### socket
+https://blog.csdn.net/qq_41725312/article/details/90375742
+
