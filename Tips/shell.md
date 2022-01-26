@@ -75,3 +75,51 @@ unset IFS
 
 ### 全文搜索
 grep -r "xxx" ./*
+
+### auto complete
+```
+#! /bin/bash
+
+_go()
+{
+    COMPREPLY=()
+
+    if test -f "/tmp/go.list"
+    then
+        local -A gomap;
+        while read line; do
+            kv_arr=($line)
+            # echo $line
+            # echo ${kv_arr[0]}
+            # echo $1
+            gomap[${kv_arr[0]}]=${kv_arr[1]}
+            if [[ ${kv_arr[0]} == $2* ]];
+            then
+                # echo ${kv_arr[1]}
+                COMPREPLY[${#COMPREPLY[*]}]=${kv_arr[0]}
+            fi
+        done < /tmp/go.list
+    fi
+
+    return 0
+}
+
+# _go $1
+complete -F _go go.sh
+complete -F _go go
+complete -F _go codedir
+
+```
+
+```
+#!/usr/bin/bash
+
+function _myscript(){
+    COMP_FILE=$(find /home/beyond/github/JavaAttentions/Tips/ -maxdepth 1 -type f -print | xargs -n1 basename)
+    COMPREPLY=($(compgen -W "${COMP_FILE}" ${COMP_WORDS[${COMP_CWORD}]}))
+}
+
+complete -F _myscript tip
+```
+
+参考: https://www.somata.net/2020/bash_completion_script.html
