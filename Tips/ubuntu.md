@@ -296,3 +296,13 @@ https://github.com/daipeihust/im-select#installation
 vi /home/beyond/.config/ibus/rime/build/default.yaml
 搜索 F4 注释掉
 
+### synergy 一个鼠标控制两个电脑
+sudo apt-get install synergy
+sudo apt install  libqt4-dbus libqtcore4 libqtgui4  libqt4-network  libqt4-opengl libqtcore4 libqtgui4
+https://www.jianshu.com/p/a706d2ece694
+
+windows:
+https://sourceforge.net/projects/synergy-stable-builds/files/v1.8.8-stable/
+
+不用注册,弹框拒绝
+server 取消ssl
