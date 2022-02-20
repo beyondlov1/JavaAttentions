@@ -170,3 +170,8 @@ http://c.biancheng.net/linux/tmux.html
 linux 的cron 不管命令执行多久, 都会到点执行
 logstash jdbc 插件中的schedule, 如果有一次卡住了, 不会执行之后的, 后边的会等前一个执行完再立即执行, 并且, 会把之前应该执行的次数短时间内全都补回来(<1s?)
 
+
+
+### linux x11 clipboard
+https://github.com/exebook/x11clipboard/blob/master/x11copy.c
+
