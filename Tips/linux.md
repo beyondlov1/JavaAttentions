@@ -175,3 +175,9 @@ logstash jdbc 插件中的schedule, 如果有一次卡住了, 不会执行之后
 ### linux x11 clipboard
 https://github.com/exebook/x11clipboard/blob/master/x11copy.c
 
+
+
+### top by name
+pidof server client |awk '{for(i=1;i<=NF;i++){ printf $i; if(i!=NF) printf ",";}}' |xargs terminator -x top -p
+
+
