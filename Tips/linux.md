@@ -181,3 +181,7 @@ https://github.com/exebook/x11clipboard/blob/master/x11copy.c
 pidof server client |awk '{for(i=1;i<=NF;i++){ printf $i; if(i!=NF) printf ",";}}' |xargs terminator -x top -p
 
 
+
+
+### 正则表达式
+https://regex101.com/
