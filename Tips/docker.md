@@ -53,3 +53,14 @@ docker commit -m "upload" -a "beyond" 9d8e0e126419 beyond/xxxx:v1
 docker container ls -a --filter status=exited --filter status=created
 docker system prune
 
+
+
+### docker systemctl
+docker run -it centos /bin/bash 这种方式不会启动systemctl, 需要使用下面的方式启动
+docker run --privileged=true -d beyond/canal-adapter-rabbitmq:v2 /usr/sbin/init
+
+
+
+### centos mariadb
+https://blog.csdn.net/TengYu456/article/details/115599479
+
