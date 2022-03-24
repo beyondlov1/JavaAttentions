@@ -47,3 +47,9 @@ docker cp ./xxxx.tar <container_id>:/xxx/xxx
 docker commit -m "upload" -a "beyond" 9d8e0e126419 beyond/xxxx:v1
 ```
 
+
+
+### 删除所有已停止的container
+docker container ls -a --filter status=exited --filter status=created
+docker system prune
+
