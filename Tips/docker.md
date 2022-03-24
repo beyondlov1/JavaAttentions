@@ -55,6 +55,7 @@ docker system prune
 
 
 
+<<<<<<< HEAD
 ### docker systemctl
 docker run -it centos /bin/bash 这种方式不会启动systemctl, 需要使用下面的方式启动
 docker run --privileged=true -d beyond/canal-adapter-rabbitmq:v2 /usr/sbin/init
@@ -63,4 +64,26 @@ docker run --privileged=true -d beyond/canal-adapter-rabbitmq:v2 /usr/sbin/init
 
 ### centos mariadb
 https://blog.csdn.net/TengYu456/article/details/115599479
+=======
+1、搜索mysql5.7镜像
+docker search mysql5.7.18
+
+2、拉取镜像
+docker pull docker.io/sandou/mysql5.7.18
+
+3、查看镜像
+docker images
+
+4、新建映射目录
+mkdir /opt/mysql63307
+mkdir /etc/mysql/   #创建my.cnf映射目录
+vim /etc/mysql/my.cnf
+
+5、运行镜像
+docker run -d -p 63307:63307 -v /etc/mysql/:/etc/mysql/conf.d/ -v /opt/mysql63307:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql_test docker.io/sandou/mysql5.7.18
+
+6、进入docker
+docker exec -it mysql bash
+
+>>>>>>> 97def5a394b3d0d90debb0b7faac7c7d68e43e37
 
