@@ -53,3 +53,26 @@ docker commit -m "upload" -a "beyond" 9d8e0e126419 beyond/xxxx:v1
 docker container ls -a --filter status=exited --filter status=created
 docker system prune
 
+
+
+1、搜索mysql5.7镜像
+docker search mysql5.7.18
+
+2、拉取镜像
+docker pull docker.io/sandou/mysql5.7.18
+
+3、查看镜像
+docker images
+
+4、新建映射目录
+mkdir /opt/mysql63307
+mkdir /etc/mysql/   #创建my.cnf映射目录
+vim /etc/mysql/my.cnf
+
+5、运行镜像
+docker run -d -p 63307:63307 -v /etc/mysql/:/etc/mysql/conf.d/ -v /opt/mysql63307:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql_test docker.io/sandou/mysql5.7.18
+
+6、进入docker
+docker exec -it mysql bash
+
+
