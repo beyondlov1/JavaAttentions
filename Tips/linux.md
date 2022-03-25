@@ -185,3 +185,38 @@ pidof server client |awk '{for(i=1;i<=NF;i++){ printf $i; if(i!=NF) printf ",";}
 
 ### 正则表达式
 https://regex101.com/
+
+
+### 开启自动执行某个脚本
+     
+
+启动脚本举例（文件名为autostart.sh）：
+
+#!/bin/bash
+#chkconfig: 2345 80 90
+#description:auto_run
+/home/myproject/start.sh
+
+    文件内部前三行的意义可参考《服务不支持chkconfig的解决方法》[2]
+
+    将脚本移动到/etc/rc.d/init.d目录下
+
+mv  autostart.sh /etc/rc.d/init.d
+
+    增加脚本的可执行权限
+
+chmod 755 /etc/rc.d/init.d/autostart.sh
+
+    添加脚本到开机自动启动项目中
+cd /etc/rc.d/init.d
+chkconfig --add autostart.sh
+chkconfig autostart.sh on
+
+
+参考链接
+[1] 【centos7】添加开机启动服务/脚本
+[2] 服务不支持 chkconfig 的解决方法  https://www.cnblogs.com/areyouready/p/8857807.html
+
+https://blog.csdn.net/qq_29695701/article/details/89254282
+
+
