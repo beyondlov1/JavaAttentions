@@ -123,3 +123,15 @@ complete -F _myscript tip
 ```
 
 参考: https://www.somata.net/2020/bash_completion_script.html
+
+
+### 截取最后一个  substringafter
+pwd | awk -F/ '{print $NF}'
+ehco "foo-bar-123" | sed 's/.*-//'
+https://linuxhint.com/bash-substring-after-character/
+
+
+
+### ohmybash theme 路径
+/home/beyond/.oh-my-bash/themes/powerline
+
