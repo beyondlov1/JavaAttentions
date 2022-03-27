@@ -135,3 +135,8 @@ https://linuxhint.com/bash-substring-after-character/
 ### ohmybash theme 路径
 /home/beyond/.oh-my-bash/themes/powerline
 
+
+
+### 替换文件中的全局变量
+cat test.txt | envsubst | tee test.txt
+
