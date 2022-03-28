@@ -140,3 +140,8 @@ https://linuxhint.com/bash-substring-after-character/
 ### 替换文件中的全局变量
 cat test.txt | envsubst | tee test.txt
 
+
+
+### 递归替换
+find <path> -type f -path "*" |xargs sed -i 's:xxxx:bbbbbbb:g'
+
