@@ -220,3 +220,9 @@ chkconfig autostart.sh on
 https://blog.csdn.net/qq_29695701/article/details/89254282
 
 
+
+
+### keycode对应
+xev
+xbindkeys -k
+
