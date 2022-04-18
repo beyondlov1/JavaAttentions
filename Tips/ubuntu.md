@@ -306,3 +306,8 @@ https://sourceforge.net/projects/synergy-stable-builds/files/v1.8.8-stable/
 
 不用注册,弹框拒绝
 server 取消ssl
+
+
+### ubuntu 默认图片地址
+/usr/share/backgrounds/brad-huchteman-stone-mountain.jpg
+
