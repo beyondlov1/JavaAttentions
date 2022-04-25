@@ -311,3 +311,9 @@ server 取消ssl
 ### ubuntu 默认图片地址
 /usr/share/backgrounds/brad-huchteman-stone-mountain.jpg
 
+
+
+### qq ukylin
+https://www.ubuntukylin.com/applications/107-cn.html
+command in : /usr/share/applications/QQ.desktop
+
