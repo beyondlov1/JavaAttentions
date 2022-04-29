@@ -111,3 +111,8 @@ docker inspect --format '{{.Name}} {{.State.Running}}'
 # 容器运行状态
 ```
 https://www.php.cn/docker/458430.html#:~:text=Docker%E6%80%8E%E4%B9%88%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8IP%E5%9C%B0%E5%9D%80%EF%BC%9F%20%E6%9F%A5%E7%9C%8B%E6%96%B9%E6%B3%95%EF%BC%9A1%E3%80%81%E4%BD%BF%E7%94%A8%E2%80%9Cdocker%20inspect%20--format%3D%27%20%7B%20%7B.NetworkSettings.IPAddress%7D%7D%27%E2%80%9D%E5%91%BD%E4%BB%A4%EF%BC%9B2%E3%80%81%E4%BD%BF%E7%94%A8%E2%80%9Cdocker,exec%20-it%20ID%2FNAMES%20ip%20addr%E2%80%9D%E5%91%BD%E4%BB%A4%E3%80%82%20%E6%9F%A5%E7%9C%8BDocker%E7%9A%84%E5%BA%95%E5%B1%82%E4%BF%A1%E6%81%AF%E3%80%82
+
+
+### docker compose 启动前再build一次
+docker compose up --build --no-deps
+
