@@ -73,3 +73,9 @@ https://downloads.mysql.com/archives/proxy/
 https://cloud.tencent.com/developer/article/1047570
 
 有hook, lua脚本
+
+### mysql 锁表 (亲测 mysql5.6)
+如果根据索引查询, 没有该数据, 则不会锁表, 其他正常查询
+如果不根据索引, 不管有没有该数据, 都会锁表
+参考: https://blog.csdn.net/hardplay123/article/details/88774240
+
