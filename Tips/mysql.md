@@ -79,3 +79,6 @@ https://cloud.tencent.com/developer/article/1047570
 如果不根据索引, 不管有没有该数据, 都会锁表
 参考: https://blog.csdn.net/hardplay123/article/details/88774240
 
+
+### timestamp update on change 
+数据不改变时, 时间戳不会更改, 即使执行了update操作
