@@ -317,3 +317,11 @@ server 取消ssl
 https://www.ubuntukylin.com/applications/107-cn.html
 command in : /usr/share/applications/QQ.desktop
 
+
+
+### 挂载webdav
+apt-get install davfs2
+mkdir /media/akann
+mount -t davfs http://www.server.com/dir /media/akann
+参考: https://blog.csdn.net/twlkyao/article/details/10426103
+
