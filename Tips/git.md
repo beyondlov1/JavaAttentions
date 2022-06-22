@@ -65,3 +65,7 @@ git config --global user.email john@example.com
 
 ### 文档路径过深
     git config --system core.longpaths true  
+
+### .ignore 没生效
+git rm -r --cached .
+
