@@ -8,3 +8,9 @@ chrome一定要装的插件有：oneTab、Adblocks等。
 
 ### 中国crx下载网站
 https://chrome.zzzmh.cn/index#/index
+
+
+### chrome shotcut
+chrome://extensions/shortcuts
+配合插件:  Shortkeys 
+
