@@ -82,3 +82,8 @@ https://cloud.tencent.com/developer/article/1047570
 
 ### timestamp update on change 
 数据不改变时, 时间戳不会更改, 即使执行了update操作
+
+
+MRR multi range read 
+ICP index condition pushdown
+
