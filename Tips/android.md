@@ -604,3 +604,21 @@ You can find your Android.mk in; app/build/intermediates/ndk/debug
 ### android lib
 could not get unknown property for 'applicationVariants' for BuildType
 https://stackoverflow.com/questions/45101309/could-not-get-unknown-property-for-applicationvariants-for-buildtype-decorated
+
+
+### termux调用android api
+首先安装Termux:API.apk到安卓系统中
+pkg install termux-api
+参考: https://zhuanlan.zhihu.com/p/150082183
+https://wiki.termux.com/wiki/Termux:API
+https://www.sqlsec.com/2018/05/termuxapi.html
+
+### 命令行启动应用
+am start -n com.android.calendar/com.android.calendar.LaunchActivity 
+https://blog.csdn.net/xiao5678yun/article/details/53381881
+https://blog.csdn.net/jlminghui/article/details/40622103
+http://www.codebaoku.com/tech/tech-yisu-494562.html
+
+### 查看activity
+Activity应用
+
