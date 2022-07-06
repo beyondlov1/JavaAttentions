@@ -87,3 +87,19 @@ https://cloud.tencent.com/developer/article/1047570
 MRR multi range read 
 ICP index condition pushdown
 
+### keys
+- 存储结构: 行 compact 页 区 段 redo undo leafnode non-leafnode
+- 索引结构: 二级索引结构
+- MVVC readview trx_id
+- redo 512字节, 不用doublewrite LSN  checkout flush currLSN
+- double write 把脏页memcpy 到doublewritebuffer, 然后写入磁盘, 调用fsync, 然后刷入脏页
+  解决问题: 防止脏页部分写, 要保证page要么都写进去, 要么就从doublewritebuffer的文件恢复
+  类似于先写日志, 再慢慢写
+- undo 链 提交日志时判断undopage是否可复用, 判断是否要删除(insert)
+  purge 离散读取, 一个事务的undo可能分布与不同undopage中, purge比较慢, 在master thread中处理
+- binlog, mysql层, 逻辑日志, 使用两段式提交, 保证binlog 和redolog中的内容相同, 避免binlog写入了, 但是redolog没写成功
+- group commit , 多个commit一起提交, 但是有了binlog后, 为了保证顺序所以要加mutex锁,导致性能下降, 之后用队列, Flush Sync Commit 三个阶段解决, 队列中的一起刷盘
+- latch(多线程) lock(数据库中的锁)   X S IX IS , 位图存储每一页中被锁定的行, 也能锁索引
+  READ REPEATABLE 间隙锁 next-key锁 Record锁
+- 死锁检测机制  timeout wait-for graph
+- 
