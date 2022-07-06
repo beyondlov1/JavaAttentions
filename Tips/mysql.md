@@ -97,9 +97,11 @@ ICP index condition pushdown
   类似于先写日志, 再慢慢写
 - undo 链 提交日志时判断undopage是否可复用, 判断是否要删除(insert)
   purge 离散读取, 一个事务的undo可能分布与不同undopage中, purge比较慢, 在master thread中处理
+  按页purge, 如果某个undolog被某个事务引用, 则换一个事务开始追踪清理
 - binlog, mysql层, 逻辑日志, 使用两段式提交, 保证binlog 和redolog中的内容相同, 避免binlog写入了, 但是redolog没写成功
 - group commit , 多个commit一起提交, 但是有了binlog后, 为了保证顺序所以要加mutex锁,导致性能下降, 之后用队列, Flush Sync Commit 三个阶段解决, 队列中的一起刷盘
 - latch(多线程) lock(数据库中的锁)   X S IX IS , 位图存储每一页中被锁定的行, 也能锁索引
   READ REPEATABLE 间隙锁 next-key锁 Record锁
 - 死锁检测机制  timeout wait-for graph
-- 
+- 空闲列表 FREE FULL NOT_FULL      Fragment
+- xtrabackup 利用LSN来寻找有增量的页
