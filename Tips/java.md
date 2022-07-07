@@ -74,3 +74,8 @@ jmap -dump:live,format=b,file=dump.hprof 124474
 ### 反射
 mybatis
 SystemMetaObject.forObject(config).getValue("name");
+
+### double 精度丢失
+C: DBL_EPSILON
+java: java.lang.Math 包和 Math.ulp() 
+
