@@ -145,3 +145,8 @@ cat test.txt | envsubst | tee test.txt
 ### 递归替换
 find <path> -type f -path "*" |xargs sed -i 's:xxxx:bbbbbbb:g'
 
+
+
+### top查看包含某名称的进程
+top -c -p $(pgrep -d',' -f string_to_match_in_cmd_line)
+
