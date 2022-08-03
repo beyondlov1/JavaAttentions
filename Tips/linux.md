@@ -233,3 +233,8 @@ signal的handler相同, 则等上一个完成在进行下一个
 handler不同, 则中断上一个, 开启这个, 等这个执行完, 再回到上一个
 对于read被打断, 则之前read的会清空, 然后从信号处理结束之后再输入的才会被读进去
 
+
+
+### epoll
+https://mp.weixin.qq.com/s/OmRdUgO1guMX76EdZn11UQ?utm_source=pocket_mylist
+
