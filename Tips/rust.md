@@ -53,3 +53,9 @@ https://blog.itdevwu.com/post/915/
 用户/xxx/AppData/Local/tauri
 https://blog.csdn.net/sinat_36728518/article/details/125663288
 
+
+
+### sqlite.dll 不存在
+用rusqlite连接时, 加上features = ["bundled"]
+具体见其github页面
+
