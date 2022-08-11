@@ -7,3 +7,9 @@ https://blog.csdn.net/weixin_44003528/article/details/90477484
 ### vmware 全屏快捷键
 ctrl+alt+enter
 
+
+
+### vmware vmx cpu占用过高
+window服务关闭 : VMware Authorization Service
+会提示关闭vmware statition server 什么的, 关
+
