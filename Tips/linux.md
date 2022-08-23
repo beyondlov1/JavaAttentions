@@ -238,3 +238,8 @@ handler不同, 则中断上一个, 开启这个, 等这个执行完, 再回到�
 ### epoll
 https://mp.weixin.qq.com/s/OmRdUgO1guMX76EdZn11UQ?utm_source=pocket_mylist
 
+
+
+### 尽量少使用swap
+https://blog.csdn.net/qq_37968132/article/details/81584027
+
