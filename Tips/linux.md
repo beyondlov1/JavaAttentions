@@ -241,5 +241,16 @@ https://mp.weixin.qq.com/s/OmRdUgO1guMX76EdZn11UQ?utm_source=pocket_mylist
 
 
 ### 尽量少使用swap
+```
+1.查看当前swappiness值
+　$ cat /proc/sys/vm/swappiness
+2.修改swappiness值为10（临时修改，重启后即还原为默认值）
+　$ sudo sysctl vm.swappiness=10
+
+3.永久修改swappiness默认值（重启生效）
+$ sudo gedit /etc/sysctl.conf
+在文档的最后加上:
+　　vm.swappiness=10
+```
 https://blog.csdn.net/qq_37968132/article/details/81584027
 
