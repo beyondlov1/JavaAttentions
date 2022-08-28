@@ -59,3 +59,5 @@ https://blog.csdn.net/sinat_36728518/article/details/125663288
 用rusqlite连接时, 加上features = ["bundled"]
 具体见其github页面
 
+### wait for package cache lock
+rm ~/.cargo/.package-cache
