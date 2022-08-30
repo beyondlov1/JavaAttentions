@@ -254,3 +254,8 @@ $ sudo gedit /etc/sysctl.conf
 ```
 https://blog.csdn.net/qq_37968132/article/details/81584027
 
+
+
+### 磁盘修复
+https://blog.csdn.net/weixin_30478757/article/details/95736756
+
