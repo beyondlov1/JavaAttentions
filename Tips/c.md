@@ -150,3 +150,5 @@ netBSD
 ### socket
 https://blog.csdn.net/qq_41725312/article/details/90375742
 
+### 关闭stdout缓存
+```setbuf(stdout,NULL);```
