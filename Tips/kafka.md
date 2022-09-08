@@ -15,3 +15,7 @@ bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic
 
 zookeeper
 bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+### exactly once
+https://cloud.tencent.com/developer/article/1805392#:~:text=%E5%9C%A8%E4%BD%BF%E7%94%A8kafka,%E4%BB%AC%E4%BB%8B%E7%BB%8D%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E3%80%82
+
