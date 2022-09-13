@@ -55,3 +55,10 @@ pipreqs . --encoding=utf8 --force
 pip3 install -r requirements.txt
 ```
 参考: https://www.jb51.net/article/170248.htm
+
+
+### python binding
+python 调用其他语言  
+pyqt 
+转换数据存储格式 python object -> c原生
+
