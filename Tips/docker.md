@@ -116,3 +116,18 @@ https://www.php.cn/docker/458430.html#:~:text=Docker%E6%80%8E%E4%B9%88%E6%9F%A5%
 ### docker compose 启动前再build一次
 docker compose up --build --no-deps
 
+
+
+### docker0 网段问题
+在装上docker后, 会有一个docker0的虚拟网卡, 如果container的network设置的bridge会用这个转发, host貌似也会
+但是有个问题, 就是ping或者数据库连接链不了,
+但是换个网段就可以了: 192.186.0.1
+```
+sudo vim /etc/docker/daemon.json (没有就创建)
+{
+    "bip":"192.168.0.1/24"
+}
+重启docker
+```
+暂未明白为什么
+
