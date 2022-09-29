@@ -325,3 +325,16 @@ mkdir /media/akann
 mount -t davfs http://www.server.com/dir /media/akann
 参考: https://blog.csdn.net/twlkyao/article/details/10426103
 
+
+### xcb-imdkit编译
+```
+sudo apt-get install build-essential
+sudo apt-get install extra-cmake-modules
+sudo apt-get install libxcb-util-dev
+sudo apt-get install libxcb-keysyms1-dev
+```
+ mkdir build
+ cd build
+ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+ make
+ sudo make install
