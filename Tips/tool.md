@@ -11,3 +11,51 @@ https://sm.ms/
 http://tools.jb51.net/aideddesign/img_add_info
 
 
+
+
+### html 转pdf
+wkhtmltopdf
+
+
+
+
+### python3 长截图
+```
+from sys import argv
+from urllib.parse import quote
+import requests
+from selenium import webdriver
+from time import sleep
+import base64
+
+url = "https://www.cnblogs.com/superhin/p/11481910.html"
+
+if argv[1]:
+    url = argv[1]
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+driver = webdriver.Chrome(options=chrome_options)
+driver.get(url)
+
+# 取出页面的宽度和高度
+page_width = driver.execute_script("return document.body.scrollWidth")
+page_height = driver.execute_script("return document.body.scrollHeight")
+
+# 直接开启设备模拟，不要再手动开devtools了，否则截图截的是devtools的界面！
+driver.execute_cdp_cmd('Emulation.setDeviceMetricsOverride', {'mobile':False, 'width':page_width, 'height':page_height, 'deviceScaleFactor': 1})
+
+# sleep(3)
+
+# 执行截图
+res = driver.execute_cdp_cmd('Page.captureScreenshot', { 'fromSurface': True})
+
+with open(quote(url,safe="",encoding="utf-8")+".png", 'wb') as f:
+    img = base64.b64decode(res['data'])
+    f.write(img)
+
+driver.quit()
+
+```
+headless 代表无界面
+
