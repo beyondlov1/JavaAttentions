@@ -349,3 +349,6 @@ for FILE in tracker-*.desktop; do echo Hidden=true >> $FILE; done
 rm -rf ~/.cache/tracker ~/.local/share/tracker
 ```
 https://stackoom.com/question/1oBkS
+
+### ubuntu 微信
+http://archive.ubuntukylin.com/software/pool/partner/weixin_2.1.2_amd64.deb
