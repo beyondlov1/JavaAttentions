@@ -352,3 +352,6 @@ https://stackoom.com/question/1oBkS
 
 ### ubuntu 微信
 http://archive.ubuntukylin.com/software/pool/partner/weixin_2.1.2_amd64.deb
+
+### linux 下 chrome 滚动慢
+https://blog.csdn.net/weixin_42640948/article/details/123036131
