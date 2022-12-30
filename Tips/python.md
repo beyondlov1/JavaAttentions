@@ -62,3 +62,6 @@ python 调用其他语言
 pyqt 
 转换数据存储格式 python object -> c原生
 
+
+### 安装matplotlib
+pip3 install matplotlib -i https://pypi.tuna.tsinghua.edu.cn/simple/
