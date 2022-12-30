@@ -217,3 +217,14 @@ for update 可以锁住一行, 但是要加上事务才会起作用
 2.修改对应映射源码
 
 https://blog.csdn.net/qq_22587123/article/details/83657354
+
+### 查询最近的药店
+SELECT ( 6371 * acos( cos( radians(#{lat} ) ) * cos(radians( latitude ) ) * cos( radians( longitude ) - radians(#{lon} ) ) + sin( radians(#{lat}) ) * sin( radians( latitude ) ) ) ) AS distance,
+    <include refid="Base_Column_List"/>
+    FROM db_dict.ts_areas
+    where latitude is not null and latitude != 0 and longitude is not null and longitude != 0
+    ORDER BY distance
+    LIMIT 1
+
+ST_DISTANCE(ST_GEOMFROMTEXT(CONCAT('POINT(',b.longitude,' ',b.latitude,')')),
+        ST_GEOMFROMTEXT('POINT(${inModel.longitude} ${inModel.latitude})')) as distance
