@@ -264,3 +264,5 @@ https://blog.csdn.net/weixin_30478757/article/details/95736756
 ### x11 compositors 原理
 https://dev.to/l04db4l4nc3r/compositors-in-linux-1hhb
 
+### 查看端口占用(全)
+sudo netstat -tunlp | grep 80
