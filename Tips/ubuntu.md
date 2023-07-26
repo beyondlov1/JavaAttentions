@@ -355,3 +355,27 @@ http://archive.ubuntukylin.com/software/pool/partner/weixin_2.1.2_amd64.deb
 
 ### linux 下 chrome 滚动慢
 https://blog.csdn.net/weixin_42640948/article/details/123036131
+
+
+### ubuntu开机自启动
+在/etc/systemd/user目录下创建一个systemd服务文件, 命名为user-defined.service, 内容如下：
+```
+[Unit]
+After=network.service
+
+[Service]
+ExecStart=/home/beyond/autostart.sh
+
+[Install]
+WantedBy=default.target
+
+```
+权限:
+```
+sudo chmod 744 /home/beyond/autostart.sh
+sudo chmod 664 /etc/systemd/user/user-defined.service
+sudo systemctl daemon-reload
+systemctl --user enable user-defined.service
+```
+
+autostart.sh 脚本开头一定要有 ```#!/bin/bash```
