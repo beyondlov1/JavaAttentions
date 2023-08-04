@@ -76,6 +76,7 @@ export LC_CTYPE='zh_CN.UTF-8'
 source .bashrc
 ```
 
+
 ### 查看端口被占用
 ss -tnlp | grep 8080
 
@@ -266,3 +267,11 @@ https://dev.to/l04db4l4nc3r/compositors-in-linux-1hhb
 
 ### 查看端口占用(全)
 sudo netstat -tunlp | grep 80
+
+
+### 定时休眠, 定时启动
+执行这条命令会立即休眠, 并在20s后启动
+sudo rtcwake -v -s 20 -m mem
+
+制定时间启动
+rtcwake -v -t `date -d 10:53 +%s` -m mem
