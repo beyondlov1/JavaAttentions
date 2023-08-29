@@ -379,3 +379,16 @@ systemctl --user enable user-defined.service
 ```
 
 autostart.sh 脚本开头一定要有 ```#!/bin/bash```
+
+
+### bluetooth
+sudo systemctl status bluetooth
+bluetoothctl scan on
+bluetoothctl pair [UUID]
+bluetoothctl connect [UUID]
+bluetoothctl paired-devices
+
+### bluetooth battery
+https://github.com/pybluez/pybluez/blob/master/docs/install.rst
+download 解压
+pip3 install .
