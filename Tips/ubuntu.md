@@ -392,3 +392,6 @@ bluetoothctl paired-devices
 https://github.com/pybluez/pybluez/blob/master/docs/install.rst
 download 解压
 pip3 install .
+pip3 install bluetooth_battery
+
+https://duter2016.github.io/2020/12/18/Linuxmint%E7%B3%BB%E7%BB%9F%E6%9F%A5%E7%9C%8B%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E7%94%B5%E6%B1%A0%E7%94%B5%E9%87%8F%E6%96%B9%E6%B3%95/
